@@ -389,7 +389,7 @@ export default function Help() {
           <div className="top-content relative faq-content">
             <div className="header grid relative">
               <h1 className="text-2xl xs:text-[1.65rem] xs:leading-[0.95] md:text-[1.6rem] font-codePro !leading-8 capitalize">
-                Frequently asked questions
+                FAQ
               </h1>
             </div>
 
@@ -444,7 +444,7 @@ export default function Help() {
                 </div>
               </div>
               {/* right */}
-              <div className="right faq-collaps flex flex-col gap-4 relative">
+              <div className="right faq-collaps flex flex-col gap-4 relative max-w-[60rem]">
                 {collapsInfo[option].map((item, index) => (
                   <FaqCollaps
                     key={index + option}

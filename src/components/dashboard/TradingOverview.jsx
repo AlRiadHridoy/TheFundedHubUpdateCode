@@ -43,114 +43,107 @@ export default function TradingOverview() {
       <div className="dashboard-wrapper flex flex-col gap-8">
         <div className="grid lg:grid-cols-8 gap-5">
           <div className="w-full lg:col-span-5">
-            <div className="flex flex-wrap">
+            {/* content */}
+            <div className="grid gap-5 sm:grid-cols-2 h-full">
               <div className="w-full">
-                <div className="relative z-10 grid gap-4">
-                  <div className="content">
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div className="w-full">
-                        <div className="p-5 rounded-[15px] card-border backdrop-blur-3xl card-border h-full">
-                          <p className=" leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht inline-block">
-                            <div className="mr-1 inline-block font-medium">
-                              Minimum Trading Days
-                            </div>
-                          </p>
-                          <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
-                            <span>Minimum</span>
-                            <span>0 days</span>
-                          </p>
-                          <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
-                            <span>Current Result</span>
-                            <span className="text-primary">11 days</span>
-                          </p>
-                          <p>
-                            <span className="text-primary bg-primary/20 text-[14px] py-[6px] px-[16px] rounded-[5px]">
-                              Ongoing
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="w-full">
-                        <div className="p-5 rounded-[15px] card-border backdrop-blur-3xl card-border h-full">
-                          <p className=" leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht inline-block">
-                            <div className="mr-1 inline-block font-medium">
-                              Daily Loss Limit
-                            </div>
-                          </p>
-                          <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
-                            <span>Max. daily Loss</span>
-                            <span>$250</span>
-                          </p>
-                          <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
-                            <span>Max. daily Loss recorded</span>
-                            <span className="text-primary">$80</span>
-                          </p>
-                          <p>
-                            <span className="text-primary bg-primary/20 text-[14px] py-[6px] px-[16px] rounded-[5px]">
-                              Ongoing
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="w-full ">
-                        <div className="p-5 rounded-[15px] card-border backdrop-blur-3xl card-border h-full">
-                          <p className=" leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht inline-block ">
-                            <div className="mr-1 inline-block font-medium">
-                              Maximum Loss Limit
-                            </div>
-                          </p>
-                          <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
-                            <span>Max. Loss</span>
-                            <span>$600</span>
-                          </p>
-                          <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
-                            <span>Max. Loss recorded</span>
-                            <span className="text-primary">$140</span>
-                          </p>
-                          <p>
-                            <span className="text-primary bg-primary/20 text-[14px] py-[6px] px-[16px] rounded-[5px]">
-                              Ongoing
-                            </span>
-                          </p>
-                        </div>
-                      </div>
-                      <div className="w-full">
-                        <div className="p-5 rounded-2xl card-border backdrop-blur-3xl card-border h-full">
-                          <div className="card-heading flex items-center mb-[20px]">
-                            <div className="mr-1 inline-block font-medium">
-                              Trading Growth Curve
-                            </div>
-                          </div>
-                          <div className="content grid gap-2">
-                            <div className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] text-wht">
-                              <p className="inline-flex items-center">
-                                Max Permitted Loss
-                              </p>
-                              <p className="font-semibold py-1 px-1.5 rounded-md bg-primary/40 font-Montserrat leading-none">
-                                $600
-                              </p>
-                            </div>
+                <div className="p-5 rounded-[15px] card-border backdrop-blur-3xl card-border h-full">
+                  <p className=" leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht inline-block">
+                    <div className="mr-1 inline-block font-medium">
+                      Minimum Trading Days
+                    </div>
+                  </p>
+                  <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
+                    <span>Minimum</span>
+                    <span>0 days</span>
+                  </p>
+                  <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
+                    <span>Current Result</span>
+                    <span className="text-primary">11 days</span>
+                  </p>
+                  <p>
+                    <span className="text-primary bg-primary/20 text-[14px] py-[6px] px-[16px] rounded-[5px]">
+                      Ongoing
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div className="w-full">
+                <div className="p-5 rounded-[15px] card-border backdrop-blur-3xl card-border h-full">
+                  <p className=" leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht inline-block">
+                    <div className="mr-1 inline-block font-medium">
+                      Daily Loss Limit
+                    </div>
+                  </p>
+                  <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
+                    <span>Max. daily Loss</span>
+                    <span>$250</span>
+                  </p>
+                  <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
+                    <span>Max. daily Loss recorded</span>
+                    <span className="text-primary">$80</span>
+                  </p>
+                  <p>
+                    <span className="text-primary bg-primary/20 text-[14px] py-[6px] px-[16px] rounded-[5px]">
+                      Ongoing
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div className="w-full ">
+                <div className="p-5 rounded-[15px] card-border backdrop-blur-3xl card-border h-full">
+                  <p className=" leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht inline-block ">
+                    <div className="mr-1 inline-block font-medium">
+                      Maximum Loss Limit
+                    </div>
+                  </p>
+                  <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
+                    <span>Max. Loss</span>
+                    <span>$600</span>
+                  </p>
+                  <p className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] mb-[15px] text-wht">
+                    <span>Max. Loss recorded</span>
+                    <span className="text-primary">$140</span>
+                  </p>
+                  <p>
+                    <span className="text-primary bg-primary/20 text-[14px] py-[6px] px-[16px] rounded-[5px]">
+                      Ongoing
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div className="w-full">
+                <div className="p-5 rounded-2xl card-border backdrop-blur-3xl card-border h-full">
+                  <div className="card-heading flex items-center mb-[20px]">
+                    <div className="mr-1 inline-block font-medium">
+                      Trading Growth Curve
+                    </div>
+                  </div>
+                  <div className="content grid gap-2">
+                    <div className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] text-wht">
+                      <p className="inline-flex items-center">
+                        Max Permitted Loss
+                      </p>
+                      <p className="font-semibold py-1 px-1.5 rounded-md bg-primary/40 font-Montserrat leading-none">
+                        $600
+                      </p>
+                    </div>
 
-                            <div className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] text-wht">
-                              <p className="inline-flex items-center">
-                                Today&apos;s Permitted Loss
-                              </p>
-                              <p className="font-semibold py-1 px-1.5 rounded-md bg-primary/40 font-Montserrat leading-none">
-                                $250
-                              </p>
-                            </div>
+                    <div className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] text-wht">
+                      <p className="inline-flex items-center">
+                        Today&apos;s Permitted Loss
+                      </p>
+                      <p className="font-semibold py-1 px-1.5 rounded-md bg-primary/40 font-Montserrat leading-none">
+                        $250
+                      </p>
+                    </div>
 
-                            <div className="flex items-start justify-between  leading-[1.5] tracking-[-0.05px] text-wht">
-                              <p className="inline-flex items-center">
-                                Today&apos;s Permitted Loss Will Reset In
-                              </p>
-                              <p className="font-semibold py-1 px-1.5 rounded-md bg-primary/40 font-Montserrat leading-none">
-                                -2:56:29
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    <div className="flex items-start justify-between  leading-[1.5] tracking-[-0.05px] text-wht">
+                      <p className="inline-flex items-center">
+                        Today&apos;s Permitted Loss Will Reset In
+                      </p>
+                      <p className="font-semibold py-1 px-1.5 rounded-md bg-primary/40 font-Montserrat leading-none">
+                        -2:56:29
+                      </p>
                     </div>
                   </div>
                 </div>

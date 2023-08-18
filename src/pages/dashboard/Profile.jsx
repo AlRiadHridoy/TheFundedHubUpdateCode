@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
 
-import { FaRegUserCircle } from "react-icons/fa";
-import { MdOutlineSecurity } from "react-icons/md";
-import { FaDiscord } from "react-icons/fa";
-
 import { Country, State } from "country-state-city";
 import authorTwo from "../../assets/images/dashboard/author/author-2.jpeg";
-
-import { discord } from "../../ui/images";
 
 export default function Profile() {
   const [getCountry, setGetCountry] = useState("");
@@ -25,7 +19,7 @@ export default function Profile() {
 
   return (
     <>
-      <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadown-dash">
+      <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadown-dash min-h-[100vh]">
         <div className="inner-content px-6">
           <div className="breadcrumb-wrap">
             <div className="breadcrumb-title">
@@ -91,13 +85,6 @@ export default function Profile() {
                           }`}
                           onClick={() => setInfoToggle("personal")}
                         >
-                          <FaRegUserCircle
-                            className={`"text-lg  ${
-                              infoToggle === "personal"
-                                ? "text-main-bg/90"
-                                : "text-gry"
-                            }`}
-                          />
                           Personal Information
                         </button>
                         <button
@@ -108,31 +95,7 @@ export default function Profile() {
                           }`}
                           onClick={() => setInfoToggle("account")}
                         >
-                          <MdOutlineSecurity
-                            className={`"text-lg  ${
-                              infoToggle === "account"
-                                ? "text-main-bg/90"
-                                : "text-gry"
-                            }`}
-                          />
                           Account Information
-                        </button>
-                        <button
-                          className={`w-full 2xl:text-[16px] text-[14px] font-semibold flex items-center 2xl:px-[30px] px-[15px] py-[15px] mb-[16px] gap-4 text-gry ${
-                            infoToggle === "discord"
-                              ? "text-main-bg/90 bg-primary"
-                              : ""
-                          }`}
-                          onClick={() => setInfoToggle("discord")}
-                        >
-                          <FaDiscord
-                            className={`"text-lg  ${
-                              infoToggle === "discord"
-                                ? "text-main-bg/90"
-                                : "text-gry"
-                            }`}
-                          />
-                          Discord Settings
                         </button>
                       </div>
                     </div>
@@ -234,7 +197,7 @@ export default function Profile() {
                       </div>
                     </div>
                   </div>
-                ) : infoToggle === "account" ? (
+                ) : (
                   <div className="card-wrap bg-main-bg/90">
                     <h3 className="card-title">Account Infomation</h3>
                     <div className="content">
@@ -273,37 +236,6 @@ export default function Profile() {
                           <button className="save capitalize hidden sm:inline-block font-Montserrat text-xs font-bold py-3 px-10 dash-btn rounded-3xl ">
                             Save
                           </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="card-wrap">
-                    <div className="p-[30px] mb-[30px] rounded-[10px] relative z-10 overflow-hidden flex items-center justify-between gap-[20px] lg:flex-nowrap flex-wrap bg-main-bg/90">
-                      <div className="left grid sm:flex flex-col justify-center items-center sm:items-start gap-6">
-                        <div className="img flex justify-center items-center">
-                          <img
-                            className="max-w-[15rem] w-full sm:w-[18rem]"
-                            src={discord}
-                            alt="discord"
-                          />
-                        </div>
-
-                        <div className="w-full grid justify-center sm:justify-start gap-3">
-                          <p className="max-w-[30rem] text-center sm:text-start">
-                            Where veteran and rookie traders all come together
-                            to talk about the markets and keep up to date with
-                            all annoucements.
-                          </p>
-                          <div className="mt-2 btn uppercase flex justify-center sm:justify-start">
-                            <a
-                              target="__blank"
-                              href="https://discord.gg/GVXNaVTr"
-                              className=" capitalize hidden sm:inline-block font-Montserrat text-xs font-bold py-3 px-10 dash-btn rounded-3xl"
-                            >
-                              Join our Discord
-                            </a>
-                          </div>
                         </div>
                       </div>
                     </div>

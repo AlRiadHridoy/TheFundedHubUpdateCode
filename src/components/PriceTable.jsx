@@ -186,7 +186,7 @@ export default function PriceTable() {
             </div>
           </div>
           {/* right-inside */}
-          <div className="right-inside p-5 bg-light/[17%] rounded-3xl col-span-2">
+          <div className="right-inside p-5 bg-light/[17%] rounded-3xl col-span-2 h-full">
             <div className="heading">
               <h3 className="font-light">
                 <b className="font-bold">Step 2: </b> Choose your Platform

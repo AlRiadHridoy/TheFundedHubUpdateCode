@@ -38,18 +38,18 @@ export default function Billing() {
                         {/* My plan */}
                         <li className="inline-block group">
                           <button
-                            className={`px-[30px] py-[12px] rounded-[10px] shadow-[0_4px_10px_rgba(255,255,255,0.08)]  flex gap-2 ${
+                            className={`px-[30px] py-[12px] rounded-2xl shadow-[0_4px_10px_rgba(255,255,255,0.02)]  flex gap-2 ${
                               planSwap ? "bg-blu" : ""
                             }`}
                             onClick={() => setPlanSwap(!planSwap)}
                           >
-                            My Plan
+                            Get Funded
                           </button>
                         </li>
                         {/* Payment history */}
                         <li className="inline-block mr-[10px]">
                           <button
-                            className={`flex gap-2 items-center px-[30px] py-[12px] rounded-[10px] shadow-[0_4px_10px_rgba(255,255,255,0.08)] ${
+                            className={`flex gap-2 items-center px-[30px] py-[12px] rounded-2xl shadow-[0_4px_10px_rgba(255,255,255,0.02)] ${
                               !planSwap ? "bg-blu" : ""
                             }`}
                             onClick={() => setPlanSwap(!planSwap)}

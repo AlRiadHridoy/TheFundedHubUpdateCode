@@ -303,11 +303,15 @@ export default function DashboardHome() {
                 </div>
 
                 {/* card */}
-                <div className="card-wrap card-border md:col-span-3 flex flex-col gap-4 justify-center items-center">
-                  <img className="max-w-[7.5rem]" src={meta} alt="meta-trader" />
-                  <div className="wrap flex gap-3">
-                    <img className="max-w-[7.5rem]" src={playStore} alt="" />
-                    <img className="max-w-[7.5rem]" src={appleStore} alt="" />
+                <div className=" rounded-2xl p-4 card-border md:col-span-3 grid gap-3 h-full">
+                  <img
+                    className="w-full max-w-[6.5rem] justify-self-center"
+                    src={meta}
+                    alt="meta-trader"
+                  />
+                  <div className="wrap grid grid-cols-2 gap-3">
+                    <img className="w-full" src={playStore} alt="" />
+                    <img className="w-full" src={appleStore} alt="" />
                   </div>
                 </div>
               </div>
