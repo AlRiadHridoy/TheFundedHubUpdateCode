@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Code Pro Light";
+  src: url("./assets/fonts/Code-Pro-Light-LC.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Code Pro regular";
+  src: url("./assets/fonts/Code-Pro-LC.otf") format("opentype");
+}
+@font-face {
+  font-family: "Code Pro bold";
+  src: url("./assets/fonts/Code-Pro-Bold-LC.otf") format("opentype");
+}
+
+html {
+  font-family: "Code Pro regular";
+}
