@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`transition-all duration-300 border-b border-transparent py-3f sm:py-6f bg-transparent z-[9999] absolute left-0 right-0 top-0`}
+        className={`transition-all duration-300 border-b border-transparent py-3 sm:py-6 bg-transparent z-[9999] absolute left-0 right-0 top-0`}
       >
         <div className="text-xl text-all bg-all/10 py-4 px-4 mb-6 text-center hidden">
           We do NOT give out any real capital for management. All accounts are
