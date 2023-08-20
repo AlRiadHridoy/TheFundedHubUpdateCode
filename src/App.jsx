@@ -13,10 +13,8 @@ import SingleBlog from "./pages/main/SingleBlog";
 
 // Dashboard
 import Dashboard from "./pages/dashboard/Dashboard";
-// import TradingOverview from "./pages/dashboard/TradingOverview";
 import Withdraw from "./pages/dashboard/Withdraw";
 import TopUpReset from "./pages/dashboard/TopUpReset";
-// import NewsCalendar from "./pages/dashboard/NewsCalendar";
 import Help from "./pages/dashboard/Help";
 import Profile from "./pages/dashboard/Profile";
 import DashContact from "./pages/dashboard/DashContact";
@@ -26,7 +24,7 @@ import Checkout from "./pages/main/Checkout";
 // CSS
 import "./App.css";
 import Cookies from "./ui/Cookies";
-// import Blur from "./ui/Blur";
+import Blur from "./ui/Blur";
 
 function App() {
   return (
@@ -51,9 +49,7 @@ function App() {
           <Route path="dashboard" element={<Dashboard />}>
             <Route path="Profile" element={<Profile />} />
             <Route path="billing" element={<Billing />} />
-            {/* <Route path="trading-overview" element={<TradingOverview />} /> */}
             <Route path="withdraw" element={<Withdraw />} />
-            {/* <Route path="news-calendar" element={<NewsCalendar />} /> */}
             <Route path="top-up-reset" element={<TopUpReset />} />
             <Route path="help" element={<Help />} />
             <Route path="dashboard-contact" element={<DashContact />} />

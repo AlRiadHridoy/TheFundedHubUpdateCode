@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { copy } from "../../ui/images";
 import ApexChart from "../../components/dashboard/ApexChart";
 import TradingOverview from "../../components/dashboard/TradingOverview";
-
-import meta from "../../assets/images/dashboard/dash-meta.png";
-import playStore from "../../assets/images/dashboard/dash-playstore.png";
-import appleStore from "../../assets/images/dashboard/dash-apple.png";
 
 export default function DashboardHome() {
   const [passVisible, setPassVisible] = useState(false);
@@ -65,9 +61,9 @@ export default function DashboardHome() {
                       </h3>
                       <div className="content">
                         {/* ApexChart section */}
-                        <div className="ApexChart relative z-10 grid gap-4 card-border rounded-xl">
+                        <div className="ApexChart relative z-10 grid gap-4 card-border rounded-xl mt-6 md:mt-0">
                           {/* ApexChart */}
-                          <div className="min-h-[300px] sm:h-[250px] md:min-h-[410px] rounded-xl md:p-6 pr-4">
+                          <div className="min-h-[300px] sm:h-[280px] md:min-h-[420px] rounded-xl py-4 md:p-6 pr-4 md:mt-4">
                             <ApexChart />
                           </div>
                         </div>
@@ -135,7 +131,6 @@ export default function DashboardHome() {
                     </div>
                   </div>
 
-                  {/* ****************************** */}
                   {/* card */}
                   <div className="card-border  hidden">
                     <div className="d-icon bg-gry">
@@ -175,13 +170,13 @@ export default function DashboardHome() {
                 {/* Account detalis */}
                 <div className="flex flex-wrap relative z-20 md:col-span-9">
                   <div className="w-full">
-                    <div className="card-wrap card-border">
+                    <div className="card-wrap card-border h-full">
                       <h3 className="card-title">Account Details</h3>
                       <div className="content">
                         <div className="account-info font-Montserrat">
                           <div className="account-info-top grid xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                             <div className="info-item">
-                              <div className="wrapper flex gap-3">
+                              <div className="wrapper flex gap-2">
                                 <h4>Login</h4>
                                 <div className="icon-wrapper relative before:absolute before:content-['Copied'] before:text-black before:py-1 before:px-2.5 before:text-xs before:rounded-lg before:bg-primary before:left-[50%] before:-top-[130%] before:opacity-0 before:invisible transition-all duration-200">
                                   <img
@@ -199,7 +194,7 @@ export default function DashboardHome() {
                               </span>
                             </div>
                             <div className="info-item">
-                              <div className="wrapper flex gap-3">
+                              <div className="wrapper flex gap-2">
                                 <h4>Password</h4>
 
                                 <div className="icon-wrapper relative before:absolute before:content-['Copied'] before:text-black before:py-1 before:px-2.5 before:text-xs before:rounded-lg before:bg-primary before:left-[50%] before:-top-[130%] before:opacity-0 before:invisible transition-all duration-200">
@@ -239,7 +234,7 @@ export default function DashboardHome() {
                               </div>
                             </div>
                             <div className="info-item">
-                              <div className="wrapper flex gap-3">
+                              <div className="wrapper flex gap-2">
                                 <h4>Server</h4>
                                 <div className="icon-wrapper relative before:absolute before:content-['Copied'] before:text-black before:py-1 before:px-2.5 before:text-xs before:rounded-lg before:bg-primary before:left-[50%] before:-top-[130%] before:opacity-0 before:invisible transition-all duration-200">
                                   <img
@@ -257,7 +252,7 @@ export default function DashboardHome() {
                               </span>
                             </div>
                             <div className="info-item ">
-                              <div className="wrapper flex gap-3">
+                              <div className="wrapper flex gap-2">
                                 <h4>Balance</h4>
                               </div>
                               <span className="!font-Montserrat">
@@ -266,34 +261,12 @@ export default function DashboardHome() {
                             </div>
 
                             <div className="info-item !hidden">
-                              <div className="wrapper flex gap-3">
+                              <div className="wrapper flex gap-2">
                                 <h4>Platform</h4>
                               </div>
                               <a href="#" className="text-primary underline">
                                 {userinfo.platform}
                               </a>
-                            </div>
-                          </div>
-                          <div className="account-info-bottom mt-10">
-                            <div className="flex md:flex-nowrap flex-wrap items-center md:gap-[40px] gap-[20px]">
-                              <div>
-                                <span className="text-[16px] font-bold">
-                                  Start Date:
-                                </span>{" "}
-                                <span>Sep 25, 2022</span>
-                              </div>
-                              <div>
-                                <span className="text-[16px] font-bold">
-                                  End Date:
-                                </span>{" "}
-                                <span>Oct 25, 2022</span>
-                              </div>
-                              <Link
-                                to="trading-overview"
-                                className="inline-flexf uppercase font-bold font-Montserrat text-xs items-center justify-center py-2.5 px-8  rounded-3xl text-white hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)] group dash-btn hidden"
-                              >
-                                Trading Details
-                              </Link>
                             </div>
                           </div>
                         </div>
@@ -303,15 +276,17 @@ export default function DashboardHome() {
                 </div>
 
                 {/* card */}
-                <div className=" rounded-2xl p-4 card-border md:col-span-3 grid gap-3 h-full">
-                  <img
-                    className="w-full max-w-[6.5rem] justify-self-center"
-                    src={meta}
-                    alt="meta-trader"
-                  />
-                  <div className="wrap grid grid-cols-2 gap-3">
-                    <img className="w-full" src={playStore} alt="" />
-                    <img className="w-full" src={appleStore} alt="" />
+                <div className=" rounded-2xl p-[25px] card-border h-full md:col-span-3 ">
+                  <div className="title text-lg font-semibold mb-5">Timing</div>
+                  <div className="wrap grid gap-2">
+                    <div>
+                      <span className="text-[16px] font-bold">Start Date:</span>{" "}
+                      <span>Sep 25, 2022</span>
+                    </div>
+                    <div>
+                      <span className="text-[16px] font-bold">End Date:</span>{" "}
+                      <span>Oct 25, 2022</span>
+                    </div>
                   </div>
                 </div>
               </div>

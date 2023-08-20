@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Navbar from "../../components/main/Navbar";
 import Footer from "../../components/main/Footer";
-import MotionX from "../../ui/MotionX";
 import blogOne from "../../assets/images/blog-1.png";
 
 import { Link } from "react-router-dom";

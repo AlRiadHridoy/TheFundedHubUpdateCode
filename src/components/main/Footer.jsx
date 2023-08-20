@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { footerBg, mainLogo } from "../../ui/images";
+import { mainLogo } from "../../ui/images";
 import { BsTwitter, BsInstagram, BsDiscord } from "react-icons/bs";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";

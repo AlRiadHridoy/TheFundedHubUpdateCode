@@ -20,7 +20,7 @@ export default function CountDown() {
       mm = String(today.getMonth() + 1).padStart(2, "0"),
       yyyy = today.getFullYear(),
       nextYear = yyyy + 1,
-      dayMonth = "09/30/",
+      dayMonth = "09/15/",
       release = dayMonth + yyyy;
 
     today = mm + "/" + dd + "/" + yyyy;
@@ -50,45 +50,39 @@ export default function CountDown() {
   })();
 
   // Disable right-click
-  document.addEventListener("contextmenu", (e) => e.preventDefault());
+  // document.addEventListener("contextmenu", (e) => e.preventDefault());
 
-  function ctrlShiftKey(e, keyCode) {
-    return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
-  }
+  // function ctrlShiftKey(e, keyCode) {
+  //   return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+  // }
 
-  document.onkeydown = (e) => {
-    // Disable F12, Ctrl + Shift + I, Ctrl + Shift + J, Ctrl + U
-    if (
-      event.keyCode === 123 ||
-      ctrlShiftKey(e, "I") ||
-      ctrlShiftKey(e, "J") ||
-      ctrlShiftKey(e, "C") ||
-      (e.ctrlKey && e.keyCode === "U".charCodeAt(0))
-    )
-      return false;
-  };
+  // document.onkeydown = (e) => {
+  //   if (
+  //     event.keyCode === 123 ||
+  //     ctrlShiftKey(e, "I") ||
+  //     ctrlShiftKey(e, "J") ||
+  //     ctrlShiftKey(e, "C") ||
+  //     (e.ctrlKey && e.keyCode === "U".charCodeAt(0))
+  //   )
+  //     return false;
+  // };
   return (
-    <div className="grid gap-4">
-      <div className="range">
-        
+    <div className=" grid grid-cols-2 sm:flex gap-4 text-[1.2rem] sm:text-xl md:text-2xl justify-between w-full">
+      <div className="days text-center">
+        <div>{days}</div>
+        <div>DAYS</div>
       </div>
-      <div className="flex gap-4 text-xl justify-between">
-        <div className="days text-center">
-          <div>{days}</div>
-          <div>DAYS</div>
-        </div>
-        <div className="hours text-center">
-          <div>{hours}</div>
-          <div>HOURS</div>
-        </div>
-        <div className="minutes text-center">
-          <div>{minutes}</div>
-          <div>MINUTES</div>
-        </div>
-        <div className="seconds text-center">
-          <div>{seconds}</div>
-          <div>SECONDS</div>
-        </div>
+      <div className="hours text-center">
+        <div>{hours}</div>
+        <div>HOURS</div>
+      </div>
+      <div className="minutes text-center">
+        <div>{minutes}</div>
+        <div>MINUTES</div>
+      </div>
+      <div className="seconds text-center">
+        <div>{seconds}</div>
+        <div>SECONDS</div>
       </div>
     </div>
   );

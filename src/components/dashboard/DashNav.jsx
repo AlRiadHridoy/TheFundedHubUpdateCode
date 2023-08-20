@@ -47,7 +47,7 @@ export default function DashNav({ props }) {
       <div className="header-left">
         {/* Accounts */}
         <div className="accounts relative h-[1.875rem] z-50">
-          <div className="grid gap-2 absolute inset-0  max-w-[12rem] xs:min-w-[12rem]">
+          <div className="grid gap-2 absolute inset-0 min-w-[12rem]">
             <div className="border border-primary/30 hover:border-primary/50 transition-all duration-200 rounded-lg bg-main-bg/40 w-full relative">
               <header
                 onClick={() => setIsOpen(!isOpen)}
@@ -170,7 +170,7 @@ export default function DashNav({ props }) {
       <div className="header-right">
         <Link
           to="/dashboard/billing"
-          className="capitalize hidden sm:inline-block font-Montserrat text-xs font-bold py-3 px-7 dash-btn rounded-3xl"
+          className="capitalize hidden sm:inline-block font-Montserrat text-xs font-bold py-3 px-7 dash-btn rounded-3xl md:mr-4"
         >
           START NEW CHALLENGE
         </Link>

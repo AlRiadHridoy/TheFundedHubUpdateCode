@@ -11,7 +11,6 @@ import Hero from "../../components/main/Hero";
 import FAQ from "../../components/main/FAQ";
 import TradingWdget from "../../ui/TradingWdget";
 import Compare from "../../components/main/Compare";
-// import Disclimer from "../../ui/Disclimer";
 
 export default function Home() {
   const { pathname } = useLocation();

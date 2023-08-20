@@ -51,8 +51,6 @@ export default function Dashboard() {
       <div className="wrapper purple-shadown">
         {pathname === "/dashboard" ? <DashboardHome /> : <Outlet />}
       </div>
-
-      {/* <Footer /> */}
     </>
   );
 }

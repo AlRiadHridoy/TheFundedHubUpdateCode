@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { thumbHistory } from "../../ui/images";
 import PriceTable from "../../components/PriceTable";
 
 // Import Swiper styles
@@ -58,7 +57,7 @@ export default function Billing() {
                           </button>
                         </li>
                       </ul>
-                      <div className="w-fullrounded-[10px] relative z-10">
+                      <div className="">
                         <div className="tab-content tab-space">
                           {/* Prices */}
                           <div
@@ -72,13 +71,11 @@ export default function Billing() {
 
                         {/* History */}
                         <div
-                          className={`payment-method text-center py-[40px] ${
+                          className={`payment-method h-full text-center py-[40px] ${
                             !planSwap ? "" : "hidden"
                           }`}
                         >
-                          <div className="thumb inline-block mb-[24px]">
-                            <img src={thumbHistory} alt="thumb" />
-                          </div>
+                          
                           <p>No history found!</p>
                         </div>
                       </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { arrow } from "../../ui/images";
 import { Country } from "country-state-city";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { RxCross1 } from "react-icons/rx";
 
 // eslint-disable-next-line react/prop-types
@@ -42,6 +42,15 @@ export default function SignUpModal({ props }) {
     accept,
     agree,
   ]);
+
+  // EnableScrolling scrolling
+  const navigate = useNavigate();
+  function enableScrolling(path) {
+    const html = document.querySelector("html");
+    html.classList.remove("stop-scrolling");
+
+    navigate(path);
+  }
 
   return (
     <div
@@ -218,13 +227,12 @@ export default function SignUpModal({ props }) {
                       className="sm:cursor-pointer font-Montserrat font-medium text-sm"
                     >
                       I agree to the{" "}
-                      <Link
-                        to="/terms-condition"
-                        onClick={() => setRegisterModal(false)}
-                        className="underline text-all"
+                      <span
+                        onClick={() => enableScrolling("/terms-condition")}
+                        className="underline text-all cursor-pointer"
                       >
                         terms and conditions
-                      </Link>
+                      </span>
                     </label>
                   </div>
                   {/* checkbox */}
@@ -240,13 +248,12 @@ export default function SignUpModal({ props }) {
                       className="sm:cursor-pointer font-Montserrat font-medium text-sm"
                     >
                       I accept the{" "}
-                      <Link
-                        to="/privacy-policy"
-                        onClick={() => setRegisterModal(false)}
-                        className="underline text-all"
+                      <span
+                        onClick={() => enableScrolling("/privacy-policy")}
+                        className="underline text-all cursor-pointer"
                       >
                         privacy policy
-                      </Link>
+                      </span>
                     </label>
                   </div>
                   {/* checkbox */}

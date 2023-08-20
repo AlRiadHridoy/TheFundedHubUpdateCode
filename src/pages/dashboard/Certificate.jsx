@@ -13,7 +13,7 @@ export default function Certificate() {
       <div className="content-wrapper relative">
         <div className="inner-content px-6 relative">
           {/* locks */}
-          <div className="certificates grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:mx-w-[80%]">
+          <div className="certificates grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:mx-w-[80%] 2xl:max-w-[70rem]">
             {/* Item */}
             <div className="item relative">
               <div className="img relative after:absolute after:inset-0 after:bg-main-bg/80 after:h-full after:w-full">

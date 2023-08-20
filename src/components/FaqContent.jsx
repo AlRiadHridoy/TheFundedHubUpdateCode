@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import FaqCollaps from "./main/FaqCollaps";
 
 export default function FaqContent() {

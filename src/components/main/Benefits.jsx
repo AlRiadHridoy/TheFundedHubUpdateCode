@@ -313,9 +313,6 @@ export default function Benefits() {
             {/* Content Top */}
             <div className="content-top"></div>
 
-            {/* Content Middle */}
-            {/* <Whytrade /> */}
-            {/* Content bottom */}
             <EarnSalary />
           </div>
         </div>

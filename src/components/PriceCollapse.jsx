@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import { arrow } from "../ui/images";
 
@@ -6,14 +6,12 @@ export default function PriceCollapse({
   data,
   state,
   close,
-  setClose,
+
   identity,
   priceChange,
 }) {
-  const [options, setOptions] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
   const [val, setVal] = useState(data[0]);
-  const refferance = useRef(null);
 
   const onchage = (item) => {
     setVal(item);

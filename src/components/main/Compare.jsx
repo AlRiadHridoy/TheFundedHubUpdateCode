@@ -13,13 +13,6 @@ import MotionY from "../../ui/MotionY";
 
 export default function Compare() {
   const [compare, setCompare] = useState("FTMO");
-  // const names = [
-  //   "THE FUNDEDHUB",
-  //   "FTMO",
-  //   "MY FOREX FUNDS",
-  //   "TRUE FOREX FUNDS",
-  //   "FUNDEDNEXT",
-  // ];
 
   const values = {
     FTMO: [

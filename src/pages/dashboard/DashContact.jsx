@@ -2,8 +2,6 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 
 import { BsDiscord, BsInstagram, BsTwitter } from "react-icons/bs";
-
-import { MdPermContactCalendar } from "react-icons/md";
 import ContactForm from "../../components/ContactForm";
 
 export default function DashContact() {
@@ -16,10 +14,7 @@ export default function DashContact() {
     <main className="contact content-wrapper pt-16 sm:pb-6 sm:pt-24 min-h-screen bg-black  purple-shadown-dash">
       <div className="px-6 py-[20px] z-10 relative">
         <div className="breadcrumb-wrap">
-          <div className="breadcrumb-title ">
-            <MdPermContactCalendar className="breadcrumb-icon" />
-            Contact
-          </div>
+          <div className="breadcrumb-title">Contact</div>
         </div>
         <div className="wrapper flex items-center w-full relative">
           <div className="content grid md:grid-cols-3 gap-10 w-full">
@@ -58,7 +53,7 @@ export default function DashContact() {
               </div>
             </div>
             {/* Right */}
-            <div className="right md:col-span-2">
+            <div className="right md:col-span-2 max-w-[50rem] w-full">
               <ContactForm />
             </div>
           </div>

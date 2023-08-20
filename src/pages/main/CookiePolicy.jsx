@@ -286,12 +286,6 @@ export default function CookiePolicy() {
                 the relevant legal regulations, you can lodge a complaint with
                 the relevant supervisory authority.
               </p>
-              <p>
-                <div></div>
-              </p>
-              <p>
-                <div></div>
-              </p>
             </div>
           </div>
         </div>

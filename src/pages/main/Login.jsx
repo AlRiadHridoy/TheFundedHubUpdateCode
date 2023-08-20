@@ -1,4 +1,4 @@
-import { mainLogo, tick } from "../../ui/images";
+import { mainLogo } from "../../ui/images";
 import { FaFacebookF, FaGoogle } from "react-icons/fa";
 
 import { Link, useLocation } from "react-router-dom";
@@ -195,16 +195,7 @@ export default function Login() {
             forgetModal ? "visible opacity-100" : "invisible opacity-0"
           }`}
         >
-          {/* Tick */}
-          <div className="tick hidden pt-5 sm:pt-8 pb-5 sm:pb-8 md:pb-12 flex justify-center items-center">
-            <img
-              className={`max-w-[3.5rem] exs:max-w-[4rem] sm:max-w-[5rem] md:max-w-[5.5rem] transition-all duration-500 opacity-50 ${
-                forgetModal ? "scale-100" : "scale-0"
-              }`}
-              src={tick}
-              alt="tick"
-            />
-          </div>
+        
 
           {/* content */}
           <form className="content grid w-full text-center gap-4 font-semibold">

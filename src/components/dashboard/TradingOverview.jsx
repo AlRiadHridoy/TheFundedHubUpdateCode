@@ -3,6 +3,7 @@ import Pagination from "@mui/material/Pagination";
 import usePagination from "../../ui/usePagination";
 import Stack from "@mui/material/Stack";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { HiOutlineExclamationCircle } from "react-icons/hi";
 
 export default function TradingOverview() {
   let [page, setPage] = useState(1);
@@ -37,7 +38,7 @@ export default function TradingOverview() {
 
   return (
     <>
-      <div className="breadcrumb-wrap">
+      <div className="breadcrumb-wrap z-50">
         <h3 className="card-title text-xl mb-4">Trading Objectives</h3>
       </div>
       <div className="dashboard-wrapper flex flex-col gap-8">
@@ -123,27 +124,21 @@ export default function TradingOverview() {
                       <p className="inline-flex items-center">
                         Max Permitted Loss
                       </p>
-                      <p className="font-semibold py-1 px-1.5 rounded-md bg-primary/40 font-Montserrat leading-none">
-                        $600
-                      </p>
+                      <p>$600</p>
                     </div>
 
                     <div className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] text-wht">
                       <p className="inline-flex items-center">
                         Today&apos;s Permitted Loss
                       </p>
-                      <p className="font-semibold py-1 px-1.5 rounded-md bg-primary/40 font-Montserrat leading-none">
-                        $250
-                      </p>
+                      <p>$250</p>
                     </div>
 
-                    <div className="flex items-start justify-between  leading-[1.5] tracking-[-0.05px] text-wht">
+                    <div className="flex  justify-between items-center  leading-[1.5] tracking-[-0.05px] text-wht">
                       <p className="inline-flex items-center">
                         Today&apos;s Permitted Loss Will Reset In
                       </p>
-                      <p className="font-semibold py-1 px-1.5 rounded-md bg-primary/40 font-Montserrat leading-none">
-                        -2:56:29
-                      </p>
+                      <p className="text-primary">-2:56:29</p>
                     </div>
                   </div>
                 </div>
@@ -211,11 +206,11 @@ export default function TradingOverview() {
             </div>
           </div>
 
-          <div className="!w-full font-Montserrat lg:col-span-3">
-            <div className="card-wrap card-border h-full text-base">
-              <h3 className="card-title">Details Stats</h3>
-              <div className="content text-center grid gap-4">
-                <div className="stats-list flex flex-wrap items-center justify-between pb-4 border-b border-white/10">
+          <div className="lg:pl-[15px] font-Montserrat lg:col-span-3 relative z-30">
+            <div className="p-6 rounded-xl card-border h-full text-base">
+              <h3 className="font-bold pb-3 hidden">Details Stats</h3>
+              <div className="content text-center grid gap-[0.7rem]">
+                <div className="stats-list flex flex-wrap items-center justify-between pb-[0.7rem] border-b border-white/10">
                   <div>
                     <p className="inline-flex items-center leading-[1.5] tracking-[-0.05px] text-wht z-0">
                       Equity
@@ -225,6 +220,7 @@ export default function TradingOverview() {
                           profit/loss. The Equity takes into account both open
                           and closed positions.
                         </div>
+                        {"  "} <HiOutlineExclamationCircle />
                       </div>
                     </p>
                   </div>
@@ -233,7 +229,7 @@ export default function TradingOverview() {
                   </div>
                 </div>
 
-                <div className="stats-list flex flex-wrap items-center justify-between pb-4 border-b  border-white/10">
+                <div className="stats-list flex flex-wrap items-center justify-between pb-[0.7rem] border-b  border-white/10">
                   <div className="">
                     <p className="inline-flex items-center  leading-[1.5] tracking-[-0.05px] text-wht">
                       Balance
@@ -242,6 +238,7 @@ export default function TradingOverview() {
                           The Balance reflects your profit/loss from closed
                           positions.
                         </div>
+                        {"  "} <HiOutlineExclamationCircle />
                       </div>
                     </p>
                   </div>
@@ -250,7 +247,7 @@ export default function TradingOverview() {
                   </div>
                 </div>
 
-                <div className="stats-list flex flex-wrap items-center justify-between pb-4  border-b  border-white/10">
+                <div className="stats-list flex flex-wrap items-center justify-between pb-[0.7rem]  border-b  border-white/10">
                   <div className="">
                     <p className="inline-flex items-center  leading-[1.5] tracking-[-0.05px] text-wht">
                       Avg. Winning Trade
@@ -259,6 +256,7 @@ export default function TradingOverview() {
                           The average amount of {detailsVal[2]} that you have
                           made from your winning trades.
                         </div>
+                        {"  "} <HiOutlineExclamationCircle />
                       </div>
                     </p>
                   </div>
@@ -267,7 +265,7 @@ export default function TradingOverview() {
                   </div>
                 </div>
 
-                <div className="stats-list flex flex-wrap items-center justify-between pb-4  border-b  border-white/10">
+                <div className="stats-list flex flex-wrap items-center justify-between pb-[0.7rem]  border-b  border-white/10">
                   <div className="">
                     <p className="inline-flex items-center  leading-[1.5] tracking-[-0.05px] text-wht">
                       Avg. Losing Trade
@@ -276,6 +274,7 @@ export default function TradingOverview() {
                           The average amount of {detailsVal[3]} that you have
                           lost from your losing trades.
                         </div>
+                        {"  "} <HiOutlineExclamationCircle />
                       </div>
                     </p>
                   </div>
@@ -284,7 +283,7 @@ export default function TradingOverview() {
                   </div>
                 </div>
 
-                <div className="stats-list flex flex-wrap items-center justify-between pb-4  border-b  border-white/10">
+                <div className="stats-list flex flex-wrap items-center justify-between pb-[0.7rem]  border-b  border-white/10">
                   <div className="">
                     <p className="inline-flex items-center  leading-[1.5] tracking-[-0.05px] text-wht">
                       Total n. of trades
@@ -292,6 +291,7 @@ export default function TradingOverview() {
                         <div className="hover-txt  absolute z-10">
                           Total number of trades taken in your trading cycle.
                         </div>
+                        {"  "} <HiOutlineExclamationCircle />
                       </div>
                     </p>
                   </div>
@@ -300,7 +300,7 @@ export default function TradingOverview() {
                   </div>
                 </div>
 
-                <div className="stats-list flex flex-wrap items-center justify-between pb-4  border-b  border-white/10">
+                <div className="stats-list flex flex-wrap items-center justify-between pb-[0.7rem]  border-b  border-white/10">
                   <div className="">
                     <p className="inline-flex items-center  leading-[1.5] tracking-[-0.05px] text-wht">
                       Avg. lots
@@ -308,6 +308,7 @@ export default function TradingOverview() {
                         <div className="hover-txt  absolute z-10">
                           Total number of lots taken in your trading cycle.
                         </div>
+                        {"  "} <HiOutlineExclamationCircle />
                       </div>
                     </p>
                   </div>
@@ -316,7 +317,7 @@ export default function TradingOverview() {
                   </div>
                 </div>
 
-                <div className="stats-list flex flex-wrap items-center justify-between pb-4 border-b  border-white/10">
+                <div className="stats-list flex flex-wrap items-center justify-between pb-[0.7rem] border-b  border-white/10">
                   <div className="">
                     <p className="inline-flex items-center  leading-[1.5] tracking-[-0.05px] text-wht">
                       Average RRR
@@ -327,6 +328,7 @@ export default function TradingOverview() {
                           does not necessarily signify a profitable trading
                           system if not considered together with Win rate.
                         </div>
+                        {"  "} <HiOutlineExclamationCircle />
                       </div>
                     </p>
                   </div>
@@ -344,6 +346,7 @@ export default function TradingOverview() {
                           The number of trades won over the number of trades
                           taken.
                         </div>
+                        {"  "} <HiOutlineExclamationCircle />
                       </div>
                     </p>
                   </div>
@@ -452,7 +455,7 @@ export default function TradingOverview() {
         </div>
 
         {/* pagination */}
-        <div className="pagination mt-4 flex justify-center">
+        <div className="pagination flex justify-center">
           <ThemeProvider theme={darkTheme}>
             <Stack spacing={2}>
               <Pagination

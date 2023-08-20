@@ -46,7 +46,7 @@ export default function TradingOverview() {
   });
 
   return (
-    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadown-dash">
+    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadown-dash  z-[99]">
       <div className="inner-content px-6">
         <div className="breadcrumb-wrap">
           <div className="breadcrumb-title">
@@ -62,8 +62,8 @@ export default function TradingOverview() {
           </div>
           <h3 className="card-title text-xl mb-4">Trading Objectives</h3>
         </div>
-        <div className="dashboard-wrapper flex flex-col gap-8">
-          <div className="grid lg:grid-cols-8 gap-6">
+        <div className="dashboard-wrapper flex flex-col gap-8 z-[99]">
+          <div className="grid lg:grid-cols-8 gap-6 relative z-[99">
             <div className="w-full lg:col-span-5">
               <div className="flex flex-wrap">
                 <div className="w-full">
@@ -221,7 +221,7 @@ export default function TradingOverview() {
               </div>
             </div>
 
-            <div className="!w-full lg:pl-[15px] font-Montserrat lg:col-span-3">
+            <div className="!w-full lg:pl-[15px] font-Montserrat lg:col-span-3 relative z-[99]">
               <div className="card-wrap card-border h-full text-base">
                 <h3 className="card-title">Details Stats</h3>
                 <div className="content text-center grid gap-4">
@@ -272,7 +272,7 @@ export default function TradingOverview() {
                     </div>
                   </div>
 
-                  <div className="stats-list flex flex-wrap items-center justify-between pb-4  border-b  border-white/10">
+                  <div className="stats-list flex flex-wrap items-center justify-between pb-4 border-b border-white/10">
                     <div className="">
                       <p className="inline-flex items-center  leading-[1.5] tracking-[-0.05px] text-wht">
                         <img
@@ -414,7 +414,7 @@ export default function TradingOverview() {
             </div>
           </div>
 
-          <div className="flex flex-wrap mx-[-15px]">
+          <div className="flex flex-wrap mx-[-15px] z-0">
             <div className="w-full px-[15px]">
               <div className="card-wrap card-border">
                 <div className="card-heading flex items-center justify-between mb-[20px]">

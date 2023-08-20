@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { Country, State } from "country-state-city";
-import authorTwo from "../../assets/images/dashboard/author/author-2.jpeg";
+import { FaUserCircle } from "react-icons/fa";
 
 export default function Profile() {
   const [getCountry, setGetCountry] = useState("");
@@ -19,96 +19,67 @@ export default function Profile() {
 
   return (
     <>
-      <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadown-dash min-h-[100vh]">
+      <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadown-dash min-h-[100vh] font-Montserrat">
         <div className="inner-content px-6">
-          <div className="breadcrumb-wrap">
-            <div className="breadcrumb-title">
-              <svg
-                className="breadcrumb-icon"
-                focusable="false"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-              >
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"></path>
-              </svg>
-              Profile
-            </div>
-          </div>
           <div className="dashboard-wrapper">
-            <div className="flex flex-wrap mx-[-15px]">
-              <div className="xl:w-3/12 lg:w-3/12 w-full px-[15px]">
-                <div className="flex flex-wrap mx-[-15px]">
-                  <div className="w-full px-[15px]">
-                    <div className="py-[30px] mb-[30px] rounded-[10px] relative z-10 overflow-hidden bg-main-bg/90">
-                      <div className="author-head text-center md:px-[30px] mb-[20px]">
-                        <div className="thumb w-[100px] h-[100px] mx-auto relative  mb-[10px]">
-                          <img
-                            className="rounded-[5px]"
-                            src={authorTwo}
-                            alt="author"
-                          />
-                          <button className="w-[24px] h-[24px] bg-main-bg flex items-center justify-center rounded-[5px] absolute -bottom-0.5 right-0">
-                            <svg
-                              className="w-[15px] h-[15px] fill-white"
-                              focusable="false"
-                              viewBox="0 0 24 24"
-                              aria-hidden="true"
-                            >
-                              <path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"></path>
-                            </svg>
-                          </button>
-                        </div>
-                        <h4 className="font-semibold 2xl:text-[18px] text-[14px] text-wht">
-                          mikha dev
-                        </h4>
-                        <p className="text-dark 2xl:text-[18px] text-[14px] mb-[10px] text-wht/70">
-                          mikha.dev@gmail.com
-                        </p>
-                        <p className="text-primary text-[13px] flex items-center justify-center">
-                          <svg
-                            className="w-[14px] h-[14px] fill-primary mr-[5px]"
-                            focusable="false"
-                            viewBox="0 0 24 24"
-                            aria-hidden="true"
-                          >
-                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
-                          </svg>
-                          Resend verify email
-                        </p>
-                      </div>
-                      <div className="author-tab">
-                        <button
-                          className={`w-full 2xl:text-[16px] text-[14px] font-semibold flex items-center 2xl:px-[30px] px-[15px] py-[15px] mb-[16px] gap-4 text-gry ${
-                            infoToggle === "personal"
-                              ? "text-main-bg/90 bg-primary"
-                              : ""
-                          }`}
-                          onClick={() => setInfoToggle("personal")}
-                        >
-                          Personal Information
-                        </button>
-                        <button
-                          className={`w-full 2xl:text-[16px] text-[14px] font-semibold flex items-center 2xl:px-[30px] px-[15px] py-[15px] mb-[16px] gap-4 text-gry ${
-                            infoToggle === "account"
-                              ? "text-main-bg/90 bg-primary"
-                              : ""
-                          }`}
-                          onClick={() => setInfoToggle("account")}
-                        >
-                          Account Information
-                        </button>
-                      </div>
-                    </div>
+            <div className="grid md:flex gap-4 md:gap-6 mb-20">
+              <div className="py-8 rounded-xl relative bg-main-bg/90 min-h-full">
+                <div className="flex gap-4 items-center px-6">
+                  <div className="user relative">
+                    <button className="absolute right-0 bottom-0 bg-dash p-1 rounded-md">
+                      <svg
+                        className="w-[15px] h-[15px] fill-white"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                        aria-hidden="true"
+                      >
+                        <path d="M14.06 9.02l.92.92L5.92 19H5v-.92l9.06-9.06M17.66 3c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29zm-3.6 3.19L3 17.25V21h3.75L17.81 9.94l-3.75-3.75z"></path>
+                      </svg>
+                    </button>
+                    <FaUserCircle className="text-[4rem]" />
+                  </div>
+
+                  {/* account info */}
+                  <div className="account-info">
+                    <h4 className="font-semibold 2xl:text-[18px] text-[14px] text-wht">
+                      Abcd person
+                    </h4>
+                    <p className="text-dark 2xl:text-[18px] text-[14px] mb-[10px] text-wht/70">
+                      abcd.dev@gmail.com
+                    </p>
                   </div>
                 </div>
+                <div className="author-tab grid gap-4 mt-6 sm:ml-6">
+                  <button
+                    className={`w-full py-2 pl-4 font-semibold text-start rounded-lg sm:rounded-l-lg gap-4 text-gry ${
+                      infoToggle === "personal"
+                        ? "text-main-bg/90 bg-primary"
+                        : ""
+                    }`}
+                    onClick={() => setInfoToggle("personal")}
+                  >
+                    Personal Information
+                  </button>
+                  <button
+                    className={`w-full py-2 pl-4 font-semibold text-start rounded-lg sm:rounded-l-lg gap-4 text-gry ${
+                      infoToggle === "account"
+                        ? "text-main-bg/90 bg-primary"
+                        : ""
+                    }`}
+                    onClick={() => setInfoToggle("account")}
+                  >
+                    Account Information
+                  </button>
+                </div>
               </div>
-              <div className="xl:w-9/12 lg:w-9/12 w-full px-[15px] relative ">
+              {/* form */}
+              <div className="max-w-[45rem] w-full relative col-span-5 font-medium">
                 {infoToggle === "personal" ? (
                   <div className="card-wrap bg-main-bg/90">
                     <h3 className="card-title">Personal Infomation</h3>
                     <div className="content">
                       <div className="author-form">
-                        <div className="inputs grid grid-cols-2 gap-6">
+                        <div className="inputs grid sm:grid-cols-2 gap-6 ">
                           {/* first-name */}
                           <div className="first-name">
                             <input
@@ -190,7 +161,7 @@ export default function Profile() {
 
                         {/* btn */}
                         <div className="btn mt-6 flex justify-end">
-                          <button className="save capitalize hidden sm:inline-block font-Montserrat text-xs font-bold py-3 px-10 dash-btn rounded-3xl">
+                          <button className="save capitalize font-Montserrat text-xs font-bold py-3 px-16 bg-primary transition-all duration-300 hover:opacity-80 text-main-bg rounded-3xl">
                             Save
                           </button>
                         </div>
@@ -233,7 +204,7 @@ export default function Profile() {
                         </div>
                         {/* btn */}
                         <div className="btn mt-6 flex justify-end">
-                          <button className="save capitalize hidden sm:inline-block font-Montserrat text-xs font-bold py-3 px-10 dash-btn rounded-3xl ">
+                          <button className="save capitalize font-Montserrat text-xs font-bold py-3 px-16 bg-primary transition-all duration-300 hover:opacity-80 text-main-bg rounded-3xl ">
                             Save
                           </button>
                         </div>

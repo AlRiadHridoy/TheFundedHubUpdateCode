@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
+import { BsDiscord, BsInstagram, BsTwitter } from "react-icons/bs";
+
 import { mainLogo, circle } from "../../ui/images";
 
 export default function SiderNav() {
@@ -45,35 +47,6 @@ export default function SiderNav() {
               </div>
             </li>
           </NavLink>
-          <NavLink
-            to="trading-overview"
-            className={({ isActive }) =>
-              isActive ? "active-side-nav hidden" : "hidden"
-            }
-          >
-            <li className="nav-item">
-              <div className="nav-link group">
-                <span className="text group-hover:text-main-bg/70">
-                  Trading Overview
-                </span>
-              </div>
-            </li>
-          </NavLink>
-          <NavLink
-            to="trading-overview"
-            className={({ isActive }) =>
-              isActive ? "active-side-nav hidden" : "hidden"
-            }
-          >
-            <li className="nav-item">
-              <div className="nav-link group">
-                <span className="text group-hover:text-main-bg/70">
-                  Trading Overview
-                </span>
-              </div>
-            </li>
-          </NavLink>
-
           <NavLink
             to="withdraw"
             className={({ isActive }) => (isActive ? "active-side-nav" : "")}
@@ -149,9 +122,32 @@ export default function SiderNav() {
           </NavLink>
         </ul>
       </div>
-      <ul className="px-10 absolute bottom-[2rem] w-full z-30 font-Montserrat">
-        {" "}
-        <li className="border-b border-primary/20 group ">
+      <ul className="px-10 absolute bottom-[1.5rem] w-full z-30 font-Montserrat">
+        {/* logos */}
+        <div className="logos flex gap-4">
+          <a
+            target="__blank"
+            href="https://discord.gg/GVXNaVTr"
+            className="logo h-[1.7rem] w-[1.7rem] rounded-md bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
+          >
+            <BsDiscord className="text-main-bg h-4 w-4 " />
+          </a>
+          <a
+            target="__blank"
+            href="https://www.instagram.com/fundedhub/"
+            className="logo h-7 w-7 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
+          >
+            <BsInstagram className="text-main-bg h-4 w-4 " />
+          </a>
+          <a
+            target="__blank"
+            href="https://twitter.com/TheFundedHub"
+            className="logo h-7 w-7 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
+          >
+            <BsTwitter className="text-main-bg h-4 w-4 " />
+          </a>
+        </div>
+        <li className="border-b border-primary/20 group mt-3">
           <Link
             to="profile"
             className="flex items-center  leading-[1.5] tracking-[-0.05px] py-[10px] transition-all duration-350 ease-linear text-wht group-hover:text-primary"
