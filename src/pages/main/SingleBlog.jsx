@@ -25,7 +25,7 @@ export default function SingleBlog() {
   return (
     <>
       <Navbar />
-      <section className="single-blog relative pt-32 sm:pt-48 pb-28 sm:pb-44 purple-shadown">
+      <section className="single-blog relative pt-32 sm:pt-48 pb-28 sm:pb-44 purple-shadow">
         <div className="container z-10 relative">
           <div className="wrapper max-w-[75rem] m-auto w-full">
             <div className="flex justify-center items-center">

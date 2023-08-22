@@ -5,12 +5,11 @@ import PriceTable from "../../components/PriceTable";
 import "swiper/css";
 import "swiper/css/pagination";
 
-
 export default function Billing() {
   const [planSwap, setPlanSwap] = useState(true);
 
   return (
-    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 min-h-screen bg-black  purple-shadown-dash">
+    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 min-h-screen bg-black  purple-shadow-dash">
       <div className="inner-content px-6">
         <div className="breadcrumb-wrap relative z-10">
           <div className="breadcrumb-title md:hidden">
@@ -75,7 +74,6 @@ export default function Billing() {
                             !planSwap ? "" : "hidden"
                           }`}
                         >
-                          
                           <p>No history found!</p>
                         </div>
                       </div>

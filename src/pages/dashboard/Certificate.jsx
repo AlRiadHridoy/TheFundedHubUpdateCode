@@ -9,7 +9,7 @@ import six from "../../assets/images/certificates/MAX-ALLOCATED.png";
 
 export default function Certificate() {
   return (
-    <main className="certificate relative pt-16 sm:pb-6 sm:pt-24 min-h-screen bg-black  purple-shadown-dash">
+    <main className="certificate relative pt-16 sm:pb-6 sm:pt-24 min-h-screen bg-black  purple-shadow-dash">
       <div className="content-wrapper relative">
         <div className="inner-content px-6 relative">
           {/* locks */}

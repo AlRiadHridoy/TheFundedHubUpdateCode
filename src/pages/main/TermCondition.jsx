@@ -11,7 +11,7 @@ export default function TermCondition() {
   return (
     <>
       <Navbar />
-      <main className="terms-condition pb-28 pt-32 sm:pt-44 border-b border-gray-400/20 purple-shadown">
+      <main className="terms-condition pb-28 pt-32 sm:pt-44 border-b border-gray-400/20 purple-shadow">
         <div className="container relative">
           <div className="wrapper font-light grid gap-6 z-10 relative max-w-[65rem] m-auto">
             <div className="heading text-center">

@@ -24,7 +24,7 @@ import Checkout from "./pages/main/Checkout";
 // CSS
 import "./App.css";
 import Cookies from "./ui/Cookies";
-import Blur from "./ui/Blur";
+// import Blur from "./ui/Blur";
 
 function App() {
   return (
@@ -45,7 +45,6 @@ function App() {
           <Route path="risk-disclosure" element={<RiskDisclosure />} />
           <Route path="report-problem" element={<ReportProblem />} />
 
-          {/* dashboard */}
           <Route path="dashboard" element={<Dashboard />}>
             <Route path="Profile" element={<Profile />} />
             <Route path="billing" element={<Billing />} />

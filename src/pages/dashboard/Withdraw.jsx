@@ -7,7 +7,7 @@ import usdt from "../../assets/images/dashboard/icon/usdt.svg";
 
 export default function Withdraw() {
   return (
-    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadown-dash">
+    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadow-dash">
       <div className="inner-content px-6">
         <div className="dashboard-wrapper relative">
           <div className="flex flex-wrap relative">

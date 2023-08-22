@@ -44,7 +44,7 @@ export default function Checkout() {
   return (
     <>
       <Navbar />
-      <section className="py-32 lg:py-44 relative purple-shadown">
+      <section className="py-32 lg:py-44 relative purple-shadow">
         <div className="container z-10 relative">
           <div className="wrapper flex justify-center items-center">
             <div className="heading">

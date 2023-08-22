@@ -31,7 +31,7 @@ export default function DashboardHome() {
   };
 
   return (
-    <main className="dashboard relative pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadown-dash">
+    <main className="dashboard relative pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadow-dash">
       <div className="content-wrapper relative">
         <div className="inner-content px-6 relative">
           <div className="flex flex-col xs:flex-row gap-5 relative mb-10 md:hidden">

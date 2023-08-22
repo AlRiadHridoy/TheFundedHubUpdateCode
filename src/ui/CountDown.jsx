@@ -40,34 +40,14 @@ export default function CountDown() {
 
         //do something later when date is reached
         if (distance < 0) {
-          // document.getElementById("headline").innerText = "It's my release!";
-          // document.getElementById("countdown").style.display = "none";
-          // document.getElementById("content").style.display = "block";
           clearInterval(x);
         }
         //seconds
       }, 0);
   })();
 
-  // Disable right-click
-  // document.addEventListener("contextmenu", (e) => e.preventDefault());
-
-  // function ctrlShiftKey(e, keyCode) {
-  //   return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
-  // }
-
-  // document.onkeydown = (e) => {
-  //   if (
-  //     event.keyCode === 123 ||
-  //     ctrlShiftKey(e, "I") ||
-  //     ctrlShiftKey(e, "J") ||
-  //     ctrlShiftKey(e, "C") ||
-  //     (e.ctrlKey && e.keyCode === "U".charCodeAt(0))
-  //   )
-  //     return false;
-  // };
   return (
-    <div className=" grid grid-cols-2 sm:flex gap-4 text-[1.2rem] sm:text-xl md:text-2xl justify-between w-full">
+    <div className=" grid grid-cols-2 sm:flex gap-4 md:gap-16 text-[1.2rem] sm:text-xl md:text-2xl justify-between w-full">
       <div className="days text-center">
         <div>{days}</div>
         <div>DAYS</div>

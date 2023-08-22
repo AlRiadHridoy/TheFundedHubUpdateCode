@@ -263,7 +263,7 @@
   @apply invisible group-hover:visible transition-all duration-300 opacity-0 group-hover:opacity-100 absolute left-1/2 transform -translate-x-1/2 top-[240%] w-64 z-[999] bg-[#5b5075] font-medium p-3 rounded-lg text-sm;
 }
 
-.purple-shadown-dash::before {
+.purple-shadow-dash::before {
   position: absolute;
   content: "";
   inset: 0;

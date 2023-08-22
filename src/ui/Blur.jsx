@@ -1,10 +1,11 @@
 import { mainLogo } from "./images";
 import { FaUserCircle } from "react-icons/fa";
+import { BsTwitter, BsInstagram, BsDiscord } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-import lock from "../../src/assets/waitlist/lock.svg";
+import video from "../launching/mov_bbb.mp4";
 
 import { useState } from "react";
 import CountDown from "./CountDown";
@@ -17,165 +18,216 @@ export default function Blur() {
     today = new Date(),
     percent = Math.round(((today - start) / (end - start)) * 100) + "%";
 
+  // Disable right-click
+
+  (function () {
+    document.addEventListener("contextmenu", (e) => e.preventDefault());
+
+    function ctrlShiftKey(e, keyCode) {
+      return e.ctrlKey && e.shiftKey && e.keyCode === keyCode.charCodeAt(0);
+    }
+
+    document.onkeydown = (e) => {
+      if (
+        event.keyCode === 123 ||
+        ctrlShiftKey(e, "I") ||
+        ctrlShiftKey(e, "J") ||
+        ctrlShiftKey(e, "C") ||
+        (e.ctrlKey && e.keyCode === "U".charCodeAt(0))
+      )
+        return false;
+    };
+  });
+
   return (
     <div
-      className={`release-modal fixed inset-0 z-[999999] transition-all duration-100 flex justify-center items-center
-       visible opacity-100`}
+      className={`release-modal transition-all duration-100 flex justify-center items-center
+       visible opacity-100 bg-[#030307] purple-shadow`}
     >
       <div
         className={`bg absolute inset-0 w-full h-full transition-all duration-200 backdrop-blur-[12px] opacity-100
         }`}
       ></div>
 
-      <div className="scroll bg-main-bg/50">
-        <div className="wrap overflow-hidden rounded-3xl h-full sm:h-unset sm:flex justify-center items-center">
+      <div className="scroll grd-waiting">
+        <div className="wrap sm:flex justify-center items-center">
           <div
-            className={`box h-[32rem]f max-w-[65rem]f h-screen overflow-y-scroll md:overflow-hidden  relative text-main text-wht bg-light-gra transition-all duration-300 rounded-3xl z-[999] py-10 md:py-10 px-6 md:px-16 visible opacity-100
-             flex flex-col justify-center gap-6 font-Montserrat font-medium`}
+            className={`box w-screen relative text-main text-wht transition-all duration-300 rounded-3xl z-[999]
+              font-Montserrat font-light container`}
           >
-            {/* logo */}
-            <div className="logo max-w-[11rem]">
-              <img src={mainLogo} alt="" />
-            </div>
-
-            <div className="wrap grid md:grid-cols-2 gap-6">
-              {/* heading */}
-              <div className="heading uppercase font-Montserrat font-medium grid gap-5 md:gap-2">
-                <span className="text-[#A6A6A6] text-2xl sm:text-3xl">
-                  The funded hub is
-                </span>
-                <span className="text-3xl sm:text-4xl md:text-[2.5rem] uppercase leading-[1]">
-                  Launching soon.
-                </span>
-              </div>
-
-              {/* countdown */}
-              <div className="rotate hidden  justify-center items-center sm:flex">
-                <CountDown />
-              </div>
-            </div>
-
-            {/* pera */}
-            <div className="pera font-normal  text-sm max-w-[40rem]">
-              <p>
-                Join the free 5-day email challenge for freelance writers who
-                want more ease and less overwhelm in their work. By the end of
-                day 5, you`&apos;ll audit and refresh the key areas of your
-                freelance writing business and be ready for goals for the
-                upcoming month, quarter, and year!
-              </p>
-            </div>
-
-            <div className="middle">
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 font-bold font-codePro text-center">
-                <div className="item">
-                  <h5>
-                    Pay in 3/4 <br />{" "}
-                    <span className=" font-codeProBold">installments.</span>
-                  </h5>
-                </div>
-                <div className="item">
-                  <h5>
-                    Get you{" "}
-                    <span className=" font-codeProBold">Monthly Salary:</span>{" "}
-                    Up to $2,000 / Month
-                  </h5>
-                </div>
-                <div className="item">
-                  <h5>
-                    <span className=" font-codeProBold">Customize</span> <br />{" "}
-                    your Rules.{" "}
-                  </h5>
-                </div>
-                <div className="item">
-                  <h5>
-                    <span className=" font-codeProBold">0</span> Minimum Days{" "}
-                    <br /> and <span className=" font-codeProBold">NO</span>{" "}
-                    Time Limit.
-                  </h5>
-                </div>
-              </div>
-            </div>
-
-            {/* countdown */}
-            <div className="rotate flex justify-center items-center sm:hidden">
-              <CountDown />
-            </div>
-
-            <div className="progress-bar flex gap-4 items-center">
-              <div className={`range w-full overflow-hidden`}>
-                <div
-                  className="progress flex justify-center items-center"
-                  style={{ width: percent }}
+            <div className="wrap max-w-[85rem] m-auto">
+              {/* logos */}
+              <div className="logos flex justify-end items-center gap-4 py-10">
+                <a
+                  target="__blank"
+                  href="https://discord.gg/GVXNaVTr"
+                  className="logo h-8 w-8 rounded-md bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
                 >
-                  <div className="value text-main-bg">{percent}</div>
-                </div>
+                  <BsDiscord className="text-main-bg h-5 w-5 " />
+                </a>
+                <a
+                  target="__blank"
+                  href="https://www.instagram.com/fundedhub/"
+                  className="logo h-8 w-8 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
+                >
+                  <BsInstagram className="text-main-bg h-5 w-5 " />
+                </a>
+                <a
+                  target="__blank"
+                  href="https://twitter.com/TheFundedHub"
+                  className="logo h-8 w-8 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
+                >
+                  <BsTwitter className="text-main-bg h-5 w-5 " />
+                </a>
               </div>
-              <div>
-                <img
-                  className="max-w-[2rem] sm:max-w-[3rem]"
-                  src={lock}
-                  alt=""
-                />
-              </div>
-            </div>
-
-            {/* waitlist */}
-            <div className="waitlist grid md:flex gap-10 justify-center">
-              <div className="left-text">
-                <p className="max-w-[20rem]">
-                  Iscriviti alla waiting list e riceverai il 15% di sconto sulla
-                  tua prima challenge.
-                </p>
-              </div>
-              {/* waitlist form */}
-              <form action="" className="grid md:grid-cols-2 gap-10">
-                <div className="inputs grid gap-4">
-                  {/* your name */}
-                  <div className="wrap relative">
-                    <input
-                      name="name"
-                      className="name w-full focus:outline-primary/70 bg-black  border-none outline outline-2 outline-primary/30 py-2 px-6 pl-10 rounded-3xl transition-all duration-200"
-                      type="text"
-                      placeholder="Your Name"
-                    />
-                    {/* icon */}
-                    <div className="absolute top-1/2 transform -translate-y-1/2 left-2 bg-transparent h-6 w-6 rounded-full flex justify-center items-center">
-                      <FaUserCircle className="text-[#514C58] text-lg" />
+              <div className="container grid justify-center items-center w-full">
+                <div className="wrap flex flex-col justify-center gap-3 pt-10 pb-10 md:pb-16">
+                  {/* top */}
+                  <div className="wrap grid md:grid-cols-2 m-auto gap-6 font-Montserrat">
+                    <div className="video rounded-2xl fcol-span-4 w-full relative">
+                      <video
+                        className="w-full h-full rounded-2xl relative"
+                        controls
+                      >
+                        <source src={video} />
+                      </video>
+                    </div>
+                    <div className="text fcol-span-3 flex flex-col justify-center gap-6">
+                      {/* logo */}
+                      <div className="logo max-w-[11rem]">
+                        <img src={mainLogo} />
+                      </div>
+                      {/* heading */}
+                      <h1>
+                        <div className="text-3xl md:text-4xl xl:text-[2.8rem] 2xl:text-[4rem] uppercase font-medium -mr-18 !leading-[1.05]">
+                          IS Launching soon.
+                        </div>
+                        <div className="text-3xl md:text-4xl xl:text-[2.8rem] 2xl:text-[4.8rem] uppercase font-medium  -mr-18 !leading-[1.05]">
+                          {" "}
+                        </div>
+                      </h1>
+                      <p className="text-lg font-light">
+                        Unlock exclusive early access to The Funded Hub by
+                        filling the waiting list form. Elevate your trading game
+                        with customizable challenges, up to $2,000 monthly
+                        salary, flexible payments, no minimum & maximum trading
+                        days, and unbeatable industry-low spreads.
+                      </p>
                     </div>
                   </div>
-                  {/* your email */}
-                  <div className="wrap relative">
-                    <input
-                      name="email"
-                      className="email w-full focus:outline-primary/70 bg-black  border-none outline outline-2 outline-primary/30 py-2 px-6 pl-10 rounded-3xl transition-all duration-200"
-                      type="email"
-                      placeholder="Your Email"
-                    />
 
-                    {/* icon */}
-                    <div className="absolute top-1/2 transform -translate-y-1/2 left-2 bg-[#514C58] h-6 w-6 rounded-full flex justify-center items-center">
-                      <MdEmail className="text-black text-base" />
+                  <div className="middle mt-16 font-Montserrat bg-[#2B2C30]/[22%] py-4 px-20  rounded-[30px] uppercase">
+                    <div className="flex justify-between gap-4 font-light  text-center text-sm">
+                      <div className="item">
+                        <h5>
+                          Pay in 3/4 <br />{" "}
+                          <span className="font-normal text-sm">
+                            installments.
+                          </span>
+                        </h5>
+                      </div>
+                      <div className="item">
+                        <h5>
+                          Get up to $2,000 <br />
+                          <span className=" font-normal text-sm">
+                            Monthly Salary.
+                          </span>
+                        </h5>
+                      </div>
+                      <div className="item">
+                        <h5>
+                          <span className=" font-normal text-sm">
+                            Customize
+                          </span>{" "}
+                          <br /> your Rules.{" "}
+                        </h5>
+                      </div>
+                      <div className="item">
+                        <h5>
+                          <span className="font-normal text-sm"> NO </span>{" "}
+                          Minimum <br /> & Maximum Trading Days
+                        </h5>
+                      </div>
                     </div>
                   </div>
-                  {/* your number */}
-                  <div className="wrap relative">
-                    <PhoneInput
-                      className="relative"
-                      placeholder="Enter phone number"
-                      country={"it"}
-                      value={number}
-                      onChange={setNumber}
-                    />
+
+                  {/* Progress */}
+                  <div className="progress-bar flex gap-4 items-center">
+                    <div className={`range w-full overflow-hidden`}>
+                      <div
+                        className="progress flex justify-center items-center"
+                        style={{ width: percent }}
+                      >
+                        <div className="value text-main-bg">{percent}</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* countdown */}
+                  <div className="justify-center items-center max-w-[50rem] m-auto hidden">
+                    <CountDown />
+                  </div>
+                  {/* waitlist */}
+                  <div className="waitlist grid justify-center bg-[#2B2C30]/[22%] py-6 px-20  rounded-3xl m-auto mt-6 max-w-[56rem]">
+                    {/* txt */}
+                    <div className="left-text self-center text-xl text-center max-w-[40rem] m-auto mb-8">
+                      <p className="">
+                        Don&apos;t miss your chance to redefine your trading
+                        journey – secure your spot now and get up to 15% off on
+                        your first challenge
+                      </p>
+                    </div>
+                    {/* waitlist form */}
+                    <form action="" className="w-full max-w-[40rem] m-auto">
+                      <div className="inputs grid gap-4 col-span-2">
+                        {/* your name */}
+                        <div className="wrap relative">
+                          <input
+                            name="name"
+                            className="name w-full focus:outline-primary/70 bg-black  border-none outline outline-2 outline-primary/30 py-2 px-6 pl-10 rounded-3xl transition-all duration-200"
+                            type="text"
+                            placeholder="Your Name"
+                          />
+                          {/* icon */}
+                          <div className="absolute top-1/2 transform -translate-y-1/2 left-2 bg-transparent h-[1.5rem] w-[1.5rem] rounded-full flex justify-center items-center">
+                            <FaUserCircle className="text-[#514C58] text-3xl" />
+                          </div>
+                        </div>
+                        {/* your email */}
+                        <div className="wrap relative">
+                          <input
+                            name="email"
+                            className="email w-full focus:outline-primary/70 bg-black  border-none outline outline-2 outline-primary/30 py-2 px-6 pl-10 rounded-3xl transition-all duration-200"
+                            type="email"
+                            placeholder="Your Email"
+                          />
+
+                          {/* icon */}
+                          <div className="absolute top-1/2 transform -translate-y-1/2 left-2 bg-[#514C58] h-6 w-6 rounded-full flex justify-center items-center">
+                            <MdEmail className="text-black text-base" />
+                          </div>
+                        </div>
+                        {/* your number */}
+                        <div className="wrap relative">
+                          <PhoneInput
+                            className="relative"
+                            placeholder="Enter phone number"
+                            country={"it"}
+                            value={number}
+                            onChange={setNumber}
+                          />
+                        </div>
+                      </div>
+                      {/* btn */}
+                      <div className="btn grid justify-center items-center col-span-1 justify-self-center mt-6">
+                        <button className="py-3 px-12 rounded-3xl font-Montserrat font-semibold glowing-btn">
+                          JOIN OUR WAITLIST
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
-                {/* btn */}
-                <div className="btn grid justify-start items-center">
-                  <button className="py-3 px-12 hover:opacity-70 transition-all duration-200 rounded-3xl font-Montserrat font-semibold bg-[#5271FF]">
-                    JOIN OUR WAITLIST
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>

@@ -349,7 +349,7 @@ select option {
   @apply font-Montserrat font-normal;
 }
 
-.purple-shadown {
+.purple-shadow {
   background-image: url("./assets/images/home-shadow.png");
   background-position: center;
   background-repeat: no-repeat;

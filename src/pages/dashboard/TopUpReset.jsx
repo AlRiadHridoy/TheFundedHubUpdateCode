@@ -2,7 +2,7 @@ import { thumbHistory } from "../../ui/images";
 
 export default function TopUpReset() {
   return (
-    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadown-dash">
+    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadow-dash">
       <div className="inner-content px-6 min-h-screen">
         <div className="dashboard-wrapper">
           <div className="flex flex-wrap">

@@ -19,7 +19,7 @@ export default function Profile() {
 
   return (
     <>
-      <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadown-dash min-h-[100vh] font-Montserrat">
+      <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadow-dash min-h-[100vh] font-Montserrat">
         <div className="inner-content px-6">
           <div className="dashboard-wrapper">
             <div className="grid md:flex gap-4 md:gap-6 mb-20">

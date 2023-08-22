@@ -24,7 +24,7 @@ export default function Login() {
   }, [pathname]);
 
   return (
-    <main className="login min-h-screen purple-shadown pt-32 md:py-32">
+    <main className="login min-h-screen purple-shadow pt-32 md:py-32">
       <header className="z-50 left-0 right-0 transition-all duration-300 border-b border-transparent py-2 sm:py-6 absolute top-0">
         <div className="container">
           <div className="wrapper flex mt-4 md:mt-0 justify-start md:justify-between">
@@ -195,8 +195,6 @@ export default function Login() {
             forgetModal ? "visible opacity-100" : "invisible opacity-0"
           }`}
         >
-        
-
           {/* content */}
           <form className="content grid w-full text-center gap-4 font-semibold">
             <div className="heading text-2xl">

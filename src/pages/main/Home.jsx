@@ -20,8 +20,7 @@ export default function Home() {
   }, [pathname]);
 
   return (
-    <div className="purple-shadown bg-black sm:bg-[#030307]">
-      {/* <Disclimer /> */}
+    <div className="purple-shadow bg-black sm:bg-[#030307] h-screenf">
       <Navbar />
       <Hero />
       <TradingWdget />

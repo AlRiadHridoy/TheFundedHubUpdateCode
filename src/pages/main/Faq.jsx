@@ -397,7 +397,7 @@ export default function Faq() {
   return (
     <>
       <Navbar />
-      <section className="faq relative purple-shadown pt-16 sm:pt-28">
+      <section className="faq relative purple-shadow pt-16 sm:pt-28">
         <div className="container relative">
           <div className="wrapper relative pb-24 sm:pb-36 md:pb-44 w-full grid gap-16 xs:gap-20 md:gap-32 max-w-[75rem] m-auto">
             {/* Top content */}
@@ -470,34 +470,6 @@ export default function Faq() {
                     />
                   ))}
                 </div>
-              </div>
-
-              <div className="contain">
-                {/* ------------------------------ */}
-
-                <div className="paras">
-                  <p></p>
-                  <ul>
-                    <li></li>
-                  </ul>
-                </div>
-                <div className="paras">
-                  <p></p>
-                  <ul>
-                    <li></li>
-                  </ul>
-                </div>
-                {/* ------------------------------ */}
-              </div>
-              <div className="contain">
-                {/* ------------------------------ */}
-                <div className="paras">
-                  <p></p>
-                  <ul>
-                    <li></li>
-                  </ul>
-                </div>
-                {/* ------------------------------ */}
               </div>
             </div>
 

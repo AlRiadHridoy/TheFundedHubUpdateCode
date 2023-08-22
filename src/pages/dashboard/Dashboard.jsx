@@ -48,7 +48,7 @@ export default function Dashboard() {
       <DashNav props={[setSideOpenMbl, sideOpenMbl]} />
       <SiderNav sideOpen={sideOpen} />
       <MobileSideNav props={[setSideOpenMbl, sideOpenMbl]} />
-      <div className="wrapper purple-shadown">
+      <div className="wrapper purple-shadow  fh-screen">
         {pathname === "/dashboard" ? <DashboardHome /> : <Outlet />}
       </div>
     </>

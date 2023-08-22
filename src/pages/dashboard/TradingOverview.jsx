@@ -46,7 +46,7 @@ export default function TradingOverview() {
   });
 
   return (
-    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadown-dash  z-[99]">
+    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadow-dash  z-[99]">
       <div className="inner-content px-6">
         <div className="breadcrumb-wrap">
           <div className="breadcrumb-title">

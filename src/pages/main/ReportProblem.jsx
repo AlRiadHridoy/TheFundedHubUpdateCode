@@ -13,7 +13,7 @@ export default function ReportProblem() {
   return (
     <>
       <Navbar />
-      <section className="contact relative pb-28 pt-32 sm:pt-44 sm:pb-44 purple-shadown">
+      <section className="contact relative pb-28 pt-32 sm:pt-44 sm:pb-44 purple-shadow">
         <div className="container z-10 relative">
           <div className="wrapper flex items-center w-full">
             <div className="content grid md:grid-cols-3 gap-10 max-w-[75rem] w-full m-auto">

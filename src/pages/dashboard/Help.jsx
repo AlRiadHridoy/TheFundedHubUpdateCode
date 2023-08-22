@@ -383,7 +383,7 @@ export default function Help() {
     ],
   };
   return (
-    <main className="content-wrapper min-h-screen pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadown-dash">
+    <main className="content-wrapper min-h-screen pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadow-dash">
       <div className="inner-content px-6">
         <div className="dashboard-wrapper">
           <div className="top-content relative faq-content">
@@ -396,13 +396,13 @@ export default function Help() {
             <div className="content grid gap-12 mt-10 relative">
               {/* left */}
               <div className="left  relative">
-                <div className="options mr-[1rem] flex flex-wrap gap-3 relative">
+                <div className="options mr-[1rem] flex flex-wrap gap-4 relative">
                   {/* option */}
                   <div
-                    className={`option py-2 sm:py-3 rounded-xl border-[3px] bg-[#2B2C30]/[17%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                    className={`option py-2.5 rounded-mds border-b-2 backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
                       option === "Started"
-                        ? "border-primary/80 before:opacity-100"
-                        : "border-transparent before:opacity-0 hover:border-primary/40"
+                        ? "border-primary"
+                        : "border-primary/10"
                     }`}
                     onClick={() => setOption("Started")}
                   >
@@ -410,10 +410,10 @@ export default function Help() {
                   </div>
                   {/* option */}
                   <div
-                    className={`option py-2 sm:py-3 rounded-xl border-[3px] bg-[#2B2C30]/[17%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                    className={`option py-2.5 rounded-mds border-b-2 backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
                       option === "Evaluation"
-                        ? "border-primary/80 before:opacity-100"
-                        : "border-transparent before:opacity-0 hover:border-primary/40"
+                        ? "border-primary"
+                        : "border-primary/10"
                     }`}
                     onClick={() => setOption("Evaluation")}
                   >
@@ -421,10 +421,8 @@ export default function Help() {
                   </div>
                   {/* option */}
                   <div
-                    className={`option py-2 sm:py-3 rounded-xl border-[3px] bg-[#2B2C30]/[17%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
-                      option === "TFH"
-                        ? "border-primary/80 before:opacity-100"
-                        : "border-transparent before:opacity-0 hover:border-primary/40"
+                    className={`option py-2.5 rounded-mds border-b-2 backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                      option === "TFH" ? "border-primary" : "border-primary/10"
                     }`}
                     onClick={() => setOption("TFH")}
                   >
@@ -432,10 +430,10 @@ export default function Help() {
                   </div>
                   {/* option */}
                   <div
-                    className={`option py-2 sm:py-3 rounded-xl border-[3px] bg-[#2B2C30]/[17%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                    className={`option py-2.5 rounded-mds border-b-2 backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
                       option === "Billing"
-                        ? "border-primary/80 before:opacity-100"
-                        : "border-transparent before:opacity-0 hover:border-primary/40"
+                        ? "border-primary"
+                        : "border-primary/10"
                     }`}
                     onClick={() => setOption("Billing")}
                   >
