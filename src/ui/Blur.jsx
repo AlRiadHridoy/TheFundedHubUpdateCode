@@ -55,7 +55,7 @@ export default function Blur() {
             className={`box w-screen relative text-main text-wht transition-all duration-300 rounded-3xl z-[999]
               font-Montserrat font-light container`}
           >
-            <div className="wrap max-w-[85rem] m-auto">
+            <div className="wrap max-w-[82rem] m-auto">
               {/* logos */}
               <div className="logos flex justify-end items-center gap-4 py-10">
                 <a
@@ -80,8 +80,8 @@ export default function Blur() {
                   <BsTwitter className="text-main-bg h-5 w-5 " />
                 </a>
               </div>
-              <div className="container grid justify-center items-center w-full">
-                <div className="wrap flex flex-col justify-center gap-3 pt-10 pb-10 md:pb-16">
+              <div className="grid justify-center items-center w-full">
+                <div className="wrap flex flex-col justify-center gap-3 pb-10 md:pb-16">
                   {/* top */}
                   <div className="wrap grid md:grid-cols-2 m-auto gap-6 font-Montserrat">
                     <div className="video rounded-2xl fcol-span-4 w-full relative">
@@ -99,14 +99,14 @@ export default function Blur() {
                       </div>
                       {/* heading */}
                       <h1>
-                        <div className="text-3xl md:text-4xl xl:text-[2.8rem] 2xl:text-[4rem] uppercase font-medium -mr-18 !leading-[1.05]">
+                        <div className="text-3xl md:text-4xl xl:text-[3.2rem] uppercase font-medium -mr-18 !leading-[1.05] text-wht-gradient">
                           IS Launching soon.
                         </div>
                         <div className="text-3xl md:text-4xl xl:text-[2.8rem] 2xl:text-[4.8rem] uppercase font-medium  -mr-18 !leading-[1.05]">
                           {" "}
                         </div>
                       </h1>
-                      <p className="text-lg font-light">
+                      <p className="text-lg font-light xl:pr-10">
                         Unlock exclusive early access to The Funded Hub by
                         filling the waiting list form. Elevate your trading game
                         with customizable challenges, up to $2,000 monthly
@@ -116,8 +116,8 @@ export default function Blur() {
                     </div>
                   </div>
 
-                  <div className="middle mt-16 font-Montserrat bg-[#2B2C30]/[22%] py-4 px-20  rounded-[30px] uppercase">
-                    <div className="flex justify-between gap-4 font-light  text-center text-sm">
+                  <div className="middle mt-4 sm:mt-8 md:mt-16 font-Montserrat bg-[#2B2C30]/[22%] py-4 md:px-20 rounded-[30px] uppercase flex md:inline-block justify-center">
+                    <div className="grid xs:grid-cols-2 md:flex justify-between gap-4 font-light  text-center text-sm">
                       <div className="item">
                         <h5>
                           Pay in 3/4 <br />{" "}
@@ -168,7 +168,7 @@ export default function Blur() {
                     <CountDown />
                   </div>
                   {/* waitlist */}
-                  <div className="waitlist grid justify-center bg-[#2B2C30]/[22%] py-6 px-20  rounded-3xl m-auto mt-6 max-w-[56rem]">
+                  <div className="waitlist grid justify-center bg-[#2B2C30]/[22%] py-6 px-6 sm:px-16 md:px-20 rounded-3xl m-auto mt-6 max-w-[56rem]">
                     {/* txt */}
                     <div className="left-text self-center text-xl text-center max-w-[40rem] m-auto mb-8">
                       <p className="">
