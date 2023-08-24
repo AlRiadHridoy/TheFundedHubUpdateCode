@@ -399,7 +399,7 @@ export default function Help() {
                 <div className="options mr-[1rem] flex flex-wrap gap-4 relative">
                   {/* option */}
                   <div
-                    className={`option py-2.5 rounded-mds border-b-2 backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                    className={`option py-2.5 border-b-2 cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
                       option === "Started"
                         ? "border-primary"
                         : "border-primary/10"
@@ -410,7 +410,7 @@ export default function Help() {
                   </div>
                   {/* option */}
                   <div
-                    className={`option py-2.5 rounded-mds border-b-2 backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                    className={`option py-2.5 border-b-2 cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
                       option === "Evaluation"
                         ? "border-primary"
                         : "border-primary/10"
@@ -421,7 +421,7 @@ export default function Help() {
                   </div>
                   {/* option */}
                   <div
-                    className={`option py-2.5 rounded-mds border-b-2 backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                    className={`option py-2.5 border-b-2 cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
                       option === "TFH" ? "border-primary" : "border-primary/10"
                     }`}
                     onClick={() => setOption("TFH")}
@@ -430,7 +430,7 @@ export default function Help() {
                   </div>
                   {/* option */}
                   <div
-                    className={`option py-2.5 rounded-mds border-b-2 backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                    className={`option py-2.5 border-b-2 cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
                       option === "Billing"
                         ? "border-primary"
                         : "border-primary/10"

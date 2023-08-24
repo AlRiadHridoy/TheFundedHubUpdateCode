@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BsDiscord, BsInstagram, BsTwitter } from "react-icons/bs";
+import SocialIcons from "../../components/SocialIcons";
 import Footer from "../../components/main/Footer";
 import Navbar from "../../components/main/Navbar";
 import { useLocation } from "react-router-dom";
@@ -27,29 +27,8 @@ export default function ReportProblem() {
                   </p>
                 </div>
 
-                {/* logos */}
-                <div className="logos flex gap-4 mt-5">
-                  <a
-                    target="__blank"
-                    href="https://discord.gg/GVXNaVTr"
-                    className="logo h-8 w-8 rounded-md bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-                  >
-                    <BsDiscord className="text-main-bg h-5 w-5 " />
-                  </a>
-                  <a
-                    target="__blank"
-                    href="https://www.instagram.com/fundedhub/"
-                    className="logo h-8 w-8 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-                  >
-                    <BsInstagram className="text-main-bg h-5 w-5 " />
-                  </a>
-                  <a
-                    target="__blank"
-                    href="https://twitter.com/TheFundedHub"
-                    className="logo h-8 w-8 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-                  >
-                    <BsTwitter className="text-main-bg h-5 w-5 " />
-                  </a>
+                <div className="mt-5">
+                  <SocialIcons />
                 </div>
               </div>
               {/* Right */}

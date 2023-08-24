@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
-import { BsDiscord, BsInstagram, BsTwitter } from "react-icons/bs";
+import SocialIcons from "../../components/SocialIcons";
 
 import { mainLogo, circle } from "../../ui/images";
 
@@ -29,8 +29,8 @@ export default function SiderNav() {
           src="/assets/img/author/author.jpeg"
           alt="author"
         />
-        <h4 className="text-wht text-[15px] mt-[8px]">mikha dev</h4>
-        <p className="text-primary text-[12px] mt-[8px]">mikha.dev@gmail.com</p>
+        <h4 className="text-wht text-[15px] mt-[8px]">abc dev</h4>
+        <p className="text-primary text-[12px] mt-[8px]">abc.dev@gmail.com</p>
       </div>
       <div className="main-menu z-30 relative">
         <ul className="nav grid gap-2 overflow-y-scroll md:overflow-auto">
@@ -123,30 +123,7 @@ export default function SiderNav() {
         </ul>
       </div>
       <ul className="px-10 absolute bottom-[1.5rem] w-full z-30 font-Montserrat">
-        {/* logos */}
-        <div className="logos flex gap-4">
-          <a
-            target="__blank"
-            href="https://discord.gg/GVXNaVTr"
-            className="logo h-[1.7rem] w-[1.7rem] rounded-md bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-          >
-            <BsDiscord className="text-main-bg h-4 w-4 " />
-          </a>
-          <a
-            target="__blank"
-            href="https://www.instagram.com/fundedhub/"
-            className="logo h-7 w-7 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-          >
-            <BsInstagram className="text-main-bg h-4 w-4 " />
-          </a>
-          <a
-            target="__blank"
-            href="https://twitter.com/TheFundedHub"
-            className="logo h-7 w-7 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-          >
-            <BsTwitter className="text-main-bg h-4 w-4 " />
-          </a>
-        </div>
+        <SocialIcons />
         <li className="border-b border-primary/20 group mt-3">
           <Link
             to="profile"

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation, Link } from "react-router-dom";
-import { BsDiscord, BsInstagram, BsTwitter } from "react-icons/bs";
+import SocialIcons from "../SocialIcons";
 
 // eslint-disable-next-line react/prop-types
 export default function MobileSideNav({ props }) {
@@ -158,30 +158,7 @@ export default function MobileSideNav({ props }) {
           </ul>
         </div>
 
-        {/* logos */}
-        <div className="logos flex gap-4 mt-8 z-[999] pl-12 relative pb-20">
-          <a
-            target="__blank"
-            href="https://discord.gg/GVXNaVTr"
-            className="logo h-[1.7rem] w-[1.7rem] rounded-md bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-          >
-            <BsDiscord className="text-main-bg h-4 w-4 " />
-          </a>
-          <a
-            target="__blank"
-            href="https://www.instagram.com/fundedhub/"
-            className="logo h-7 w-7 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-          >
-            <BsInstagram className="text-main-bg h-4 w-4 " />
-          </a>
-          <a
-            target="__blank"
-            href="https://twitter.com/TheFundedHub"
-            className="logo h-7 w-7 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-          >
-            <BsTwitter className="text-main-bg h-4 w-4 " />
-          </a>
-        </div>
+        <SocialIcons />
       </aside>
     </div>
   );

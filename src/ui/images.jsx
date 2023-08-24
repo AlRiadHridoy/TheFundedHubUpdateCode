@@ -1,8 +1,7 @@
-import mainLogo from "../assets/images/logo.png";
+import mainLogo from "../assets/images/logo.webp";
 import dashboard from "../assets/images/dashboard.webp";
 import discord from "../assets/images/discord.svg";
 import arrow from "../assets/images/arrow.svg";
-import footerBg from "../assets/images/footer-logo.png";
 import circle from "../assets/images/circle.svg";
 import copy from "../assets/images/copy.svg";
 import tick from "../assets/images/tick.svg";
@@ -18,7 +17,7 @@ export {
   dashboard,
   discord,
   arrow,
-  footerBg,
+
   circle,
   copy,
   tick,

@@ -180,52 +180,6 @@
   @apply text-[15px] font-semibold font-Montserrat leading-[1.167] tracking-[-0.05px] mb-[8px] text-wht;
 }
 
-.account-info-bottom h4 {
-  @apply text-[18px] font-semibold font-Montserrat leading-[1.167] tracking-[-0.06px] mb-[20px] text-wht;
-}
-.account-info-bottom p {
-  @apply text-[15px] font-semibold font-Montserrat leading-[1.167] tracking-[-0.05px] text-wht;
-}
-
-.account-info-btn {
-  @apply inline-flex uppercase font-bold font-Montserrat text-xs items-center justify-center py-2.5 px-8 bg-primary/80 hover:bg-primary rounded-3xl text-dashboard-bg transition-all duration-200 ease-linear hover:shadow-[0_6px_15px_rgba(0,0,0,0.2)];
-}
-
-.t-row:hover {
-  box-shadow: 0 0 #0000, 0 0 #0000, 0 0 #0000, 0 0 #0000,
-    0px 2.13333px 36px rgba(195, 129, 252, 0.315);
-}
-
-.table-wrap {
-  @apply rounded-[5px] bg-dashboard-bg;
-}
-
-.faq-nav-wrap,
-.faq-tab-wrap {
-  @apply rounded-[5px];
-}
-
-/* section {
-  padding: 0 !important;
-} */
-
-.calender-header {
-  background-image: linear-gradient(
-      90deg,
-      rgba(10, 3, 2, 0.95) 0%,
-      rgb(195, 129, 252, 0.5) 100%
-    ),
-    url("./assets/images/dashboard/thumb/calendar-bg.svg");
-}
-.help-header {
-  background-image: linear-gradient(
-      90deg,
-      rgba(58, 31, 82, 0.9) 0%,
-      rgba(103, 64, 138, 0.3) 100%
-    ),
-    url("./assets/images/dashboard/thumb/help-bg.png");
-}
-
 /* card border */
 .card-border {
   @apply bg-[#2B2C30]/[17%] backdrop-blur-3xl border border-all/20;
@@ -234,6 +188,7 @@
 .copied::before {
   opacity: 1 !important;
   visibility: visible !important;
+  font-weight: 400;
 }
 
 /* side nav */
@@ -283,10 +238,6 @@
 .apexcharts-active {
   @apply text-all bg-main-bg/100 backdrop-blur-3xl !shadow-none;
 }
-
-/* .apexcharts-active .apexcharts-tooltip-text-y-value {
-  @apply relative ml-2 before:absolute before:content-['$'] before:text-all before:-left-[0.6rem] before:top-1/2 before:transform before:-translate-y-1/2;
-} */
 
 .apexcharts-tooltip.apexcharts-theme-light {
   border: 1px solid red;

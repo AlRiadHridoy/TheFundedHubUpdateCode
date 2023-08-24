@@ -1,0 +1,19 @@
+.main-content {
+  @apply mt-4 grid gap-6 font-Montserrat py-10 px-8 bg-light/30 rounded-xl font-normal;
+}
+
+.para ol,
+.para ul {
+  @apply ml-10 mt-5 grid gap-1.5;
+}
+
+.para ul {
+  @apply list-disc;
+}
+
+.des span,
+.para h4,
+.des h5,
+ul li span {
+  @apply font-bold;
+}

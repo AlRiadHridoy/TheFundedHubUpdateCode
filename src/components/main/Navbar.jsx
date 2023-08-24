@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
-import { footerBg, mainLogo } from "../../ui/images";
+import { mainLogo } from "../../ui/images";
 
 export default function Navbar() {
   const [navToggle, setnavToggle] = useState(false);
@@ -127,7 +127,7 @@ export default function Navbar() {
             <Link to="/" className="logo block pt-6 px-6">
               <img
                 className="max-w-[6rem] md:hidden"
-                src={footerBg}
+                src={mainLogo}
                 alt="TheFundedHub"
               />
             </Link>

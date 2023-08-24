@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { mainLogo } from "../../ui/images";
-import { BsTwitter, BsInstagram, BsDiscord } from "react-icons/bs";
+import SocialIcons from "../../components/SocialIcons";
+
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
@@ -116,30 +117,7 @@ export default function Footer() {
 
             {/* right */}
             <div className="right">
-              {/* logos */}
-              <div className="logos flex justify-center items-center gap-4">
-                <a
-                  target="__blank"
-                  href="https://discord.gg/GVXNaVTr"
-                  className="logo h-8 w-8 rounded-md bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-                >
-                  <BsDiscord className="text-main-bg h-5 w-5 " />
-                </a>
-                <a
-                  target="__blank"
-                  href="https://www.instagram.com/fundedhub/"
-                  className="logo h-8 w-8 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-                >
-                  <BsInstagram className="text-main-bg h-5 w-5 " />
-                </a>
-                <a
-                  target="__blank"
-                  href="https://twitter.com/TheFundedHub"
-                  className="logo h-8 w-8 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-                >
-                  <BsTwitter className="text-main-bg h-5 w-5 " />
-                </a>
-              </div>
+              <SocialIcons />
             </div>
           </div>
 
@@ -183,30 +161,7 @@ export default function Footer() {
                 />
               </Link>
             </div>
-            {/* logos */}
-            <div className="logos flex justify-center items-center gap-4">
-              <a
-                target="__blank"
-                href="https://discord.gg/GVXNaVTr"
-                className="logo h-8 w-8 rounded-md bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-              >
-                <BsDiscord className="text-main-bg h-5 w-5 " />
-              </a>
-              <a
-                target="__blank"
-                href="https://www.instagram.com/fundedhub/"
-                className="logo h-8 w-8 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-              >
-                <BsInstagram className="text-main-bg h-5 w-5 " />
-              </a>
-              <a
-                target="__blank"
-                href="https://twitter.com/TheFundedHub"
-                className="logo h-8 w-8 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-              >
-                <BsTwitter className="text-main-bg h-5 w-5 " />
-              </a>
-            </div>
+            <SocialIcons />
           </div>
           {/* content */}
           <div className="content grid gap-8 mt-4">

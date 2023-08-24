@@ -1,16 +1,16 @@
 import { mainLogo } from "./images";
 import { FaUserCircle } from "react-icons/fa";
-import { BsTwitter, BsInstagram, BsDiscord } from "react-icons/bs";
+import SocialIcons from "../components/SocialIcons";
 import { MdEmail } from "react-icons/md";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
-import video from "../launching/mov_bbb.mp4";
+import video from "../assets/launching/mov_bbb.mp4";
 
 import { useState } from "react";
 import CountDown from "./CountDown";
 
-export default function Blur() {
+export default function WaitingList() {
   const [number, setNumber] = useState(null);
 
   const start = new Date(2023, 4, 1),
@@ -42,7 +42,7 @@ export default function Blur() {
   return (
     <div
       className={`release-modal transition-all duration-100 flex justify-center items-center
-       visible opacity-100 bg-[#030307] purple-shadow`}
+      visible opacity-100 bg-[#030307] purple-shadow min-h-screen`}
     >
       <div
         className={`bg absolute inset-0 w-full h-full transition-all duration-200 backdrop-blur-[12px] opacity-100
@@ -56,29 +56,8 @@ export default function Blur() {
               font-Montserrat font-light container`}
           >
             <div className="wrap max-w-[82rem] m-auto">
-              {/* logos */}
-              <div className="logos flex justify-end items-center gap-4 py-10">
-                <a
-                  target="__blank"
-                  href="https://discord.gg/GVXNaVTr"
-                  className="logo h-8 w-8 rounded-md bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-                >
-                  <BsDiscord className="text-main-bg h-5 w-5 " />
-                </a>
-                <a
-                  target="__blank"
-                  href="https://www.instagram.com/fundedhub/"
-                  className="logo h-8 w-8 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-                >
-                  <BsInstagram className="text-main-bg h-5 w-5 " />
-                </a>
-                <a
-                  target="__blank"
-                  href="https://twitter.com/TheFundedHub"
-                  className="logo h-8 w-8 rounded-full bg-white/[62%] hover:bg-wht transition-all duration-300 flex justify-center items-center"
-                >
-                  <BsTwitter className="text-main-bg h-5 w-5 " />
-                </a>
+              <div className="py-3 sm:py-6 flex justify-end">
+                <SocialIcons />
               </div>
               <div className="grid justify-center items-center w-full">
                 <div className="wrap flex flex-col justify-center gap-3 pb-10 md:pb-16">

@@ -1,42 +1,53 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./pages/main/Home";
-import Login from "./pages/main/Login";
-import Contact from "./pages/main/Contact";
-import Faq from "./pages/main/Faq";
-import CookiePolicy from "./pages/main/CookiePolicy";
-import PrivacyPolicy from "./pages/main/PrivacyPolicy";
-import TermCondition from "./pages/main/TermCondition";
-import RiskDisclosure from "./pages/main/RiskDisclosure";
-import ReportProblem from "./pages/main/ReportProblem";
-import Blog from "./pages/main/Blog";
-import SingleBlog from "./pages/main/SingleBlog";
+// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// import Home from "./pages/main/Home";
+// import Login from "./pages/main/Login";
+// import Contact from "./pages/main/Contact";
+// import Faq from "./pages/main/Faq";
+// import CookiePolicy from "./pages/main/CookiePolicy";
+// import PrivacyPolicy from "./pages/main/PrivacyPolicy";
+// import TermCondition from "./pages/main/TermCondition";
+// import RiskDisclosure from "./pages/main/RiskDisclosure";
+// import ReportProblem from "./pages/main/ReportProblem";
 
-// Dashboard
-import Dashboard from "./pages/dashboard/Dashboard";
-import Withdraw from "./pages/dashboard/Withdraw";
-import TopUpReset from "./pages/dashboard/TopUpReset";
-import Help from "./pages/dashboard/Help";
-import Profile from "./pages/dashboard/Profile";
-import DashContact from "./pages/dashboard/DashContact";
-import Billing from "./pages/dashboard/Billing";
-import Certificate from "./pages/dashboard/Certificate";
-import Checkout from "./pages/main/Checkout";
+// // Dashboard
+// import Dashboard from "./pages/dashboard/Dashboard";
+// import Withdraw from "./pages/dashboard/Withdraw";
+// import TopUpReset from "./pages/dashboard/TopUpReset";
+// import Help from "./pages/dashboard/Help";
+// import Profile from "./pages/dashboard/Profile";
+// import DashContact from "./pages/dashboard/DashContact";
+// import Billing from "./pages/dashboard/Billing";
+// import Certificate from "./pages/dashboard/Certificate";
+// import Checkout from "./pages/main/Checkout";
+
+// // blog
+// import Blog from "./pages/main/blog/Blog";
+// import Exploring from "./pages/main/blog/Exploring";
+// import HowDoesWork from "./pages/main/blog/HowDoesWork";
+// import Introduction from "./pages/main/blog/Introduction";
+// import Understanding from "./pages/main/blog/Understanding";
+// import Leveraging from "./pages/main/blog/Leveraging";
+
 // CSS
 import "./App.css";
-import Cookies from "./ui/Cookies";
-// import Blur from "./ui/Blur";
+// import Cookies from "./ui/Cookies";
+import WaitingList from "./ui/WaitingList";
 
 function App() {
   return (
     <div className="App">
-      <Router>
+      {/* <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="login" element={<Login />} />
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<Faq />} />
           <Route path="blog" element={<Blog />} />
-          <Route path="blog/single-blog" element={<SingleBlog />} />
+          <Route path="blog/exploring" element={<Exploring />} />
+          <Route path="blog/how-does-work" element={<HowDoesWork />} />
+          <Route path="blog/introduction" element={<Introduction />} />
+          <Route path="blog/understanding" element={<Understanding />} />
+          <Route path="blog/leveraging" element={<Leveraging />} />
           <Route path="checkout" element={<Checkout />} />
 
           <Route path="cookie-policy" element={<CookiePolicy />} />
@@ -55,10 +66,10 @@ function App() {
             <Route path="certificate" element={<Certificate />} />
           </Route>
         </Routes>
-      </Router>
+      </Router> */}
 
-      <Cookies />
-      {/* <Blur /> */}
+      {/* <Cookies /> */}
+      <WaitingList />
     </div>
   );
 }

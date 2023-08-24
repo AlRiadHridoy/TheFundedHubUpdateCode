@@ -5,8 +5,8 @@ import MotionX from "../../ui/MotionX";
 import MotionY from "../../ui/MotionY";
 
 // trader
-import metaTraderFive from "../../assets/images/meta-trader-5.png";
-import metaTraderFour from "../../assets/images/meta-trader-4.png";
+import metaTraderFive from "../../assets/images/meta-trader-5.webp";
+import metaTraderFour from "../../assets/images/meta-trader-4.webp";
 import blackBull from "../../assets/images/BBM-Partners.svg";
 
 // Import Swiper styles
