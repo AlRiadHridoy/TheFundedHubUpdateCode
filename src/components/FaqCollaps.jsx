@@ -38,7 +38,7 @@ export default function FaqCollaps({ heading, para, fls }) {
 
       <div
         style={{ maxHeight: isOpen ? paraHeight + "px" : "0" }}
-        className={`content transition-all duration-300 overflow-hidden`}
+        className={`faq-content transition-all duration-300 overflow-hidden`}
       >
         <div ref={refferance} className="wrapper">
           <div className="text-[0.9rem] xs:text-base px-4 pb-5 pt-4 border-t border-primary/20">

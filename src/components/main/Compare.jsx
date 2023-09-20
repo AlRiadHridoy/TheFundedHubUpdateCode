@@ -25,15 +25,15 @@ export default function Compare() {
       "No",
       "$600",
     ],
-    "MY FOREX FUNDS": [
+    "SKILLED FUNDED TRADERS": [
       "100K Evaluation",
-      "5% Daily | 12% Total",
-      "5 Day",
+      "5% Daily | 10% Total",
+      "3 Day",
       "Unlimited",
       "8% - 5%",
-      "Yes",
       "No",
-      "$499",
+      "No",
+      "$549",
     ],
     "TRUE FOREX FUNDS": [
       "100K Evaluation",
@@ -82,14 +82,14 @@ export default function Compare() {
                 </button>
                 <button
                   className={`button py-2 px-3 font-semibold transition-all duration-200 text-wht text-[0.7rem] cursor-pointer border-b-2 ${
-                    compare === "MY FOREX FUNDS"
+                    compare === "SKILLED FUNDED TRADERS"
                       ? "border-primary"
                       : "border-primary/30"
                   }
               `}
-                  onClick={() => setCompare("MY FOREX FUNDS")}
+                  onClick={() => setCompare("SKILLED FUNDED TRADERS")}
                 >
-                  MY FOREX FUNDS
+                  SKILLED FUNDED TRADERS
                 </button>
                 <button
                   className={`button py-2 px-3 font-semibold transition-all duration-200 text-wht text-[0.7rem] cursor-pointer border-b-2 ${

@@ -1,37 +1,310 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+// import ApexChart from "../../components/dashboard/ApexChart";
 import { useLocation } from "react-router-dom";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import { copy } from "../../ui/images";
-import ApexChart from "../../components/dashboard/ApexChart";
-import TradingOverview from "../../components/dashboard/TradingOverview";
+import { PiSuitcaseSimpleFill } from "react-icons/pi";
+import { BiDollar, BiTime } from "react-icons/bi";
+import { RiStackLine } from "react-icons/ri";
+import {
+  AiOutlineAppstore,
+  AiOutlinePercentage,
+  AiOutlinePieChart,
+} from "react-icons/ai";
+import {
+  BsGraphUpArrow,
+  BsGraphDownArrow,
+  BsCurrencyPound,
+} from "react-icons/bs";
+import { MdMenuOpen } from "react-icons/md";
+import LineCharts from "../../components/dashboard/Charts/LineChart";
+import BarCharts from "../../components/dashboard/Charts/BarCharts";
+import RadialBarCharts from "../../components/dashboard/Charts/RadialBarCharts";
+import PieCharts from "../../components/dashboard/Charts/PieCharts";
 
-export default function DashboardHome() {
-  const [passVisible, setPassVisible] = useState(false);
-
-  const copyFunc = (el, text) => {
-    el.target.parentNode.classList.add("copied");
-    setTimeout(() => {
-      el.target.parentNode.classList.remove("copied");
-    }, 450);
-    navigator.clipboard.writeText(text);
-  };
-
+export default function NewDashboard() {
   const { pathname } = useLocation();
+
+  const weeklyData = [
+    {
+      name: "Mon",
+      return: -1.75,
+    },
+    {
+      name: "Tue",
+      return: 2.9,
+    },
+    {
+      name: "Wed",
+      return: 3.2,
+    },
+    {
+      name: "Thu",
+      return: 0.7,
+    },
+    {
+      name: "Fri",
+      return: 4.8,
+    },
+    {
+      name: "Sat",
+      return: 0,
+    },
+    {
+      name: "Sun",
+      return: -2.1,
+    },
+  ];
+  const profitData = [
+    {
+      name: "00:00-00:05",
+      return: 540,
+    },
+    {
+      name: "00:05-00:15",
+      return: -125,
+    },
+
+    {
+      name: "00:60-00:75",
+      return: -300,
+    },
+    {
+      name: "00:75-00:90",
+      return: 200,
+    },
+  ];
+  const buySellData = [
+    {
+      name: "Sell",
+      return: -50,
+    },
+    {
+      name: "Buy",
+      return: 505,
+    },
+  ];
+
+  // pie chart
+  const symbolAllocationData = [
+    { name: "US30.cash", value: 30.3, fill: "#f59e0b" },
+    { name: "US100.cash", value: 34.6, fill: "#84cc16" },
+    { name: "GER30.cash", value: 33.7, fill: "#5b21b6" },
+    { name: "BTC", value: 1.4, fill: "#3b82f6" },
+  ];
+  const buysellPie = [
+    { name: "Sell", value: 30, fill: "#dc2626" },
+    { name: "Buy", value: 70, fill: "#84cc16" },
+  ];
+  const symbolData = [
+    {
+      name: "GBPUSD.tff",
+      return: 800,
+    },
+    {
+      name: "XAUUSD",
+      return: 95,
+    },
+    {
+      name: "XAGUSD",
+      return: -40,
+    },
+  ];
+
+  const dailySummaryData = [
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "£94.10 ",
+    },
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "£94.10 ",
+    },
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "£94.10 ",
+    },
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "-£94.10 ",
+    },
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "£94.10 ",
+    },
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "-£94.10 ",
+    },
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "£94.10 ",
+    },
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "£94.10 ",
+    },
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "-£94.10 ",
+    },
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "£94.10 ",
+    },
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "£94.10 ",
+    },
+    {
+      time: "Sep 12, 2023 ",
+      trade: "18 ",
+      lots: "0.90 ",
+      result: "-£94.10 ",
+    },
+  ];
+
+  const historyData = [
+    {
+      open: " Sep 12, 2023, 8:49:31 PM",
+      Action: "sell",
+      Symbol: "XAUUSD",
+      Volume: "0.05",
+      OpenPrice: "1912.6400",
+      Close: "Sep 12, 2023, 10:14:08 PM",
+      ClosePrice: "1914.7100",
+      Duration: "01:24:37",
+      Swap: "£0.00",
+      Commission: "-£0.28",
+      Profit: "-£8.01",
+      Pip: "-207.0",
+    },
+    {
+      open: " Sep 12, 2023, 8:49:31 PM",
+      Action: "sell",
+      Symbol: "XAUUSD",
+      Volume: "0.05",
+      OpenPrice: "1912.6400",
+      Close: "Sep 12, 2023, 10:14:08 PM",
+      ClosePrice: "1914.7100",
+      Duration: "01:24:37",
+      Swap: "£0.00",
+      Commission: "-£0.28",
+      Profit: "-£8.01",
+      Pip: "-207.0",
+    },
+    {
+      open: " Sep 12, 2023, 8:49:31 PM",
+      Action: "buy",
+      Symbol: "XAUUSD",
+      Volume: "0.05",
+      OpenPrice: "1912.6400",
+      Close: "Sep 12, 2023, 10:14:08 PM",
+      ClosePrice: "1914.7100",
+      Duration: "01:24:37",
+      Swap: "£0.00",
+      Commission: "-£0.28",
+      Profit: "£8.01",
+      Pip: "207.0",
+    },
+    {
+      open: " Sep 12, 2023, 8:49:31 PM",
+      Action: "sell",
+      Symbol: "XAUUSD",
+      Volume: "0.05",
+      OpenPrice: "1912.6400",
+      Close: "Sep 12, 2023, 10:14:08 PM",
+      ClosePrice: "1914.7100",
+      Duration: "01:24:37",
+      Swap: "£0.00",
+      Commission: "-£0.28",
+      Profit: "-£8.01",
+      Pip: "-207.0",
+    },
+    {
+      open: " Sep 12, 2023, 8:49:31 PM",
+      Action: "sell",
+      Symbol: "XAUUSD",
+      Volume: "0.05",
+      OpenPrice: "1912.6400",
+      Close: "Sep 12, 2023, 10:14:08 PM",
+      ClosePrice: "1914.7100",
+      Duration: "01:24:37",
+      Swap: "£0.00",
+      Commission: "-£0.28",
+      Profit: "-£8.01",
+      Pip: "-207.0",
+    },
+    {
+      open: " Sep 12, 2023, 8:49:31 PM",
+      Action: "buy",
+      Symbol: "XAUUSD",
+      Volume: "0.05",
+      OpenPrice: "1912.6400",
+      Close: "Sep 12, 2023, 10:14:08 PM",
+      ClosePrice: "1914.7100",
+      Duration: "01:24:37",
+      Swap: "£0.00",
+      Commission: "-£0.28",
+      Profit: "£8.01",
+      Pip: "207.0",
+    },
+    {
+      open: " Sep 12, 2023, 8:49:31 PM",
+      Action: "buy",
+      Symbol: "XAUUSD",
+      Volume: "0.05",
+      OpenPrice: "1912.6400",
+      Close: "Sep 12, 2023, 10:14:08 PM",
+      ClosePrice: "1914.7100",
+      Duration: "01:24:37",
+      Swap: "£0.00",
+      Commission: "-£0.28",
+      Profit: "£8.01",
+      Pip: "207.0",
+    },
+    {
+      open: " Sep 12, 2023, 8:49:31 PM",
+      Action: "buy",
+      Symbol: "XAUUSD",
+      Volume: "0.05",
+      OpenPrice: "1912.6400",
+      Close: "Sep 12, 2023, 10:14:08 PM",
+      ClosePrice: "1914.7100",
+      Duration: "01:24:37",
+      Swap: "£0.00",
+      Commission: "-£0.28",
+      Profit: "£8.01",
+      Pip: "207.0",
+    },
+  ];
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  const userinfo = {
-    login: "7382691",
-    password: "HDJNSJ39",
-    server: "TFH - Funded",
-    balance: "5000.00",
-    platform: "MetaTrader 5",
-  };
-
   return (
-    <main className="dashboard relative pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadow-dash">
+    <main className="new-dashboard relative pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadow-dash">
       <div className="content-wrapper relative">
         <div className="inner-content px-6 relative">
           <div className="flex flex-col xs:flex-row gap-5 relative mb-10 md:hidden">
@@ -49,253 +322,578 @@ export default function DashboardHome() {
           </div>
 
           {/* Dashboard */}
-          <div className="dashboard-wrapper z-10">
-            <div className="flex flex-wrap">
-              <div className="w-full grid md:grid-cols-12 gap-6">
-                {/* ApexChart section */}
-                <div className="flex flex-wrap mx-[-15px] relative md:col-span-9">
-                  <div className="w-full xs:px-[15px] z-10 relative">
-                    <div className="sm:card-wrap">
-                      <h3 className="card-title hidden z-10 relative text-center sm:text-start mb-2">
-                        Trading Growth Curve
-                      </h3>
-                      <div className="content">
-                        {/* ApexChart section */}
-                        <div className="ApexChart relative z-10 grid gap-4 card-border rounded-xl mt-6 md:mt-0">
-                          {/* ApexChart */}
-                          <div className="min-h-[300px] sm:h-[280px] md:min-h-[420px] rounded-xl py-4 md:p-6 pr-4 md:mt-4">
-                            <ApexChart />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+          <div className="dashboard-wrapper z-10 grid gap-6 font-Montserrat font-normal text-sm">
+            <div className="head flex flex-col xs:flex-row gap-6 justify-between">
+              <div className="left flex  items-center gap-4">
+                <div className="symbol bg-blu p-2.5 sm:p-3 rounded-full">
+                  <BsCurrencyPound className="text-2xl" />
+                </div>
+                <h2 className="relative text-wht-gradient text-2xl sm:text-3xl">
+                  Account
+                </h2>
+              </div>
+
+              {/* create */}
+              <div className="right flex items-center">
+                <span>
+                  <span className="text-gry">Created</span>: Aug 30, 2023
+                </span>
+              </div>
+            </div>
+            {/* balance chart */}
+            <div className="wrap grid md:grid-cols-3 gap-6 mt-5">
+              <div className="balance-chart col-span-2 hidden">
+                {/* ReChart section */}
+                <div className="ApexChart relative z-10 grid gap-4 card-border rounded-xl mt-6 md:mt-0">
+                  {/* rechart */}
+                  <div className="min-h-[300px] sm:h-[280px] md:min-h-[420px] rounded-xl py-4 md:p-6 pr-4 md:mt-4"></div>
+                </div>
+              </div>
+
+              {/* line chart */}
+              <div className="chart-wrap md:col-span-2 grid gap-4 mt-1">
+                <div className="wrap">
+                  <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                    Balance chart
                   </div>
                 </div>
-                {/* Cards */}
-                <div className="grid  gap-6 w-full relative z-20 md:col-span-3">
-                  {/* card */}
-                  <div className="card-border border-green-600s flex items-center p-6 gap-4 rounded-xl">
-                    <div className="wrap flex justify-center gap-4">
-                      <div className="d-icon bg-gry w-12 h-12 rounded-full flexf justify-center items-center mt-1 hidden">
-                        <svg
-                          className="fill-main-bg w-10"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                        >
-                          <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"></path>
-                        </svg>
-                      </div>
-                      <div className="content">
-                        <h2 className="text-2xl">$421, 30</h2>
-                        <p>Profit</p>
-                      </div>
-                    </div>
-                  </div>
-                  {/* card */}
-                  <div className="card-border border-yellow-600s flex items-center p-6 gap-4 rounded-xl">
-                    <div className="wrap flex justify-center gap-4">
-                      <div className="d-icon bg-gry w-12 h-12 rounded-full flexf justify-center items-center mt-1 hidden">
-                        <svg
-                          className="fill-main-bg w-10"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                        >
-                          <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"></path>
-                        </svg>
-                      </div>
-                      <div className="content">
-                        <h2 className="text-2xl">$0.00</h2>
-                        <p className="!normal-case">Daily drawdown</p>
-                      </div>
-                    </div>
-                  </div>
-                  {/* card */}
-                  <div className="card-border border-blue-600s flex items-center p-6 gap-4 rounded-xl">
-                    <div className="wrap flex justify-center gap-4">
-                      <div className="d-icon bg-gry w-12 h-12 rounded-full flexf justify-center items-center mt-1 hidden">
-                        <svg
-                          className="fill-main-bg w-10"
-                          focusable="false"
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                        >
-                          <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"></path>
-                        </svg>
-                      </div>
-                      <div className="content">
-                        <h2 className="text-2xl">11 Days</h2>
-                        <p>Trading days</p>
-                      </div>
-                    </div>
+                <div className="card-border overflow-hidden w-full max-h-full">
+                  <LineCharts />
+                </div>
+              </div>
+              {/* Funded Account */}
+              <div className="right md:col-span-1 grid gap-4">
+                <div className="top flex gap-4 justify-between items-center">
+                  <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                    Funded Account
                   </div>
 
-                  {/* card */}
-                  <div className="card-border  hidden">
-                    <div className="d-icon bg-gry">
-                      <svg
-                        className="fill-main-bg h- w-6"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path d="M5 9.2h3V19H5zM10.6 5h2.8v14h-2.8zm5.6 8H19v6h-2.8z"></path>
-                      </svg>
-                    </div>
-                    <div className="content">
-                      <h2>$0.00</h2>
-                      <p className="!normal-case">Daily drawdown</p>
-                    </div>
-                  </div>
-                  {/* card */}
-                  <div className="card-border hidden">
-                    <div className="d-icon bg-gry">
-                      <svg
-                        className="fill-main-bg h- w-6"
-                        focusable="false"
-                        viewBox="0 0 24 24"
-                        aria-hidden="true"
-                      >
-                        <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"></path>
-                      </svg>
-                    </div>
-                    <div className="content">
-                      <h2>11 Days</h2>
-                      <p>trading days</p>
-                    </div>
+                  <div className="pas bg-grn p-1 px-2.5 rounded-2xl text-white">
+                    passed
                   </div>
                 </div>
-
-                {/* Account detalis */}
-                <div className="flex flex-wrap relative z-20 md:col-span-9">
-                  <div className="w-full">
-                    <div className="card-wrap card-border h-full">
-                      <h3 className="card-title">Account Details</h3>
-                      <div className="content">
-                        <div className="account-info font-Montserrat">
-                          <div className="account-info-top grid xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-                            <div className="info-item">
-                              <div className="wrapper flex gap-2">
-                                <h4>Login</h4>
-                                <div className="icon-wrapper relative before:absolute before:content-['Copied'] before:text-black before:py-1 before:px-2.5 before:text-xs before:rounded-lg before:bg-primary before:left-[50%] before:-top-[130%] before:opacity-0 before:invisible transition-all duration-200">
-                                  <img
-                                    className="w-4 opacity-70 cursor-pointer hover:opacity-40 transition duration-150"
-                                    onClick={(el) => {
-                                      copyFunc(el, userinfo.login);
-                                    }}
-                                    src={copy}
-                                    alt=""
-                                  />
-                                </div>
-                              </div>
-                              <span className="!font-Montserrat">
-                                {userinfo.login}
-                              </span>
-                            </div>
-                            <div className="info-item">
-                              <div className="wrapper flex gap-2">
-                                <h4>Password</h4>
-
-                                <div className="icon-wrapper relative before:absolute before:content-['Copied'] before:text-black before:py-1 before:px-2.5 before:text-xs before:rounded-lg before:bg-primary before:left-[50%] before:-top-[130%] before:opacity-0 before:invisible transition-all duration-200">
-                                  <img
-                                    className="w-4 opacity-70 cursor-pointer hover:opacity-40 transition duration-150"
-                                    onClick={(el) => {
-                                      copyFunc(el, userinfo.password);
-                                    }}
-                                    src={copy}
-                                    alt=""
-                                  />
-                                </div>
-                              </div>
-                              <div className="pass-show flex h-[24px] w-[85px] ">
-                                {passVisible ? (
-                                  <span className="!font-Montserrat">
-                                    {userinfo.password}
-                                  </span>
-                                ) : (
-                                  <span className="!text-2xl">********</span>
-                                )}
-
-                                <div className="pass-icon ml-4 mt-1">
-                                  <AiFillEye
-                                    onClick={() => setPassVisible(false)}
-                                    className={`icon w-[14px] h-[14px] fill-white cursor-pointer ${
-                                      passVisible ? "" : "hidden"
-                                    }`}
-                                  />
-                                  <AiFillEyeInvisible
-                                    onClick={() => setPassVisible(true)}
-                                    className={`icon w-[14px] h-[14px] fill-white cursor-pointer ${
-                                      !passVisible ? "" : "hidden"
-                                    }`}
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                            <div className="info-item">
-                              <div className="wrapper flex gap-2">
-                                <h4>Server</h4>
-                                <div className="icon-wrapper relative before:absolute before:content-['Copied'] before:text-black before:py-1 before:px-2.5 before:text-xs before:rounded-lg before:bg-primary before:left-[50%] before:-top-[130%] before:opacity-0 before:invisible transition-all duration-200">
-                                  <img
-                                    className="w-4 opacity-70 cursor-pointer hover:opacity-40 transition duration-150"
-                                    onClick={(el) => {
-                                      copyFunc(el, userinfo.server);
-                                    }}
-                                    src={copy}
-                                    alt=""
-                                  />
-                                </div>
-                              </div>
-                              <span className="!font-Montserrat">
-                                {userinfo.server}
-                              </span>
-                            </div>
-                            <div className="info-item ">
-                              <div className="wrapper flex gap-2">
-                                <h4>Balance</h4>
-                              </div>
-                              <span className="!font-Montserrat">
-                                ${userinfo.balance}
-                              </span>
-                            </div>
-
-                            <div className="info-item !hidden">
-                              <div className="wrapper flex gap-2">
-                                <h4>Platform</h4>
-                              </div>
-                              <a href="#" className="text-primary underline">
-                                {userinfo.platform}
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                <div className="wrap card-border py-4 px-4 text-sm h-full">
+                  <div className=" grid gap-8">
+                    <div className="txt flex gap-4 justify-between">
+                      <div className="name text-gry">Deposit:</div>
+                      <div className="value">£10,000.00</div>
                     </div>
-                  </div>
-                </div>
-
-                {/* card */}
-                <div className=" rounded-2xl p-[25px] card-border h-full md:col-span-3 ">
-                  <div className="title text-lg font-semibold mb-5">Timing</div>
-                  <div className="wrap grid gap-2">
-                    <div>
-                      <span className="text-[16px] font-bold">Start Date:</span>{" "}
-                      <span>Sep 25, 2022</span>
+                    <div className="txt flex gap-4 justify-between">
+                      <div className="name text-gry">Start date:</div>
+                      <div className="value">Aug 30, 2023, 6:10:29 PM</div>
                     </div>
-                    <div>
-                      <span className="text-[16px] font-bold">End Date:</span>{" "}
-                      <span>Oct 25, 2022</span>
+                    <div className="txt flex gap-4 justify-between">
+                      <div className="name text-gry">Broker:</div>
+                      <div className="value">True Proprietary Funds Kft.</div>
+                    </div>
+                    <div className="txt flex gap-4 justify-between">
+                      <div className="name text-gry">Platform:</div>
+                      <div className="value">MetaTrader 5</div>
+                    </div>
+                    <div className="txt flex gap-4 justify-between">
+                      <div className="name text-gry">Balance:</div>
+                      <div className="value">£10,701.27</div>
+                    </div>
+                    <div className="txt flex gap-4 justify-between">
+                      <div className="name text-gry">Equity:</div>
+                      <div className="value">£10,701.27</div>
+                    </div>
+                    <div className="txt flex gap-4 justify-between">
+                      <div className="name text-gry">Last update:</div>
+                      <div className="value">Sep 13, 2023, 2:02:58 PM</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+            {/* options */}
+            <div className="wrap grid sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-5 text-sm pt-2">
+              <div className="card-border p-4">
+                <div className="top text-[0.8rem] flex justify-between gap-1">
+                  <div className="text-gry">Balance</div>
+                  <div className="text-green-500 ">+£701.27</div>
+                </div>
 
-          {/* Trading Overview */}
-          <div className="treading-overview mt-10">
-            <TradingOverview />
+                <div className="val font-bold">£10,701.27</div>
+              </div>
+              <div className="card-border p-4">
+                <div className="top text-[0.8rem] flex justify-between gap-1">
+                  <div className="text-gry">Equity</div>
+                  <div className="text-green-500 ">+£701.27</div>
+                </div>
+
+                <div className="val font-bold">£10,701.27</div>
+              </div>
+
+              <div className="card-border p-4">
+                <div className="top text-[0.8rem] flex justify-between gap-1">
+                  <div className="text-gry">Today’s Permitted Loss</div>
+                </div>
+
+                <div className="val font-bold">Not available</div>
+              </div>
+
+              <div className="card-border p-4">
+                <div className="top text-[0.8rem] flex justify-between gap-1">
+                  <div className="text-gry">Max. Permitted Loss</div>
+                </div>
+
+                <div className="val font-bold">Not available</div>
+              </div>
+              <div className="card-border p-4">
+                <div className="top text-[0.8rem] flex justify-between gap-1">
+                  <div className="text-gry">Today&apos;s Profit</div>
+                </div>
+
+                <div className="val font-bold">£0.00</div>
+              </div>
+            </div>
+            {/* two side */}
+            <div className="wrap mt-8">
+              <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                Trading Objectives
+              </div>
+
+              <div className="items mt-4 grid sm:grid-cols-2 gap-4">
+                <div className="item card-border p-5">
+                  <div className="top flex justify-between items-center border-b border-primary/10 pb-4">
+                    <div className="txt flex gap-4 items-center">
+                      <div className="pas bg-grn p-1.5 px-2.5 rounded-2xl text-white">
+                        passed
+                      </div>
+                      <div>Max Daily Loss</div>
+                    </div>
+
+                    <div className="val">£500.00</div>
+                  </div>
+
+                  {/* bottom */}
+                  <div className="bottom flex gap-4 justify-between pt-3">
+                    <div className="text-gry">Result:</div>
+                    <div> -£237.76</div>
+                  </div>
+                </div>
+
+                <div className="item card-border p-5">
+                  <div className="top flex justify-between items-center border-b border-primary/10 pb-4">
+                    <div className="txt flex gap-4 items-center">
+                      <div className="pas bg-grn p-1.5 px-2.5 rounded-2xl text-white">
+                        passed
+                      </div>
+                      <div>Max Loss</div>
+                    </div>
+
+                    <div className="val">£1,000.00</div>
+                  </div>
+
+                  {/* bottom */}
+                  <div className="bottom flex gap-4 justify-between pt-3">
+                    <div className="text-gry">Result:</div>
+                    <div> -£223.76</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* middle */}
+            <div className="middle mt-8 text-xs">
+              <div className="wrap grid md:grid-cols-5 gap-6 ">
+                <div className="left md:col-span-2 flex flex-col gap-4">
+                  <div className="wrap flex ">
+                    <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                      Daily Summary
+                    </div>
+                  </div>
+                  <div className="card-border px-3 py-4 h-full">
+                    <table>
+                      <thead>
+                        <tr className="border-b border-primary">
+                          <th align="left">Time</th>
+                          <th align="left">Trades</th>
+                          <th align="left">Lots</th>
+                          <th align="left">Result</th>
+                        </tr>
+                      </thead>
+                      <tbody className="text-gry">
+                        {dailySummaryData.map((item, index) => (
+                          <tr key={item.trade + index}>
+                            <td>
+                              <span> {item.time} </span>
+                            </td>
+                            <td>
+                              <span> {item.trade} </span>
+                            </td>
+                            <td>
+                              <span> {item.lots} </span>
+                            </td>
+                            <td>
+                              <span
+                                className={`${
+                                  item.result.indexOf("-") === -1
+                                    ? "text-grn"
+                                    : "text-danger"
+                                }`}
+                              >
+                                {" "}
+                                {item.result}{" "}
+                              </span>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                {/* Barchart Chart */}
+                <div className="right md:col-span-3 grid gap-4">
+                  <div className="wrap">
+                    <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                      Daily Returns
+                    </div>
+                  </div>
+                  <div className="chart card-border py-4 max-h-full">
+                    <BarCharts data={weeklyData} percent={1} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* win & bar chart */}
+            <div className="win-loss mt-8 text-xs">
+              <div className="wrap flex flex-col md:grid md:grid-cols-5 gap-6 ">
+                <div className="left md:col-span-2 grid gap-4">
+                  <div className="wrap">
+                    <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                      Wins & Losses
+                    </div>
+                  </div>
+                  <div className="card-border px-3 py-4  h-full w-full">
+                    <RadialBarCharts />
+                  </div>
+                </div>
+
+                {/* Barchart Chart */}
+                <div className="right md:col-span-3 grid gap-4">
+                  <div className="wrap flex">
+                    <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                      Profit by Holding time
+                    </div>
+                  </div>
+                  <div className="chart card-border py-4">
+                    <BarCharts data={profitData} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Statistics */}
+            <div className="statistics mt-8">
+              <div className="wrap">
+                <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                  Statistics
+                </div>
+              </div>
+
+              <div className="wrap mt-4">
+                <div className="items grid xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                    <div className="left">
+                      <h5 className="text-gry">Best trade</h5>
+                      <span>£27.17</span>
+                    </div>
+
+                    {/* right */}
+                    <div className="right">
+                      <div className="icon">
+                        <PiSuitcaseSimpleFill />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* item */}
+                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                    <div className="left">
+                      <h5 className="text-gry">Worst trade</h5>
+                      <span>-£26.27</span>
+                    </div>
+
+                    {/* right */}
+                    <div className="right">
+                      <div className="icon">
+                        <BiDollar />
+                      </div>
+                    </div>
+                  </div>
+                  {/* item */}
+                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                    <div className="left">
+                      <h5 className="text-gry">No. of trades</h5>
+                      <span>158</span>
+                    </div>
+
+                    {/* right */}
+                    <div className="right">
+                      <div className="icon">
+                        <RiStackLine />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* item */}
+                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                    <div className="left">
+                      <h5 className="text-gry">Lots</h5>
+                      <span>7.57</span>
+                    </div>
+
+                    {/* right */}
+                    <div className="right">
+                      <div className="icon">
+                        <AiOutlineAppstore />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* item */}
+                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                    <div className="left">
+                      <h5 className="text-gry">Win rate</h5>
+                      <span>75%</span>
+                    </div>
+
+                    {/* right */}
+                    <div className="right">
+                      <div className="icon">
+                        <AiOutlinePercentage />
+                      </div>
+                    </div>
+                  </div>
+                  {/* item */}
+                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                    <div className="left">
+                      <h5 className="text-gry">Average win</h5>
+                      <span>£8.70</span>
+                    </div>
+
+                    {/* right */}
+                    <div className="right">
+                      <div className="icon">
+                        <BsGraphUpArrow />
+                      </div>
+                    </div>
+                  </div>
+                  {/* item */}
+                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                    <div className="left">
+                      <h5 className="text-gry">Average loss</h5>
+                      <span>-£8.78</span>
+                    </div>
+
+                    {/* right */}
+                    <div className="right">
+                      <div className="icon">
+                        <BsGraphDownArrow />
+                      </div>
+                    </div>
+                  </div>
+                  {/* item */}
+                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                    <div className="left">
+                      <h5 className="text-gry">Average RRR</h5>
+                      <span>0.99</span>
+                    </div>
+
+                    {/* right */}
+                    <div className="right">
+                      <div className="icon">
+                        <MdMenuOpen />
+                      </div>
+                    </div>
+                  </div>
+                  {/* item */}
+                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                    <div className="left">
+                      <h5 className="text-gry">Expectancy</h5>
+                      <span>£4.44</span>
+                    </div>
+
+                    {/* right */}
+                    <div className="right">
+                      <div className="icon">
+                        <BiTime />
+                      </div>
+                    </div>
+                  </div>
+                  {/* item */}
+                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                    <div className="left">
+                      <h5 className="text-gry">Profit factor</h5>
+                      <span>3.10</span>
+                    </div>
+
+                    {/* right */}
+                    <div className="right">
+                      <div className="icon">
+                        <AiOutlinePieChart />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Buy / Sell & Direction Allocation
+             */}
+            <div className="buy-sell mt-8 text-xs">
+              <div className="wrap grid md:grid-cols-2 gap-6">
+                <div className="left grid gap-4">
+                  <div className="wrap">
+                    <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                      Buy / Sell
+                    </div>
+                  </div>
+                  <div className="card-border px-3 py-4  h-full w-full">
+                    <BarCharts data={buySellData} />
+                  </div>
+                </div>
+
+                {/* Barchart Chart */}
+                <div className="right grid gap-4">
+                  <div className="wrap">
+                    <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                      Direction Allocation
+                    </div>
+                  </div>
+                  <div className="chart card-border py-4">
+                    <PieCharts data={buysellPie} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Symbol & Symbol Allocation */}
+            <div className="symbol mt-8 text-xs">
+              <div className="wrap grid md:grid-cols-2 gap-6">
+                <div className="left grid gap-4">
+                  <div className="wrap">
+                    <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                      Symbol
+                    </div>
+                  </div>
+                  <div className="card-border px-3 py-4  h-full w-full">
+                    <BarCharts data={symbolData} />
+                  </div>
+                </div>
+
+                {/* Barchart Chart */}
+                <div className="right grid gap-4">
+                  <div className="wrap">
+                    <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                      Symbol Allocation
+                    </div>
+                  </div>
+                  <div className="chart card-border py-4">
+                    <PieCharts data={symbolAllocationData} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* history */}
+            <div className="history mt-8">
+              <div className="head text-[1.4rem] leading-6 text-wht-gradient">
+                History
+              </div>
+
+              <div className="wrap mt-4 card-border px-3 py-4 h-[400px] overflow-y-scroll">
+                <div className="w-full m-auto max-w-[80vw] md:max-w-[70vw] overflow-x-scroll pr-10 pb-10">
+                  <table className="">
+                    <thead>
+                      <tr className="border-b border-primary">
+                        <th align="left">Open</th>
+                        <th align="left">Action</th>
+                        <th align="left">Symbol</th>
+                        <th align="left">Volume</th>
+                        <th align="left">Open price</th>
+                        <th align="left">Close</th>
+                        <th align="left">Close price</th>
+                        <th align="left">Duration</th>
+                        <th align="left">Swap</th>
+                        <th align="left">Commission</th>
+                        <th align="left">Profit</th>
+                        <th align="left">Pip</th>
+                      </tr>
+                    </thead>
+
+                    {/* tbody */}
+                    <tbody>
+                      {historyData.map((data) => (
+                        <tr key={data.open}>
+                          <td>
+                            <span> {data.open} </span>
+                          </td>
+                          <td>
+                            <span
+                              className={`${
+                                data.Action === "buy"
+                                  ? "text-grn"
+                                  : "text-danger"
+                              } capitalize`}
+                            >
+                              {" "}
+                              {data.Action}{" "}
+                            </span>
+                          </td>
+                          <td>
+                            <span> {data.Symbol} </span>
+                          </td>
+                          <td>
+                            <span> {data.Volume}</span>
+                          </td>
+                          <td>
+                            <span> {data.OpenPrice} </span>
+                          </td>
+                          <td>
+                            <span> {data.Close}</span>
+                          </td>
+                          <td>
+                            <span> {data.ClosePrice} </span>
+                          </td>
+                          <td>
+                            <span> {data.Duration} </span>
+                          </td>
+                          <td>
+                            <span> {data.Swap} </span>
+                          </td>
+                          <td>
+                            <span> {data.Commission} </span>
+                          </td>
+                          <td>
+                            <span
+                              className={`${
+                                data.Profit.indexOf("-") === -1
+                                  ? "text-grn"
+                                  : "text-danger"
+                              } capitalize`}
+                            >
+                              {" "}
+                              {data.Profit}
+                            </span>
+                          </td>
+                          <td>
+                            <span
+                              className={`${
+                                data.Pip.indexOf("-") === -1
+                                  ? "text-grn"
+                                  : "text-danger"
+                              } capitalize`}
+                            >
+                              {" "}
+                              {data.Pip}{" "}
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

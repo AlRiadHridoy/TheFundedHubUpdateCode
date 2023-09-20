@@ -25,7 +25,7 @@ export default function TreadingHub() {
 
           <MotionY delay={0.4} cls="dashboard-img z-10 relative">
             <img
-              className="md:max-w-[90%] m-auto rounded-2xl border-[3px] border-primary/50"
+              className="md:max-w-[90%] m-auto rounded-2xl"
               src={dashboard}
               alt="dashboard"
             />

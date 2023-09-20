@@ -19,6 +19,8 @@ module.exports = {
         wht: "#dddddd",
         gry: "#a6a6a6",
         blu: "#4f46e5",
+        grn: "#00bf00",
+        danger: "#ef0000",
 
         dash: "#2B2C30",
         "dashboard-bg": "#090914",

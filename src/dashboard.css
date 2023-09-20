@@ -182,7 +182,7 @@
 
 /* card border */
 .card-border {
-  @apply bg-[#2B2C30]/[17%] backdrop-blur-3xl border border-all/20;
+  @apply bg-[#2B2C30]/[17%] backdrop-blur-3xl border border-all/20 !rounded-3xl;
 }
 /* Copied */
 .copied::before {
@@ -224,7 +224,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./assets/images/home-shadow.png");
+  background-image: url("./assets/images/home-shadow.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -311,4 +311,39 @@
 
 line {
   stroke: #5b5075 !important;
+}
+
+/* New dashboard */
+
+.new-dashboard table {
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  width: 100%;
+}
+
+.new-dashboard th {
+  @apply border-b border-primary/10 pb-2;
+}
+
+.new-dashboard td,
+.new-dashboard th {
+  @apply pl-2 pr-4 whitespace-nowrap;
+}
+.new-dashboard thead td {
+  @apply font-bold text-base;
+}
+.new-dashboard thead {
+  @apply pb-24 border-b border-primary/10;
+}
+
+.new-dashboard tbody tr {
+}
+
+.new-dashboard tbody td,
+.new-dashboard tbody span {
+  @apply !font-normal font-Montserrat !text-[0.8rem];
+}
+
+.statistics .icon {
+  @apply text-[1.35rem] bg-blu rounded-full p-2.5;
 }

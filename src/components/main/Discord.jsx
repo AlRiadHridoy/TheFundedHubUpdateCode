@@ -31,7 +31,7 @@ export default function Discord() {
                 <div className="mt-2 btn uppercase flex justify-center sm:justify-start">
                   <a
                     target="__blank"
-                    href="https://discord.gg/QUeY4kk7"
+                    href="https://discord.com/invite/96Mq2M2gdB"
                     className="uppercase font-base flex h-full justify-center items-center py-3 px-10 text-black border-primary rounded-3xl whitespace-nowrap font-Montserrat font-semibold text-[0.8rem] grd-btn max-w-[228px]"
                   >
                     Join our Discord
@@ -77,7 +77,7 @@ export default function Discord() {
               <div className="mt-2 btn uppercase flex justify-center items-center">
                 <a
                   target="__blank"
-                  href="https://discord.gg/QUeY4kk7"
+                  href="https://discord.com/invite/96Mq2M2gdB"
                   className="uppercase max-w-[228px] h-[48px] font-Montserrat text-center text-xs font-bold grd-btn-wht rounded-3xl w-full text-main-bg flex justify-center items-center"
                 >
                   Join our Discord

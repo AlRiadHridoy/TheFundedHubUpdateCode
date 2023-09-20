@@ -6,8 +6,7 @@ import MotionY from "../../ui/MotionY";
 
 // trader
 import metaTraderFive from "../../assets/images/meta-trader-5.webp";
-import metaTraderFour from "../../assets/images/meta-trader-4.webp";
-import blackBull from "../../assets/images/BBM-Partners.svg";
+import blackBull from "../../assets/images/BlackBull-logo.svg";
 
 // Import Swiper styles
 import "swiper/css";
@@ -46,11 +45,11 @@ export default function Benefits() {
             {/* Desktop Version */}
             <div className="w-full max-w-screen hidden lg:flex justify-center items-center relative">
               <div className="items grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 relative z-10">
-                <div className="wrap scale-100 hover:scale-105 transition-all duration-200">
+                <div className="wrap scale-100 hover:scale-105 transition-all duration-200 ">
                   {/* Item */}
                   <MotionY
                     delay={0.1}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem]"
+                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] border border-primary/[17%]"
                   >
                     <div className="head text-base">
                       <h5>
@@ -73,7 +72,7 @@ export default function Benefits() {
                   {/* Item */}
                   <MotionY
                     delay={0.2}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem]"
+                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] border border-primary/[17%]"
                   >
                     <div className="head text-base">
                       <h5>
@@ -96,7 +95,7 @@ export default function Benefits() {
                   {/* Item */}
                   <MotionY
                     delay={0.3}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem]"
+                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] border border-primary/[17%]"
                   >
                     <div className="head text-base">
                       <h5>
@@ -118,7 +117,7 @@ export default function Benefits() {
                   {/* Item */}
                   <MotionY
                     delay={0.4}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem]"
+                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] border border-primary/[17%]"
                   >
                     <div className="head text-base">
                       <h5>
@@ -137,11 +136,11 @@ export default function Benefits() {
                   </MotionY>
                 </div>
 
-                <div className="wrap scale-100 hover:scale-105 transition-all duration-200">
+                <div className="wrap scale-100 hover:scale-105 transition-all duration-200 ">
                   {/* Item */}
                   <MotionY
                     delay={0.5}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem]"
+                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] border border-primary/[17%]"
                   >
                     <div className="head text-base">
                       <h5>
@@ -283,33 +282,33 @@ export default function Benefits() {
               </Swiper>
             </div>
 
-            {/* trade logos */}
-            <div className="trade-logos flex justify-center sm:justify-end mt-8 w-full">
-              <div className="logos flex gap-4 items-center bg-black/[37%] py-2 xs:py-3 px-6 sm:px-12 rounded-full">
-                <div className="logo">
+            {/* trande area */}
+            <div className="trade mt-12 ">
+              <div className="bg-[#2B2C30]/[17%] border-[3px] border-primary/[17%] rounded-3xl p-6 grid gap-6 md:grid-cols-5 justify-center items-center max-w-[72rem] m-auto ">
+                <div className="left md:col-span-3">
+                  <h4 className="text-xl font-medium">Regulated Broker</h4>
+                  <p className="pt-2">
+                    Trade with lightning fast execution speed on a trusted &
+                    regulated broker Ranked #1 forex broker in execution speed
+                    by CompareForexBrokers.com
+                  </p>
+                </div>
+
+                {/* right */}
+                <div className="right md:col-span-2 md:place-self-end flex flex-col gap-3 justify-center items-center">
                   <img
-                    className="max-w-[8rem] w-full"
+                    className="max-w-[14rem] sm:max-w-[18rem] w-full"
                     src={blackBull}
-                    alt="Black-bull"
+                    alt="black-bull"
                   />
-                </div>
-                <div className="logo">
                   <img
-                    className="max-w-[8rem] w-full"
-                    src={metaTraderFour}
-                    alt="meta-trader-4"
-                  />
-                </div>
-                <div className="logo">
-                  <img
-                    className="max-w-[8rem] w-full"
+                    className="max-w-[9rem] w-full"
                     src={metaTraderFive}
-                    alt="meta-trader-5"
+                    alt="metaTrader-5"
                   />
                 </div>
               </div>
             </div>
-
             {/* Content Top */}
             <div className="content-top"></div>
 

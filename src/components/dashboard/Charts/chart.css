@@ -1,0 +1,202 @@
+/* ----------------- Line Charts ---------------------- */
+
+.lineChart {
+  width: 50%;
+}
+
+.lineChart > h3 {
+  color: white;
+  font-weight: 500;
+}
+
+.lineChart > .charts-wrapper {
+  /* height: 250px; */
+  position: relative;
+  width: 100%;
+  /* border: 1px solid grey;
+  border-radius: 20px;
+  background: #0d0d24; */
+  padding: 50px 10px 30px 0;
+}
+
+.lineChart > .charts-wrapper {
+  @apply h-[280px] sm:h-full;
+}
+.charts-wrapper > .buttons {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
+.buttons > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.buttons > div > h3 {
+  cursor: pointer;
+
+  color: grey;
+  font-weight: 500;
+  text-decoration-color: blue !important;
+  text-decoration-thickness: 5px !important;
+  margin-left: 10px;
+}
+
+/* ----------------- Line Charts ---------------------- */
+
+.barChart {
+  width: 30%;
+}
+
+.barChart > h3 {
+  color: white;
+  font-weight: 500;
+}
+
+.charts-wrapper {
+  width: 100%; /* Bar Chart Size*/
+  height: 500px;
+
+  position: relative;
+  /* border: 1px solid grey;
+  border-radius: 20px;
+  background: #0d0d24;
+  padding: 50px 4% 50px 0; */
+}
+
+.recharts-wrapper::after {
+  @apply !bottom-[-1rem];
+}
+
+/* ----------------- Line Charts ---------------------- */
+
+.lineChart {
+  width: 50%;
+}
+
+.lineChart > h3 {
+  color: white;
+  font-weight: 500;
+}
+
+.container > .buttons {
+  position: absolute;
+  top: 0;
+  right: 5%;
+}
+
+.buttons > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.buttons > div > h3 {
+  cursor: pointer;
+
+  color: grey;
+  font-weight: 500;
+  text-decoration-color: blue !important;
+  text-decoration-thickness: 5px !important;
+  margin-left: 10px;
+}
+
+/* ----------------- Line Charts ---------------------- */
+
+/* .recharts-tooltip-cursor {
+  fill: #2b2c3057;
+
+} */
+
+.barChart {
+  width: 100%;
+}
+
+.barChart > .container {
+  width: 96%; /* Bar Chart Size*/
+  height: 450px;
+
+  position: relative;
+  border-radius: 20px;
+  padding: 50px 4% 50px 0;
+}
+
+.positive-bar {
+  fill: #2196f3; /* Positive bar color */
+}
+
+.negative-bar {
+  fill: #ff5722; /* Negative bar color */
+}
+
+/* ----------------- Pie Charts ---------------------- */
+
+.pieChart {
+  width: 100%; /* Pie Chart container Size*/
+}
+
+.pieChart > h3 {
+  color: white;
+  font-weight: 500;
+}
+
+/* Customized Pichart library class */
+
+.pieChart .recharts-legend-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 90% !important;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.pieChart .recharts-default-legend {
+  width: auto;
+  display: inline-flex;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  height: 60px;
+}
+
+.pieChart ::-webkit-scrollbar {
+  height: 10px;
+}
+
+/* Handle */
+.pieChart ::-webkit-scrollbar-thumb {
+  background: rgb(97, 94, 94);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.pieChart ::-webkit-scrollbar-thumb:hover {
+  background: rgb(58, 56, 56);
+}
+
+.pieChart .recharts-legend-wrapper li {
+  display: flex !important;
+  align-items: center;
+  white-space: nowrap;
+}
+
+/* ----------------- Radial Bar Charts ---------------------- */
+
+.radialChart {
+  width: 100%; /* radial Chart container Size*/
+}
+
+.radialChart > h3 {
+  color: white;
+  font-weight: 500;
+}
+
+.radialChart .recharts-legend-wrapper {
+  width: auto !important;
+}
+
+.radialChart .recharts-legend-wrapper span {
+  color: gray;
+  font-weight: 500;
+}

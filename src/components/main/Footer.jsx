@@ -13,8 +13,6 @@ export default function Footer() {
     setActive(pathname);
   }, []);
 
-  console.log(pathname, active);
-
   return (
     <footer className="footer relative bg-black sm:bg-main-bg pt-12 pb-5 z-40">
       <div className="container relative z-10">

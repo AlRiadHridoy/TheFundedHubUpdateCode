@@ -5,6 +5,7 @@ import { useLocation, Outlet } from "react-router-dom";
 import DashNav from "../../components/dashboard/DashNav";
 import SiderNav from "../../components/dashboard/SiderNav";
 import DashboardHome from "./DashboardHome";
+// import NewDashboard from "./NewDashboard";
 import MobileSideNav from "../../components/dashboard/MobileSideNav";
 
 import "../../dashboard.css";

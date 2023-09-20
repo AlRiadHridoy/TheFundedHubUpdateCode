@@ -155,10 +155,12 @@ export default function MobileSideNav({ props }) {
                 </div>
               </li>
             </NavLink>
+
+            <div className="ml-14 mt-8 mb-12">
+              <SocialIcons />
+            </div>
           </ul>
         </div>
-
-        <SocialIcons />
       </aside>
     </div>
   );

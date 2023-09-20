@@ -5,7 +5,8 @@ import arrow from "../assets/images/arrow.svg";
 import circle from "../assets/images/circle.svg";
 import copy from "../assets/images/copy.svg";
 import tick from "../assets/images/tick.svg";
-import mobile from "../assets/images/discord-mobile.png";
+import shadow from "../assets/images/shadow.png";
+import mobile from "../assets/images/discord-mobile.webp";
 // import mainMobile from "../assets/images/main-mobile.png";
 
 // Dashboard Images
@@ -17,12 +18,11 @@ export {
   dashboard,
   discord,
   arrow,
-
   circle,
   copy,
   tick,
   mobile,
-
+  shadow,
   // Dashboard
   author,
   thumbHistory,

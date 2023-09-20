@@ -17,7 +17,7 @@ export default function Navbar() {
         </div>
         <div className="container">
           <div className="wrapper flex justify-between z-[999]">
-            <Link to="/" className="main-logo flex gap-1">
+            <Link to="/" className="main-logo">
               <img
                 className="max-w-[8rem] sm:max-w-[10rem]"
                 src={mainLogo}

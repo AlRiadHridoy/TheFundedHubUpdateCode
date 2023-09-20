@@ -1,19 +1,54 @@
-.main-content {
-  @apply mt-4 grid gap-6 font-Montserrat py-10 px-8 bg-light/30 rounded-xl font-normal;
+.blog-content {
+  @apply mt-10 grid gap-5 max-w-[768px] m-auto;
 }
 
-.para ol,
-.para ul {
+.blog-wrap-data {
+  @apply mt-4 font-Montserrat py-10 px-8 bg-light/30 rounded-xl font-normal;
+}
+
+.data {
+  @apply grid gap-6;
+}
+.blog-content div ol,
+.blog-content div ul {
   @apply ml-10 mt-5 grid gap-1.5;
 }
 
-.para ul {
+.blog-content div ul {
   @apply list-disc;
 }
 
-.des span,
-.para h4,
-.des h5,
-ul li span {
+.blog-content div span,
+.blog-content div h4,
+.blog-content div h5,
+.blog-content ul li span,
+.blog-content ol li span {
   @apply font-bold;
+}
+
+.blog-content div h4,
+.blog-content div h5,
+.blog-content div span {
+  @apply mb-1;
+}
+
+.blog-content {
+  @apply mt-10 grid gap-5 max-w-[768px] m-auto;
+}
+
+.blog-content h2 {
+  @apply font-medium text-2xl xs:text-[1.9rem] tracking-tight;
+}
+
+.blog-content p,
+i {
+  @apply text-[0.95rem] text-wht;
+}
+
+.blog-content h6 {
+  @apply text-[0.8rem] font-bold;
+}
+
+.blog-para-slice span {
+  @apply font-normal text-[0.9rem];
 }
