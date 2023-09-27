@@ -10,7 +10,6 @@ import axios from "axios";
 import video from "../assets/launching/TheFundedHub_Waiting.mp4";
 
 import { useEffect, useState } from "react";
-import CountDown from "./CountDown";
 import "./waitlist.css";
 
 export default function WaitingList() {
@@ -21,6 +20,7 @@ export default function WaitingList() {
   const [number, setNumber] = useState("");
   const [prefix, setPrefix] = useState("");
   const [active, setActive] = useState(false);
+  const [blink, setBlink] = useState(false);
 
   useEffect(() => {
     const cllfunc = () => {
@@ -98,7 +98,7 @@ export default function WaitingList() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative scroll-smooth">
       <div
         className={`release-modal transition-all duration-100 flex justify-center items-center
       visible opacity-100 bg-[#030307] purple-shadow min-h-screen`}
@@ -147,6 +147,19 @@ export default function WaitingList() {
                           <source src={video} />
                         </video>
                       </div>
+                      {/* scroll to waitlist form */}
+                      <div className="scroll-to flex justify-center sm:hidden">
+                        {/* btn */}
+
+                        <a
+                          onClick={() => setBlink(true)}
+                          href="#waitlist-form"
+                          className={`py-3 w-full rounded-3xl font-Montserrat font-semibold waitlist-btn glowing-btn  max-w-[15rem]`}
+                        >
+                          JOIN OUR WAITLIST
+                        </a>
+                      </div>
+
                       <div className="text fcol-span-3 flex flex-col justify-center gap-3 sm:gap-6">
                         {/* logo */}
                         <div className="logo max-w-[11rem] hidden sm:block">
@@ -187,6 +200,17 @@ export default function WaitingList() {
                             spreads.
                           </p>
                         </MotionX>
+                        {/* scroll to waitlist form */}
+                        <div className="scroll-to hidden sm:flex">
+                          {/* btn */}
+                          <a
+                            onClick={() => setBlink(true)}
+                            href="#waitlist-form"
+                            className={`py-3 w-full rounded-3xl font-Montserrat font-semibold waitlist-btn glowing-btn  max-w-[13.5rem]`}
+                          >
+                            JOIN OUR WAITLIST
+                          </a>
+                        </div>
                       </div>
                     </div>
 
@@ -231,12 +255,13 @@ export default function WaitingList() {
                       </div>
                     </div>
 
-                    {/* countdown */}
-                    <div className="justify-center items-center max-w-[50rem] m-auto hidden">
-                      <CountDown />
-                    </div>
                     {/* waitlist */}
-                    <div className="waitlist grid justify-center bg-main-bg/[40%] py-6 px-6 sm:px-16 md:px-20 rounded-3xl m-auto max-w-[56rem] mt-8 mb-10">
+                    <div
+                      id="waitlist-form"
+                      className={`waitlist grid justify-center bg-main-bg/[40%] py-6 px-6 sm:px-16 md:px-20 rounded-3xl m-auto max-w-[56rem] mt-8 mb-10 ${
+                        blink ? "after-click" : "waitform-bg"
+                      }`}
+                    >
                       {/* txt */}
                       <div className="left-text self-center text-xl text-center max-w-[40rem] m-auto mb-8">
                         <p className="">
@@ -247,6 +272,7 @@ export default function WaitingList() {
                         </p>
                       </div>
                       {/* waitlist form */}
+
                       <form
                         onSubmit={(e) => handleSubmit(e)}
                         className="validate w-full max-w-[40rem] m-auto"
@@ -286,18 +312,13 @@ export default function WaitingList() {
                               <MdEmail className="text-black text-base" />
                             </div>
                           </div>
-                         
                         </div>
                         {/* btn */}
                         <div className="btn grid justify-center items-center col-span-1 justify-self-center mt-6">
                           <button
-                            className={`py-3 px-12 rounded-3xl font-Montserrat font-semibold waitlist-btn ${
-                              active
-                                ? "glowing-btn"
-                                : "opacity-50 bg-blu cursor-default"
-                            }`}
+                            className={`py-3 px-8 rounded-3xl font-Montserrat font-semibold waitlist-btn glowing-btn `}
                           >
-                            JOIN OUR WAITLIST
+                            SIGN UP OUR WAITLIST
                           </button>
                         </div>
                       </form>
@@ -325,13 +346,6 @@ export default function WaitingList() {
               : ""
           }`}
         >
-          {/* <div className="loading h-2  absolute top-0 left-0 right-0">
-            <div
-              className={`h-2 bg-primary/70 ${
-                status === "filled" ? "load" : status === "not" ? "load" : "w-0"
-              }`}
-            ></div>
-          </div> */}
           <div className="subscribe text-base sm:text-xl font-nomal text-center pr-[1.5rem]">
             {status === "filled" ? (
               <div>

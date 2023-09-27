@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 .load {
   animation-name: reverse;
   animation-duration: 3000ms;
@@ -46,7 +49,7 @@
 }
 
 .react-tel-input .country-list .country.highlight {
-  background-color: #4f46e5 !important;
+  background-color: #c381fc !important;
 }
 
 .react-tel-input .country-list .country .dial-code {
@@ -54,5 +57,59 @@
 }
 
 .waitlist-btn {
-  @apply bg-primary/20 md:bg-transparent flex justify-center items-center py-3 px-7 sm:px-12 hover:text-white/70 text-white transition-all duration-200 rounded-3xl whitespace-nowrap font-Montserrat font-semibold text-[0.8rem] w-full uppercase text-center;
+  @apply bg-transparent flex justify-center items-center py-3 px-7 sm:px-12 hover:text-white/70 text-white transition-all duration-200 rounded-3xl whitespace-nowrap font-Montserrat font-semibold text-[0.8rem] w-full uppercase text-center;
+}
+
+.waitform-bg {
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+  border: none;
+  color: #eeeeee;
+  display: inline-block;
+  font-family: sans-serif;
+  font-size: 20px;
+  padding: 5px 15px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 0 15px #bbb7ff6b;
+  transition: 0.3s linear;
+}
+
+.after-click {
+  box-shadow: 0 0 15px #bbb7ff4b;
+  transition: 0.3s linear;
+  animation: blink 3000ms;
+  animation-delay: 1000ms;
+}
+@keyframes blink {
+  0% {
+    box-shadow: 0 0 15px #cdcaff;
+  }
+
+  100% {
+    box-shadow: 0 0 15px #bbb7ff4b;
+  }
+}
+
+.waitform-bg {
+  animation: waitglowing 1300ms infinite;
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 5px #c381fc;
+  }
+  50% {
+    box-shadow: 0 0 20px #c381fc;
+  }
+  100% {
+    box-shadow: 0 0 5px #c381fc;
+  }
+}
+.glowing-btn {
+  animation: glowing 1300ms infinite;
+}
+
+input {
+  @apply !text-base;
 }

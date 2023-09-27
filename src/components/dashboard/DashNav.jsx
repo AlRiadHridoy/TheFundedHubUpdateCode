@@ -1,15 +1,24 @@
 import { useEffect, useState, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
-import { IoIosNotifications } from "react-icons/io";
 import { CgMenuLeft } from "react-icons/cg";
 import { arrow } from "../../ui/images";
 
 // eslint-disable-next-line react/prop-types
 export default function DashNav({ props }) {
   const [accountOpen, setAccountOpen] = useState(false);
+  const [userName, setUserName] = useState("John Doe");
   const [notifOpen, setNotifOpen] = useState(false);
+  const [userOpen, setUserOpen] = useState(false);
   const refferance = useRef(null);
+
+  // user name first latter
+
+  const shortUserName = userName
+    .split(" ")
+    .map((name) => name.charAt(0))
+    .join("");
+
   // distructure
   const [setSideOpenMbl, sideOpenMbl] = props;
 
@@ -17,9 +26,9 @@ export default function DashNav({ props }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
     setAccountOpen(false);
     setNotifOpen(false);
+    setUserOpen(false);
   }, [pathname]);
 
   const handleClick = (text) => {
@@ -43,12 +52,12 @@ export default function DashNav({ props }) {
   }, [pathname]);
 
   return (
-    <header className="header-area px-[20px] z-[9999] fixed bg-black">
+    <header className="header-area px-[20px] z-[9999] fixed dash-nav floating-bars">
       <div className="header-left">
         {/* Accounts */}
         <div className="accounts relative h-[1.875rem] z-50">
           <div className="grid gap-2 absolute inset-0 min-w-[12rem]">
-            <div className="border border-primary/30 hover:border-primary/50 transition-all duration-200 rounded-lg bg-main-bg/40 w-full relative">
+            <div className="border border-primary/30 hover:border-primary/50 transition-all duration-200 rounded-lg floating-bars w-full relative">
               <header
                 onClick={() => setIsOpen(!isOpen)}
                 className="select-account flex justify-between cursor-pointer w-full py-[0.26rem] px-2.5"
@@ -67,13 +76,13 @@ export default function DashNav({ props }) {
               </header>
 
               <div
-                className={`select-account-options content overflow-hidden absolute border border-primary/0 transition-all duration-300 py-[0.26rem] w-full mt-2 rounded-lg font-Montserrat ${
+                className={`select-account-options dash-bar-clr content overflow-hidden absolute border border-primary/0 transition-all duration-300 py-[0.26rem] w-full mt-2 rounded-lg font-Montserrat floating-bars ${
                   isOpen
                     ? "max-h-[81px] opacity-100 visible"
                     : "max-h-0 opacity-0 invisible"
                 }`}
               >
-                <p
+                <div
                   ref={refferance}
                   className="grid gap-1 text-center text-[0.9rem] xs:text-base"
                 >
@@ -107,11 +116,11 @@ export default function DashNav({ props }) {
                   >
                     Funded - 7382691
                   </h5>
-                </p>
+                </div>
               </div>
             </div>
 
-            <div className="border-2 hidden border-primary/30 hover:border-primary/50 transition-all duration-200 rounded-lg bg-main-bg w-full">
+            <div className="border-2 hidden border-primary/30 hover:border-primary/50 transition-all duration-200 rounded-lg floating-bars w-full">
               <header
                 onClick={() => setIsOpen(!isOpen)}
                 className="flex justify-between cursor-pointer w-full py-[0.26rem] px-2.5"
@@ -133,7 +142,7 @@ export default function DashNav({ props }) {
                 style={{ maxHeight: isOpen ? paraHeight + "px" : "0" }}
                 className={`content transition-all duration-300 overflow-hidden`}
               >
-                <p
+                <div
                   ref={refferance}
                   className="grid gap-1 mt-1 text-[0.9rem] xs:text-base pb-4 px-4"
                 >
@@ -161,39 +170,57 @@ export default function DashNav({ props }) {
                   >
                     Funded
                   </h5>
-                </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="header-right">
-        <Link
-          to="/dashboard/billing"
-          className="capitalize hidden sm:inline-block font-Montserrat text-xs font-bold py-3 px-7 dash-btn rounded-3xl md:mr-4"
-        >
-          START NEW CHALLENGE
-        </Link>
+      <div className="header-right relative">
+        <div className="navigate relative font-Montserrat font-medium text-wht/90 hidden sm:inline-block">
+          <div
+            className="wrap flex gap-3 items-center cursor-pointer"
+            onClick={() => setUserOpen(!userOpen)}
+          >
+            <h4 className="user-name">{userName}</h4>
+            <div className="short-name uppercase border bg-blu/20 border-blu h-10 w-10 rounded-full flex justify-center items-center">
+              {shortUserName}
+            </div>
 
-        <div className="h-notification group hidden">
-          <div className="" onClick={() => handleClick("notification")}>
-            <div className="h-10 w-10 bg-primary/50 rounded-full cursor-pointer flex justify-center items-center">
-              <IoIosNotifications className="text-2xl" />
+            <div className="arrow">
+              <img className="w-5" src={arrow} alt="" />
             </div>
           </div>
 
+          {/* floating panel */}
           <div
-            className={`notification-open transition-all duration-500 ${
-              notifOpen
-                ? " scale-100 opacity-100 visible"
-                : "scale-50 opacity-0 invisible"
+            className={`floating absolute dash-bar-clr z-50 -bottom-[7rem] text-wht rounded-xl border border-primary/20 transition-all duration-300 transform ${
+              userOpen
+                ? "opacity-100 scale-100 -right-[1rem]"
+                : "opacity-0 scale-75 -right-[3rem]"
             }`}
           >
-            <h1 className="font-bold text-wht pb-[15px] mb-[20px] border-b border-primary/50 ">
-              Notifications
-            </h1>
-            <div className="content text-center">
-              <p>No Notification Here</p>
+            <div className="wrap">
+              <ul>
+                <li className="group">
+                  <Link
+                    to="profile"
+                    className="flex items-center  leading-[1.5] tracking-[-0.05px] py-[10px] transition-all duration-350 hover:bg-primary/10 ease-linear pl-4 pr-10"
+                    onClick={() => setUserOpen(false)}
+                  >
+                    My Profile
+                  </Link>
+                </li>
+                <li className="group">
+                  <Link
+                    to="/login"
+                    className="flex items-center leading-[1.5] tracking-[-0.05px] py-[10px] transition-all duration-350 hover:bg-primary/10 ease-linear pl-4 pr-10"
+                    onClick={() => setUserOpen(false)}
+                  >
+                    Logout
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -220,7 +247,7 @@ export default function DashNav({ props }) {
           </div>
 
           <div
-            className={`user-info-open absolute right-0 top-[70px] md:w-[228px] w-[280px] py-[10px] px-[20px] rounded-[10px] shadow-[0_1px_15px_rgba(199,179,252,0.13)] lg:origin-center origin-right bg-main-bg  z-[99999] transition-all duration-500 ${
+            className={`user-info-open absolute right-0 top-[70px] md:w-[228px] w-[280px] py-[10px] px-[20px] rounded-[10px] shadow-[0_1px_15px_rgba(199,179,252,0.13)] lg:origin-center origin-right floating-bars z-[99999] transition-all duration-500 ${
               accountOpen
                 ? " scale-100 opacity-100 visible"
                 : "scale-50 opacity-0 invisible"

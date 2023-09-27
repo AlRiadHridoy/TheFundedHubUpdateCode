@@ -1,13 +1,55 @@
-// Dashboard Images
-import thumbHistory from "../../assets/images/dashboard/thumb/thumb-11.png";
-// Tranding overview
-import bitcoin from "../../assets/images/dashboard/icon/bitcoin.svg";
-import deel from "../../assets/images/dashboard/icon/deel.svg";
-import usdt from "../../assets/images/dashboard/icon/usdt.svg";
-
+import { useState, useEffect, useRef } from "react";
+import { BsDownload } from "react-icons/bs";
+import { arrow } from "../../ui/images";
 export default function Withdraw() {
+  const [paraHeight, setparaHeight] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const refferance = useRef(null);
+
+  useEffect(() => {
+    setparaHeight(refferance.current.clientHeight);
+  }, [isOpen]);
+
+  const billingData = [
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+  ];
+
   return (
-    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadow-dash">
+    <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadow-dash min-h-screen">
       <div className="inner-content px-6">
         <div className="dashboard-wrapper relative">
           <div className="flex flex-wrap relative">
@@ -17,8 +59,8 @@ export default function Withdraw() {
                   <div className="content relative mb-[30px]">
                     <div className="flex relative z-10 flex-wrap justify-center mx-[-15px]">
                       <div className="xl:w-4/12 lg:w-4/12 md:w-6/12 w-full px-[15px]">
-                        <div className="p-6 rounded-[15px] mb-[30px] card-border backdrop-blur-3xl card-border">
-                          <h3 className="text-xl md:text-[1.4rem] font-semibold leading-[1.185] tracking-[-0.05px] mb-[20px] text-wht">
+                        <div className="p-6 rounded-[2rem] mb-[30px] dash-bar-clr backdrop-blur-3xl dash-bar-clr">
+                          <h3 className="text-xl md:text-[1.4rem] font-Montserrat font-semibold leading-[1.185] tracking-[-0.05px] mb-[20px] text-wht">
                             Account Profit
                           </h3>
                           <p className="xl:text-[16px] text-[15px] leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht/70">
@@ -30,8 +72,8 @@ export default function Withdraw() {
                         </div>
                       </div>
                       <div className="xl:w-4/12 lg:w-4/12 md:w-6/12 w-full px-[15px]">
-                        <div className="p-6 rounded-[15px] mb-[30px] card-border backdrop-blur-3xl card-border">
-                          <h3 className=" text-xl md:text-[1.4rem] font-semibold leading-[1.185] tracking-[-0.05px] mb-[20px]">
+                        <div className="p-6 rounded-[2rem] mb-[30px] dash-bar-clr backdrop-blur-3xl dash-bar-clr">
+                          <h3 className=" text-xl md:text-[1.4rem] font-Montserrat font-semibold leading-[1.185] tracking-[-0.05px] mb-[20px]">
                             Withdrawable Profit
                           </h3>
                           <p className="xl:text-[16px] text-[15px] leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht/70">
@@ -44,43 +86,19 @@ export default function Withdraw() {
                         </div>
                       </div>
                       <div className="xl:w-4/12 lg:w-4/12 md:w-6/12 w-full px-[15px]">
-                        <div className="p-6 rounded-[15px] mb-[30px] card-border backdrop-blur-3xl card-border">
-                          <h3 className="text-xl md:text-[1.4rem] font-semibold leading-[1.185] tracking-[-0.05px] mb-[20px] text-wht">
-                            Total Account Growth
+                        <div className="p-6 rounded-[2rem] mb-[30px] dash-bar-clr backdrop-blur-3xl dash-bar-clr">
+                          <h3 className="text-xl md:text-[1.4rem] font-Montserrat font-semibold leading-[1.185] tracking-[-0.05px] mb-[20px] text-wht">
+                            Withdraw Request
                           </h3>
                           <p className="xl:text-[16px] text-[15px] leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht/70">
                             Total Account Growth Percentage You&apos;ve Reached
                           </p>
-                          <p className="text-[34px] font-semibold leading-[1.185] tracking-[-0.24px] text-wht">
-                            0%
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-wrap relative z-10">
-                      <div className="w-full">
-                        <div className="flex flex-wrap items-center justify-between p-[30px] rounded-[15px] card-border backdrop-blur-3xl card-border">
-                          <div className="left">
-                            <h3 className="text-xl md:text-[1.4rem] font-semibold leading-[1.185] tracking-[-0.05px] mb-[20px] text-wht">
-                              Payment Methods
-                            </h3>
-                            <div className="flex flex-wrap gap-[15px] py-[5px]">
-                              <img className="w-[60px]" src={deel} alt="icon" />
-                              <img
-                                className="w-[60px]"
-                                src={bitcoin}
-                                alt="icon"
-                              />
-                              <img className="w-[60px]" src={usdt} alt="icon" />
-                            </div>
-                          </div>
-                          <div className="right md:mt-0 mt-8">
+                          <div className="btn">
                             <a
-                              href="#"
-                              className="font-Montserrat text-sm font-bold py-2.5 sm:py-4 px-8 dash-btn transition-all duration-200 rounded-3xl text-wht"
+                              className="capitalize hidden sm:inline-block font-Montserrat text-sm font-bold py-3 px-7 dash-btn rounded-3xl"
+                              href="/dashboard/billing"
                             >
-                              Withdraw Request
+                              Get your payout
                             </a>
                           </div>
                         </div>
@@ -94,20 +112,107 @@ export default function Withdraw() {
 
           <div className="flex flex-wrap relative">
             <div className="w-full">
-              <div className="card-wrap card-border">
-                <div className="card-heading flex items-center justify-between mb-[20px]">
-                  <h3 className="!mb-0 text-xl md:text-[1.4rem] font-semibold leading-[1.185] tracking-[-0.05px]">
+              <div className="card-wrap dash-bar-clr rounded-[2rem]">
+                <div
+                  className="card-heading flex items-center justify-between cursor-pointer"
+                  onClick={() => setIsOpen(!isOpen)}
+                >
+                  <h3 className="text-[1.1rem] font-Montserrat font-semibold leading-[1.185] tracking-[-0.05px]">
                     Withdraw History
                   </h3>
-                </div>
-                <div className="content">
-                  <div className="withdraw-history text-center py-[40px]">
-                    <div className="thumb inline-block mb-[24px]">
-                      <img src={thumbHistory} alt="thumb" />
-                    </div>
-                    <p>No history found!</p>
+
+                  <div className="arrow">
+                    <img
+                      className={`max-w-[1.4rem] transform-gpu transition-all duration-300 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                      src={arrow}
+                      alt="arrow"
+                    />
                   </div>
                 </div>
+                <article className="dash-home-bg rounded-xl">
+                  <div
+                    style={{ maxHeight: isOpen ? paraHeight + "px" : "0" }}
+                    className={`width-content transition-all duration-300 overflow-hidden`}
+                  >
+                    <div ref={refferance} className="wrapper">
+                      <div className="billing-data bg-transparent px-3 py-4 overflow-y-scroll">
+                        <div className="w-full m-auto max-w-[80vw] md:max-w-[70vw] overflow-x-scroll">
+                          <table className="font-Montserrat w-full">
+                            <thead>
+                              <tr className="whitespace-nowrap">
+                                <th align="left">Pay</th>
+                                <th align="left">Funded challenge</th>
+                                <th align="left">Dates</th>
+                                <th align="left">Amount</th>
+                                <th align="left">Account</th>
+                                <th align="left">status</th>
+                                <th align="left">Invoice</th>
+                              </tr>
+                            </thead>
+
+                            {/* tbody */}
+                            <tbody>
+                              {billingData.map((data, i) => (
+                                <tr key={data.open + i}>
+                                  <td> -- </td>
+                                  <td>
+                                    <div>
+                                      <div className="nm text-all">
+                                        Funded challenge
+                                      </div>
+                                      <div className="acnt-sizes flex gap-1">
+                                        <div className="text-gry">
+                                          Account size:
+                                        </div>
+                                        {data.accountSize}
+                                      </div>
+                                      <div className="perf flex gap-1">
+                                        <div className="text-gry">
+                                          Proforma no.:
+                                        </div>
+                                        {data.ProformaNo}
+                                      </div>
+                                    </div>
+                                  </td>
+
+                                  <td>
+                                    <div className="dates">
+                                      <div className="date1">{data.date1}</div>
+                                      <div className="date2">{data.date2}</div>
+                                    </div>
+                                  </td>
+
+                                  <td>
+                                    <div className="amount">{data.amount}</div>
+                                  </td>
+
+                                  <td>
+                                    <div>Funded</div>
+                                    <div>MT5</div>
+                                  </td>
+
+                                  <td>
+                                    <div className="paid py-2 text-center rounded-xl bg-grn text-white">
+                                      paid
+                                    </div>
+                                  </td>
+
+                                  <td>
+                                    <div className="invoice flex justify-center items-center">
+                                      <BsDownload className=" cursor-pointer" />
+                                    </div>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
           </div>

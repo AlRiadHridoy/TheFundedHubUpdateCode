@@ -1,12 +1,77 @@
 import { useState } from "react";
-import PriceTable from "../../components/PriceTable";
+
+import { BsDownload } from "react-icons/bs";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 
 export default function Billing() {
-  const [planSwap, setPlanSwap] = useState(true);
+  const billingData = [
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+    {
+      accountSize: "£10,000",
+      ProformaNo: "18056525",
+      date1: "6 Mar 2022",
+      date2: "7 Mar 2022",
+      amount: "€155.00",
+    },
+  ];
 
   return (
     <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 min-h-screen bg-black  purple-shadow-dash">
@@ -32,50 +97,91 @@ export default function Billing() {
                   {/* Content */}
                   <div className="content">
                     <div className="tabs-wrap">
-                      <ul className="flex flex-wrap justify-center items-center gap-[20px] mb-[40px] relative z-10">
-                        {/* My plan */}
-                        <li className="inline-block group">
-                          <button
-                            className={`px-[30px] py-[12px] rounded-2xl shadow-[0_4px_10px_rgba(255,255,255,0.02)]  flex gap-2 ${
-                              planSwap ? "bg-blu" : ""
-                            }`}
-                            onClick={() => setPlanSwap(!planSwap)}
-                          >
-                            Get Funded
-                          </button>
-                        </li>
-                        {/* Payment history */}
-                        <li className="inline-block mr-[10px]">
-                          <button
-                            className={`flex gap-2 items-center px-[30px] py-[12px] rounded-2xl shadow-[0_4px_10px_rgba(255,255,255,0.02)] ${
-                              !planSwap ? "bg-blu" : ""
-                            }`}
-                            onClick={() => setPlanSwap(!planSwap)}
-                          >
-                            Payment History
-                          </button>
-                        </li>
-                      </ul>
-                      <div className="">
-                        <div className="tab-content tab-space">
-                          {/* Prices */}
-                          <div
-                            className={`prices relative  ${
-                              planSwap ? "" : "hidden"
-                            }`}
-                          >
-                            <PriceTable />
-                          </div>
-                        </div>
-
-                        {/* History */}
-                        <div
-                          className={`payment-method h-full text-center py-[40px] ${
-                            !planSwap ? "" : "hidden"
-                          }`}
-                        >
+                      {/* History */}
+                      <div className={`payment-method h-full text-center `}>
+                        {billingData === "" ? (
                           <p>No history found!</p>
-                        </div>
+                        ) : (
+                          <div className="billing-data dash-home-bg px-8 py-4 ">
+                            <div className="m-auto max-w-[1200px] overflow-x-scroll whitespace-nowrap pb-6">
+                              <table className="font-Montserrat w-full">
+                                <thead>
+                                  <tr className="whitespace-nowrap">
+                                    <th align="left">Pay</th>
+                                    <th align="left">Funded challenge</th>
+                                    <th align="left">Dates</th>
+                                    <th align="left">Amount</th>
+                                    <th align="left">Account</th>
+                                    <th align="left">status</th>
+                                    <th align="left">Invoice</th>
+                                  </tr>
+                                </thead>
+
+                                {/* tbody */}
+                                <tbody>
+                                  {billingData.map((data, i) => (
+                                    <tr key={data.open + i}>
+                                      <td> -- </td>
+                                      <td>
+                                        <div>
+                                          <div className="nm text-all">
+                                            Funded challenge
+                                          </div>
+                                          <div className="acnt-sizes flex gap-1">
+                                            <div className="text-gry">
+                                              Account size:
+                                            </div>
+                                            {data.accountSize}
+                                          </div>
+                                          <div className="perf flex gap-1">
+                                            <div className="text-gry">
+                                              Proforma no.:
+                                            </div>
+                                            {data.ProformaNo}
+                                          </div>
+                                        </div>
+                                      </td>
+
+                                      <td>
+                                        <div className="dates">
+                                          <div className="date1">
+                                            {data.date1}
+                                          </div>
+                                          <div className="date2">
+                                            {data.date2}
+                                          </div>
+                                        </div>
+                                      </td>
+
+                                      <td>
+                                        <div className="amount">
+                                          {data.amount}
+                                        </div>
+                                      </td>
+
+                                      <td>
+                                        <div>Funded</div>
+                                        <div>MT5</div>
+                                      </td>
+
+                                      <td>
+                                        <div className="paid py-2 text-center rounded-xl bg-grn text-white w-[4.5rem]">
+                                          paid
+                                        </div>
+                                      </td>
+
+                                      <td>
+                                        <div className="invoice flex justify-center items-center">
+                                          <BsDownload className=" cursor-pointer" />
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>

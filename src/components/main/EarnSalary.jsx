@@ -40,7 +40,7 @@ export default function EarnSalary() {
         {truthy ? (
           <div className="items grid xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 justify-center items-center text-[0.9rem] text-center">
             {/* item */}
-            <div className="wrap scale-100 hover:scale-105 transition-all duration-200">
+            <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow">
               <MotionY
                 delay={0.1}
                 cls="item flex flex-col gap-5 justify-center items-center text-base sm:text-lg bg-main-bg/90  md:bg-[#2B2C30]/[17%] border border-all/20 rounded-2xl py-4 px-4 md:border-none"
@@ -65,7 +65,7 @@ export default function EarnSalary() {
               </MotionY>
             </div>
             {/* item */}
-            <div className="wrap scale-100 hover:scale-105 transition-all duration-200">
+            <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow">
               <MotionY
                 delay={0.2}
                 cls="item flex flex-col gap-5 justify-center items-center text-base sm:text-lg bg-main-bg/90  md:bg-[#2B2C30]/[17%] border border-all/20 rounded-2xl py-4 px-4 md:border-none"
@@ -90,7 +90,7 @@ export default function EarnSalary() {
               </MotionY>
             </div>
             {/* item */}
-            <div className="wrap scale-100 hover:scale-105 transition-all duration-200">
+            <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow">
               <MotionY
                 delay={0.3}
                 cls="item flex flex-col gap-5 justify-center items-center text-base sm:text-lg bg-main-bg/90  md:bg-[#2B2C30]/[17%] border border-all/20 rounded-2xl py-4 px-4 md:border-none"
@@ -115,7 +115,7 @@ export default function EarnSalary() {
               </MotionY>
             </div>
             {/* item */}
-            <div className="wrap scale-100 hover:scale-105 transition-all duration-200">
+            <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow">
               <MotionY
                 delay={0.4}
                 cls="item flex flex-col gap-5 justify-center items-center text-base sm:text-lg bg-main-bg/90  md:bg-[#2B2C30]/[17%] border border-all/20 rounded-2xl py-4 px-4  md:border-none"
@@ -140,7 +140,7 @@ export default function EarnSalary() {
               </MotionY>
             </div>
             {/* item */}
-            <div className="wrap scale-100 hover:scale-105 transition-all duration-200">
+            <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow">
               <MotionY
                 delay={0.5}
                 cls="item flex flex-col gap-5 justify-center items-center text-base sm:text-lg bg-main-bg/90  md:bg-[#2B2C30]/[17%] border border-all/20 rounded-2xl py-4 px-4 md:border-none"
@@ -165,10 +165,10 @@ export default function EarnSalary() {
               </MotionY>
             </div>
             {/* item */}
-            <div className="wrap scale-100 hover:scale-105 transition-all duration-200 ">
+            <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow">
               <MotionY
                 delay={0.5}
-                cls="item flex flex-col gap-5 justify-center items-center text-base sm:text-lg bg-main-bg/90  md:bg-[#2B2C30]/[17%] border border-all/20 rounded-2xl py-4 px-4 md:border-none relative"
+                cls="item flex flex-col gap-5 justify-center items-center text-base sm:text-lg bg-main-bg/90  md:bg-[#2B2C30]/[17%] border border-all/20 rounded-2xl py-4 px-4 md:border-none relative "
               >
                 {/* top */}
                 <div className="top text-center">
@@ -187,9 +187,6 @@ export default function EarnSalary() {
                     Salary
                   </h6>
                 </div>
-
-                {/* shadow */}
-                <div className="bottom-shadow"></div>
               </MotionY>
             </div>
           </div>

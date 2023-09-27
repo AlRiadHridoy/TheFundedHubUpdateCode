@@ -84,16 +84,30 @@ export default function NewDashboard() {
   ];
 
   // pie chart
-  const symbolAllocationData = [
-    { name: "US30.cash", value: 30.3, fill: "#f59e0b" },
-    { name: "US100.cash", value: 34.6, fill: "#84cc16" },
-    { name: "GER30.cash", value: 33.7, fill: "#5b21b6" },
-    { name: "BTC", value: 1.4, fill: "#3b82f6" },
-  ];
-  const buysellPie = [
-    { name: "Sell", value: 30, fill: "#dc2626" },
-    { name: "Buy", value: 70, fill: "#84cc16" },
-  ];
+  const symbolAllocationData = {
+    data: [
+      { name: "US30.cash", value: 30.3 },
+      { name: "US100.cash", value: 34.6 },
+      { name: "GER30.cash", value: 33.7 },
+      { name: "BTC", value: 1.4 },
+    ],
+    color: [
+      { start: "#be185d", end: "#ec4899" },
+      { start: "#6b21a8", end: "#a855f7" },
+      { start: "#1e40af", end: "#6366f1" },
+      { start: "#0e7490", end: "#22d3ee" },
+    ],
+  };
+  const buysellPie = {
+    data: [
+      { name: "Sell", value: 30 },
+      { name: "Buy", value: 70 },
+    ],
+    color: [
+      { start: "#ef4444", end: "#b91c1c" },
+      { start: "#84cc16", end: "#15803d" },
+    ],
+  };
   const symbolData = [
     {
       name: "GBPUSD.tff",
@@ -304,7 +318,7 @@ export default function NewDashboard() {
   }, [pathname]);
 
   return (
-    <main className="new-dashboard relative pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadow-dash">
+    <main className="new-dashboard relative pt-16 sm:pb-6 sm:pt-24 bg-black">
       <div className="content-wrapper relative">
         <div className="inner-content px-6 relative">
           <div className="flex flex-col xs:flex-row gap-5 relative mb-10 md:hidden">
@@ -323,7 +337,7 @@ export default function NewDashboard() {
 
           {/* Dashboard */}
           <div className="dashboard-wrapper z-10 grid gap-6 font-Montserrat font-normal text-sm">
-            <div className="head flex flex-col xs:flex-row gap-6 justify-between">
+            <div className="head flexf flex-col xs:flex-row gap-6 justify-between hidden">
               <div className="left flex  items-center gap-4">
                 <div className="symbol bg-blu p-2.5 sm:p-3 rounded-full">
                   <BsCurrencyPound className="text-2xl" />
@@ -341,10 +355,10 @@ export default function NewDashboard() {
               </div>
             </div>
             {/* balance chart */}
-            <div className="wrap grid md:grid-cols-3 gap-6 mt-5">
+            <div className="wrap grid md:grid-cols-3 gap-6">
               <div className="balance-chart col-span-2 hidden">
                 {/* ReChart section */}
-                <div className="ApexChart relative z-10 grid gap-4 card-border rounded-xl mt-6 md:mt-0">
+                <div className="ApexChart relative z-10 grid gap-4 dash-home-bg rounded-xl mt-6 md:mt-0">
                   {/* rechart */}
                   <div className="min-h-[300px] sm:h-[280px] md:min-h-[420px] rounded-xl py-4 md:p-6 pr-4 md:mt-4"></div>
                 </div>
@@ -357,7 +371,7 @@ export default function NewDashboard() {
                     Balance chart
                   </div>
                 </div>
-                <div className="card-border overflow-hidden w-full max-h-full">
+                <div className="dash-home-bg overflow-hidden w-full max-h-full">
                   <LineCharts />
                 </div>
               </div>
@@ -372,7 +386,7 @@ export default function NewDashboard() {
                     passed
                   </div>
                 </div>
-                <div className="wrap card-border py-4 px-4 text-sm h-full">
+                <div className="wrap dash-home-bg py-6 px-4 text-sm h-full">
                   <div className=" grid gap-8">
                     <div className="txt flex gap-4 justify-between">
                       <div className="name text-gry">Deposit:</div>
@@ -380,11 +394,11 @@ export default function NewDashboard() {
                     </div>
                     <div className="txt flex gap-4 justify-between">
                       <div className="name text-gry">Start date:</div>
-                      <div className="value">Aug 30, 2023, 6:10:29 PM</div>
+                      <div className="value">Aug 11, 2023, 6:20:20 PM</div>
                     </div>
                     <div className="txt flex gap-4 justify-between">
                       <div className="name text-gry">Broker:</div>
-                      <div className="value">True Proprietary Funds Kft.</div>
+                      <div className="value">BlackBull</div>
                     </div>
                     <div className="txt flex gap-4 justify-between">
                       <div className="name text-gry">Platform:</div>
@@ -392,15 +406,19 @@ export default function NewDashboard() {
                     </div>
                     <div className="txt flex gap-4 justify-between">
                       <div className="name text-gry">Balance:</div>
-                      <div className="value">£10,701.27</div>
+                      <div className="value">£10,425.05</div>
                     </div>
                     <div className="txt flex gap-4 justify-between">
                       <div className="name text-gry">Equity:</div>
-                      <div className="value">£10,701.27</div>
+                      <div className="value">£10,425.05</div>
                     </div>
                     <div className="txt flex gap-4 justify-between">
                       <div className="name text-gry">Last update:</div>
-                      <div className="value">Sep 13, 2023, 2:02:58 PM</div>
+                      <div className="value">Sep 10, 2023, 5:06:47 PM</div>
+                    </div>
+                    <div className="txt flex gap-4 justify-between">
+                      <div className="name text-gry">Created:</div>
+                      <div className="value">Sep 10, 2023</div>
                     </div>
                   </div>
                 </div>
@@ -408,24 +426,24 @@ export default function NewDashboard() {
             </div>
             {/* options */}
             <div className="wrap grid sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-5 text-sm pt-2">
-              <div className="card-border p-4">
+              <div className="dash-home-bg p-4">
                 <div className="top text-[0.8rem] flex justify-between gap-1">
                   <div className="text-gry">Balance</div>
-                  <div className="text-green-500 ">+£701.27</div>
+                  <div className="text-green-500 ">+£425.05</div>
                 </div>
 
-                <div className="val font-bold">£10,701.27</div>
+                <div className="val font-bold">£10,425.05</div>
               </div>
-              <div className="card-border p-4">
+              <div className="dash-home-bg p-4">
                 <div className="top text-[0.8rem] flex justify-between gap-1">
                   <div className="text-gry">Equity</div>
-                  <div className="text-green-500 ">+£701.27</div>
+                  <div className="text-green-500 ">+£425.05</div>
                 </div>
 
-                <div className="val font-bold">£10,701.27</div>
+                <div className="val font-bold">£10,425.05</div>
               </div>
 
-              <div className="card-border p-4">
+              <div className="dash-home-bg p-4">
                 <div className="top text-[0.8rem] flex justify-between gap-1">
                   <div className="text-gry">Today’s Permitted Loss</div>
                 </div>
@@ -433,14 +451,14 @@ export default function NewDashboard() {
                 <div className="val font-bold">Not available</div>
               </div>
 
-              <div className="card-border p-4">
+              <div className="dash-home-bg p-4">
                 <div className="top text-[0.8rem] flex justify-between gap-1">
                   <div className="text-gry">Max. Permitted Loss</div>
                 </div>
 
                 <div className="val font-bold">Not available</div>
               </div>
-              <div className="card-border p-4">
+              <div className="dash-home-bg p-4">
                 <div className="top text-[0.8rem] flex justify-between gap-1">
                   <div className="text-gry">Today&apos;s Profit</div>
                 </div>
@@ -448,6 +466,7 @@ export default function NewDashboard() {
                 <div className="val font-bold">£0.00</div>
               </div>
             </div>
+
             {/* two side */}
             <div className="wrap mt-8">
               <div className="head text-[1.4rem] leading-6 text-wht-gradient">
@@ -455,7 +474,7 @@ export default function NewDashboard() {
               </div>
 
               <div className="items mt-4 grid sm:grid-cols-2 gap-4">
-                <div className="item card-border p-5">
+                <div className="item dash-home-bg p-5">
                   <div className="top flex justify-between items-center border-b border-primary/10 pb-4">
                     <div className="txt flex gap-4 items-center">
                       <div className="pas bg-grn p-1.5 px-2.5 rounded-2xl text-white">
@@ -474,7 +493,7 @@ export default function NewDashboard() {
                   </div>
                 </div>
 
-                <div className="item card-border p-5">
+                <div className="item dash-home-bg p-5">
                   <div className="top flex justify-between items-center border-b border-primary/10 pb-4">
                     <div className="txt flex gap-4 items-center">
                       <div className="pas bg-grn p-1.5 px-2.5 rounded-2xl text-white">
@@ -503,7 +522,7 @@ export default function NewDashboard() {
                       Daily Summary
                     </div>
                   </div>
-                  <div className="card-border px-3 py-4 h-full">
+                  <div className="dash-home-bg px-3 py-4 h-full">
                     <table>
                       <thead>
                         <tr className="border-b border-primary">
@@ -551,7 +570,7 @@ export default function NewDashboard() {
                       Daily Returns
                     </div>
                   </div>
-                  <div className="chart card-border py-4 max-h-full">
+                  <div className="chart dash-home-bg py-4 max-h-full">
                     <BarCharts data={weeklyData} percent={1} />
                   </div>
                 </div>
@@ -559,26 +578,26 @@ export default function NewDashboard() {
             </div>
             {/* win & bar chart */}
             <div className="win-loss mt-8 text-xs">
-              <div className="wrap flex flex-col md:grid md:grid-cols-5 gap-6 ">
-                <div className="left md:col-span-2 grid gap-4">
+              <div className="wrap flex flex-col md:grid md:grid-cols-2 gap-6 ">
+                <div className="left flex flex-col gap-4">
                   <div className="wrap">
                     <div className="head text-[1.4rem] leading-6 text-wht-gradient">
                       Wins & Losses
                     </div>
                   </div>
-                  <div className="card-border px-3 py-4  h-full w-full">
+                  <div className="dash-home-bg px-3 py-4 h-[580px]  sm:h-full w-full">
                     <RadialBarCharts />
                   </div>
                 </div>
 
                 {/* Barchart Chart */}
-                <div className="right md:col-span-3 grid gap-4">
+                <div className="right  grid gap-4">
                   <div className="wrap flex">
                     <div className="head text-[1.4rem] leading-6 text-wht-gradient">
                       Profit by Holding time
                     </div>
                   </div>
-                  <div className="chart card-border py-4">
+                  <div className="chart dash-home-bg py-4">
                     <BarCharts data={profitData} />
                   </div>
                 </div>
@@ -594,14 +613,14 @@ export default function NewDashboard() {
 
               <div className="wrap mt-4">
                 <div className="items grid xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                  <div className="item dash-home-bg p-4 flex gap-4 justify-center items-center text-center">
                     <div className="left">
                       <h5 className="text-gry">Best trade</h5>
                       <span>£27.17</span>
                     </div>
 
                     {/* right */}
-                    <div className="right">
+                    <div className="right hidden">
                       <div className="icon">
                         <PiSuitcaseSimpleFill />
                       </div>
@@ -609,28 +628,28 @@ export default function NewDashboard() {
                   </div>
 
                   {/* item */}
-                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                  <div className="item dash-home-bg p-4 flex gap-4 justify-center items-center text-center">
                     <div className="left">
                       <h5 className="text-gry">Worst trade</h5>
                       <span>-£26.27</span>
                     </div>
 
                     {/* right */}
-                    <div className="right">
+                    <div className="right hidden">
                       <div className="icon">
                         <BiDollar />
                       </div>
                     </div>
                   </div>
                   {/* item */}
-                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                  <div className="item dash-home-bg p-4 flex gap-4 justify-center items-center text-center">
                     <div className="left">
                       <h5 className="text-gry">No. of trades</h5>
                       <span>158</span>
                     </div>
 
                     {/* right */}
-                    <div className="right">
+                    <div className="right hidden">
                       <div className="icon">
                         <RiStackLine />
                       </div>
@@ -638,14 +657,14 @@ export default function NewDashboard() {
                   </div>
 
                   {/* item */}
-                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                  <div className="item dash-home-bg p-4 flex gap-4 justify-center items-center text-center">
                     <div className="left">
                       <h5 className="text-gry">Lots</h5>
                       <span>7.57</span>
                     </div>
 
                     {/* right */}
-                    <div className="right">
+                    <div className="right hidden">
                       <div className="icon">
                         <AiOutlineAppstore />
                       </div>
@@ -653,84 +672,84 @@ export default function NewDashboard() {
                   </div>
 
                   {/* item */}
-                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                  <div className="item dash-home-bg p-4 flex gap-4 justify-center items-center text-center">
                     <div className="left">
                       <h5 className="text-gry">Win rate</h5>
                       <span>75%</span>
                     </div>
 
                     {/* right */}
-                    <div className="right">
+                    <div className="right hidden">
                       <div className="icon">
                         <AiOutlinePercentage />
                       </div>
                     </div>
                   </div>
                   {/* item */}
-                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                  <div className="item dash-home-bg p-4 flex gap-4 justify-center items-center text-center">
                     <div className="left">
                       <h5 className="text-gry">Average win</h5>
                       <span>£8.70</span>
                     </div>
 
                     {/* right */}
-                    <div className="right">
+                    <div className="right hidden">
                       <div className="icon">
                         <BsGraphUpArrow />
                       </div>
                     </div>
                   </div>
                   {/* item */}
-                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                  <div className="item dash-home-bg p-4 flex gap-4 justify-center items-center text-center">
                     <div className="left">
                       <h5 className="text-gry">Average loss</h5>
                       <span>-£8.78</span>
                     </div>
 
                     {/* right */}
-                    <div className="right">
+                    <div className="right hidden">
                       <div className="icon">
                         <BsGraphDownArrow />
                       </div>
                     </div>
                   </div>
                   {/* item */}
-                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                  <div className="item dash-home-bg p-4 flex gap-4 justify-center items-center text-center">
                     <div className="left">
                       <h5 className="text-gry">Average RRR</h5>
                       <span>0.99</span>
                     </div>
 
                     {/* right */}
-                    <div className="right">
+                    <div className="right hidden">
                       <div className="icon">
                         <MdMenuOpen />
                       </div>
                     </div>
                   </div>
                   {/* item */}
-                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                  <div className="item dash-home-bg p-4 flex gap-4 justify-center items-center text-center">
                     <div className="left">
                       <h5 className="text-gry">Expectancy</h5>
                       <span>£4.44</span>
                     </div>
 
                     {/* right */}
-                    <div className="right">
+                    <div className="right hidden">
                       <div className="icon">
                         <BiTime />
                       </div>
                     </div>
                   </div>
                   {/* item */}
-                  <div className="item card-border p-4 flex gap-4 justify-between items-center">
+                  <div className="item dash-home-bg p-4 flex gap-4 justify-center items-center text-center">
                     <div className="left">
                       <h5 className="text-gry">Profit factor</h5>
                       <span>3.10</span>
                     </div>
 
                     {/* right */}
-                    <div className="right">
+                    <div className="right hidden">
                       <div className="icon">
                         <AiOutlinePieChart />
                       </div>
@@ -743,13 +762,13 @@ export default function NewDashboard() {
              */}
             <div className="buy-sell mt-8 text-xs">
               <div className="wrap grid md:grid-cols-2 gap-6">
-                <div className="left grid gap-4">
+                <div className="left flex flex-col gap-4">
                   <div className="wrap">
                     <div className="head text-[1.4rem] leading-6 text-wht-gradient">
                       Buy / Sell
                     </div>
                   </div>
-                  <div className="card-border px-3 py-4  h-full w-full">
+                  <div className="dash-home-bg px-3 py-4  h-full ">
                     <BarCharts data={buySellData} />
                   </div>
                 </div>
@@ -761,8 +780,8 @@ export default function NewDashboard() {
                       Direction Allocation
                     </div>
                   </div>
-                  <div className="chart card-border py-4">
-                    <PieCharts data={buysellPie} />
+                  <div className="chart dash-home-bg py-4">
+                    <PieCharts pieData={buysellPie} />
                   </div>
                 </div>
               </div>
@@ -770,13 +789,13 @@ export default function NewDashboard() {
             {/* Symbol & Symbol Allocation */}
             <div className="symbol mt-8 text-xs">
               <div className="wrap grid md:grid-cols-2 gap-6">
-                <div className="left grid gap-4">
+                <div className="left flex flex-col gap-4">
                   <div className="wrap">
                     <div className="head text-[1.4rem] leading-6 text-wht-gradient">
                       Symbol
                     </div>
                   </div>
-                  <div className="card-border px-3 py-4  h-full w-full">
+                  <div className="dash-home-bg px-3 py-4  h-full w-full">
                     <BarCharts data={symbolData} />
                   </div>
                 </div>
@@ -788,8 +807,8 @@ export default function NewDashboard() {
                       Symbol Allocation
                     </div>
                   </div>
-                  <div className="chart card-border py-4">
-                    <PieCharts data={symbolAllocationData} />
+                  <div className="chart dash-home-bg py-4">
+                    <PieCharts pieData={symbolAllocationData} />
                   </div>
                 </div>
               </div>
@@ -800,7 +819,7 @@ export default function NewDashboard() {
                 History
               </div>
 
-              <div className="wrap mt-4 card-border px-3 py-4 h-[400px] overflow-y-scroll">
+              <div className="wrap mt-4 dash-home-bg px-3 py-4 h-[400px] overflow-y-scroll">
                 <div className="w-full m-auto max-w-[80vw] md:max-w-[70vw] overflow-x-scroll pr-10 pb-10">
                   <table className="">
                     <thead>
@@ -822,8 +841,8 @@ export default function NewDashboard() {
 
                     {/* tbody */}
                     <tbody>
-                      {historyData.map((data) => (
-                        <tr key={data.open}>
+                      {historyData.map((data, i) => (
+                        <tr key={data.open + i}>
                           <td>
                             <span> {data.open} </span>
                           </td>

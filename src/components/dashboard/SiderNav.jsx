@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
 import SocialIcons from "../../components/SocialIcons";
-
-import { mainLogo, circle } from "../../ui/images";
+import mainLogo from "../../assets/images/dashboard-logo.png";
 
 export default function SiderNav() {
   const [activeNav, setActiveNav] = useState(false);
@@ -17,7 +16,7 @@ export default function SiderNav() {
     else setActiveNav(false);
   }, [pathname]);
   return (
-    <aside className="sidebar bg-black">
+    <aside className="sidebar floating-bars">
       <div className="logo text-center h-[80px] flex items-center justify-center cursor-pointer relative z-[9999]">
         <Link to="/dashboard">
           <img className="inline-block w-36" src={mainLogo} alt="logo" />
@@ -41,9 +40,7 @@ export default function SiderNav() {
           >
             <li className="nav-item group">
               <div className="nav-link">
-                <span className="text group-hover:text-main-bg/70">
-                  Dashboard
-                </span>
+                <span className="">Dashboard</span>
               </div>
             </li>
           </NavLink>
@@ -53,9 +50,7 @@ export default function SiderNav() {
           >
             <li className="nav-item">
               <div className="nav-link group">
-                <span className="text group-hover:text-main-bg/70">
-                  Withdraw
-                </span>
+                <span className="">Withdraw</span>
               </div>
             </li>
           </NavLink>
@@ -65,9 +60,7 @@ export default function SiderNav() {
           >
             <li className="nav-item">
               <div className="nav-link group">
-                <span className="text group-hover:text-main-bg/70">
-                  Top-up & Reset
-                </span>
+                <span className="">Top-up & Reset</span>
               </div>
             </li>
           </NavLink>
@@ -78,9 +71,7 @@ export default function SiderNav() {
           >
             <li className="nav-item">
               <div className="nav-link group">
-                <span className="text group-hover:text-main-bg/70">
-                  Billing
-                </span>
+                <span className="">Billing</span>
               </div>
             </li>
           </NavLink>
@@ -91,7 +82,7 @@ export default function SiderNav() {
           >
             <li className="nav-item">
               <div className="nav-link group">
-                <span className="text group-hover:text-main-bg/70">Help</span>
+                <span className="">Help</span>
               </div>
             </li>
           </NavLink>
@@ -102,9 +93,7 @@ export default function SiderNav() {
           >
             <li className="nav-item">
               <div className="nav-link group">
-                <span className="text group-hover:text-main-bg/70">
-                  Contact
-                </span>
+                <span className="">Contact</span>
               </div>
             </li>
           </NavLink>
@@ -114,45 +103,23 @@ export default function SiderNav() {
           >
             <li className="nav-item">
               <div className="nav-link group">
-                <span className="text group-hover:text-main-bg/70">
-                  Certificate
-                </span>
+                <span className="">Certificate</span>
               </div>
             </li>
           </NavLink>
         </ul>
       </div>
-      <ul className="px-10 absolute bottom-[1.5rem] w-full z-30 font-Montserrat">
-        <SocialIcons />
-        <li className="border-b border-primary/20 group mt-3">
-          <Link
-            to="profile"
-            className="flex items-center  leading-[1.5] tracking-[-0.05px] py-[10px] transition-all duration-350 ease-linear text-wht group-hover:text-primary"
-          >
-            My Profile
-          </Link>
-        </li>
-        <li className="group">
-          <Link
-            to="/login"
-            className="flex items-center leading-[1.5] tracking-[-0.05px] py-[10px] transition-all duration-350 ease-linear  text-wht group-hover:text-primary"
-          >
-            Logout
-          </Link>
-        </li>
-      </ul>
-      {/* cirlce */}
-      <img
-        className="cirlce absolute bottom-[10%] -right-[2%] !max-w-[100rem] w-[90rem] rotate-[-20deg] opacity-[0.2]"
-        src={circle}
-        alt="circle"
-      />
-      {/* cirlce */}
-      <img
-        className="cirlce absolute -top-[10%] -left-[140%] !max-w-[50rem] w-[90rem] rotate-[-20deg] opacity-[0.1]"
-        src={circle}
-        alt="circle"
-      />
+      <div className="absolute grid gap-4 justify-center items-center bottom-[1.5rem] w-full z-30 font-Montserrat">
+        <div className="wrap flex justify-center">
+          <SocialIcons />
+        </div>
+        <Link
+          to="/dashboard/start-new-challenge"
+          className="capitalize whitespace-nowrap font-Montserrat text-xs font-bold py-3 px-5 dash-btn rounded-3xl text-center max-w-[12rem]"
+        >
+          START NEW CHALLENGE
+        </Link>
+      </div>
     </aside>
   );
 }

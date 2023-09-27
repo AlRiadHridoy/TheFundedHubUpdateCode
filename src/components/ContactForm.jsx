@@ -1,6 +1,10 @@
-export default function ContactForm() {
+export default function ContactForm({ clr }) {
   return (
-    <form className="grid gap-6 sm:gap-8 md:gap-10 px-4 py-6 sm:p-8 relative z-10 rounded-xl bg-main-bg/70 border-primary backdrop-blur-3xl">
+    <form
+      className={`grid gap-6 sm:gap-8 md:gap-10 px-4 py-6 sm:p-8 relative z-10 rounded-3xl border-primary backdrop-blur-3xl ${
+        clr === "dash-bar-clr" ? "contact-clr" : "bg-main-bg/30"
+      }`}
+    >
       <div className="head">
         <h3 className="text-xl">Have questions?</h3>
       </div>
@@ -9,7 +13,7 @@ export default function ContactForm() {
         <div className="name">
           <input
             name="name"
-            className="name w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
+            className="name w-full focus:outline-primary/70 bg-transparent backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
             type="text"
             placeholder="Name"
           />
@@ -18,7 +22,7 @@ export default function ContactForm() {
         <div className="surname">
           <input
             name="surname"
-            className="name w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
+            className="name w-full focus:outline-primary/70 bg-transparent backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
             type="text"
             placeholder="Surname"
           />
@@ -27,7 +31,7 @@ export default function ContactForm() {
         <div className="email">
           <input
             name="email"
-            className="name w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
+            className="name w-full focus:outline-primary/70 bg-transparent backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
             type="email"
             placeholder="Email"
           />
@@ -37,7 +41,7 @@ export default function ContactForm() {
         <div className="subject">
           <input
             name="subject"
-            className="name w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
+            className="name w-full focus:outline-primary/70 bg-transparent backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
             type="text"
             placeholder="Subject"
           />
@@ -46,7 +50,7 @@ export default function ContactForm() {
       {/* textarea */}
       <div className="textarea">
         <textarea
-          className="focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 p-4 rounded-xl transition-all duration-200 w-full min-h-[10rem] sm:min-h-[12rem] md:min-h-[15rem]"
+          className="focus:outline-primary/70 bg-transparent backdrop-blur-3xl border-none outline outline-2 outline-primary/30 p-4 rounded-xl transition-all duration-200 w-full min-h-[10rem] sm:min-h-[12rem] md:min-h-[15rem]"
           name="comment"
           id="comment"
           placeholder="Comment"
@@ -55,7 +59,7 @@ export default function ContactForm() {
 
       {/* Login button */}
       <div className="login-btn flex justify-center items-center">
-        <button className="py-2.5 px-16 transition-all duration-300 rounded-3xl font-Montserrat font-semibold grd-btn-wht pink-glowing-btn">
+        <button className="py-2.5 px-16 transition-all duration-300 rounded-3xl font-Montserrat font-semibold glowing-btn max-w-[12rem]">
           Send
         </button>
       </div>

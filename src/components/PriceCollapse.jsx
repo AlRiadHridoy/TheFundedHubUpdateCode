@@ -40,7 +40,7 @@ export default function PriceCollapse({
           id="option"
           name="option"
           onChange={(e) => onchage(e.target.value)}
-          className="form-control focus:outline-primary/70 border-none outline outline-1 sm:outline-2 outline-primary/30 h-[2.2rem] px-2 xs:px-3 md:px-4 transition-all duration-200 bg-light/20 rounded-xl w-[7rem] xs:w-[9rem] md:w-[9.5rem] capitalize text-[0.9rem] font-Montserrat font-medium relative z-10"
+          className="price-table-select"
         >
           {data.map((option, index) => {
             return (

@@ -32,7 +32,7 @@ export default function Discord() {
                   <a
                     target="__blank"
                     href="https://discord.com/invite/96Mq2M2gdB"
-                    className="uppercase font-base flex h-full justify-center items-center py-3 px-10 text-black border-primary rounded-3xl whitespace-nowrap font-Montserrat font-semibold text-[0.8rem] grd-btn max-w-[228px]"
+                    className="uppercase font-base flex h-full justify-center items-center py-3 px-10 text-white border-primary rounded-3xl whitespace-nowrap font-Montserrat font-semibold text-[0.8rem]  max-w-[228px] discglow-btn"
                   >
                     Join our Discord
                   </a>

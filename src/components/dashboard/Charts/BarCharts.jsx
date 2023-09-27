@@ -11,6 +11,36 @@ import {
 } from "recharts";
 
 function BarCharts({ data, percent }) {
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="customTooltip">
+          <div
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              opacity: "0.9",
+              zIndex: "-1",
+              top: "0",
+              left: "0",
+              borderRadius: "10px",
+              padding: "10px 20px 10px 20px",
+            }}
+          />
+          <p className="intro pt-2 pb-6">{label}</p>
+          <p className="label">
+            {`${payload[0].name} : `}
+            <span style={{ color: payload[0].value >= 0 ? "green" : "red" }}>
+              {payload[0].value}
+            </span>
+          </p>
+        </div>
+      );
+    }
+
+    return null;
+  };
   return (
     <>
       <div className={"barChart w-full"}>
@@ -21,19 +51,19 @@ function BarCharts({ data, percent }) {
               margin={{
                 top: 5,
                 right: 30,
-                left: 0,
+                left: 20,
                 bottom: 5,
               }}
             >
               <defs>
                 <linearGradient id="positive" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="5%" stopColor="#0c1ad5" stopOpacity={1} />
-                  <stop offset="95%" stopColor="#0c1ad5" stopOpacity={0.1} />
+                  <stop offset="5%" stopColor="#C7B3FC" stopOpacity={0.9} />
+                  <stop offset="95%" stopColor="#C7B3FC" stopOpacity={0.1} />
                 </linearGradient>
 
                 <linearGradient id="negative" x1="0" x2="0" y1="1" y2="0">
-                  <stop offset="5%" stopColor="#0c1ad5" stopOpacity={1} />
-                  <stop offset="95%" stopColor="#0c1ad5" stopOpacity={0.1} />
+                  <stop offset="5%" stopColor="#C7B3FC" stopOpacity={0.9} />
+                  <stop offset="95%" stopColor="#C7B3FC" stopOpacity={0.1} />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="10 10" vertical={false} />
@@ -52,7 +82,12 @@ function BarCharts({ data, percent }) {
                   `${value} ${percent === 1 ? "%" : ""}`
                 }
               />
-              <Tooltip />
+              <Tooltip
+                cursor={{ fill: "transparent" }}
+                labelStyle={{ color: "gray" }}
+                itemStyle={{ color: "white", fontWeight: "500" }}
+                content={<CustomTooltip />}
+              />
               <ReferenceLine y={0} stroke="#fff" />
               <Bar dataKey="return">
                 {data.map((entry, index) => (

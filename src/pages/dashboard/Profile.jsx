@@ -1,12 +1,33 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { useTimezoneSelect, allTimezones } from "react-timezone-select";
 
 import { Country, State } from "country-state-city";
+import userImg from "../../assets/images/blog-1.png";
+import { arrow } from "../../ui/images";
 
 export default function Profile() {
+  // Inputs
   const [getCountry, setGetCountry] = useState("");
   const [getStates, setGetStates] = useState([]);
+  const [userName, setUserName] = useState("John Doe");
+  const [getTimeZone, setGetTimeZone] = useState([]);
   const allCountry = Country.getAllCountries();
   const [infoToggle, setInfoToggle] = useState("personal");
+
+  const shortUserName = userName
+    .split(" ")
+    .map((name) => name.charAt(0))
+    .join("");
+
+  // security
+  const [paraHeight, setparaHeight] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const refferance = useRef(null);
+
+  useEffect(() => {
+    setparaHeight(refferance?.current?.clientHeight);
+  }, [isOpen]);
+
   useEffect(() => {
     setGetStates([]);
     allCountry.forEach((country) => {
@@ -16,25 +37,25 @@ export default function Profile() {
     });
   }, [getCountry]);
 
+  const labelStyle = "original";
+  const timezones = {
+    ...allTimezones,
+    "Europe/Berlin": "Frankfurt",
+  };
+  const { options, parseTimezone } = useTimezoneSelect({
+    labelStyle,
+    timezones,
+  });
+
   return (
     <>
       <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadow-dash min-h-[100vh] font-Montserrat">
         <div className="inner-content px-6">
           <div className="dashboard-wrapper">
-            <div className="grid md:flex gap-4 md:gap-6 mb-20">
-              <div className="py-8 rounded-xl relative bg-main-bg/90 min-h-full">
-                <div className="flex gap-4 items-center px-6">
-                  {/* account info */}
-                  <div className="account-info">
-                    <h4 className="font-semibold text font-Montserrat text-wht">
-                      Abcd person
-                    </h4>
-                    <p className="text-dark text mb-[10px] text-wht/70">
-                      abcd.dev@gmail.com
-                    </p>
-                  </div>
-                </div>
-                <div className="author-tab grid gap-4 mt-6 px-4">
+            {/* from */}
+            <div className="grid gap-4  mb-20">
+              <div className="py-8 rounded-xl relative  min-h-full">
+                <div className="grid grid-cols-2 sm:flex gap-4 w-full max-w-[40rem]">
                   <button
                     className={`w-full py-2.5 border-b-2 cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 text ${
                       infoToggle === "personal"
@@ -55,153 +76,336 @@ export default function Profile() {
                   >
                     Account Information
                   </button>
+                  <button
+                    className={`w-full py-2.5 border-b-2 cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 text ${
+                      infoToggle === "Security"
+                        ? "border-primary"
+                        : "border-primary/10"
+                    }`}
+                    onClick={() => setInfoToggle("Security")}
+                  >
+                    Security
+                  </button>
                 </div>
               </div>
-              {/* form */}
-              <div className="max-w-[45rem] w-full relative col-span-5 font-medium">
-                {infoToggle === "personal" ? (
-                  <div className="card-wrap bg-main-bg/90">
-                    <h3 className="text font-Montserrat mb-5 text-xl">
-                      Personal Infomation
-                    </h3>
-                    <div className="content">
-                      <div className="author-form">
-                        <div className="inputs grid sm:grid-cols-2 gap-6 ">
-                          {/* first-name */}
-                          <div className="first-name">
-                            <input
-                              name="first-name"
-                              className="name w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
-                              type="text"
-                              placeholder="First Name"
-                            />
-                          </div>
-                          {/* last name */}
-                          <div className="last-name">
-                            <input
-                              name="last-name"
-                              className="name w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
-                              type="text"
-                              placeholder="Last Name"
-                            />
-                          </div>
 
-                          {/* phone */}
-                          <div className="phone">
-                            <input
-                              name="phone"
-                              className="phone w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200 appearance-none"
-                              type="number"
-                              placeholder="Phone"
-                            />
-                          </div>
-                          {/* Email */}
-                          <div className="country">
-                            {/* country */}
-                            <select
-                              id="country"
-                              name="country"
-                              onChange={(e) => setGetCountry(e.target.value)}
-                              className="form-control w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
-                            >
-                              <option defaultChecked>Country</option>
-                              {allCountry.map((country, index) => {
-                                return (
-                                  <option key={index} value={country.name}>
-                                    {country.name}
-                                  </option>
-                                );
-                              })}
-                            </select>
-                          </div>
-                          {/* state */}
-                          <div className="state">
-                            {/* state */}
-                            <select
-                              id="state"
-                              name="state"
-                              disabled={!getStates.length}
-                              className="form-control w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
-                            >
-                              <option defaultChecked>State</option>
-                              {getStates.map((state, index) => {
-                                return (
-                                  <option key={index} value={state.name}>
-                                    {state.name}
-                                  </option>
-                                );
-                              })}
-                            </select>
-                          </div>
-                          {/* zip */}
-                          <div className="zip">
-                            {/* zip */}
-                            <input
-                              name="zip"
-                              className="name w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
-                              type="number"
-                              placeholder="ZIP"
-                              required
-                            />
-                          </div>
+              {infoToggle === "personal" ? (
+                <div className="personal grid gap-8">
+                  <div className="top dash-bar-clr p-6 rounded-3xl">
+                    <div className="user flex gap-4 items-center max-w-[20rem] mb-6">
+                      <div className="img grid gap-2 justify-center items-center relative">
+                        <img
+                          className="h-[6rem] w-[6rem] rounded-full hidden"
+                          src={userImg}
+                          alt="user-img"
+                        />
+                        <div className="short-name uppercase border bg-blu/20 border-blu h-24 w-24 rounded-full flex justify-center items-center text-2xl">
+                          {shortUserName}
                         </div>
 
-                        {/* btn */}
-                        <div className="btn mt-6 flex justify-end">
-                          <button className="save capitalize font-Montserrat text-xs font-bold py-3 px-16 bg-primary transition-all duration-300 hover:opacity-80 text-main-bg rounded-3xl">
-                            Save
-                          </button>
+                        <div className="edit text-center absolute bottom-[-2rem] left-1/2 transform -translate-x-1/2">
+                          Edit
+                        </div>
+                      </div>
+
+                      <div className="info flex flex-col gap-2">
+                        <div className="name font-medium">John Doe</div>
+                        <div className="user-name">info@johndoe.com</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* client */}
+                  <div className="client font-normal">
+                    <div className="head text-xl font-semibold">Client</div>
+
+                    <div className="inputs grid sm:grid-cols-2 gap-6 mt-3 dash-bar-clr p-6 rounded-3xl pb-8">
+                      {/* first-name */}
+                      <div className="first-name grid gap-2">
+                        <label htmlFor="first-name" className="font-medium">
+                          First Name
+                        </label>
+                        <input
+                          id="first-name"
+                          name="first-name"
+                          className="last-name w-full focus:outline-primary/70 bg-dark  backdrop-blur-3xl border-none outline outline-2 outline-primary/10 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
+                          type="text"
+                          placeholder="John"
+                        />
+                      </div>
+                      {/* last name */}
+                      <div className="last-name grid gap-2">
+                        <label htmlFor="last-name" className="font-medium">
+                          Last name
+                        </label>
+                        <input
+                          id="last-name"
+                          name="last-name"
+                          className="last-name w-full focus:outline-primary/70 bg-dark backdrop-blur-3xl border-none outline outline-2 outline-primary/10 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
+                          type="text"
+                          placeholder="Doe"
+                        />
+                      </div>
+
+                      <div className="selecte-title grid gap-2">
+                        <label htmlFor="title">Title</label>
+                        <div className="wrapper relative bg-dark rounded-2xl">
+                          {/* arrow */}
+                          <img
+                            className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 xs:w-[1.rem]"
+                            src={arrow}
+                            alt="arrow"
+                          />
+
+                          {/* select */}
+                          <select
+                            id="title"
+                            name="title"
+                            autoFocus={true}
+                            className="form-control relative title-select w-full focus:outline-primary/70 border-none outline outline-2 outline-primary/10 py-2 sm:py-2.5 px-6 rounded-3xl transition-all duration-200 bg-transparent"
+                          >
+                            <option value="Mr.">Mr.</option>
+                            <option value="Mr.">Ms.</option>
+                            <option value="Mr.">Mrs.</option>
+                            <option value="Mr.">Mx.</option>
+                          </select>
                         </div>
                       </div>
                     </div>
                   </div>
-                ) : (
-                  <div className="card-wrap bg-main-bg/90">
-                    <h3 className="font-Montserrat mb-5 text-xl">
-                      Account Infomation
-                    </h3>
-                    <div className="content">
-                      <div className="author-form">
-                        <div className="inputs grid gap-6">
-                          {/* current password */}
-                          <div className="curr-pass">
-                            <input
-                              name="current-pass"
-                              className="curr-pass w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200 appearance-none"
-                              type="password"
-                              placeholder="Current Password*"
-                            />
-                          </div>
-                          {/* new password */}
-                          <div className="new-pass">
-                            <input
-                              name="new-pass"
-                              className="curr-pass w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200 appearance-none"
-                              type="password"
-                              placeholder="New Password*"
-                            />
-                          </div>
-                          {/* confirm password */}
-                          <div className="confirm-pass">
-                            <input
-                              name="confirm-pass"
-                              className="curr-pass w-full focus:outline-primary/70 bg-[#2B2C30]/[0%] backdrop-blur-3xl border-none outline outline-2 outline-primary/30 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200 appearance-none"
-                              type="password"
-                              placeholder="Confirm Password*"
-                            />
-                          </div>
+                  {/* client */}
+                  <div className="client font-normal">
+                    <div className="head text-xl font-semibold">
+                      Contact Info
+                    </div>
+
+                    <div className="inputs grid sm:grid-cols-2 gap-6 mt-3 dash-bar-clr p-6 rounded-3xl pb-8">
+                      {/* phone */}
+                      <div className="phone grid gap-2">
+                        <label htmlFor="phone">Phone</label>
+                        <input
+                          id="phone"
+                          name="phone"
+                          className="phone w-full focus:outline-primary/70 bg-dark backdrop-blur-3xl border-none outline outline-2 outline-primary/10 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200 appearance-none"
+                          type="number"
+                          placeholder="1234567890"
+                        />
+                      </div>
+                      {/* Email */}
+                      <div className="email grid gap-2">
+                        <label htmlFor="email">E-mail address</label>
+                        <input
+                          id="email"
+                          name="email"
+                          className="phone w-full focus:outline-primary/70 bg-dark backdrop-blur-3xl border-none outline outline-2 outline-primary/10 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200 appearance-none"
+                          type="email"
+                          placeholder="example@mail.com"
+                        />
+                      </div>
+
+                      {/* country */}
+                      <div className="country grid gap-2">
+                        <label htmlFor="country">Country</label>
+                        {/* country */}
+                        <div className="wrapper relative bg-dark rounded-2xl">
+                          {/* arrow */}
+                          <img
+                            className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 xs:w-[1.rem]"
+                            src={arrow}
+                            alt="arrow"
+                          />
+                          <select
+                            id="country"
+                            name="country"
+                            onChange={(e) => setGetCountry(e.target.value)}
+                            className="form-control relative title-select w-full focus:outline-primary/70 border-none outline outline-2 outline-primary/10 py-2 sm:py-2.5 px-6 rounded-3xl transition-all duration-200 bg-transparent"
+                          >
+                            {allCountry.map((country, index) => {
+                              return (
+                                <option key={index} value={country.name}>
+                                  {country.name}
+                                </option>
+                              );
+                            })}
+                          </select>
                         </div>
-                        {/* btn */}
-                        <div className="btn mt-6 flex justify-end">
-                          <button className="save capitalize font-Montserrat text-xs font-bold py-3 px-16 bg-primary transition-all duration-300 hover:opacity-80 text-main-bg rounded-3xl ">
-                            Save
-                          </button>
-                        </div>
+                      </div>
+                      {/* City */}
+                      <div className="City grid gap-2">
+                        <label htmlFor="city">City</label>
+                        {/* state */}
+                        <select
+                          id="city"
+                          name="city"
+                          disabled={!getStates.length}
+                          className="form-control w-full focus:outline-primary/70 bg-dark backdrop-blur-3xl border-none outline outline-2 outline-primary/10 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
+                        >
+                          <option defaultChecked>City</option>
+                          {getStates.map((state, index) => {
+                            return (
+                              <option key={index} value={state.name}>
+                                {state.name}
+                              </option>
+                            );
+                          })}
+                        </select>
+                      </div>
+
+                      {/* street */}
+                      <div className="street grid gap-2">
+                        <label htmlFor="street">Street</label>
+                        {/* zip */}
+                        <input
+                          id="street"
+                          name="street"
+                          className="name w-full focus:outline-primary/70 bg-dark backdrop-blur-3xl border-none outline outline-2 outline-primary/10 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
+                          type="text"
+                          placeholder="Vila Safi 13A"
+                          required
+                        />
+                      </div>
+                      {/* zip */}
+                      <div className="zip grid gap-2">
+                        <label htmlFor="zip">Zip</label>
+                        {/* zip */}
+                        <input
+                          id="zip"
+                          name="zip"
+                          className="name w-full focus:outline-primary/70 bg-dark backdrop-blur-3xl border-none outline outline-2 outline-primary/10 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200"
+                          type="text"
+                          placeholder="4042"
+                          required
+                        />
                       </div>
                     </div>
                   </div>
-                )}
-              </div>
+                  <div className="save flex justify-center w-full mt-6">
+                    <button className="capitalize hidden sm:inline-block font-Montserrat text-lg font-bol2 py-3 max-w-[20rem] w-full text-center dash-btn rounded-3xl cursor-pointer m-auto font-semibold">
+                      Save
+                    </button>
+                  </div>
+                </div>
+              ) : infoToggle === "account" ? (
+                <div className="account font-normal">
+                  <div className="inputs grid sm:grid-cols-2 gap-6 mt-3 dash-bar-clr p-6 rounded-3xl ">
+                    {/* Email */}
+                    <div className="email-readonly grid gap-2">
+                      <label htmlFor="email-readonly">Username</label>
+                      <input
+                        id="email-readonly"
+                        name="email-readonly"
+                        className="phone w-full focus:outline-primary/70 bg-dark backdrop-blur-3xl border-none outline outline-2 outline-primary/10 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200 appearance-none text-gry"
+                        type="email"
+                        readOnly
+                        value="johndoe@mail.com"
+                        placeholder="johndoe@mail.com"
+                      />
+                    </div>
+
+                    {/* Time zone */}
+                    <div className="time-zone grid gap-2">
+                      <label htmlFor="time-zone">Time Zone</label>
+
+                      <div className="wrapper relative bg-dark rounded-2xl">
+                        {/* arrow */}
+                        <img
+                          className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 xs:w-[1.rem]"
+                          src={arrow}
+                          alt="arrow"
+                        />
+                        <select
+                          id="time-zone"
+                          name="time-zone"
+                          onChange={(e) => setGetTimeZone(e.target.value)}
+                          className="form-control relative title-select w-full focus:outline-primary/70 border-none outline outline-2 outline-primary/10 py-2 sm:py-2.5 px-6 rounded-3xl transition-all duration-200 bg-transparent"
+                        >
+                          {options.map((option) => (
+                            <option key={option} value={option.value}>
+                              {option.label}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="save flex justify-center w-full mt-10">
+                    <button className="capitalize hidden sm:inline-block font-Montserrat text-lg font-bol2 py-3 max-w-[12rem] w-full text-center dash-btn rounded-3xl cursor-pointer m-auto">
+                      Save
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <div className="security">
+                  <div className="dash-bar-clr rounded-xl p-4">
+                    <div
+                      className="flex items-center justify-between cursor-pointer"
+                      onClick={() => setIsOpen(!isOpen)}
+                    >
+                      <h3 className="text-[1.1rem] font-Montserrat font-semibold leading-[1.185] tracking-[-0.05px]">
+                        Password Change
+                      </h3>
+
+                      <div className="arrow">
+                        <img
+                          className={`max-w-[1.4rem] transform-gpu transition-all duration-300 ${
+                            isOpen ? "rotate-180" : ""
+                          }`}
+                          src={arrow}
+                          alt="arrow"
+                        />
+                      </div>
+                    </div>
+                    <article className="">
+                      <div
+                        style={{ maxHeight: isOpen ? paraHeight + "px" : "0" }}
+                        className={`width-content transition-all duration-300 overflow-hidden `}
+                      >
+                        <div
+                          ref={refferance}
+                          className="wrapper py-3 px-2 pt-4"
+                        >
+                          <div className="inputs grid sm:grid-cols-2 gap-6 pt-4">
+                            {/* current password */}
+                            <div className="curr-pass">
+                              <input
+                                name="current-pass"
+                                className="curr-pass w-full focus:outline-primary/70 bg-dark backdrop-blur-3xl border-none outline outline-2 outline-primary/10 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200 appearance-none"
+                                type="password"
+                                placeholder="Current Password*"
+                              />
+                            </div>
+                            {/* new password */}
+                            <div className="new-pass">
+                              <input
+                                name="new-pass"
+                                className="curr-pass w-full focus:outline-primary/70 bg-dark backdrop-blur-3xl border-none outline outline-2 outline-primary/10 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200 appearance-none"
+                                type="password"
+                                placeholder="New Password*"
+                              />
+                            </div>
+                            {/* confirm password */}
+                            <div className="confirm-pass sm:col-start-2">
+                              <input
+                                name="confirm-pass"
+                                className="curr-pass w-full focus:outline-primary/70 bg-dark backdrop-blur-3xl border-none outline outline-2 outline-primary/10 py-2 md:py-2.5 px-6 rounded-3xl transition-all duration-200 appearance-none"
+                                type="password"
+                                placeholder="Confirm Password*"
+                              />
+                            </div>
+                          </div>
+
+                          <div className="save flex justify-center w-full mt-10">
+                            <button className="capitalize hidden sm:inline-block font-Montserrat text-lg font-bold py-2 max-w-[12rem] w-full text-center dash-btn rounded-3xl cursor-pointer m-auto">
+                              Save
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@ export default function FaqCollaps({ heading, para, fls }) {
   }, [isOpen]);
 
   return (
-    <article className="bg-[#545454]/10 rounded-xl">
+    <article className="dash-home-bg rounded-xl">
       <header
         onClick={() => setIsOpen(!isOpen)}
         className="flex justify-between cursor-pointer py-3 px-4"

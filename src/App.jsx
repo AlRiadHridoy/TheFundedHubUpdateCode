@@ -17,6 +17,7 @@ import Help from "./pages/dashboard/Help";
 import Profile from "./pages/dashboard/Profile";
 import DashContact from "./pages/dashboard/DashContact";
 import Billing from "./pages/dashboard/Billing";
+import StartNewChallenge from "./pages/dashboard/StartNewChallenge";
 import Certificate from "./pages/dashboard/Certificate";
 import Checkout from "./pages/main/Checkout";
 
@@ -52,6 +53,7 @@ function App() {
           <Route path="dashboard" element={<Dashboard />}>
             <Route path="Profile" element={<Profile />} />
             <Route path="billing" element={<Billing />} />
+            <Route path="start-new-challenge" element={<StartNewChallenge />} />
             <Route path="withdraw" element={<Withdraw />} />
             <Route path="top-up-reset" element={<TopUpReset />} />
             <Route path="help" element={<Help />} />

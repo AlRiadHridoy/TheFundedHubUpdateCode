@@ -430,14 +430,6 @@ select option {
   opacity: 1;
 }
 
-/* .desktop-img .shadow img {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2rem;
-  min-width: 100%;
-} */
-
 .static-grd {
   background: linear-gradient(
     90deg,
@@ -448,12 +440,12 @@ select option {
   color: white;
 }
 
-/* price table select */
-/* .price-table select {
-  text-align-last: center;
-} */
 .price-table .swiper-slide {
   height: auto !important;
+}
+
+.price-table-select {
+  @apply focus:outline-primary/70 border-none outline outline-1 sm:outline-2 outline-primary/30 h-[2.2rem] px-2 xs:px-3 md:px-4 transition-all duration-200 bg-light/20 rounded-xl w-[7rem] xs:w-[9rem] md:w-[9.5rem] capitalize text-[0.9rem] font-Montserrat font-medium relative z-10;
 }
 
 .glowing-btn {
@@ -595,15 +587,20 @@ select option {
 }
 
 .bottom-shadow {
-  @apply absolute;
+  @apply relative;
 }
 
 .bottom-shadow::after {
-  /* content: url("./assets/images/desktop-shadow.png"); */
+  content: "";
+  background-image: url("./assets/images/shadow.png");
+  background-position: center;
+  background-size: cover;
   position: absolute;
-  left: -50%;
-  bottom: -1rem;
+  left: 0;
+  right: 0;
+  bottom: -1.2rem;
   max-width: 100%;
   height: 1rem;
   object-fit: cover;
+  opacity: 0.9;
 }

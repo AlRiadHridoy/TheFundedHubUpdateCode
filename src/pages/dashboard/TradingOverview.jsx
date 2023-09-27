@@ -71,7 +71,7 @@ export default function TradingOverview() {
                     <div className="content">
                       <div className="grid gap-5 sm:grid-cols-2">
                         <div className="w-full">
-                          <div className="p-5 rounded-[15px] card-border backdrop-blur-3xl card-border">
+                          <div className="p-5 rounded-[15px] dash-home-bg backdrop-blur-3xl dash-home-bg">
                             <p className=" leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht inline-block">
                               <div className="mr-1 inline-block font-medium">
                                 Minimum Trading Days
@@ -94,7 +94,7 @@ export default function TradingOverview() {
                           </div>
                         </div>
                         <div className="w-full">
-                          <div className="p-5 rounded-[15px] card-border backdrop-blur-3xl card-border">
+                          <div className="p-5 rounded-[15px] dash-home-bg backdrop-blur-3xl dash-home-bg">
                             <p className=" leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht inline-block">
                               <div className="mr-1 inline-block font-medium">
                                 Daily Loss Limit
@@ -117,7 +117,7 @@ export default function TradingOverview() {
                           </div>
                         </div>
                         <div className="w-full ">
-                          <div className="p-5 rounded-[15px] card-border backdrop-blur-3xl card-border">
+                          <div className="p-5 rounded-[15px] dash-home-bg backdrop-blur-3xl dash-home-bg">
                             <p className=" leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht inline-block ">
                               <div className="mr-1 inline-block font-medium">
                                 Maximum Loss Limit
@@ -140,7 +140,7 @@ export default function TradingOverview() {
                           </div>
                         </div>
                         <div className="w-full">
-                          <div className="p-5 rounded-2xl card-border backdrop-blur-3xl card-border">
+                          <div className="p-5 rounded-2xl dash-home-bg backdrop-blur-3xl dash-home-bg">
                             <div className="card-heading flex items-center mb-[20px]">
                               <div className="mr-1 inline-block font-medium">
                                 Account Growth
@@ -162,7 +162,7 @@ export default function TradingOverview() {
 
               <div className="flex flex-wrap h-full mt-6">
                 <div className="w-full">
-                  <div className="card-wrap card-border mb-0 h-full">
+                  <div className="card-wrap dash-home-bg mb-0 h-full">
                     <h3 className="card-title">Trading Growth Curve</h3>
                     <div className="content flex flex-col gap-3 justify-between ">
                       <div className="flex flex-wrap items-center justify-between  leading-[1.5] tracking-[-0.05px] text-wht">
@@ -222,7 +222,7 @@ export default function TradingOverview() {
             </div>
 
             <div className="!w-full lg:pl-[15px] font-Montserrat lg:col-span-3 relative z-[99]">
-              <div className="card-wrap card-border h-full text-base">
+              <div className="card-wrap dash-home-bg h-full text-base">
                 <h3 className="card-title">Details Stats</h3>
                 <div className="content text-center grid gap-4">
                   <div className="stats-list flex flex-wrap items-center justify-between pb-4 border-b border-white/10">
@@ -416,7 +416,7 @@ export default function TradingOverview() {
 
           <div className="flex flex-wrap mx-[-15px] z-0">
             <div className="w-full px-[15px]">
-              <div className="card-wrap card-border">
+              <div className="card-wrap dash-home-bg">
                 <div className="card-heading flex items-center justify-between mb-[20px]">
                   <h3 className="card-title !mb-0">Trading History</h3>
                 </div>

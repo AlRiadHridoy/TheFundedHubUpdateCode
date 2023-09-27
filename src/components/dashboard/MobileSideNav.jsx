@@ -18,7 +18,7 @@ export default function MobileSideNav({ props }) {
   return (
     <div className="wrapper relative left-0 right-0 top-0 bottom-0 z-[999] overflow-hidden">
       <aside
-        className={`mobile-nav pt-[70px] h-screen overflow-y-scroll lg:hidden w-[80%] sm:w-[60%] fixed z-[999] top-0 bottom-0 bg-black transition-all duration-500 o  ${
+        className={`mobile-nav pt-[70px] h-screen overflow-y-scroll lg:hidden w-[80%] sm:w-[60%] fixed z-[999] top-0 bottom-0 transition-all duration-500 o  ${
           sideOpenMbl ? "left-0" : "-left-full"
         }
     `}
@@ -58,9 +58,7 @@ export default function MobileSideNav({ props }) {
             >
               <li className="nav-item">
                 <div className="nav-link">
-                  <span className="text group-hover:text-main-bg/70 font-bold">
-                    Dashboard
-                  </span>
+                  <span>Dashboard</span>
                 </div>
               </li>
             </NavLink>
@@ -72,9 +70,7 @@ export default function MobileSideNav({ props }) {
             >
               <li className="nav-item">
                 <div className="nav-link group">
-                  <span className="text group-hover:text-main-bg/70 font-bold">
-                    Trading Overview
-                  </span>
+                  <span>Trading Overview</span>
                 </div>
               </li>
             </NavLink>
@@ -85,9 +81,7 @@ export default function MobileSideNav({ props }) {
             >
               <li className="nav-item">
                 <div className="nav-link group">
-                  <span className="text group-hover:text-main-bg/70 font-bold">
-                    Withdraw
-                  </span>
+                  <span>Withdraw</span>
                 </div>
               </li>
             </NavLink>
@@ -97,9 +91,7 @@ export default function MobileSideNav({ props }) {
             >
               <li className="nav-item">
                 <div className="nav-link group">
-                  <span className="text group-hover:text-main-bg/70 font-bold">
-                    Top-up & Reset
-                  </span>
+                  <span>Top-up & Reset</span>
                 </div>
               </li>
             </NavLink>
@@ -110,9 +102,7 @@ export default function MobileSideNav({ props }) {
             >
               <li className="nav-item">
                 <div className="nav-link group">
-                  <span className="text group-hover:text-main-bg/70 font-bold">
-                    Billing
-                  </span>
+                  <span>Billing</span>
                 </div>
               </li>
             </NavLink>
@@ -123,9 +113,7 @@ export default function MobileSideNav({ props }) {
             >
               <li className="nav-item">
                 <div className="nav-link group">
-                  <span className="text group-hover:text-main-bg/70 font-bold">
-                    Help
-                  </span>
+                  <span>Help</span>
                 </div>
               </li>
             </NavLink>
@@ -136,9 +124,7 @@ export default function MobileSideNav({ props }) {
             >
               <li className="nav-item">
                 <div className="nav-link group flex gap-4">
-                  <span className="text group-hover:text-main-bg/70 font-bold">
-                    Contact
-                  </span>
+                  <span>Contact</span>
                 </div>
               </li>
             </NavLink>
@@ -156,8 +142,14 @@ export default function MobileSideNav({ props }) {
               </li>
             </NavLink>
 
-            <div className="ml-14 mt-8 mb-12">
+            <div className="ml-14 mt-8 mb-12 grid gap-8">
               <SocialIcons />
+              <Link
+                to="/dashboard/start-new-challenge"
+                className="capitalize  whitespace-nowrap font-Montserrat text-xs font-bold py-3 px-5 dash-btn rounded-3xl text-center max-w-[12rem]"
+              >
+                START NEW CHALLENGE
+              </Link>
             </div>
           </ul>
         </div>

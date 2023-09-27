@@ -13,48 +13,50 @@ import "./chart.css";
 function LineCharts() {
   const [dataState, setDataState] = useState("Per Trade"); //Change data visual
 
-  const data = [
-    { name: "0", trade: "195.000" },
-    { name: "29", trade: "217.336" },
-
-    { name: "51", trade: "196.724" },
-
-    { name: "65", trade: "221.533" },
-    { name: "87", trade: "193.716" },
-
-    { name: "97", trade: "196.444" },
-
-    { name: "110", trade: "203.723" },
-
-    { name: "232", trade: "200.487" },
-
-    { name: "375", trade: "209.204" },
-    { name: "443", trade: "223.989" },
-    { name: "575", trade: "210.055" },
-    { name: "582", trade: "209.955" },
-    { name: "813", trade: "209.105" },
-
-    { name: "835", trade: "210.495" },
-
-    { name: "873", trade: "197.494" },
-
-    { name: "919", trade: "199.551" },
-    { name: "920", trade: "211.414" },
-    { name: "921", trade: "193.438" },
-
-    { name: "959", trade: "212.408" },
-
-    { name: "965", trade: "221.238" },
-    { name: "989", trade: "193.585" },
-    { name: "990", trade: "195.057" },
-    { name: "991", trade: "223.899" },
-    { name: "992", trade: "191.320" },
-    { name: "993", trade: "219.202" },
-    { name: "994", trade: "222.008" },
-    { name: "995", trade: "201.866" },
-    { name: "996", trade: "223.095" },
-    { name: "997", trade: "193.869" },
+  const data1 = [
+    { XAUUSD: "0", date: "20 Sep 2023", Balance: "195.000" },
+    { XAUUSD: "29", date: "21 Sep 2023", Balance: "217.336" },
+    { XAUUSD: "51", date: "22 Sep 2023", Balance: "196.724" },
+    { XAUUSD: "65", date: "23 Sep 2023", Balance: "221.533" },
+    { XAUUSD: "87", date: "24 Sep 2023", Balance: "193.716" },
+    { XAUUSD: "97", date: "25 Sep 2023", Balance: "196.444" },
+    { XAUUSD: "110", date: "26 Sep 2023", Balance: "203.723" },
+    { XAUUSD: "999", date: "20 Oct 2023", Balance: "201.075" },
+    { XAUUSD: "1010", date: "27 Oct 2023", Balance: "209.012" },
+    { XAUUSD: "1011", date: "28 Oct 2023", Balance: "211.507" },
+    { XAUUSD: "1012", date: "29 Oct 2023", Balance: "217.470" },
   ];
+
+  const data2 = [
+    { XAUUSD: "0", date: "20 Sep 2023", Balance: "195.000" },
+    { XAUUSD: "29", date: "21 Sep 2023", Balance: "217.336" },
+    { XAUUSD: "920", date: "6 Oct 2023", Balance: "211.414" },
+    { XAUUSD: "921", date: "7 Oct 2023", Balance: "193.438" },
+    { XAUUSD: "97", date: "25 Sep 2023", Balance: "196.444" },
+    { XAUUSD: "110", date: "26 Sep 2023", Balance: "203.723" },
+    { XAUUSD: "232", date: "27 Sep 2023", Balance: "200.487" },
+    { XAUUSD: "375", date: "28 Sep 2023", Balance: "209.204" },
+    { XAUUSD: "443", date: "29 Sep 2023", Balance: "223.989" },
+    { XAUUSD: "575", date: "30 Sep 2023", Balance: "210.055" },
+    { XAUUSD: "1010", date: "27 Oct 2023", Balance: "209.012" },
+    { XAUUSD: "1011", date: "28 Oct 2023", Balance: "211.507" },
+    { XAUUSD: "1012", date: "29 Oct 2023", Balance: "217.470" },
+  ];
+
+  const CustomTooltip = ({ active, payload, label }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="customTooltip">
+          <p className="intro pb-4">{payload[0]?.payload?.date}</p>
+          <p className=" pb-4 text-white">XAUUSD : {label}</p>
+          <p className="label">{`${payload[0].name} : ${payload[0].value}`}</p>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <div className={"lineChart h-full w-full"}>
       {/* <h3>Balance Chart</h3> */}
@@ -62,17 +64,13 @@ function LineCharts() {
         <div className={"buttons"}>
           <div>
             <h3
-              style={{
-                textDecoration: dataState === "Per Trade" ? "underline" : "",
-              }}
+              className={dataState === "Per Trade" ? "active" : ""}
               onClick={() => setDataState("Per Trade")}
             >
               Per Trade
             </h3>
             <h3
-              style={{
-                textDecoration: dataState === "Daily" ? "underline" : "",
-              }}
+              className={dataState === "Daily" ? "active" : ""}
               onClick={() => setDataState("Daily")}
             >
               Daily
@@ -81,27 +79,30 @@ function LineCharts() {
         </div>
         <ResponsiveContainer width="100%" height="100%">
           <AreaChart
-            data={data}
-            margin={{ top: 10, right: 25, left: 20, bottom: 5 }}
+            data={dataState === "Per Trade" ? data1 : data2}
+            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
           >
             <defs>
               <linearGradient id="colorTrade" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#151b68" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#151b68" stopOpacity={0} />
+                <stop offset="5%" stopColor="#C7B3FC" stopOpacity={0.8} />
+                <stop offset="95%" stopColor="#C7B3FC" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <XAxis axisLine={false} tickLine={false} dataKey="name" />
+            <XAxis axisLine={true} tickLine={true} dataKey="XAUUSD" />
             <YAxis
               axisLine={false}
               tickLine={false}
               domain={[190.0, 225.0]}
               type="number"
             />
-            <Tooltip />
+            <Tooltip
+              cursor={{ opacity: "0.4", stroke: "#C7B3FC" }}
+              content={<CustomTooltip />}
+            />
             <Area
-              type="linear"
-              dataKey="trade"
-              stroke="#0014ff"
+              type="monotone"
+              dataKey="Balance"
+              stroke="#C7B3FC"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#colorTrade)"

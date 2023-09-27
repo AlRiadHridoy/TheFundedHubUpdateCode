@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
@@ -7,18 +8,30 @@ import "swiper/css/pagination";
 import { Navigation } from "swiper";
 import { Link } from "react-router-dom";
 
+// arrow svg
+import { arrow } from "../ui/images";
+
 // trader
 import metaTraderFive from "../assets/images/meta-trader-5.webp";
 import metaTraderFour from "../assets/images/meta-trader-4.webp";
 
 import PriceCollapse from "./PriceCollapse";
 
-export default function PriceTable() {
+export default function PriceTable({ clr }) {
+  // choose balance
+  const [chooseBalance, setChooseBalance] = useState(200000);
+  const [dailyLoss, setDailyLoss] = useState(5);
+  const [overallLoss, setOverallloss] = useState(0);
+  const [profitTarget, setProfitTarget] = useState(0);
+  const [tradingPeriod, setTradingPeriod] = useState(0);
+  const [tradingDays, setTradingDays] = useState(0);
+
   const [btnNum, setBtnNum] = useState(6);
   const [closeAll, setCloseAll] = useState(false);
-  const [dailyLoss, setDailyLoss] = useState(0);
-  const [overallLoss, setOverallloss] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
   const [activeTrade, setActiveTrade] = useState("meta-5");
+
+  // const sec = useRef();
 
   const priceValues = {
     0: [
@@ -100,21 +113,30 @@ export default function PriceTable() {
     ],
   };
 
+  // Get Price values
   useEffect(() => {
-    setDailyLoss("$ " + priceValues[btnNum][1] + " (5%)");
-    setOverallloss("$ " + priceValues[btnNum][3] + " (12%)");
-  }, [btnNum]);
-
-  const refundable = ["1080", "79", "129", "229", "349", "569", "1049"];
+    const url = `https://development-api.thefundedhub.com/v1/website/prices?phaseCount=2&startingCapital=${chooseBalance}&minimumTradingDays=${tradingDays}&maximumTradingDays=${tradingPeriod}&profitTargetPercentage=8-5&maximumDailyLossPercentage=${dailyLoss}&maximumTotalLossPercentage=${overallLoss}`;
+    axios
+      .get(url)
+      .then((response) => {
+        setTotalPrice(response.data.totalPrice);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error("There was an error!", error);
+      });
+  }, [chooseBalance, dailyLoss]);
 
   return (
-    <div className="price-table">
+    <div className="price-table ">
       {/* Desktop version */}
       <div className="desktop-content relative z-[999] hidden lg:grid gap-2 w-full backdrop-blur-3xl rounded-2xl font-Montserrat">
         {/* Left side */}
         <div className="left grid grid-cols-5 items-center justify-start gap-2  font-medium">
           {/* left-inside */}
-          <div className="heading grid col-span-3 gap-5 p-5 h-full bg-light/[17%] rounded-3xl">
+          <div
+            className={`heading grid col-span-3 gap-5 p-5 h-full rounded-3xl ${clr}`}
+          >
             <h3 className="font-light">
               <b className="font-bold">Step 1: </b> Choose your Balance
             </h3>
@@ -122,9 +144,11 @@ export default function PriceTable() {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    btnNum === 1 ? "border-primary" : "border-primary/10"
+                    chooseBalance === 5000
+                      ? "border-primary"
+                      : "border-primary/10"
                   }`}
-                  onClick={() => setBtnNum(1)}
+                  onClick={() => setChooseBalance(5000)}
                 >
                   $ 5,000
                 </button>
@@ -133,9 +157,11 @@ export default function PriceTable() {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    btnNum === 2 ? "border-primary" : "border-primary/10"
+                    chooseBalance === 10000
+                      ? "border-primary"
+                      : "border-primary/10"
                   }`}
-                  onClick={() => setBtnNum(2)}
+                  onClick={() => setChooseBalance(10000)}
                 >
                   $ 10,000
                 </button>
@@ -144,9 +170,11 @@ export default function PriceTable() {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    btnNum === 3 ? "border-primary" : "border-primary/10"
+                    chooseBalance === 25000
+                      ? "border-primary"
+                      : "border-primary/10"
                   }`}
-                  onClick={() => setBtnNum(3)}
+                  onClick={() => setChooseBalance(25000)}
                 >
                   $ 25,000
                 </button>
@@ -155,9 +183,11 @@ export default function PriceTable() {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    btnNum === 4 ? "border-primary" : "border-primary/10"
+                    chooseBalance === 50000
+                      ? "border-primary"
+                      : "border-primary/10"
                   }`}
-                  onClick={() => setBtnNum(4)}
+                  onClick={() => setChooseBalance(50000)}
                 >
                   $ 50,000
                 </button>
@@ -166,9 +196,11 @@ export default function PriceTable() {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    btnNum === 5 ? "border-primary" : "border-primary/10"
+                    chooseBalance === 100000
+                      ? "border-primary"
+                      : "border-primary/10"
                   }`}
-                  onClick={() => setBtnNum(5)}
+                  onClick={() => setChooseBalance(100000)}
                 >
                   $ 100,000
                 </button>
@@ -176,9 +208,11 @@ export default function PriceTable() {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    btnNum === 6 ? "border-primary" : "border-primary/10"
+                    chooseBalance === 200000
+                      ? "border-primary"
+                      : "border-primary/10"
                   }`}
-                  onClick={() => setBtnNum(6)}
+                  onClick={() => setChooseBalance(200000)}
                 >
                   $ 200,000
                 </button>
@@ -186,7 +220,9 @@ export default function PriceTable() {
             </div>
           </div>
           {/* right-inside */}
-          <div className="right-inside p-5 bg-light/[17%] rounded-3xl col-span-2 h-full">
+          <div
+            className={`right-inside p-5 rounded-3xl col-span-2 h-full ${clr}`}
+          >
             <div className="heading">
               <h3 className="font-light">
                 <b className="font-bold">Step 2: </b> Choose your Platform
@@ -195,7 +231,7 @@ export default function PriceTable() {
             {/* Tranders */}
             <div className="tranders flex gap-3 items-center w-full mt-2 relative z-30">
               <div
-                className={`img scale-100 hover:scale-105 transition-all duration-200 py-2 px-6 rounded-3xl bg-light/60 border hover:border-primary cursor-pointer ${
+                className={`img scale-105 transition-all duration-200 py-2 px-6 rounded-3xl bg-light/30 relative after:absolute after:h-full after:w-full after:bottom-[-3rem] after:left-0 after:rounded-2xl after:bg-red-600 after:content-[coming_soon] group ${
                   activeTrade === "meta-4"
                     ? "border-primary"
                     : "border-transparent "
@@ -203,10 +239,13 @@ export default function PriceTable() {
                 onClick={() => setActiveTrade("meta-4")}
               >
                 <img
-                  className="max-w-[7rem] w-full opacity-[0.87]"
+                  className="max-w-[7rem] w-full relative opacity-20"
                   src={metaTraderFour}
                   alt="scop-markets"
                 />
+                <div className="coming-soon absolute transition-all duration-200 opacity-0 group-hover:opacity-100 left-1/2 transform -translate-x-1/2 whitespace-nowrap -bottom-[1rem]">
+                  <h6 className="text-[0.65rem]">Available Soon!</h6>
+                </div>
               </div>
               <div
                 className={`img scale-100 hover:scale-105 transition-all duration-200 py-2 px-6 rounded-3xl bg-light/60 border hover:border-primary cursor-pointer ${
@@ -227,7 +266,7 @@ export default function PriceTable() {
         </div>
 
         {/* Table */}
-        <div className="grid rounded-3xl w-full p-7 bg-light/[17%]">
+        <div className={`grid rounded-3xl w-full p-7 ${clr}`}>
           <div className="heading mb-8">
             <h3>
               <b className="font-bold">Step 3:</b> Customize your Challenge
@@ -237,24 +276,37 @@ export default function PriceTable() {
             <span className="col-span-4 text-start flex items-center gap-1">
               Trading <b className="font-bold"> Period </b>:
             </span>
-            <div className="col-span-2 relative before:absolute before:font-bold before:content-['Phase_1'] flex justify-center before:-top-10 before:text-[0.9rem]">
-              <div className="wrap flex gap-2 justify-center items-center !font-normal">
-                <PriceCollapse
-                  identity={1}
-                  priceChange={btnNum}
-                  setClose={setCloseAll}
-                  close={closeAll}
-                  data={["Unlimited", "45 Days", "30 Days"]}
-                />
+            <div className="col-span-2 relative before:absolute before:font-bold before:content-['Phase_1'] flex justify-center before:-top-10 before:text-[0.9rem] whitespace-nowrap !font-normal">
+              <div className="wrap relative">
+                <select
+                  id="treading-period"
+                  name="treading-period"
+                  onChange={(e) => setTradingPeriod(e.target.value)}
+                  className="price-table-select"
+                >
+                  <option value="0-0">Unlimited</option>
+                  <option value="45-45">45 Days</option>
+                  <option value="30-60">30 Days</option>
+                </select>
+                {/* arrow */}
+                <div className="arrow absolute right-[0.55rem] top-1/2 transform -translate-y-1/2">
+                  <img className="w-[0.9rem]" src={arrow} alt="arrow" />
+                </div>
               </div>
             </div>
-            <div className="col-span-2 relative before:absolute before:font-bold before:content-['Phase_2'] flex justify-center before:-top-10 before:text-[0.9rem] font-normal">
-              <PriceCollapse
-                key={2}
-                setClose={setCloseAll}
-                close={closeAll}
-                data={["Unlimited", "45 Days", "30 Days"]}
-              />
+
+            <div className="col-span-2 flex justify-center">
+              <div className="relative before:absolute before:font-bold before:content-['Phase_2'] flex justify-center before:-top-10 before:text-[0.9rem] font-normal whitespace-nowrap">
+                <div className="col-span-2 flex justify-center items-center">
+                  <span className="priceVal">
+                    {tradingPeriod === "0-0"
+                      ? "Unlimited"
+                      : tradingPeriod === "45-45"
+                      ? "45 Days"
+                      : "60 Days"}
+                  </span>
+                </div>
+              </div>
             </div>
             <span className="col-span-2 relative before:absolute before:font-bold before:content-['Funded'] before:-top-10 flex justify-center items-center">
               Unlimited
@@ -265,23 +317,32 @@ export default function PriceTable() {
             <span className="col-span-4 text-start flex items-center gap-1">
               Minimum Trading <b className="font-bold"> Days</b>:
             </span>
-            <span className="col-span-2 flex justify-center">
-              <PriceCollapse
-                identity={3}
-                priceChange={btnNum}
-                setClose={setCloseAll}
-                close={closeAll}
-                data={["0 Days", "5 Days", "10 Days"]}
-              />
+            <span className="col-span-2 flex justify-center ">
+              <div className="wrap relative">
+                <select
+                  id="treading-period"
+                  name="treading-period"
+                  onChange={(e) => setTradingDays(e.target.value)}
+                  className="price-table-select"
+                >
+                  <option value="0-0">0 Days</option>
+                  <option value="3-3">3 Days</option>
+                  <option value="5-5">5 Days</option>
+                </select>
+                {/* arrow */}
+                <div className="arrow absolute right-[0.55rem] top-1/2 transform -translate-y-1/2">
+                  <img className="w-[0.9rem]" src={arrow} alt="arrow" />
+                </div>
+              </div>
             </span>
             <span className="col-span-2 flex justify-center">
-              <PriceCollapse
-                identity={4}
-                priceChange={btnNum}
-                setClose={setCloseAll}
-                close={closeAll}
-                data={["0 Days", "5 Days", "10 Days"]}
-              />
+              <span className="priceVal inline-flex justify-center items-center">
+                {tradingDays === "0-0"
+                  ? "0 Days"
+                  : tradingDays === "3-3"
+                  ? "3 Days"
+                  : "5 Days"}
+              </span>
             </span>
             <span className="col-span-2 flex justify-center items-center">
               -
@@ -293,25 +354,25 @@ export default function PriceTable() {
               Max <b className="font-bold"> Daily </b> Loss:
             </span>
             <div className="col-span-2 ">
-              <span className="priceVal inline-flex justify-center items-center">
-                <PriceCollapse
-                  identity={5}
-                  priceChange={btnNum}
-                  setClose={setCloseAll}
-                  close={closeAll}
-                  state={setDailyLoss}
-                  data={[
-                    `$ ${priceValues[btnNum][0]} (5%)`,
-                    `$ ${
-                      (priceValues[btnNum][0].replace(",", "") / 5) * 4
-                    } (4%)`,
-                  ]}
-                />
+              <span className="priceVal inline-flex justify-center items-center relative">
+                <select
+                  id="daily-loss"
+                  name="daily-loss"
+                  onChange={(e) => setDailyLoss(e.target.value)}
+                  className="price-table-select"
+                >
+                  <option value="5">10,000 (5%)</option>
+                  <option value="4">8,000 (4%)</option>
+                </select>
+                {/* arrow */}
+                <div className="arrow absolute right-[0.55rem] top-1/2 transform -translate-y-1/2">
+                  <img className="w-[0.9rem]" src={arrow} alt="arrow" />
+                </div>
               </span>
             </div>
             <div className="col-span-2 flex justify-center items-center">
               <span className="priceVal inline-flex justify-center items-center">
-                {dailyLoss}
+                {dailyLoss === "5" ? "10,000 (5%)" : "8,000 (4%)"}
               </span>
             </div>
             <div className="col-span-2 flex justify-center items-center gap-1">
@@ -327,28 +388,32 @@ export default function PriceTable() {
               Max <b className="font-bold">Overall </b> Loss:
             </span>
             <div className="col-span-2">
-              <span className="priceVal inline-flex justify-center items-center">
-                <PriceCollapse
-                  identity={6}
-                  priceChange={btnNum}
-                  setClose={setCloseAll}
-                  close={closeAll}
-                  state={setOverallloss}
-                  data={[
-                    `$ ${priceValues[btnNum][3]} (12%)`,
-                    `$ ${
-                      (priceValues[btnNum][3].replace(",", "") / 12) * 10
-                    } (10%)`,
-                    `$ ${
-                      (priceValues[btnNum][3].replace(",", "") / 12) * 8
-                    } (8%)`,
-                  ]}
-                />
+              <span className="priceVal inline-flex justify-center items-center relative">
+                <select
+                  id="daily-loss"
+                  name="daily-loss"
+                  onChange={(e) => setOverallloss(e.target.value)}
+                  className="price-table-select"
+                >
+                  <option value="12">24,000 (12%)</option>
+                  <option value="10">20,000 (10%)</option>
+                  <option value="8">16,000 (8%)</option>
+                </select>
+                {/* arrow */}
+                <div className="arrow absolute right-[0.55rem] top-1/2 transform -translate-y-1/2">
+                  <img className="w-[0.9rem]" src={arrow} alt="arrow" />
+                </div>
               </span>
             </div>
             <div className="col-span-2 flex justify-center items-center">
               <span className="priceVal inline-flex justify-center items-center">
-                <span>{overallLoss}</span>
+                <span>
+                  {overallLoss === "12"
+                    ? "24,000 (12%)"
+                    : overallLoss === "10"
+                    ? "20,000 (10%)"
+                    : "16,000 (8%)"}
+                </span>
               </span>
             </div>
             <div className="col-span-2 flex justify-center items-center gap-1">
@@ -364,25 +429,27 @@ export default function PriceTable() {
               Profit <b className="font-bold">Target</b>:
             </span>
             <div className="col-span-2">
-              <span className="priceVal inline-flex justify-center items-center">
-                <PriceCollapse
-                  identity={7}
-                  priceChange={btnNum}
-                  setClose={setCloseAll}
-                  close={closeAll}
-                  data={[
-                    `$ ${priceValues[btnNum][6]} (10%)`,
-                    `$ ${
-                      (priceValues[btnNum][6].replace(",", "") / 10) * 8
-                    } (8%)`,
-                  ]}
-                />
+              <span className="priceVal inline-flex justify-center items-center relative">
+                <select
+                  id="daily-loss"
+                  name="daily-loss"
+                  onChange={(e) => setProfitTarget(e.target.value)}
+                  className="price-table-select"
+                >
+                  <option value="10">20,000 (10%)</option>
+                  <option value="8">16,000 (8%)</option>
+                </select>
+                {/* arrow */}
+                <div className="arrow absolute right-[0.55rem] top-1/2 transform -translate-y-1/2">
+                  <img className="w-[0.9rem]" src={arrow} alt="arrow" />
+                </div>
               </span>
             </div>
+
             <div className="col-span-2 flex justify-center items-center gap-1">
               <b>$ </b>
               <span className="priceVal inline-flex justify-center items-center">
-                {priceValues[btnNum][7]} (5%)
+                {profitTarget === "10" ? "20,000 (10%)" : "16,000 (8%)"}
               </span>
             </div>
             <span className="col-span-2 flex justify-center items-center">
@@ -433,12 +500,14 @@ export default function PriceTable() {
         </div>
 
         {/* bottom */}
-        <div className="bottom flex justify-between bg-light/[17%] py-7 px-12 rounded-3xl">
+        <div
+          className={`bottom flex justify-between py-7 px-12 rounded-3xl ${clr}`}
+        >
           <div className="wrap grid gap-1">
             <div className="refund flex items-center">
               <b className="text-lg font-codePro">Refundable fee:</b>
               <h4 className="text-[1.4rem] font-extrabold ml-4 w-28">
-                $ {refundable[btnNum]}
+                {totalPrice}
               </h4>
             </div>
             {/* text */}
@@ -464,9 +533,11 @@ export default function PriceTable() {
               <div className="price">
                 <button
                   className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                    btnNum === 1 ? "border-primary" : "border-primary/10"
+                    chooseBalance === 5000
+                      ? "border-primary"
+                      : "border-primary/10"
                   }`}
-                  onClick={() => setBtnNum(1)}
+                  onClick={() => setChooseBalance(5000)}
                 >
                   $ 5,000
                 </button>
@@ -474,9 +545,11 @@ export default function PriceTable() {
               <div className="price">
                 <button
                   className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                    btnNum === 2 ? "border-primary" : "border-primary/10"
+                    chooseBalance === 10000
+                      ? "border-primary"
+                      : "border-primary/10"
                   }`}
-                  onClick={() => setBtnNum(2)}
+                  onClick={() => setChooseBalance(10000)}
                 >
                   $ 10,000
                 </button>
@@ -485,9 +558,11 @@ export default function PriceTable() {
               <div className="price">
                 <button
                   className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                    btnNum === 3 ? "border-primary" : "border-primary/10"
+                    chooseBalance === 25000
+                      ? "border-primary"
+                      : "border-primary/10"
                   }`}
-                  onClick={() => setBtnNum(3)}
+                  onClick={() => setChooseBalance(25000)}
                 >
                   $ 25,000
                 </button>
@@ -498,9 +573,11 @@ export default function PriceTable() {
                 <div className="price">
                   <button
                     className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                      btnNum === 4 ? "border-primary" : "border-primary/10"
+                      chooseBalance === 50000
+                        ? "border-primary"
+                        : "border-primary/10"
                     }`}
-                    onClick={() => setBtnNum(4)}
+                    onClick={() => setChooseBalance(50000)}
                   >
                     $ 50,000
                   </button>
@@ -509,9 +586,11 @@ export default function PriceTable() {
                 <div className="price">
                   <button
                     className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                      btnNum === 5 ? "border-primary" : "border-primary/10"
+                      chooseBalance === 5
+                        ? "border-primary"
+                        : "border-primary/10"
                     }`}
-                    onClick={() => setBtnNum(5)}
+                    onClick={() => setChooseBalance(100000)}
                   >
                     $ 100,000
                   </button>
@@ -519,9 +598,11 @@ export default function PriceTable() {
                 <div className="price">
                   <button
                     className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                      btnNum === 6 ? "border-primary" : "border-primary/10"
+                      chooseBalance === 200000
+                        ? "border-primary"
+                        : "border-primary/10"
                     }`}
-                    onClick={() => setBtnNum(6)}
+                    onClick={() => setChooseBalance(200000)}
                   >
                     $ 200,000
                   </button>
@@ -621,7 +702,7 @@ export default function PriceTable() {
                       priceChange={btnNum}
                       setClose={setCloseAll}
                       close={closeAll}
-                      data={["0 Days", "5 Days", "10 Days"]}
+                      data={["0 Days", "5 Days", "7 Days"]}
                     />
                   </div>
 
@@ -749,7 +830,7 @@ export default function PriceTable() {
                       priceChange={btnNum}
                       setClose={setCloseAll}
                       close={closeAll}
-                      data={["0 Days", "5 Days", "10 Days"]}
+                      data={["0 Days", "5 Days", "7 Days"]}
                     />
                   </div>
 
@@ -900,7 +981,7 @@ export default function PriceTable() {
               <span className="!text-lg">Refundable fee: </span>
               <h4 className="text-[1.5rem] font-Montserrat font-extrabold ml-4">
                 {" "}
-                $ {refundable[btnNum]}
+                {totalPrice}
               </h4>
             </div>
           </div>

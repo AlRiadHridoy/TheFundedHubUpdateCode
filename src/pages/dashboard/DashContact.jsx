@@ -12,7 +12,7 @@ export default function DashContact() {
   }, [pathname]);
   return (
     <main className="contact content-wrapper pt-16 sm:pb-6 sm:pt-24 min-h-screen bg-black  purple-shadow-dash">
-      <div className="px-6 py-[20px] z-10 relative">
+      <div className="px-6 py-[20px] z-10 relative md:ml-1">
         <div className="breadcrumb-wrap">
           <div className="breadcrumb-title">Contact</div>
         </div>
@@ -33,7 +33,7 @@ export default function DashContact() {
             </div>
             {/* Right */}
             <div className="right md:col-span-2 max-w-[50rem] w-full">
-              <ContactForm />
+              <ContactForm clr={"dash-bar-clr"} />
             </div>
           </div>
         </div>
