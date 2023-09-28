@@ -19,19 +19,19 @@ import PriceCollapse from "./PriceCollapse";
 
 export default function PriceTable({ clr }) {
   // choose balance
-  const [chooseBalance, setChooseBalance] = useState(200000);
+  const [chooseBalance, setChooseBalance] = useState("200000");
   const [tradingPeriod, setTradingPeriod] = useState("0-0");
   const [tradingDays, setTradingDays] = useState("0-0");
   const [dailyLoss, setDailyLoss] = useState("5");
   const [overallLoss, setOverallloss] = useState("12");
   const [profitTarget, setProfitTarget] = useState("10-5");
 
+  // navigate to payment page
+
   const [btnNum, setBtnNum] = useState(6);
   const [closeAll, setCloseAll] = useState(false);
   const [totalPrice, setTotalPrice] = useState(0);
   const [activeTrade, setActiveTrade] = useState("meta-5");
-
-  // const sec = useRef();
 
   const priceValues = {
     0: [
@@ -113,6 +113,7 @@ export default function PriceTable({ clr }) {
     ],
   };
 
+
   // Get Price values
   useEffect(() => {
     const url = `https://development-api.thefundedhub.com/v1/website/prices?phaseCount=2&startingCapital=${chooseBalance}&minimumTradingDays=${tradingDays}&maximumTradingDays=${tradingPeriod}&profitTargetPercentage=${profitTarget}&maximumDailyLossPercentage=${dailyLoss}&maximumTotalLossPercentage=${overallLoss}`;
@@ -136,7 +137,24 @@ export default function PriceTable({ clr }) {
 
   // purchage request
   const purchageRequest = () => {
-    as
+    axios
+      .post("https://development-api.thefundedhub.com/v1/website/purchases", {
+        email: "johndoe@mail.com",
+        firstName: "John",
+        lastName: "doe",
+        paymentProvider: "STRIPE",
+        platform: "MT5",
+        phaseCount: "2",
+        startingCapital: chooseBalance,
+        minimumTradingDays: tradingDays,
+        maximumTradingDays: tradingPeriod,
+        profitTargetPercentage: profitTarget,
+        maximumDailyLossPercentage: dailyLoss,
+        maximumTotalLossPercentage: overallLoss,
+      })
+      .then((response) => {
+        window.location.replace(response.data.data.paymentUrl);
+      });
   };
 
   return (
@@ -156,11 +174,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === 5000
+                    chooseBalance === "5000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance(5000)}
+                  onClick={() => setChooseBalance("5000")}
                 >
                   $ 5,000
                 </button>
@@ -169,11 +187,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === 10000
+                    chooseBalance === "10000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance(10000)}
+                  onClick={() => setChooseBalance("10000")}
                 >
                   $ 10,000
                 </button>
@@ -182,11 +200,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === 25000
+                    chooseBalance === "25000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance(25000)}
+                  onClick={() => setChooseBalance("25000")}
                 >
                   $ 25,000
                 </button>
@@ -195,11 +213,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === 50000
+                    chooseBalance === "50000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance(50000)}
+                  onClick={() => setChooseBalance("50000")}
                 >
                   $ 50,000
                 </button>
@@ -208,11 +226,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === 100000
+                    chooseBalance === "100000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance(100000)}
+                  onClick={() => setChooseBalance("100000")}
                 >
                   $ 100,000
                 </button>
@@ -220,11 +238,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === 200000
+                    chooseBalance === "200000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance(200000)}
+                  onClick={() => setChooseBalance("200000")}
                 >
                   $ 200,000
                 </button>
@@ -448,8 +466,8 @@ export default function PriceTable({ clr }) {
                   onChange={(e) => setProfitTarget(e.target.value)}
                   className="price-table-select"
                 >
-                  <option value="10">20,000 (10%)</option>
-                  <option value="8">16,000 (8%)</option>
+                  <option value="10-5">20,000 (10%)</option>
+                  <option value="8-5">16,000 (8%)</option>
                 </select>
                 {/* arrow */}
                 <div className="arrow absolute right-[0.55rem] top-1/2 transform -translate-y-1/2">
@@ -529,9 +547,9 @@ export default function PriceTable({ clr }) {
           </div>
 
           <div className="btn flex justify-start items-center">
-            <Link to="/login" className="glowing-btn">
+            <div onClick={purchageRequest} className="glowing-btn">
               Get Funded Now
-            </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -545,11 +563,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                    chooseBalance === 5000
+                    chooseBalance === "5000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance(5000)}
+                  onClick={() => setChooseBalance("5000")}
                 >
                   $ 5,000
                 </button>
@@ -557,11 +575,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                    chooseBalance === 10000
+                    chooseBalance === "10000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance(10000)}
+                  onClick={() => setChooseBalance("10000")}
                 >
                   $ 10,000
                 </button>
@@ -570,11 +588,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                    chooseBalance === 25000
+                    chooseBalance === "25000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance(25000)}
+                  onClick={() => setChooseBalance("25000")}
                 >
                   $ 25,000
                 </button>
@@ -585,11 +603,11 @@ export default function PriceTable({ clr }) {
                 <div className="price">
                   <button
                     className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                      chooseBalance === 50000
+                      chooseBalance === "50000"
                         ? "border-primary"
                         : "border-primary/10"
                     }`}
-                    onClick={() => setChooseBalance(50000)}
+                    onClick={() => setChooseBalance("50000")}
                   >
                     $ 50,000
                   </button>
@@ -598,11 +616,11 @@ export default function PriceTable({ clr }) {
                 <div className="price">
                   <button
                     className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                      chooseBalance === 5
+                      chooseBalance === "100000"
                         ? "border-primary"
                         : "border-primary/10"
                     }`}
-                    onClick={() => setChooseBalance(100000)}
+                    onClick={() => setChooseBalance("100000")}
                   >
                     $ 100,000
                   </button>
@@ -610,11 +628,11 @@ export default function PriceTable({ clr }) {
                 <div className="price">
                   <button
                     className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                      chooseBalance === 200000
+                      chooseBalance === "200000"
                         ? "border-primary"
                         : "border-primary/10"
                     }`}
-                    onClick={() => setChooseBalance(200000)}
+                    onClick={() => setChooseBalance("200000")}
                   >
                     $ 200,000
                   </button>
