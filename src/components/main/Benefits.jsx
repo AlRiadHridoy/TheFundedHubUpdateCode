@@ -6,7 +6,7 @@ import MotionY from "../../ui/MotionY";
 
 // trader
 import metaTraderFive from "../../assets/images/meta-trader-5.webp";
-import blackBull from "../../assets/images/BlackBull-logo.svg";
+import blackBull from "../../assets/images/BlackBull-logo.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -284,8 +284,8 @@ export default function Benefits() {
 
             {/* trande area */}
             <div className="trade mt-12 ">
-              <div className="bg-[#2B2C30]/[17%] border-[3px] border-primary/[3%] rounded-3xl p-6 grid gap-6 md:grid-cols-5 justify-center items-center max-w-[72rem] m-auto bottom-shadow">
-                <div className="left md:col-span-3">
+              <div className="bg-[#2B2C30]/[17%] rounded-3xl p-6 grid gap-6 md:grid-cols-7 justify-center items-center max-w-[64rem] m-auto bottom-shadow">
+                <div className="left md:col-span-5">
                   <h4 className="text-xl font-medium">Regulated Broker</h4>
                   <p className="pt-2">
                     Trade with lightning fast execution speed on a trusted &
@@ -295,16 +295,11 @@ export default function Benefits() {
                 </div>
 
                 {/* right */}
-                <div className="right md:col-span-2 md:place-self-end flex flex-col gap-3 justify-center items-center">
+                <div className="right md:col-span-2  flex flex-col justify-center items-center md:mt-4">
                   <img
-                    className="max-w-[14rem] sm:max-w-[18rem] w-full"
+                    className="max-w-[12rem] sm:max-w-[16rem] w-full "
                     src={blackBull}
                     alt="black-bull"
-                  />
-                  <img
-                    className="max-w-[9rem] w-full"
-                    src={metaTraderFive}
-                    alt="metaTrader-5"
                   />
                 </div>
               </div>

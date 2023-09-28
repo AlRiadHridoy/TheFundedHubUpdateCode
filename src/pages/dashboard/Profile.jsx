@@ -279,8 +279,8 @@ export default function Profile() {
                       </div>
                     </div>
                   </div>
-                  <div className="save flex justify-center w-full mt-6">
-                    <button className="capitalize hidden sm:inline-block font-Montserrat text-lg font-bol2 py-3 max-w-[20rem] w-full text-center dash-btn rounded-3xl cursor-pointer m-auto font-semibold">
+                  <div className="save flex justify-center w-full mt-3">
+                    <button className="capitalize hidden sm:inline-block font-Montserrat text-lg font-bol2 py-3 max-w-[12rem] w-full text-center dash-btn rounded-3xl cursor-pointer m-auto font-semibold">
                       Save
                     </button>
                   </div>
@@ -329,7 +329,7 @@ export default function Profile() {
                     </div>
                   </div>
 
-                  <div className="save flex justify-center w-full mt-10">
+                  <div className="save flex justify-center w-full mt-4">
                     <button className="capitalize hidden sm:inline-block font-Montserrat text-lg font-bol2 py-3 max-w-[12rem] w-full text-center dash-btn rounded-3xl cursor-pointer m-auto">
                       Save
                     </button>
@@ -395,7 +395,7 @@ export default function Profile() {
                             </div>
                           </div>
 
-                          <div className="save flex justify-center w-full mt-10">
+                          <div className="save flex justify-center w-full mt-4">
                             <button className="capitalize hidden sm:inline-block font-Montserrat text-lg font-bold py-2 max-w-[12rem] w-full text-center dash-btn rounded-3xl cursor-pointer m-auto">
                               Save
                             </button>

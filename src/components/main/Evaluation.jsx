@@ -11,7 +11,6 @@ import "swiper/css/pagination";
 // import required modules
 import { EffectCoverflow, Navigation } from "swiper";
 
-import { Link } from "react-router-dom";
 
 export default function Evaluation() {
   return (
@@ -85,12 +84,12 @@ export default function Evaluation() {
                 </div>
 
                 <div className="card-bottom mt-4 flex justify-center items-center text-center">
-                  <Link
-                    to="/login"
-                    className="uppercase font-Montserrat text-xs font-bold px-8 border-primary/50 hover:border-primary transition-all duration-200 border-4 rounded-3xl w-[13rem] py-3 text-main-bg opacity-[75%] hover:opacity-100 eva-btn-glow"
+                  <a
+                    href="#price-table"
+                    className="uppercase font-Montserrat text-xs font-bold px-8 transition-all duration-200 rounded-3xl py-3 opacity-100 hover:opacity-[75%] discglow-btn"
                   >
-                    Get Funded Now
-                  </Link>
+                    Customize Challenge
+                  </a>
                 </div>
               </MotionY>
             </div>
@@ -139,12 +138,12 @@ export default function Evaluation() {
                 </div>
 
                 <div className="card-bottom mt-4 flex justify-center items-center text-center">
-                  <Link
-                    to="/login"
-                    className="uppercase font-Montserrat text-xs font-bold px-8 border-primary/50 hover:border-primary transition-all duration-200 border-4 rounded-3xl w-[13rem] py-3 text-main-bg opacity-[75%] hover:opacity-100 eva-btn-glow"
+                  <a
+                    href="#price-table"
+                    className="uppercase font-Montserrat text-xs font-bold px-8 transition-all duration-200 rounded-3xl py-3 opacity-100 hover:opacity-[75%] discglow-btn"
                   >
-                    Get Funded Now
-                  </Link>
+                    Customize Challenge
+                  </a>
                 </div>
               </MotionY>
             </div>
@@ -198,12 +197,12 @@ export default function Evaluation() {
                 </div>
 
                 <div className="card-bottom mt-4 flex justify-center items-center text-center">
-                  <Link
-                    to="/login"
-                    className="uppercase font-Montserrat text-xs font-bold px-8 border-primary/50 hover:border-primary transition-all duration-200 border-4 rounded-3xl w-[13rem] py-3 text-main-bg opacity-[75%] hover:opacity-100 eva-btn-glow"
+                  <a
+                    href="#price-table"
+                    className="uppercase font-Montserrat text-xs font-bold px-8 transition-all duration-200 rounded-3xl py-3 opacity-100 hover:opacity-[75%] discglow-btn"
                   >
-                    Get Funded Now
-                  </Link>
+                    Customize Challenge
+                  </a>
                 </div>
               </MotionY>
             </div>
@@ -273,12 +272,12 @@ export default function Evaluation() {
                   </div>
 
                   <div className="card-bottom mt-4 flex justify-center items-center text-center">
-                    <Link
-                      to="/login"
+                    <a
+                      href="#price-table"
                       className="capitalize bg-primary/20 font-base flex justify-center items-center py-2 px-8 rounded-lg whitespace-nowrap font-codePro font-light text-base"
                     >
-                      Get Funded Now
-                    </Link>
+                      Customize Challenge
+                    </a>
                   </div>
                 </div>
               </SwiperSlide>
@@ -326,12 +325,12 @@ export default function Evaluation() {
                   </div>
 
                   <div className="card-bottom mt-4 flex justify-center items-center text-center">
-                    <Link
-                      to="/login"
+                    <a
+                      href="#price-table"
                       className="capitalize bg-primary/20 font-base flex justify-center items-center py-2 px-8 rounded-lg whitespace-nowrap font-codePro font-light text-base"
                     >
-                      Get Funded Now
-                    </Link>
+                      Customize Challenge
+                    </a>
                   </div>
                 </div>
               </SwiperSlide>
@@ -380,12 +379,12 @@ export default function Evaluation() {
                   </div>
 
                   <div className="card-bottom mt-4 flex justify-center items-center text-center">
-                    <Link
-                      to="/login"
+                    <a
+                      href="#price-table"
                       className="capitalize bg-primary/20 font-base flex justify-center items-center py-2 px-8 rounded-lg whitespace-nowrap font-codePro font-light text-base"
                     >
-                      Get Funded Now
-                    </Link>
+                      Customize Challenge
+                    </a>
                   </div>
                 </div>
               </SwiperSlide>

@@ -46,7 +46,7 @@
 }
 
 .nav-link {
-  @apply w-[90%] flex items-center px-[22px] py-[12px] text-[12px]  rounded-t-[5px] rounded-r-none rounded-b-none rounded-l-[5px] opacity-80 transition-all duration-300 ease-linear hover:bg-[#343047] hover:text-white;
+  @apply w-[90%] flex items-center px-[22px] py-[10px] text-[12px]  rounded-t-[5px] rounded-r-none rounded-b-none rounded-l-[5px] opacity-80 transition-all duration-300 ease-linear hover:bg-[#343047] hover:text-white;
 }
 
 .nav-icon {
@@ -158,9 +158,9 @@
   @apply font-Montserrat font-normal;
 }
 
-.select-account-options {
+/* .select-account-options {
   @apply shadow-[0_1px_15px_rgba(199,179,252,0.13)] bg-main-bg;
-}
+} */
 
 .hover-txt::after {
   position: absolute;
@@ -312,6 +312,20 @@
     box-shadow: 0 0 5px #c381fc;
   }
 }
+@keyframes twtglowing {
+  0% {
+    box-shadow: 0 0 5px #4f46e5;
+  }
+  50% {
+    box-shadow: 0 0 20px #4f46e5;
+  }
+  100% {
+    box-shadow: 0 0 5px #4f46e5;
+  }
+}
 .discglow-btn {
   animation: discglowing 1300ms infinite;
+}
+.twtglow-btn {
+  animation: twtglowing 1300ms infinite;
 }

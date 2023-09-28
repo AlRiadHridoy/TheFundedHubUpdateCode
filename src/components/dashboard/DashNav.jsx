@@ -76,7 +76,7 @@ export default function DashNav({ props }) {
               </header>
 
               <div
-                className={`select-account-options dash-bar-clr content overflow-hidden absolute border border-primary/0 transition-all duration-300 py-[0.26rem] w-full mt-2 rounded-lg font-Montserrat floating-bars ${
+                className={`select-account-options dash-bar-clr border border-primary/20 content overflow-hidden absolute border border-primary/0 transition-all duration-300 py-[0.26rem] w-full mt-2 rounded-lg font-Montserrat floating-bars ${
                   isOpen
                     ? "max-h-[81px] opacity-100 visible"
                     : "max-h-0 opacity-0 invisible"
@@ -87,7 +87,7 @@ export default function DashNav({ props }) {
                   className="grid gap-1 text-center text-[0.9rem] xs:text-base"
                 >
                   <h5
-                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/50 hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-300 border-b border-primary/20 py-1.5 ${
+                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/10 ease-linear hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-300 border-b border-primary/20 py-1.5 ${
                       account === "Phase 1 - 6180217" ? "hidden" : ""
                     }`}
                     onClick={() => (
@@ -97,7 +97,7 @@ export default function DashNav({ props }) {
                     Phase 1 - 6180217
                   </h5>
                   <h5
-                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/50 hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-300 border-b border-primary/20 py-1.5 ${
+                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/10 ease-linear hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-300 border-b border-primary/20 py-1.5 ${
                       account === "Phase 2 - 9584654" ? "hidden" : ""
                     }`}
                     onClick={() => (
@@ -107,7 +107,7 @@ export default function DashNav({ props }) {
                     Phase 2 - 9584654
                   </h5>
                   <h5
-                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/50 hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-300 border-b border-primary/20 py-1.5 ${
+                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/10 ease-linear hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-300 border-b border-primary/20 py-1.5 ${
                       account === "Funded - 7382691" ? "hidden" : ""
                     }`}
                     onClick={() => (
@@ -147,7 +147,7 @@ export default function DashNav({ props }) {
                   className="grid gap-1 mt-1 text-[0.9rem] xs:text-base pb-4 px-4"
                 >
                   <h5
-                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/50 hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-200 ${
+                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/10 ease-linear hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-200 ${
                       account === "Phase - 1" ? "hidden" : ""
                     }`}
                     onClick={() => (setAccount("Phase - 1"), setIsOpen(false))}
@@ -155,7 +155,7 @@ export default function DashNav({ props }) {
                     Phase - 1
                   </h5>
                   <h5
-                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/50 hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-200 ${
+                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/10 ease-linear hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-200 ${
                       account === "Phase - 2" ? "hidden" : ""
                     }`}
                     onClick={() => (setAccount("Phase - 2"), setIsOpen(false))}
@@ -163,7 +163,7 @@ export default function DashNav({ props }) {
                     Phase - 2
                   </h5>
                   <h5
-                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/50 hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-200 ${
+                    className={`cursor-pointer whitespace-nowrap hover:bg-primary/10 ease-linear hover:text-white scale-100 hover:scale-105 font-normal transition-all duration-200 ${
                       account === "Funded" ? "hidden" : ""
                     }`}
                     onClick={() => (setAccount("Funded"), setIsOpen(false))}
@@ -196,8 +196,8 @@ export default function DashNav({ props }) {
           <div
             className={`floating absolute dash-bar-clr z-50 -bottom-[7rem] text-wht rounded-xl border border-primary/20 transition-all duration-300 transform ${
               userOpen
-                ? "opacity-100 scale-100 -right-[1rem]"
-                : "opacity-0 scale-75 -right-[3rem]"
+                ? "opacity-100 scale-100 -right-[1rem] visible"
+                : "opacity-0 scale-75 -right-[3rem] invisible"
             }`}
           >
             <div className="wrap">

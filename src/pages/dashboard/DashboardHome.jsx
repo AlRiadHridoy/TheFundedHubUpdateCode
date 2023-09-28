@@ -368,7 +368,7 @@ export default function NewDashboard() {
               <div className="chart-wrap md:col-span-2 grid gap-4 mt-1">
                 <div className="wrap">
                   <div className="head text-[1.4rem] leading-6 text-wht-gradient">
-                    Balance chart
+                    Balance Chart
                   </div>
                 </div>
                 <div className="dash-home-bg overflow-hidden w-full max-h-full">
@@ -379,15 +379,15 @@ export default function NewDashboard() {
               <div className="right md:col-span-1 grid gap-4">
                 <div className="top flex gap-4 justify-between items-center">
                   <div className="head text-[1.4rem] leading-6 text-wht-gradient">
-                    Funded Account
+                    Account Details
                   </div>
 
                   <div className="pas bg-grn p-1 px-2.5 rounded-2xl text-white">
                     passed
                   </div>
                 </div>
-                <div className="wrap dash-home-bg py-6 px-4 text-sm h-full">
-                  <div className=" grid gap-8">
+                <div className="wrap text-sm h-full grid gap-6">
+                  <div className="dash-home-bg grid gap-6 py-6 px-4">
                     <div className="txt flex gap-4 justify-between">
                       <div className="name text-gry">Deposit:</div>
                       <div className="value">£10,000.00</div>
@@ -404,6 +404,9 @@ export default function NewDashboard() {
                       <div className="name text-gry">Platform:</div>
                       <div className="value">MetaTrader 5</div>
                     </div>
+                  </div>
+                  {/* second part */}
+                  <div className="dash-home-bg grid gap-6 py-6 px-4">
                     <div className="txt flex gap-4 justify-between">
                       <div className="name text-gry">Balance:</div>
                       <div className="value">£10,425.05</div>
@@ -425,26 +428,26 @@ export default function NewDashboard() {
               </div>
             </div>
             {/* options */}
-            <div className="wrap grid sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-5 text-sm pt-2">
+            <div className="wrap grid sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-5 text-sm pt-2 text-center">
               <div className="dash-home-bg p-4">
-                <div className="top text-[0.8rem] flex justify-between gap-1">
+                <div className="top text-[0.8rem] flex justify-center gap-2">
                   <div className="text-gry">Balance</div>
-                  <div className="text-green-500 ">+£425.05</div>
+                  {/* <div className="text-green-500 ">+£425.05</div> */}
                 </div>
 
                 <div className="val font-bold">£10,425.05</div>
               </div>
               <div className="dash-home-bg p-4">
-                <div className="top text-[0.8rem] flex justify-between gap-1">
+                <div className="top text-[0.8rem] flex justify-center gap-2">
                   <div className="text-gry">Equity</div>
-                  <div className="text-green-500 ">+£425.05</div>
+                  {/* <div className="text-green-500 ">+£425.05</div> */}
                 </div>
 
                 <div className="val font-bold">£10,425.05</div>
               </div>
 
               <div className="dash-home-bg p-4">
-                <div className="top text-[0.8rem] flex justify-between gap-1">
+                <div className="top text-[0.8rem] flex justify-center gap-2">
                   <div className="text-gry">Today’s Permitted Loss</div>
                 </div>
 
@@ -452,14 +455,14 @@ export default function NewDashboard() {
               </div>
 
               <div className="dash-home-bg p-4">
-                <div className="top text-[0.8rem] flex justify-between gap-1">
+                <div className="top text-[0.8rem] flex justify-center gap-2">
                   <div className="text-gry">Max. Permitted Loss</div>
                 </div>
 
                 <div className="val font-bold">Not available</div>
               </div>
               <div className="dash-home-bg p-4">
-                <div className="top text-[0.8rem] flex justify-between gap-1">
+                <div className="top text-[0.8rem] flex justify-center gap-2">
                   <div className="text-gry">Today&apos;s Profit</div>
                 </div>
 
@@ -470,7 +473,7 @@ export default function NewDashboard() {
             {/* two side */}
             <div className="wrap mt-8">
               <div className="head text-[1.4rem] leading-6 text-wht-gradient">
-                Trading Objectives
+                Objectives
               </div>
 
               <div className="items mt-4 grid sm:grid-cols-2 gap-4">

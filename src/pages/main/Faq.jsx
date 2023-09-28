@@ -416,9 +416,9 @@ export default function Faq() {
                   <div className="options sm:mr-[1rem] flex flex-wrap xs:grid grid-cols-2 md:grid-cols-1 gap-3 relative">
                     {/* option */}
                     <div
-                      className={`option text-center text-sm sm:text-base py-2 sm:py-3 md:py-[1rem] rounded-xl  border-[3px] bg-[#545454]/[15%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                      className={`option text-center text-sm sm:text-base py-2 sm:py-3 md:py-2.5 rounded-xl border-[3px] bg-[#545454]/[15%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
                         option === "Started"
-                          ? "border-primary/80 before:opacity-100"
+                          ? "border-primary/30 before:opacity-40"
                           : "border-transparent before:opacity-0 hover:border-primary/40"
                       }`}
                       onClick={() => setOption("Started")}
@@ -427,9 +427,9 @@ export default function Faq() {
                     </div>
                     {/* option */}
                     <div
-                      className={`option text-center text-sm sm:text-base py-2 sm:py-3 md:py-[1rem] rounded-xl  border-[3px] bg-[#545454]/[15%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                      className={`option text-center text-sm sm:text-base py-2 sm:py-3 md:py-2.5 rounded-xl border-[3px] bg-[#545454]/[15%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
                         option === "Evaluation"
-                          ? "border-primary/80 before:opacity-100"
+                          ? "border-primary/30 before:opacity-40"
                           : "border-transparent before:opacity-0 hover:border-primary/40"
                       }`}
                       onClick={() => setOption("Evaluation")}
@@ -438,9 +438,9 @@ export default function Faq() {
                     </div>
                     {/* option */}
                     <div
-                      className={`option text-center text-sm sm:text-base py-2 sm:py-3 md:py-[1rem] rounded-xl  border-[3px] bg-[#545454]/[15%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                      className={`option text-center text-sm sm:text-base py-2 sm:py-3 md:py-2.5 rounded-xl border-[3px] bg-[#545454]/[15%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
                         option === "TFH"
-                          ? "border-primary/80 before:opacity-100"
+                          ? "border-primary/30 before:opacity-40"
                           : "border-transparent before:opacity-0 hover:border-primary/40"
                       }`}
                       onClick={() => setOption("TFH")}
@@ -449,9 +449,9 @@ export default function Faq() {
                     </div>
                     {/* option */}
                     <div
-                      className={`option text-center text-sm sm:text-base py-2 sm:py-3 md:py-[1rem] rounded-xl  border-[3px] bg-[#545454]/[15%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                      className={`option text-center text-sm sm:text-base py-2 sm:py-3 md:py-2.5 rounded-xl border-[3px] bg-[#545454]/[15%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
                         option === "Billing"
-                          ? "border-primary/80 before:opacity-100"
+                          ? "border-primary/30 before:opacity-40"
                           : "border-transparent before:opacity-0 hover:border-primary/40"
                       }`}
                       onClick={() => setOption("Billing")}

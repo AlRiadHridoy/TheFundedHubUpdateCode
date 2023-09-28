@@ -92,7 +92,7 @@ export default function Hero() {
               <a
                 target="__blank"
                 href="https://discord.com/invite/96Mq2M2gdB"
-                className="uppercase font-base flex justify-center items-center border-[3px] border-white rounded-3xl whitespace-nowrap font-Montserrat font-semibold text-[0.8rem] h-[55px] sm:h-[45px] hover:opacity-60 opacity-100 transition-all duration-300 w-[230px]"
+                className="uppercase font-base flex justify-center items-center h-[55px] sm:h-[45px] w-[210px] sm:w-[240px] text-white border-primary rounded-3xl whitespace-nowrap font-Montserrat font-semibold text-[0.8rem] discglow-btn"
               >
                 Join our Discord
               </a>

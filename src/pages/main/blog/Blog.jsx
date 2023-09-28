@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "../../../components/main/Navbar";
 import Footer from "../../../components/main/Footer";
-import blogOne from "../../../assets/images/blog-1.png";
+// import blogOne from "../../../assets/images/blog-1.png";
 
 import { Link } from "react-router-dom";
 import Pagination from "@mui/material/Pagination";
@@ -54,14 +54,14 @@ export default function Blog() {
                 >
                   <div className="blog-img rounded-md">
                     <img
-                      className="rounded-md w-full h-full leading-none"
-                      src={blogOne}
+                      className="rounded-md w-full h-full leading-none hidden"
+                      src=""
                       alt=""
                     />
                   </div>
 
                   {/* texts */}
-                  <div className="texts mt-6 grid gap-3 pb-8">
+                  <div className="texts fmt-6 grid gap-3 pb-8">
                     <h3 className="font-semibold">{blog.title}</h3>
                     <div className="blog-para-slice">
                       <p

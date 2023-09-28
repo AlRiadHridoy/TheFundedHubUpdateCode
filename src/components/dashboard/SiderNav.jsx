@@ -22,15 +22,6 @@ export default function SiderNav() {
           <img className="inline-block w-36" src={mainLogo} alt="logo" />
         </Link>
       </div>
-      <div className="lg:hidden flex flex-wrap flex-col items-center justify-center">
-        <img
-          className="w-[55px] h-[55px] rounded-full"
-          src="/assets/img/author/author.jpeg"
-          alt="author"
-        />
-        <h4 className="text-wht text-[15px] mt-[8px]">abc dev</h4>
-        <p className="text-primary text-[12px] mt-[8px]">abc.dev@gmail.com</p>
-      </div>
       <div className="main-menu z-30 relative">
         <ul className="nav grid gap-2 overflow-y-scroll md:overflow-auto">
           <NavLink
@@ -60,7 +51,7 @@ export default function SiderNav() {
           >
             <li className="nav-item">
               <div className="nav-link group">
-                <span className="">Top-up & Reset</span>
+                <span className="">Reset & Free Retry</span>
               </div>
             </li>
           </NavLink>

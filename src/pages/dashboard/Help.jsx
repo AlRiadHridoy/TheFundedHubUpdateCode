@@ -384,7 +384,7 @@ export default function Help() {
   };
   return (
     <main className="content-wrapper min-h-screen pt-16 sm:pb-6 sm:pt-24 bg-black  purple-shadow-dash">
-      <div className="inner-content px-6">
+      <div className="inner-content px-6 md:ml-1">
         <div className="dashboard-wrapper">
           <div className="top-content relative faq-content">
             <div className="header grid relative">

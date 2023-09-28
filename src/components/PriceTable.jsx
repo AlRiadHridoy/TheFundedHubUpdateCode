@@ -20,11 +20,11 @@ import PriceCollapse from "./PriceCollapse";
 export default function PriceTable({ clr }) {
   // choose balance
   const [chooseBalance, setChooseBalance] = useState(200000);
-  const [dailyLoss, setDailyLoss] = useState(5);
-  const [overallLoss, setOverallloss] = useState(0);
-  const [profitTarget, setProfitTarget] = useState(0);
-  const [tradingPeriod, setTradingPeriod] = useState(0);
-  const [tradingDays, setTradingDays] = useState(0);
+  const [tradingPeriod, setTradingPeriod] = useState("0-0");
+  const [tradingDays, setTradingDays] = useState("0-0");
+  const [dailyLoss, setDailyLoss] = useState("5");
+  const [overallLoss, setOverallloss] = useState("12");
+  const [profitTarget, setProfitTarget] = useState("10-5");
 
   const [btnNum, setBtnNum] = useState(6);
   const [closeAll, setCloseAll] = useState(false);
@@ -115,7 +115,7 @@ export default function PriceTable({ clr }) {
 
   // Get Price values
   useEffect(() => {
-    const url = `https://development-api.thefundedhub.com/v1/website/prices?phaseCount=2&startingCapital=${chooseBalance}&minimumTradingDays=${tradingDays}&maximumTradingDays=${tradingPeriod}&profitTargetPercentage=8-5&maximumDailyLossPercentage=${dailyLoss}&maximumTotalLossPercentage=${overallLoss}`;
+    const url = `https://development-api.thefundedhub.com/v1/website/prices?phaseCount=2&startingCapital=${chooseBalance}&minimumTradingDays=${tradingDays}&maximumTradingDays=${tradingPeriod}&profitTargetPercentage=${profitTarget}&maximumDailyLossPercentage=${dailyLoss}&maximumTotalLossPercentage=${overallLoss}`;
     axios
       .get(url)
       .then((response) => {
@@ -125,10 +125,22 @@ export default function PriceTable({ clr }) {
       .catch((error) => {
         console.error("There was an error!", error);
       });
-  }, [chooseBalance, dailyLoss]);
+  }, [
+    chooseBalance,
+    dailyLoss,
+    overallLoss,
+    profitTarget,
+    tradingDays,
+    tradingPeriod,
+  ]);
+
+  // purchage request
+  const purchageRequest = () => {
+    as
+  };
 
   return (
-    <div className="price-table ">
+    <div id="price-table" className="price-table">
       {/* Desktop version */}
       <div className="desktop-content relative z-[999] hidden lg:grid gap-2 w-full backdrop-blur-3xl rounded-2xl font-Montserrat">
         {/* Left side */}
@@ -449,7 +461,7 @@ export default function PriceTable({ clr }) {
             <div className="col-span-2 flex justify-center items-center gap-1">
               <b>$ </b>
               <span className="priceVal inline-flex justify-center items-center">
-                {profitTarget === "10" ? "20,000 (10%)" : "16,000 (8%)"}
+                {profitTarget === "10-5" ? "20,000 (5%)" : "16,000 (5%)"}
               </span>
             </div>
             <span className="col-span-2 flex justify-center items-center">

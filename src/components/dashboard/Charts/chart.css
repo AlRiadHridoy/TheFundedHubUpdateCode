@@ -173,7 +173,11 @@
 }
 .pieChart .recharts-surface,
 .pieChart .recharts-responsive-container {
-  height: 450px;
+  height: 500px;
+}
+
+.pieChart .recharts-pie {
+  margin-top: -100px;
 }
 
 .pieChart ::-webkit-scrollbar {

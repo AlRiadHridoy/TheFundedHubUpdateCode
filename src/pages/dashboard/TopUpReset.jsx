@@ -56,7 +56,7 @@ export default function TopUpReset() {
               <div className="flex flex-col justify-between h-full p-5 rounded-3xl relative z-10 overflow-hidden dash-home-bg backdrop-blur-3xl dash-home-bg">
                 <div className="content">
                   <div className="card-heading flex items-center justify-between mb-[20px]">
-                    <h3 className="card-title text-xl">Top Up</h3>
+                    <h3 className="card-title text-xl">Funded Reset</h3>
                   </div>
                   <p className="xl:text-[18px] text-[16px] leading-[1.5] tracking-[-0.05px] mb-[40px] text-wht/70">
                     Traders will get an opportunity to bring back their account
@@ -78,7 +78,7 @@ export default function TopUpReset() {
                     href="#"
                     className="capitalize font-Montserrat text-sm font-bold py-4 px-12 dash-btn rounded-3xl"
                   >
-                    Top Up Request
+                    Reset Request
                   </a>
                 </div>
               </div>
@@ -86,7 +86,7 @@ export default function TopUpReset() {
               <div className="flex flex-col justify-between h-full p-5 rounded-3xl relative z-10 overflow-hidden dash-home-bg backdrop-blur-3xl dash-home-bg">
                 <div className="content">
                   <div className="card-heading flex items-center justify-between mb-[20px]">
-                    <h3 className="card-title text-xl">Reset</h3>
+                    <h3 className="card-title text-xl">Free Retry</h3>
                   </div>
                   <p className="text-dark xl:text-[18px] text-[16px] leading-[1.5] tracking-[-0.05px] mb-[40px] text-wht/70">
                     If a trader violates the rules his/her account will be
@@ -111,7 +111,7 @@ export default function TopUpReset() {
                     href="#"
                     className="capitalize font-Montserrat text-sm font-bold py-4 px-12 dash-btn rounded-3xl"
                   >
-                    Reset Request
+                    Free Retry Request
                   </a>
                 </div>
               </div>
@@ -125,7 +125,7 @@ export default function TopUpReset() {
                         onClick={() => setIsOpen(!isOpen)}
                       >
                         <h3 className="text-[1.1rem] font-Montserrat font-semibold leading-[1.185] tracking-[-0.05px]">
-                          Top Up & Reset History
+                          Reset & Free Retry History
                         </h3>
 
                         <div className="arrow">
