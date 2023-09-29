@@ -49,7 +49,7 @@ export default function Benefits() {
                   {/* Item */}
                   <MotionY
                     delay={0.1}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem]"
+                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
                   >
                     <div className="head text-base">
                       <h5>
@@ -72,7 +72,7 @@ export default function Benefits() {
                   {/* Item */}
                   <MotionY
                     delay={0.2}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem]"
+                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
                   >
                     <div className="head text-base">
                       <h5>
@@ -95,7 +95,7 @@ export default function Benefits() {
                   {/* Item */}
                   <MotionY
                     delay={0.3}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem]"
+                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
                   >
                     <div className="head text-base">
                       <h5>
@@ -117,7 +117,7 @@ export default function Benefits() {
                   {/* Item */}
                   <MotionY
                     delay={0.4}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem]"
+                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
                   >
                     <div className="head text-base">
                       <h5>
@@ -140,7 +140,7 @@ export default function Benefits() {
                   {/* Item */}
                   <MotionY
                     delay={0.5}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem]"
+                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
                   >
                     <div className="head text-base">
                       <h5>
@@ -284,7 +284,7 @@ export default function Benefits() {
 
             {/* trande area */}
             <div className="trade mt-12 ">
-              <div className="bg-[#2B2C30]/[17%] rounded-3xl p-6 grid gap-6 md:grid-cols-7 justify-center items-center max-w-[64rem] m-auto bottom-shadow">
+              <div className="home-item-bg-clr rounded-3xl p-6 grid gap-6 md:grid-cols-7 justify-center items-center max-w-[64rem] m-auto bottom-shadow">
                 <div className="left md:col-span-5">
                   <h4 className="text-xl font-medium">Regulated Broker</h4>
                   <p className="pt-2">
@@ -304,8 +304,6 @@ export default function Benefits() {
                 </div>
               </div>
             </div>
-            {/* Content Top */}
-            <div className="content-top"></div>
 
             <EarnSalary />
           </div>

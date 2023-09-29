@@ -26,7 +26,7 @@ export default function Prices() {
           </div>
           <div className="wrap sm:max-w-[70rem] sm:w-full sm:m-auto sm:pt-4">
             <MotionY>
-              <PriceTable clr={"bg-light/[17%]"} />
+              <PriceTable clr={"home-bg-clr-shadow"} />
             </MotionY>
           </div>
         </div>

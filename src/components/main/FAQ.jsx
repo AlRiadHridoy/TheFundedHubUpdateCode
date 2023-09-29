@@ -22,7 +22,7 @@ export default function FAQ() {
   return (
     <section className="faq relative pt-28">
       <div className="container relative z-10">
-        <div className="wrapper grid gap-12 justify-center items-center">
+        <div className="wrapper grid gap-8 justify-center items-center">
           <div className="heading flex flex-col gap-2 justify-center items-center text-center">
             <MotionX delay={0.1}>
               <h2 className="font-medium text-2xl xs:text-[1.7rem] tracking-tight text-wht-gradient">
@@ -54,15 +54,13 @@ export default function FAQ() {
           <div className="readmore flex justify-center mb-12 xs:mb-24 md:mb-32">
             <Link
               to="faq"
-              className="underline text-xs x:text-sm decoration-2 font-bold py-2 px-10"
+              className="text-xs x:text-sm font-bold py-2 px-10 border-2 border-primary/20 rounded-3xl"
             >
               Visit FAQ Page
             </Link>
           </div>
         </div>
       </div>
-
-      
     </section>
   );
 }

@@ -604,3 +604,45 @@ select option {
   object-fit: cover;
   opacity: 0.9;
 }
+
+.home-item-bg-clr {
+  background: linear-gradient(180deg, rgb(23, 21, 29) 0%, rgb(2, 2, 2) 100%);
+}
+.home-bg-clr-shadow {
+  background: linear-gradient(200deg, rgb(15, 14, 19) 0%, rgb(17, 16, 20) 100%);
+  box-shadow: -5px 1px 25px 1px rgba(0, 0, 0, 0.75);
+}
+
+.social-shadow {
+  box-shadow: -5px 1px 25px 1px rgba(0, 0, 0, 0.75);
+}
+
+.x-bg {
+  background: linear-gradient(200deg, rgb(48, 15, 145) 0%, rgb(0, 0, 0) 100%);
+}
+.discord-bg {
+  background: linear-gradient(200deg, #341353 0%, rgb(0, 0, 0) 100%);
+}
+.insta-bg {
+  background: linear-gradient(200deg, #2b2d42 0%, rgb(0, 0, 0) 100%);
+}
+
+@keyframes insta-glowing {
+  0% {
+    box-shadow: 0 0 5px #6e7399;
+  }
+  50% {
+    box-shadow: 0 0 20px #6e7399;
+  }
+  100% {
+    box-shadow: 0 0 5px #6e7399;
+  }
+}
+.insta-glowing-btn {
+  animation: insta-glowing 1300ms infinite;
+}
+
+.evaluation-grnt {
+background: rgb(206,187,255);
+background: linear-gradient(59deg, rgba(206,187,255,1) 0%, rgba(103,70,132,1) 100%);
+}

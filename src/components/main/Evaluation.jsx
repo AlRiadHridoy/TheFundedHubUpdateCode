@@ -11,7 +11,6 @@ import "swiper/css/pagination";
 // import required modules
 import { EffectCoverflow, Navigation } from "swiper";
 
-
 export default function Evaluation() {
   return (
     <section className="evaluation relative pt-12 sm:pt-16">
@@ -42,9 +41,9 @@ export default function Evaluation() {
             <div className="img scale-100 hover:scale-[1.03] transition-all duration-200  w-full max-w-[20rem]">
               <MotionY
                 delay={0.4}
-                cls="card flex flex-col gap-4 py-4 pb-6 px-2 rounded-3xl bg-main-bg/90  md:bg-[#2B2C30]/[17%] border-all/20 border w-full max-w-[20rem]"
+                cls="card flex flex-col gap-4 py-4 pb-6 px-2 rounded-3xl bg-main-bg/90  md:bg-[#2B2C30]/[17%] social-shadow border-all/20 border w-full max-w-[20rem]"
               >
-                <div className="card-top py-4 px-3 rounded-xl bg-primary flex gap-2 justify-between items-center text-black">
+                <div className="card-top py-4 px-3 rounded-xl evaluation-grnt flex gap-2 justify-between items-center text-black">
                   <div className="left max-w-[10rem]">
                     <h4 className="font-codeProBold">Phase 1</h4>
                     <span className="text-sm flex font-codePro font-light">
@@ -98,9 +97,9 @@ export default function Evaluation() {
             <div className="img scale-100 hover:scale-[1.03] transition-all duration-200  w-full max-w-[20rem]">
               <MotionY
                 delay={0.5}
-                cls="card flex flex-col gap-4 py-4 pb-6 px-2 rounded-3xl bg-main-bg/90  md:bg-[#2B2C30]/[17%] border-all/20 border w-full max-w-[20rem]"
+                cls="card flex flex-col gap-4 py-4 pb-6 px-2 rounded-3xl bg-main-bg/90  md:bg-[#2B2C30]/[17%] social-shadow border-all/20 border w-full max-w-[20rem]"
               >
-                <div className="card-top py-4 px-3 rounded-xl bg-primary flex gap-2 justify-between items-center text-black">
+                <div className="card-top py-4 px-3 rounded-xl evaluation-grnt flex gap-2 justify-between items-center text-black">
                   <div className="left max-w-[10rem]">
                     <h4 className="font-codeProBold">Phase 2</h4>
                     <span className="text-sm flex font-codePro font-light">
@@ -152,9 +151,9 @@ export default function Evaluation() {
             <div className="img scale-100 hover:scale-[1.03] transition-all duration-200  w-full max-w-[20rem]">
               <MotionY
                 delay={0.6}
-                cls="card flex flex-col gap-4 py-4 pb-6 px-2 rounded-3xl bg-main-bg/90  md:bg-[#2B2C30]/[17%] border-all/20 border w-full max-w-[20rem]"
+                cls="card flex flex-col gap-4 py-4 pb-6 px-2 rounded-3xl bg-main-bg/90  md:bg-[#2B2C30]/[17%] social-shadow border-all/20 border w-full max-w-[20rem]"
               >
-                <div className="card-top py-4 px-3 rounded-xl bg-primary flex gap-2 justify-between items-center text-black">
+                <div className="card-top py-4 px-3 rounded-xl evaluation-grnt flex gap-2 justify-between items-center text-black">
                   <div className="left max-w-[10rem]">
                     <h4 className="font-codeProBold">Funded</h4>
                     <span className="text-sm flex font-codePro font-light">
@@ -163,7 +162,7 @@ export default function Evaluation() {
                   </div>
                   <div className="right grid">
                     <div className="percent">
-                      <h3 className="font-codeProBold text-3xl text-end relative before:absolute before:content-['up_to'] before:-top-1/2 before:text-xs before:font-extralight">
+                      <h3 className="font-codeProBold text-3xl text-end relative before:absolute before:content-['up_to'] before:font-codePro before:-top-1/2 before:text-xs">
                         90/10
                       </h3>
                       <span className="flex justify-end text-[0.7rem] font-codePro text-end">
@@ -229,7 +228,7 @@ export default function Evaluation() {
               {/* card */}
               <SwiperSlide className="flex justify-center items-center max-w-[27.125rem]">
                 <div className="card flex flex-col gap-4 py-4 px-2 rounded-3xl bg-main-bg/90  md:bg-[#2B2C30]/[17%] border-all/20 border w-full max-w-[27.125rem]">
-                  <div className="card-top py-4 px-3 rounded-xl bg-primary flex gap-2 justify-between items-center text-black">
+                  <div className="card-top py-4 px-3 rounded-xl evaluation-grnt flex gap-2 justify-between items-center text-black">
                     <div className="left max-w-[10rem]">
                       <h4 className="font-codeProBold">Phase 1</h4>
                       <span className="text-sm flex font-codePro font-light">
@@ -284,7 +283,7 @@ export default function Evaluation() {
               {/* card */}
               <SwiperSlide className="flex justify-center items-center max-w-[27.125rem]">
                 <div className="card flex flex-col gap-4 py-4 px-2 rounded-3xl bg-main-bg/90  md:bg-[#2B2C30]/[17%] border-all/20 border w-full max-w-[27.125rem]">
-                  <div className="card-top py-4 px-3 rounded-xl bg-primary flex gap-2 justify-between items-center text-black">
+                  <div className="card-top py-4 px-3 rounded-xl evaluation-grnt flex gap-2 justify-between items-center text-black">
                     <div className="left max-w-[10rem]">
                       <h4 className="font-codeProBold">Phase 2</h4>
                       <span className="text-sm flex font-codePro font-light">
@@ -337,7 +336,7 @@ export default function Evaluation() {
               {/* card */}
               <SwiperSlide className="flex justify-center items-center max-w-[27.125rem]">
                 <div className="card flex flex-col gap-4 py-4 px-2 rounded-3xl bg-main-bg/90  md:bg-[#2B2C30]/[17%] border-all/20 border w-full max-w-[27.125rem]">
-                  <div className="card-top py-4 px-3 rounded-xl bg-primary flex gap-2 justify-between items-center text-black">
+                  <div className="card-top py-4 px-3 rounded-xl evaluation-grnt flex gap-2 justify-between items-center text-black">
                     <div className="left max-w-[10rem]">
                       <h4 className="font-codeProBold">Funded</h4>
                       <span className="text-sm flex font-codePro font-light">
