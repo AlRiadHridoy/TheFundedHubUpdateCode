@@ -74,7 +74,7 @@ function PieCharts({ pieData }) {
 
   return (
     <>
-      <div className={"pieChart max-h-[450px] h-full"}>
+      <div className={"pieChart max-h-[500px] h-full"}>
         <div className={"charts-wrapper"}>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>

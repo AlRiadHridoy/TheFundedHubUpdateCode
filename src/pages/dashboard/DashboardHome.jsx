@@ -792,7 +792,7 @@ export default function NewDashboard() {
             {/* Symbol & Symbol Allocation */}
             <div className="symbol mt-8 text-xs">
               <div className="wrap grid md:grid-cols-12 gap-6">
-                <div className="left flex flex-col gap-4">
+                <div className="left flex flex-col gap-4 col-span-7">
                   <div className="wrap">
                     <div className="head text-[1.4rem] leading-6 text-wht-gradient">
                       Symbol
@@ -804,7 +804,7 @@ export default function NewDashboard() {
                 </div>
 
                 {/* Barchart Chart */}
-                <div className="right grid gap-4">
+                <div className="right grid gap-4 col-span-5">
                   <div className="wrap">
                     <div className="head text-[1.4rem] leading-6 text-wht-gradient">
                       Symbol Allocation
