@@ -1,7 +1,5 @@
 import mainLogo from "../assets/images/logo.webp";
 import dashboard from "../assets/images/dashboard.webp";
-import discord from "../assets/images/discord.png";
-import x from "../assets/images/x.png";
 import arrow from "../assets/images/arrow.svg";
 import circle from "../assets/images/circle.svg";
 import copy from "../assets/images/copy.svg";
@@ -17,7 +15,6 @@ import thumbHistory from "../assets/images/dashboard/thumb/thumb-11.png";
 export {
   mainLogo,
   dashboard,
-  discord,
   arrow,
   circle,
   copy,

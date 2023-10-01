@@ -764,8 +764,9 @@ export default function NewDashboard() {
             {/* Buy / Sell & Direction Allocation
              */}
             <div className="buy-sell mt-8 text-xs">
-              <div className="wrap grid md:grid-cols-2 gap-6">
-                <div className="left flex flex-col gap-4">
+              <div className="wrap grid md:grid-cols-12 gap-6">
+                {/* Barchart Chart */}
+                <div className="left flex flex-col gap-4 col-span-7">
                   <div className="wrap">
                     <div className="head text-[1.4rem] leading-6 text-wht-gradient">
                       Buy / Sell
@@ -775,9 +776,8 @@ export default function NewDashboard() {
                     <BarCharts data={buySellData} />
                   </div>
                 </div>
-
-                {/* Barchart Chart */}
-                <div className="right grid gap-4">
+                {/* pie chart */}
+                <div className="right grid gap-4 col-span-5">
                   <div className="wrap">
                     <div className="head text-[1.4rem] leading-6 text-wht-gradient">
                       Direction Allocation
@@ -791,7 +791,7 @@ export default function NewDashboard() {
             </div>
             {/* Symbol & Symbol Allocation */}
             <div className="symbol mt-8 text-xs">
-              <div className="wrap grid md:grid-cols-2 gap-6">
+              <div className="wrap grid md:grid-cols-12 gap-6">
                 <div className="left flex flex-col gap-4">
                   <div className="wrap">
                     <div className="head text-[1.4rem] leading-6 text-wht-gradient">

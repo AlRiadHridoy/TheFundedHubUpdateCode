@@ -107,7 +107,6 @@ export default function Billing() {
                               <table className="font-Montserrat w-full">
                                 <thead>
                                   <tr className="whitespace-nowrap">
-                                    <th align="left">Pay</th>
                                     <th align="left">Funded challenge</th>
                                     <th align="left">Dates</th>
                                     <th align="left">Amount</th>
@@ -121,7 +120,6 @@ export default function Billing() {
                                 <tbody>
                                   {billingData.map((data, i) => (
                                     <tr key={data.open + i}>
-                                      <td> -- </td>
                                       <td>
                                         <div>
                                           <div className="nm text-all">

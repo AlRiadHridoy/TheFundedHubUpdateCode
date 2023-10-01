@@ -1,7 +1,9 @@
 import MotionX from "../../ui/MotionX";
-import { discord } from "../../ui/images";
+
 import x from "../../assets/images/x.png";
-export default function Discord() {
+import instagram from "../../assets/images/instagram.png";
+import discord from "../../assets/images/discord.png";
+export default function SocialConnect() {
   return (
     <section className="discord pt-24 relative">
       <div className="container relative z-10">
@@ -12,14 +14,14 @@ export default function Discord() {
             </h2>
           </MotionX>
         </div>
-        {/* Desktop version */}
-        <div className="wrapper relative grid sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center items-center md:px-6 mt-8">
+        {/* Cards  */}
+        <div className="items relative grid md:grid-cols-2 lg:grid-cols-3 gap-7 justify-center max-w-[74rem] w-full m-auto items-center md:px-6 mt-8">
           {/* Discord */}
-          <div className="left grid flex-col justify-center items-center sm:items-start gap-2 px-6 pb-8 rounded-3xl discord-bg h-ful social-shadowl">
-            <div className="img flex justify-center items-center">
+          <div className="grid gap-4 px-6 pt-2 pb-8 rounded-3xl discord-bg h-full social-shadow max-w-[360px]">
+            <div className="img flex justify-center  items-center self-end">
               <MotionX delay={0.1}>
                 <img
-                  className="sm:w-[12rem] md:w-[18rem] w-full opacity-80
+                  className="sm:max-w-[12rem] md:max-w-[28rem] w-full opacity-80
                   "
                   src={discord}
                   alt="discord"
@@ -27,12 +29,11 @@ export default function Discord() {
               </MotionX>
             </div>
 
-            <div className="w-full grid justify-center gap-3">
+            <div className="w-full grid justify-center self-end gap-3">
               <MotionX delay={0.2}>
-                <p className="max-w-[30rem] text-center">
-                  Trading is certainly not easy! Interact with other traders and
-                  discuss about the markets, strategies and stay up to date with
-                  all the TFH official announcements.
+                <p className="text-center hidden">
+                  Trading is a challenge! Join our Discord for market
+                  discussions, strategies, and Friday night gaming sessions!
                 </p>
               </MotionX>
               <MotionX delay={0.3}>
@@ -49,11 +50,11 @@ export default function Discord() {
             </div>
           </div>
           {/* X */}
-          <div className="right grid flex-col justify-center items-center sm:items-start gap-2 px-6 pb-8 rounded-3xl x-bg h-full social-shadow">
-            <div className="img flex justify-center items-center h-[223px]">
+          <div className="grid gap-4 px-6 pt-2 pb-8 rounded-3xl x-bg h-full social-shadow max-w-[360px]">
+            <div className="img flex justify-center items-center self-end">
               <MotionX delay={0.1}>
                 <img
-                  className="sm:w-[12rem] md:w-[18rem] w-full opacity-80
+                  className="sm:max-w-[12rem] md:max-w-[30rem] w-full opacity-80
                   "
                   src={x}
                   alt="x"
@@ -61,12 +62,12 @@ export default function Discord() {
               </MotionX>
             </div>
 
-            <div className="w-full grid justify-center gap-3">
+            <div className="w-full grid justify-center self-end gap-3">
               <MotionX delay={0.2}>
-                <p className="max-w-[30rem] text-center">
-                  Trading is certainly not easy! Interact with other traders and
-                  discuss about the markets, strategies and stay up to date with
-                  all the TFH official announcements.
+                <p className="text-center hidden">
+                  To ensure you&apos;re always in the know about TFH&apos;s
+                  official updates and news, don&apos;t forget to follow us on
+                  Twitter! Stay tuned for the latest developments.
                 </p>
               </MotionX>
               <MotionX delay={0.3}>
@@ -83,21 +84,21 @@ export default function Discord() {
             </div>
           </div>
           {/* instagram */}
-          <div className="right grid flex-col justify-center items-center sm:items-start gap-2 px-6 pb-8 rounded-3xl h-full insta-bg social-shadow">
-            <div className="img flex justify-center items-center h-[223px]">
+          <div className="grid gap-4 px-6 pt-2 pb-8 rounded-3xl h-full insta-bg social-shadow max-w-[360px]">
+            <div className="img flex justify-center items-center">
               <MotionX delay={0.1}>
                 <img
-                  className="sm:w-[12rem] md:w-[18rem] w-full opacity-80
+                  className="sm:max-w-[12rem] md:max-w-[12rem] w-full opacity-80
                   "
-                  src={x}
-                  alt="x"
+                  src={instagram}
+                  alt="instagram"
                 />
               </MotionX>
             </div>
 
             <div className="w-full grid justify-center gap-3">
               <MotionX delay={0.2}>
-                <p className="max-w-[30rem] text-center">
+                <p className="text-center hidden">
                   Trading is certainly not easy! Interact with other traders and
                   discuss about the markets, strategies and stay up to date with
                   all the TFH official announcements.

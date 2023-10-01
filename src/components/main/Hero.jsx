@@ -7,30 +7,30 @@ export default function Hero() {
   return (
     <main className="main relative pt-16 md:pt-36">
       <div className="container relative">
-        <div className="wrapper z-10 relative flex justify-center md:gap-12 sm:pt-12">
+        <div className="wrapper z-10 relative grid grid-cols-2 md:gap-12 sm:pt-12">
           {/* left content */}
-          <div className="left-content md:flex justify-start mt-1">
-            <div className="desktop-img hidden md:block relative">
+          <div className="left-content hidden md:block w-full relative">
+            <div className="desktop-img absolute inset-0 h-full w-full">
               <MotionX delay={0.5}>
                 <img
-                  className="w-[32rem] globe-rotate z-0"
+                  className="absolute -top-[5rem] -right-[2rem] min-w-[40rem] globe-rotate z-0"
                   src={desktop}
                   alt="mobile"
                 />
                 {/* shadow */}
-                <div className="shadow absolute -bottom-[2.8rem] left-0 right-0 min-w-full">
+                <div className="shadow hidden absolute -bottom-[2.8rem] left-0 right-0 min-w-full">
                   <img src={desktopShadow} alt="shadow" />
                 </div>
               </MotionX>
             </div>
           </div>
           {/* right content */}
-          <div className="right-content flex flex-col sm:gap-6 md:gap-8 relative z-1">
+          <div className="right-content flex flex-col sm:gap-5 relative z-1 mt-1.5">
             <MotionX
               delay={1}
               className="heading grid gap-2 justify-end items-center md:text-center font-medium text-wht-gradient"
             >
-              <h1 className="xs:leading-[0.95] text-3xl exs:text-[2rem] xs:text-[2.4rem] sm:text-[4rem] md:text-[4rem] xl:text-[4.4rem] font-codeProLight tracking-tighter text-center w-full md:text-start text-wht-gradient z-10 relative hidden sm:inline-block">
+              <h1 className="xs:leading-[0.95] text-3xl exs:text-[2rem] xs:text-[2.4rem] sm:text-[3rem] md:text-[3.2rem] xl:text-[4rem] font-codeProLight tracking-tighter text-center w-full md:text-start text-wht-gradient z-10 relative hidden sm:inline-block">
                 Becoming a
                 <b className="font-codePro">
                   {" "}
@@ -41,7 +41,7 @@ export default function Hero() {
             </MotionX>
 
             {/* mobile version img */}
-            <div className="mbl-img pb-10 pt-6 sm:-mt-2.5 md:hidden relative">
+            <div className="mbl-img pb-10 pt-6 flex justify-center sm:-mt-2.5 md:hidden relative">
               <img
                 className="max-w-[30rem] w-full globe-rotate z-0 sm:-ml-10"
                 src={desktop}
@@ -80,7 +80,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <div className="wrap flex sm:justify-center mt-6 sm:mt-10 md:mt-16">
+        <div className="wrap flex sm:justify-center mt-6 sm:mt-10 md:mt-24">
           <div className="btns grid sm:grid-cols-2 gap-4 sm:gap-6 justify-start items-end">
             <div className="btn flex font-extrabold flex-shrink-0 h-[55px] sm:h-[45px] w-[230px] sm:w-[265px]">
               <Link to="/login" className="glowing-btn">

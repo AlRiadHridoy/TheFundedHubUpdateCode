@@ -1,6 +1,3 @@
-html {
-  scroll-behavior: smooth;
-}
 .load {
   animation-name: reverse;
   animation-duration: 3000ms;

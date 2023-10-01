@@ -70,7 +70,7 @@ export default function Compare() {
 
             <MotionX delay={0.2}>
               {/* buttons */}
-              <div className="buttons grid grid-cols-2 sm:grid-cols-4 gap-5 md:gap-8 text-center justify-center items-center max-w-[20rem] m-auto sm:max-w-none">
+              <div className="buttons grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 text-center justify-center items-center max-w-[20rem] m-auto sm:max-w-none">
                 <button
                   className={`button py-2 px-3 font-semibold transition-all duration-200 text-wht text-[0.7rem] cursor-pointer border-b-2 ${
                     compare === "FTMO" ? "border-primary" : "border-primary/30"

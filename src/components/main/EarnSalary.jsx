@@ -191,9 +191,9 @@ export default function EarnSalary() {
             </div>
           </div>
         ) : (
-          <div className="salary-slider flex flex-wrap gap-8 lg:gap-12 justify-center items-center overflow-hidden -mx-[1.5rem] px-[1.5rem] w-screen">
+          <div className="salary-slider flex flex-wrap gap-8 lg:gap-12 justify-center items-center overflow-hidden -mx-[1.5rem] px-[1.5rem] w-[calc(100vw-1.5rem)] m-auto">
             <Swiper
-              loop
+      
               navigation={true}
               effect={"coverflow"}
               grabCursor={true}

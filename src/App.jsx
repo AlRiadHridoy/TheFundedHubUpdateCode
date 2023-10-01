@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+// main pages
 import Home from "./pages/main/Home";
 import Login from "./pages/main/Login";
 import Contact from "./pages/main/Contact";
@@ -9,7 +10,7 @@ import TermCondition from "./pages/main/TermCondition";
 import RiskDisclosure from "./pages/main/RiskDisclosure";
 import ReportProblem from "./pages/main/ReportProblem";
 
-// Dashboard
+// Dashboard pages
 import Dashboard from "./pages/dashboard/Dashboard";
 import Withdraw from "./pages/dashboard/Withdraw";
 import TopUpReset from "./pages/dashboard/TopUpReset";
@@ -19,15 +20,19 @@ import DashContact from "./pages/dashboard/DashContact";
 import Billing from "./pages/dashboard/Billing";
 import StartNewChallenge from "./pages/dashboard/StartNewChallenge";
 import Certificate from "./pages/dashboard/Certificate";
-import Checkout from "./pages/main/Checkout";
 
+// payment
+import ThankYou from "./pages/payment/ThankYou";
+import PaymentError from "./pages/payment/PaymentError";
+
+// cookie page
+import Cookies from "./ui/Cookies";
 // blog
 import Blog from "./pages/main/blog/Blog";
 import SingleBlog from "./pages/main/Blog/singleBlog";
 // CSS
 import "./App.css";
 // import SingleBlog from "./pages/main/blog/SingleBlog";
-// import Cookies from "./ui/Cookies";
 // import WaitingList from "./ui/WaitingList";
 
 function App() {
@@ -39,8 +44,6 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="contact" element={<Contact />} />
           <Route path="faq" element={<Faq />} />
-
-          <Route path="checkout" element={<Checkout />} />
           <Route path="cookie-policy" element={<CookiePolicy />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="terms-condition" element={<TermCondition />} />
@@ -60,10 +63,14 @@ function App() {
             <Route path="dashboard-contact" element={<DashContact />} />
             <Route path="certificate" element={<Certificate />} />
           </Route>
+
+          {/* payment */}
+          <Route path="thank-you" element={<ThankYou />} />
+          <Route path="payment-error" element={<PaymentError />} />
         </Routes>
       </Router>
 
-      {/* <Cookies /> */}
+      <Cookies />
       {/* <WaitingList /> */}
     </div>
   );

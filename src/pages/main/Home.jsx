@@ -4,7 +4,7 @@ import Prices from "../../components/main/Prices";
 import Navbar from "../../components/main/Navbar";
 import Evaluation from "../../components/main/Evaluation";
 import TreadingHub from "../../components/main/TreadingHub";
-import Discord from "../../components/main/Discord";
+import SocialConnect from "../../components/main/SocialConnect";
 import Footer from "../../components/main/Footer";
 import Benefits from "../../components/main/Benefits";
 import Hero from "../../components/main/Hero";
@@ -29,7 +29,7 @@ export default function Home() {
       <Compare />
       <TreadingHub />
       <Prices />
-      <Discord />
+      <SocialConnect />
       <FAQ />
       <Footer />
 

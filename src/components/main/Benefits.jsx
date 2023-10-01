@@ -43,7 +43,7 @@ export default function Benefits() {
 
           <div className="Contents w-full grid">
             {/* Desktop Version */}
-            <div className="w-full max-w-screen hidden lg:flex justify-center items-center relative">
+            <div className="w-full max-w-screen hidden md:flex justify-center items-center relative">
               <div className="items grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 relative z-10">
                 <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow ">
                   {/* Item */}
@@ -177,7 +177,7 @@ export default function Benefits() {
             </div>
 
             {/* Mobile version */}
-            <div className="sm:hidden flex flex-wrap gap-8 md:gap-12 justify-center items-center -mx-[1.5rem] px-[1.5rem] w-screen relative">
+            <div className="md:hidden flex flex-wrap gap-8 md:gap-12 justify-center items-center -mx-[1.5rem] px-[1.5rem] sm:-mx-[3rem] sm:px-[3rem] w-screen relative ">
               <Swiper
                 navigation={true}
                 effect={"coverflow"}

@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -643,6 +647,10 @@ select option {
 }
 
 .evaluation-grnt {
-background: rgb(206,187,255);
-background: linear-gradient(59deg, rgba(206,187,255,1) 0%, rgba(103,70,132,1) 100%);
+  background: rgb(206, 187, 255);
+  background: linear-gradient(
+    59deg,
+    rgba(206, 187, 255, 1) 0%,
+    rgba(103, 70, 132, 1) 100%
+  );
 }
