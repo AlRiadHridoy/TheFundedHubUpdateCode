@@ -55,7 +55,6 @@ const renderActiveShape = (props) => {
 };
 function PieCharts({ pieData }) {
   const { data, color } = pieData;
-  data?.map((entry, index) => console.log(entry));
 
   const [activeIndex, setActiveIndex] = useState(-1);
   const onPieEnter = useCallback(
@@ -74,7 +73,7 @@ function PieCharts({ pieData }) {
 
   return (
     <>
-      <div className={"pieChart max-h-[500px] h-full"}>
+      <div className={"pieChart max-h-[450px] h-full"}>
         <div className={"charts-wrapper"}>
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>

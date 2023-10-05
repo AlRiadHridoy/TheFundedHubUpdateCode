@@ -2,10 +2,8 @@ import { circle } from "../../ui/images";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import MotionX from "../../ui/MotionX";
-import MotionY from "../../ui/MotionY";
 
 // trader
-import metaTraderFive from "../../assets/images/meta-trader-5.webp";
 import blackBull from "../../assets/images/BlackBull-logo.png";
 
 // Import Swiper styles
@@ -21,24 +19,20 @@ export default function Benefits() {
   return (
     <section className="benefits relative md:m-auto pt-20 sm:pt-24">
       <div className="container">
-        <div className="wrapper grid gap-8 relative z-30">
+        <div className="wrapper grid gap-6 relative z-30">
           <div className="heading z-10 relative flex flex-col justify-center sm:items-center sm:text-center">
-            <MotionX delay={0.1}>
-              <h2 className="font-medium text-2xl xs:text-[1.7rem] tracking-tight text-wht-gradient">
-                The Funded Hub Benefits
-              </h2>
-            </MotionX>
+            <h2 className="font-medium text-2xl xs:text-[1.7rem] tracking-tight text-wht-gradient">
+              The Funded Hub Benefits
+            </h2>
 
-            <MotionX delay={0.2}>
-              <div className="paras mt-2">
-                <p>
-                  We are partnering up directly with a regulated liquidity
-                  provider to offer you unbeatable trading conditions. <br />{" "}
-                  Our accounts will let you trade in an excellent environment
-                  with tight spreads and lighting-fast execution.
-                </p>
-              </div>
-            </MotionX>
+            <div className="paras mt-2">
+              <p>
+                We are partnering up directly with a regulated liquidity
+                provider to offer you unbeatable trading conditions. <br /> Our
+                accounts will let you trade in an excellent environment with
+                tight spreads and lighting-fast execution.
+              </p>
+            </div>
           </div>
 
           <div className="Contents w-full grid">
@@ -47,9 +41,9 @@ export default function Benefits() {
               <div className="items grid grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 relative z-10">
                 <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow ">
                   {/* Item */}
-                  <MotionY
-                    delay={0.1}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
+                  <MotionX
+                    delay={0.5}
+                    cls="item py-5 px-4 rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
                   >
                     <div className="head text-base">
                       <h5>
@@ -65,14 +59,14 @@ export default function Benefits() {
                       customize basically everything; from the trading period to
                       the target profits to the max drawdown.
                     </p>
-                  </MotionY>
+                  </MotionX>
                 </div>
 
                 <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow">
                   {/* Item */}
-                  <MotionY
-                    delay={0.2}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
+                  <MotionX
+                    delay={0.75}
+                    cls="item py-5 px-4 rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
                   >
                     <div className="head text-base">
                       <h5>
@@ -88,14 +82,14 @@ export default function Benefits() {
                       reward your skills and efforts! Earn a fixed monthly
                       salary based on your account balance.
                     </p>
-                  </MotionY>
+                  </MotionX>
                 </div>
 
                 <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow">
                   {/* Item */}
-                  <MotionY
-                    delay={0.3}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
+                  <MotionX
+                    delay={1}
+                    cls="item py-5 px-4 rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
                   >
                     <div className="head text-base">
                       <h5>
@@ -111,13 +105,14 @@ export default function Benefits() {
                       experience to all our traders. Once the payout is
                       approved, get your money in a flash!
                     </p>
-                  </MotionY>
+                  </MotionX>
                 </div>
                 <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow">
                   {/* Item */}
-                  <MotionY
-                    delay={0.4}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
+                  <MotionX
+                    right={true}
+                    delay={0.5}
+                    cls="item py-5 px-4 rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
                   >
                     <div className="head text-base">
                       <h5>
@@ -133,14 +128,15 @@ export default function Benefits() {
                       be partnering with BlackBull to offer you the best trading
                       conditions in the market.
                     </p>
-                  </MotionY>
+                  </MotionX>
                 </div>
 
                 <div className="wrap scale-100 hover:scale-105 transition-all duration-200 bottom-shadow">
                   {/* Item */}
-                  <MotionY
-                    delay={0.5}
-                    cls="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
+                  <MotionX
+                    right={true}
+                    delay={0.75}
+                    cls="item py-5 px-4 rounded-3xl relative z-10 h-full max-w-[16.8rem] home-item-bg-clr"
                   >
                     <div className="head text-base">
                       <h5>
@@ -158,7 +154,7 @@ export default function Benefits() {
                       and engineers is available 24/5 to help you with anything
                       you might need, even on Whatsapp!
                     </p>
-                  </MotionY>
+                  </MotionX>
                 </div>
               </div>
 
@@ -195,7 +191,7 @@ export default function Benefits() {
                 className="flex flex-wrap gap-8 md:gap-10 justify-center items-center w-full"
               >
                 {/* Item */}
-                <SwiperSlide className="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[17rem] border-all/20 border overflow-hidden">
+                <SwiperSlide className="item py-5 px-4 home-item-bg-clr rounded-3xl relative z-10 h-full max-w-[17rem] overflow-hidden card-shadow">
                   <div className="head text-base">
                     <h5>
                       <div className="font-codeProBold inline-block">Craft</div>{" "}
@@ -211,7 +207,7 @@ export default function Benefits() {
                 </SwiperSlide>
 
                 {/* Item */}
-                <SwiperSlide className="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[17rem] border-all/20 border overflow-hidden">
+                <SwiperSlide className="item py-5 px-4 home-item-bg-clr rounded-3xl relative z-10 h-full max-w-[17rem] overflow-hidden card-shadow">
                   <div className="head text-base">
                     <h5>
                       Earn a fixed{" "}
@@ -230,7 +226,7 @@ export default function Benefits() {
                 </SwiperSlide>
 
                 {/* Item */}
-                <SwiperSlide className="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[17rem] border-all/20 border overflow-hidden">
+                <SwiperSlide className="item py-5 px-4 home-item-bg-clr rounded-3xl relative z-10 h-full max-w-[17rem] overflow-hidden card-shadow">
                   <div className="head text-base">
                     <h5>
                       <div className="font-codeProBold inline-block">
@@ -248,7 +244,7 @@ export default function Benefits() {
                 </SwiperSlide>
 
                 {/* Item */}
-                <SwiperSlide className="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[17rem] border-all/20 border overflow-hidden">
+                <SwiperSlide className="item py-5 px-4 home-item-bg-clr rounded-3xl relative z-10 h-full max-w-[17rem] overflow-hidden card-shadow">
                   <div className="head text-base">
                     <h5>
                       <div className="font-codeProBold inline-block">
@@ -265,7 +261,7 @@ export default function Benefits() {
                   </p>
                 </SwiperSlide>
                 {/* Item */}
-                <SwiperSlide className="item py-5 px-4 bg-main-bg/90  md:bg-[#2B2C30]/[17%] rounded-3xl relative z-10 h-full max-w-[17rem] border-all/20 border overflow-hidden">
+                <SwiperSlide className="item py-5 px-4 home-item-bg-clr rounded-3xl relative z-10 h-full max-w-[17rem] overflow-hidden card-shadow">
                   <div className="head text-base">
                     <h5>
                       <div className="font-codeProBold inline-block">24/5</div>{" "}
@@ -283,10 +279,13 @@ export default function Benefits() {
             </div>
 
             {/* trande area */}
-            <div className="trade mt-12 ">
-              <div className="home-item-bg-clr rounded-3xl p-6 grid gap-6 md:grid-cols-7 justify-center items-center max-w-[64rem] m-auto bottom-shadow">
+            {/* desktop */}
+            <div className="trade mt-20 sm:mt-12">
+              <div className="hidden sm:grid gap-6 md:grid-cols-7 rounded-3xl p-6 justify-center items-center max-w-[64rem] m-auto bottom-shadow text-center sm:text-start scale-100 hover:scale-[1.02] transition-all duration-300">
                 <div className="left md:col-span-5">
-                  <h4 className="text-xl font-medium">Regulated Broker</h4>
+                  <h4 className="font-medium text-2xl xs:text-[1.7rem] tracking-tight text-wht-gradient">
+                    Regulated Broker
+                  </h4>
                   <p className="pt-2">
                     Trade with lightning fast execution speed on a trusted &
                     regulated broker Ranked #1 forex broker in execution speed
@@ -297,7 +296,29 @@ export default function Benefits() {
                 {/* right */}
                 <div className="right md:col-span-2  flex flex-col justify-center items-center md:mt-4">
                   <img
-                    className="max-w-[12rem] sm:max-w-[16rem] w-full "
+                    className="max-w-[16rem] w-full "
+                    src={blackBull}
+                    alt="black-bull"
+                  />
+                </div>
+              </div>
+              {/* mobile */}
+              <div className="sm:hidden grid gap-2.5 md:grid-cols-7 items-center ">
+                <div className="left">
+                  <h4 className="font-medium text-2xl xs:text-[1.7rem] tracking-tight text-wht-gradient">
+                    Regulated Broker
+                  </h4>
+                  <p className="pt-2">
+                    Trade with lightning fast execution speed on a trusted &
+                    regulated broker Ranked #1 forex broker in execution speed
+                    by CompareForexBrokers.com
+                  </p>
+                </div>
+
+                {/* right */}
+                <div className="right">
+                  <img
+                    className="max-w-[13rem] w-full opacity-70"
                     src={blackBull}
                     alt="black-bull"
                   />

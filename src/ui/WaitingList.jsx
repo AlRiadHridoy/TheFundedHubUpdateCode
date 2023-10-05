@@ -83,7 +83,7 @@ export default function WaitingList() {
     if (active) {
       axios
         .get(done)
-        .then((res) => console.log(res))
+        .then((res) => console.log("done"))
         .catch(function (error) {
           setStatus("filled");
           setOpen(true);

@@ -107,7 +107,7 @@ export default function MobileSideNav({ props }) {
               </li>
             </NavLink>
 
-            <NavLink
+            {/* <NavLink
               to="help"
               className={({ isActive }) => (isActive ? "active-side-nav" : "")}
             >
@@ -127,7 +127,7 @@ export default function MobileSideNav({ props }) {
                   <span>Contact</span>
                 </div>
               </li>
-            </NavLink>
+            </NavLink> */}
 
             <NavLink
               to="certificate"

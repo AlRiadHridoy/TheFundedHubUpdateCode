@@ -777,13 +777,13 @@ export default function NewDashboard() {
                   </div>
                 </div>
                 {/* pie chart */}
-                <div className="right grid gap-4 col-span-5">
+                <div className="right flex flex-col gap-4 col-span-5">
                   <div className="wrap">
                     <div className="head text-[1.4rem] leading-6 text-wht-gradient">
                       Direction Allocation
                     </div>
                   </div>
-                  <div className="chart dash-home-bg py-4">
+                  <div className="chart dash-home-bg py-4 h-full">
                     <PieCharts pieData={buysellPie} />
                   </div>
                 </div>
@@ -804,13 +804,13 @@ export default function NewDashboard() {
                 </div>
 
                 {/* Barchart Chart */}
-                <div className="right grid gap-4 col-span-5">
+                <div className="right flex flex-col gap-4 col-span-5">
                   <div className="wrap">
                     <div className="head text-[1.4rem] leading-6 text-wht-gradient">
                       Symbol Allocation
                     </div>
                   </div>
-                  <div className="chart dash-home-bg py-4">
+                  <div className="chart dash-home-bg py-4 h-full">
                     <PieCharts pieData={symbolAllocationData} />
                   </div>
                 </div>

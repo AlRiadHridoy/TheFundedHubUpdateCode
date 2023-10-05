@@ -1,4 +1,4 @@
-export default function ContactForm({ clr }) {
+export default function ContactForm({ clr, header }) {
   return (
     <form
       className={`grid gap-6 sm:gap-8 md:gap-10 px-4 py-6 sm:p-8 relative z-10 rounded-3xl border-primary backdrop-blur-3xl ${
@@ -6,7 +6,7 @@ export default function ContactForm({ clr }) {
       }`}
     >
       <div className="head">
-        <h3 className="text-xl">Have questions?</h3>
+        <h3 className="text-xl">{header ? header : "Have questions?"}</h3>
       </div>
       <div className="inputs grid sm:grid-cols-2 gap-6">
         {/* name */}

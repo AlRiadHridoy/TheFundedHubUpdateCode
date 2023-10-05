@@ -4,20 +4,26 @@ import { FaUser } from "react-icons/fa";
 import { CgMenuLeft } from "react-icons/cg";
 import { arrow } from "../../ui/images";
 
+
 // eslint-disable-next-line react/prop-types
 export default function DashNav({ props }) {
   const [accountOpen, setAccountOpen] = useState(false);
   const [userName, setUserName] = useState("John Doe");
+  const [shortUserName, SetShortUserName] = useState("");
   const [notifOpen, setNotifOpen] = useState(false);
   const [userOpen, setUserOpen] = useState(false);
   const refferance = useRef(null);
 
-  // user name first latter
-
-  const shortUserName = userName
-    .split(" ")
-    .map((name) => name.charAt(0))
-    .join("");
+  useEffect(() => {
+    // user name first latters
+    SetShortUserName(
+      userName
+        .split(" ")
+        .slice(0, 2)
+        .map((name) => name.charAt(0))
+        .join("")
+    );
+  }, []);
 
   // distructure
   const [setSideOpenMbl, sideOpenMbl] = props;

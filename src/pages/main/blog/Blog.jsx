@@ -34,7 +34,7 @@ export default function Blog() {
   return (
     <>
       <Navbar />
-      <section className="blog relative pt-32 sm:pt-48 pb-28 sm:pb-44 purple-shadow">
+      <section className="blog bg-dark relative pt-32 sm:pt-48 pb-28 sm:pb-44 purple-shadow">
         <div className="container z-10 relative">
           <div className="wrapper max-w-[75rem] m-auto w-full">
             <div className="header flex justify-between w-full">

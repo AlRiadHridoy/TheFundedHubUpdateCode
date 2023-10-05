@@ -148,11 +148,10 @@ export default function TopUpReset() {
                           >
                             <div ref={refferance} className="wrapper pt-4">
                               <div className="billing-data bg-transparent px-3 py-4 overflow-y-scroll">
-                                <div className="w-full m-auto max-w-[80vw] md:max-w-[70vw] overflow-x-scroll">
+                                <div className="m-auto max-w-[1200px] overflow-x-scroll whitespace-nowrap pb-6">
                                   <table className="font-Montserrat w-full">
                                     <thead>
                                       <tr className="whitespace-nowrap">
-                                        <th align="left">Pay</th>
                                         <th align="left">Funded challenge</th>
                                         <th align="left">Dates</th>
                                         <th align="left">Amount</th>
@@ -166,7 +165,6 @@ export default function TopUpReset() {
                                     <tbody>
                                       {billingData.map((data, i) => (
                                         <tr key={data.open + i}>
-                                          <td> -- </td>
                                           <td>
                                             <div>
                                               <div className="nm text-all">

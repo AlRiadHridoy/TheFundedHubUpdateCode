@@ -1,6 +1,5 @@
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import MotionX from "../../ui/MotionX";
 import MotionY from "../../ui/MotionY";
 
 // Import Swiper styles
@@ -10,6 +9,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { EffectCoverflow, Navigation } from "swiper";
+import { circle } from "../../ui/images";
 
 export default function Evaluation() {
   return (
@@ -17,22 +17,18 @@ export default function Evaluation() {
       <div className="container relative">
         <div className="wrapper relative z-40">
           <div className="heading flex flex-col justify-center sm:items-center sm:text-center">
-            <MotionX delay={0.1}>
-              <h2 className="font-medium text-2xl xs:text-[1.7rem] tracking-tight text-wht-gradient">
-                Evaluation Program
-              </h2>
-            </MotionX>
+            <h2 className="font-medium text-2xl xs:text-[1.7rem] tracking-tight text-wht-gradient">
+              Evaluation Program
+            </h2>
 
-            <MotionX delay={0.2}>
-              <div className="paras mt-2">
-                <p>
-                  Prove your trading skills by passing our two phases Evaluation
-                  Program. <br /> Configure your own target profits and drawdown
-                  limits, follow simple rules and start trading with our
-                  capital. <br /> You earn up to 90% of the profits.
-                </p>
-              </div>
-            </MotionX>
+            <div className="paras mt-2">
+              <p>
+                Prove your trading skills by passing our two phases Evaluation
+                Program. <br /> Configure your own target profits and drawdown
+                limits, follow simple rules and start trading with our capital.{" "}
+                <br /> You earn up to 90% of the profits.
+              </p>
+            </div>
           </div>
 
           {/* Desktop version */}
@@ -208,7 +204,7 @@ export default function Evaluation() {
           </div>
 
           {/* Mobile version */}
-          <div className="cards lg:hidden flex flex-wrap gap-8 md:gap-12 justify-center items-center mt-8">
+          <div className="cards lg:hidden flex flex-wrap gap-8 md:gap-12 justify-center items-center mt-6">
             <Swiper
               navigation={true}
               effect={"coverflow"}
@@ -273,7 +269,7 @@ export default function Evaluation() {
                   <div className="card-bottom mt-4 flex justify-center items-center text-center">
                     <a
                       href="#price-table"
-                      className="capitalize bg-primary/20 font-base flex justify-center items-center py-2 px-8 rounded-lg whitespace-nowrap font-codePro font-light text-base"
+                      className="uppercase font-Montserrat text-xs font-bold px-8 transition-all duration-200 rounded-3xl py-3 opacity-100 hover:opacity-[75%] discglow-btn"
                     >
                       Customize Challenge
                     </a>
@@ -326,7 +322,7 @@ export default function Evaluation() {
                   <div className="card-bottom mt-4 flex justify-center items-center text-center">
                     <a
                       href="#price-table"
-                      className="capitalize bg-primary/20 font-base flex justify-center items-center py-2 px-8 rounded-lg whitespace-nowrap font-codePro font-light text-base"
+                      className="uppercase font-Montserrat text-xs font-bold px-8 transition-all duration-200 rounded-3xl py-3 opacity-100 hover:opacity-[75%] discglow-btn"
                     >
                       Customize Challenge
                     </a>
@@ -380,7 +376,7 @@ export default function Evaluation() {
                   <div className="card-bottom mt-4 flex justify-center items-center text-center">
                     <a
                       href="#price-table"
-                      className="capitalize bg-primary/20 font-base flex justify-center items-center py-2 px-8 rounded-lg whitespace-nowrap font-codePro font-light text-base"
+                      className="uppercase font-Montserrat text-xs font-bold px-8 transition-all duration-200 rounded-3xl py-3 opacity-100 hover:opacity-[75%] discglow-btn"
                     >
                       Customize Challenge
                     </a>
@@ -390,6 +386,14 @@ export default function Evaluation() {
             </Swiper>
           </div>
         </div>
+      </div>
+
+      {/* shadow */}
+      <div className="circle-shadow sm:hidden absolute opacity-100 top-[10%] w-full h-full min-w-[100rem]">
+        <img src={circle} alt="circle-shadow" />
+      </div>
+      <div className="circle-shadow sm:hidden absolute opacity-50 top-[-60%] -left-[80%] w-full h-full min-w-[50rem]">
+        <img src={circle} alt="circle-shadow" />
       </div>
     </section>
   );

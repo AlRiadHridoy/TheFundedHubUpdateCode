@@ -126,7 +126,7 @@ export default function Navbar() {
           <div className="wrapper">
             <Link to="/" className="logo block pt-6 px-6">
               <img
-                className="max-w-[6rem] md:hidden"
+                className="max-w-[10rem] w-full md:hidden"
                 src={mainLogo}
                 alt="TheFundedHub"
               />

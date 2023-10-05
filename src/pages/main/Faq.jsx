@@ -397,7 +397,7 @@ export default function Faq() {
   return (
     <>
       <Navbar />
-      <section className="faq relative purple-shadow pt-16 sm:pt-28">
+      <section className="faq bg-dark relative purple-shadow pt-16 sm:pt-28">
         <div className="container relative">
           <div className="wrapper relative pb-24 sm:pb-36 md:pb-44 w-full grid gap-16 xs:gap-20 md:gap-32 max-w-[75rem] m-auto">
             {/* Top content */}
@@ -423,7 +423,7 @@ export default function Faq() {
                       }`}
                       onClick={() => setOption("Started")}
                     >
-                      <h5 className="px-3 sm:px-5">Getting Started</h5>
+                      <h5 className="px-3 sm:px-5">General</h5>
                     </div>
                     {/* option */}
                     <div

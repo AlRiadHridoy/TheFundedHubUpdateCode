@@ -593,7 +593,7 @@ export default blogs = [
   {
     link: "blog-5",
     title:
-      "Introduction to Forex Trading with The Funded Hub: A Beginner&apos;s Guide",
+      "Introduction to Forex Trading with The Funded Hub: A Beginner's Guide",
     para: `<span>Meta Description:</span> Explore the power of leverage
                   in forex trading and how it can magnify your potential gains
                   and losses. Discover how to use leverage wisely with valuable

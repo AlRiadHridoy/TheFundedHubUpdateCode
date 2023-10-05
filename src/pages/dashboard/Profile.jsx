@@ -92,7 +92,7 @@ export default function Profile() {
               {infoToggle === "personal" ? (
                 <div className="personal grid gap-8">
                   <div className="top dash-bar-clr p-6 rounded-3xl">
-                    <div className="user flex gap-4 items-center max-w-[20rem] mb-6">
+                    <div className="user flex gap-4 items-center max-w-[20rem]">
                       <div className="img grid gap-2 justify-center items-center relative">
                         <img
                           className="h-[6rem] w-[6rem] rounded-full hidden"
@@ -101,10 +101,6 @@ export default function Profile() {
                         />
                         <div className="short-name uppercase border bg-blu/20 border-blu h-24 w-24 rounded-full flex justify-center items-center text-2xl">
                           {shortUserName}
-                        </div>
-
-                        <div className="edit text-center absolute bottom-[-2rem] left-1/2 transform -translate-x-1/2">
-                          Edit
                         </div>
                       </div>
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { arrow, mainLogo } from "../../ui/images";
+import { circle, mainLogo } from "../../ui/images";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
@@ -60,15 +60,13 @@ export default function Compare() {
   return (
     <section className="compare relative pt-20 sm:pt-28">
       <div className="container relative">
-        <div className="wrapper relative z-20 grid gap-8 sm:gap-12">
-          <div className="heading relative z-20 flex flex-col justify-center sm:items-center md:text-center gap-5 md:gap-8">
-            <MotionX delay={0.1}>
-              <h2 className="text-2xl xs:text-[1.7rem] tracking-tight text-wht-gradient font-medium">
-                Compare your options
-              </h2>
-            </MotionX>
+        <div className="wrapper relative z-20 grid gap-6 sm:gap-12">
+          <div className="heading relative z-20 flex flex-col justify-center sm:items-center md:text-center gap-3 md:gap-8">
+            <h2 className="text-2xl xs:text-[1.7rem] tracking-tight text-wht-gradient font-medium">
+              Compare your options
+            </h2>
 
-            <MotionX delay={0.2}>
+            <MotionY delay={0.5}>
               {/* buttons */}
               <div className="buttons grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 text-center justify-center items-center max-w-[20rem] m-auto sm:max-w-none">
                 <button
@@ -89,7 +87,8 @@ export default function Compare() {
               `}
                   onClick={() => setCompare("SKILLED FUNDED TRADERS")}
                 >
-                  SKILLED FUNDED TRADERS
+                  SKILLED FUNDED{" "}
+                  <div className="hidden sm:inline-block">TRADERS</div>
                 </button>
                 <button
                   className={`button py-2 px-3 font-semibold transition-all duration-200 text-wht text-[0.7rem] cursor-pointer border-b-2 ${
@@ -114,13 +113,13 @@ export default function Compare() {
                   FUNDEDNEXT
                 </button>
               </div>
-            </MotionX>
+            </MotionY>
           </div>
           {/* content */}
           <div className="content relative z-10 hidden md:grid sm:grid-cols-2 m-auto gap-10 max-w-[55rem] w-full">
             {/* item */}
             <div className="wrap scale-100 hover:scale-[1.03] transition-all duration-200 relative z-10">
-              <MotionY delay={0.1} cls={""}>
+              <MotionX delay={0.25}>
                 <div className="item bg-main-bg/90  md:bg-[#2B2C30]/[17%] py-4 px-4 rounded-2xl border sm:border-none border-primary/10">
                   {/* head */}
                   <div className="head flex items-center font-Montserrat font-bold bg-primary/10 p-2 rounded-2xl h-[60px]">
@@ -128,7 +127,7 @@ export default function Compare() {
                   </div>
                   <b></b>
                   {/* paras */}
-                  <div className="paras grid gap-3 py-8">
+                  <div className="paras grid gap-3 py-8 pb-3">
                     <span>
                       <b>100K Evaluation</b>
                     </span>
@@ -156,11 +155,11 @@ export default function Compare() {
                     </span>
                   </div>
                 </div>
-              </MotionY>
+              </MotionX>
             </div>
             {/* item */}
             <div className="wrap scale-100 hover:scale-[1.03] transition-all duration-200 relative z-10">
-              <MotionY delay={0.2} cls={""}>
+              <MotionX right={true} delay={0.25}>
                 <div className="item bg-main-bg/90  md:bg-[#2B2C30]/[17%] py-4 px-4 rounded-2xl border sm:border-none border-primary/10">
                   {/* head */}
                   <div className="head flex items-center font-Montserrat bg-primary/10 py-2 px-4 rounded-2xl text-xl font-bold h-[60px]">
@@ -168,7 +167,7 @@ export default function Compare() {
                   </div>
                   {/* paras */}
 
-                  <div className="paras grid gap-3 py-8">
+                  <div className="paras grid gap-3 py-8 pb-3">
                     <span>
                       <b>100K Evaluation</b>
                     </span>
@@ -196,7 +195,7 @@ export default function Compare() {
                     </span>
                   </div>
                 </div>
-              </MotionY>
+              </MotionX>
             </div>
           </div>
           {/* mobile content */}
@@ -223,7 +222,7 @@ export default function Compare() {
                 <img className="w-40" src={mainLogo} alt="main-logo" />
               </div>
               {/* paras */}
-              <div className="paras grid gap-3 py-8">
+              <div className="paras grid gap-3 py-8 pb-3">
                 <span>
                   <b>100K Evaluation</b>
                 </span>
@@ -250,11 +249,6 @@ export default function Compare() {
                   Price - <b>$475</b>
                 </span>
               </div>
-
-              {/* arrow */}
-              <div className="compare-arrow hidden absolute  text-primary top-1/2 transform -translate-y-1/2 right-0 opacity-50">
-                <img className="w-12 -rotate-90" src={arrow} alt="" />
-              </div>
             </SwiperSlide>
             {/* item */}
             <SwiperSlide className="item relative z-10 bg-main-bg/90 sm:bg-main-bg/90  md:bg-[#2B2C30]/[17%] py-4 px-4 md:px-6 rounded-2xl border sm:border-none border-primary/10 max-w-[30rem]">
@@ -263,7 +257,7 @@ export default function Compare() {
                 {compare}
               </div>
               {/* paras */}
-              <div className="paras grid gap-3 py-8">
+              <div className="paras grid gap-3 py-8 pb-3">
                 <span>
                   Account Size & Model - <b>{values[compare][0]}</b>
                 </span>
@@ -292,6 +286,10 @@ export default function Compare() {
             </SwiperSlide>
           </Swiper>
         </div>
+      </div>
+      {/* shadow */}
+      <div className="circle-shadow sm:hidden absolute opacity-30 top-[30%] -right-[80%] w-full h-full min-w-[50rem]">
+        <img src={circle} alt="circle-shadow" />
       </div>
     </section>
   );

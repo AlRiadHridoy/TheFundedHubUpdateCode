@@ -74,7 +74,6 @@ export default function PriceTable({ clr }) {
       .get(url)
       .then((response) => {
         setTotalPrice(response.data.totalPrice);
-        console.log(response.data);
       })
       .catch((error) => {
         console.error("There was an error!", error);
@@ -214,7 +213,7 @@ export default function PriceTable({ clr }) {
             {/* Tranders */}
             <div className="tranders flex gap-3 items-center w-full mt-2 relative z-30">
               <div
-                className={`img scale-105 transition-all duration-200 py-2 px-6 rounded-3xl bg-light/30 relative after:absolute after:h-full after:w-full after:bottom-[-3rem] after:left-0 after:rounded-2xl after:bg-red-600 after:content-[coming_soon] group ${
+                className={`img scale-105 transition-all duration-200 py-2 px-6 rounded-3xl bg-light/30 relative group ${
                   activeTrade === "meta-4"
                     ? "border-primary"
                     : "border-transparent "
@@ -514,8 +513,8 @@ export default function PriceTable({ clr }) {
             </div>
             {/* text */}
             <div className=" font-Montserrat text-sm">
-              Or pay in 4 installments from <span className="font-bold">${totalPrice / 4}</span> /
-              Month
+              Or pay in 4 installments from{" "}
+              <span className="font-bold">${totalPrice / 4}</span> / Month
             </div>
           </div>
 
@@ -527,14 +526,14 @@ export default function PriceTable({ clr }) {
         </div>
       </div>
       {/* Mobile version */}
-      <div className="mobile-content relative z-20 lg:hidden flex flex-wrap justify-start items-center mt-6">
+      <div className="mobile-content relative z-20 lg:hidden flex flex-wrap justify-start items-center mt-2">
         <div className="top font-medium w-full">
           <div className="heading flex justify-center">
             {/* prices */}
-            <div className="prices grid grid-cols-3 gap-2 xs:gap-4">
+            <div className="prices grid grid-cols-3 gap-2">
               <div className="price">
                 <button
-                  className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
+                  className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
                     chooseBalance === "5000"
                       ? "border-primary"
                       : "border-primary/10"
@@ -546,7 +545,7 @@ export default function PriceTable({ clr }) {
               </div>
               <div className="price">
                 <button
-                  className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
+                  className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
                     chooseBalance === "10000"
                       ? "border-primary"
                       : "border-primary/10"
@@ -559,7 +558,7 @@ export default function PriceTable({ clr }) {
 
               <div className="price">
                 <button
-                  className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
+                  className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
                     chooseBalance === "25000"
                       ? "border-primary"
                       : "border-primary/10"
@@ -570,75 +569,75 @@ export default function PriceTable({ clr }) {
                 </button>
               </div>
 
-              {/* price-wrapper */}
-              <div className="price-wrapper col-span-full flex justify-center items-center gap-2 xs:gap-4">
-                <div className="price">
-                  <button
-                    className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                      chooseBalance === "50000"
-                        ? "border-primary"
-                        : "border-primary/10"
-                    }`}
-                    onClick={() => setChooseBalance("50000")}
-                  >
-                    $ 50,000
-                  </button>
-                </div>
+              <div className="price">
+                <button
+                  className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
+                    chooseBalance === "50000"
+                      ? "border-primary"
+                      : "border-primary/10"
+                  }`}
+                  onClick={() => setChooseBalance("50000")}
+                >
+                  $ 50,000
+                </button>
+              </div>
 
-                <div className="price">
-                  <button
-                    className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                      chooseBalance === "100000"
-                        ? "border-primary"
-                        : "border-primary/10"
-                    }`}
-                    onClick={() => setChooseBalance("100000")}
-                  >
-                    $ 100,000
-                  </button>
-                </div>
-                <div className="price">
-                  <button
-                    className={`w-full py-3 px-2 xs:p-3 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border-b-2 ${
-                      chooseBalance === "200000"
-                        ? "border-primary"
-                        : "border-primary/10"
-                    }`}
-                    onClick={() => setChooseBalance("200000")}
-                  >
-                    $ 200,000
-                  </button>
-                </div>
+              <div className="price">
+                <button
+                  className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
+                    chooseBalance === "100000"
+                      ? "border-primary"
+                      : "border-primary/10"
+                  }`}
+                  onClick={() => setChooseBalance("100000")}
+                >
+                  $ 100,000
+                </button>
+              </div>
+              <div className="price">
+                <button
+                  className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
+                    chooseBalance === "200000"
+                      ? "border-primary"
+                      : "border-primary/10"
+                  }`}
+                  onClick={() => setChooseBalance("200000")}
+                >
+                  $ 200,000
+                </button>
               </div>
             </div>
           </div>
         </div>
         {/* Tranders */}
         <div className="tranders grid items-center w-full relative z-30">
-          <p className="mt-12 ml-5 relative before:absolute before:w-2 before:h-2 before:bg-white before:left-[-1rem] before:rounded-full before:top-1/2 before:transform before:-translate-y-1/2">
+          <p className="mt-7 ml-5 relative before:absolute before:w-2 before:h-2 before:bg-white before:left-[-1rem] before:rounded-full before:top-1/2 before:transform before:-translate-y-1/2">
             {" "}
             <b className="font-bold">Step 2:</b> {"  "}Customize your Platform:
           </p>
-          <div className="wrap flex justify-center gap-3 mt-7">
+          <div className="wrap flex justify-center gap-3 mt-4">
             <div
-              className={`img scale-100 hover:scale-105 transition-all duration-200 py-2 px-6 rounded-3xl bg-light/60 border hover:border-primary ${
+              className={`img scale-100 hover:scale-105 transition-all duration-200 py-2 px-6 rounded-3xl bg-light/30 relative price-btn-shadow  ${
                 activeTrade === "meta-4"
                   ? "border-primary"
                   : "border-transparent "
               }`}
-              onClick={() => setActiveTrade("meta-4")}
+              // onClick={() => setActiveTrade("meta-4")}
             >
               <img
-                className="max-w-[7rem] w-full opacity-[0.87]"
+                className="max-w-[7rem] w-full opacity-[0.87]f opacity-60 price-btn-shadow"
                 src={metaTraderFour}
                 alt="scop-markets"
               />
+              <div className="absolute transition-all duration-200  left-1/2 transform -translate-x-1/2 whitespace-nowrap -bottom-[1rem]">
+                <h6 className="text-[0.65rem]">Available Soon!</h6>
+              </div>
             </div>
             <div
-              className={`img scale-100 hover:scale-105 transition-all duration-200 py-2 px-6 rounded-3xl bg-light/60 border hover:border-primary ${
+              className={`img transition-all duration-200 py-2 px-6 rounded-3xl bg-light/60 border hover:border-primary price-btn-shadow ${
                 activeTrade === "meta-5"
                   ? "border-primary"
-                  : "border-transparent "
+                  : "border-transparent"
               }`}
               onClick={() => setActiveTrade("meta-5")}
             >
@@ -651,7 +650,7 @@ export default function PriceTable({ clr }) {
           </div>
         </div>
         <div className="step w-full">
-          <p className="mt-12 ml-5 relative before:absolute before:w-2 before:h-2 before:bg-white before:left-[-1rem] before:rounded-full before:top-1/2 before:transform before:-translate-y-1/2">
+          <p className="mt-10 ml-5 relative before:absolute before:w-2 before:h-2 before:bg-white before:left-[-1rem] before:rounded-full before:top-1/2 before:transform before:-translate-y-1/2">
             {" "}
             <b className="font-bold">Step 3:</b> {"  "}Customize your Challenge:
           </p>
@@ -665,11 +664,11 @@ export default function PriceTable({ clr }) {
             slidesPerView={"auto"}
             modules={[Navigation]}
             spaceBetween={30}
-            className="flex flex-wrap gap-8 md:gap-10 justify-center items-center w-full px-3 xs:px-6 mt-[1.875rem] text-white"
+            className="flex flex-wrap gap-8 md:gap-10 justify-center items-center w-full px-3 xs:px-6 mt-4 text-white"
           >
             {/* slide */}
             <SwiperSlide>
-              <div className="phase1 pt-2 pb-6 item grid gap-3 border border-primary/30 rounded-3xl bg-main-bg/90 h-full">
+              <div className="phase1 pt-2 pb-6 item grid gap-3 border border-primary/20 rounded-3xl home-item-bg-clr h-full card-shadow">
                 <div className="heading pb-3 mt-2 ">
                   <h3 className="px-5 text-center m-auto max-w-[10rem] border-b-2 border-primary/30 pb-3 font-codeProBold font-extrabold">
                     Phase 1
@@ -819,7 +818,7 @@ export default function PriceTable({ clr }) {
                   <div className="item flex justify-between gap-6 items-center">
                     <span>Leverage:</span>
                     <div>
-                      <span className="w-[136px] flex justify-center">
+                      <span className="sm:w-[136px] flex justify-center">
                         1:100
                       </span>
                     </div>
@@ -830,7 +829,9 @@ export default function PriceTable({ clr }) {
                       Monthly <b className="font-bold"> Salary </b>:
                     </span>
                     <div>
-                      <span className="w-[136px] flex justify-center">-</span>
+                      <span className="sm:w-[136px] flex justify-center">
+                        -
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -838,13 +839,13 @@ export default function PriceTable({ clr }) {
             </SwiperSlide>
             {/* slide */}
             <SwiperSlide>
-              <div className="phase2 pt-2 pb-6 item grid gap-3 border border-primary/30 rounded-3xl bg-main-bg/90 h-full">
+              <div className="phase-2 pt-2 pb-6 item grid gap-3 border border-primary/20 rounded-3xl home-item-bg-clr h-full card-shadow">
                 <div className="heading pb-3 mt-2 ">
                   <h3 className="px-5 text-center m-auto max-w-[10rem] border-b-2 border-primary/30 pb-3 font-codeProBold font-extrabold">
                     Phase 2
                   </h3>
                 </div>
-                <div className="items grid gap-4 px-4">
+                <div className="items grid gap-6 px-4">
                   <div className="item flex justify-between gap-6 items-center">
                     <span>
                       Trading
@@ -852,7 +853,7 @@ export default function PriceTable({ clr }) {
                     </span>
                     <div>
                       <div className="wrap flex gap-2 justify-center items-center relative z-[10]">
-                        <div className="col-span-2 flex justify-center items-center w-[136px]">
+                        <div className="col-span-2 flex justify-center items-center sm:w-[136px]">
                           <span className="priceVal">
                             {tradingPeriod === "0-0"
                               ? "Unlimited"
@@ -870,7 +871,7 @@ export default function PriceTable({ clr }) {
                       Min. Trading
                       <b className="font-bold"> Days</b>:
                     </span>
-                    <span className="priceVal inline-flex justify-center items-center w-[136px]">
+                    <span className="priceVal inline-flex justify-center items-center sm:w-[136px]">
                       {tradingDays === "0-0"
                         ? "0 Days"
                         : tradingDays === "3-3"
@@ -885,7 +886,7 @@ export default function PriceTable({ clr }) {
                       <b className="font-bold"> Daily </b> Loss:
                     </span>
                     <div>
-                      <span className="priceVal w-[136px] flex justify-center">
+                      <span className="priceVal sm:w-[136px] flex justify-center">
                         <span className="priceVal inline-flex justify-center items-center">
                           {dailyLoss === "5"
                             ? priceValues[chooseBalance].maxDailyLossVal[0]
@@ -901,7 +902,7 @@ export default function PriceTable({ clr }) {
                       <b className="font-bold"> Overall </b> Loss:
                     </span>
                     <div>
-                      <span className="priceVal w-[136px] flex justify-center">
+                      <span className="priceVal sm:w-[136px] flex justify-center">
                         <span>
                           {overallLoss === "12"
                             ? priceValues[chooseBalance].maxOverallLossVal[0]
@@ -919,7 +920,7 @@ export default function PriceTable({ clr }) {
                       <b className="font-bold"> target </b>:
                     </span>
 
-                    <span className="priceVal w-[136px] flex justify-center">
+                    <span className="priceVal sm:w-[136px] flex justify-center">
                       {priceValues[chooseBalance].profitTargetVal[2]}
                     </span>
                   </div>
@@ -927,7 +928,7 @@ export default function PriceTable({ clr }) {
                   <div className="item flex justify-between gap-6 items-center">
                     <span>Leverage:</span>
                     <div>
-                      <span className="w-[136px] flex justify-center">
+                      <span className="sm:w-[136px] flex justify-center">
                         1:100
                       </span>
                     </div>
@@ -938,7 +939,9 @@ export default function PriceTable({ clr }) {
                       Monthly <b className="font-bold"> Salary </b>:
                     </span>
                     <div>
-                      <span className="w-[136px] flex justify-center">-</span>
+                      <span className="sm:w-[136px] flex justify-center">
+                        -
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -946,13 +949,13 @@ export default function PriceTable({ clr }) {
             </SwiperSlide>
             {/* slide */}
             <SwiperSlide>
-              <div className="funded pt-2 pb-6 item grid gap-3 border border-primary/30 rounded-3xl bg-main-bg/90 h-full">
+              <div className="funded pt-2 pb-6 item grid gap-3 border border-primary/20 rounded-3xl home-item-bg-clr h-full card-shadow">
                 <div className="heading pb-3 mt-2 ">
                   <h3 className="px-5 text-center m-auto max-w-[10rem] border-b-2 border-primary/30 pb-3 font-codeProBold font-extrabold">
                     Funded
                   </h3>
                 </div>
-                <div className="items grid gap-4 px-4">
+                <div className="items grid gap-6 px-4">
                   <div className="item flex justify-between gap-6 items-center">
                     <span>
                       Trading
@@ -980,7 +983,9 @@ export default function PriceTable({ clr }) {
                     </span>
                     <div>
                       <span className="w-[122px] flex justify-center">
-                        4444444444
+                        {dailyLoss === "5"
+                          ? priceValues[chooseBalance].maxDailyLossVal[0]
+                          : priceValues[chooseBalance].maxDailyLossVal[1]}
                       </span>
                     </div>
                   </div>
@@ -992,7 +997,13 @@ export default function PriceTable({ clr }) {
                     </span>
                     <div>
                       <span className="w-[122px] flex justify-center">
-                        4444444444
+                        <span>
+                          {overallLoss === "12"
+                            ? priceValues[chooseBalance].maxOverallLossVal[0]
+                            : overallLoss === "10"
+                            ? priceValues[chooseBalance].maxOverallLossVal[1]
+                            : priceValues[chooseBalance].maxOverallLossVal[2]}
+                        </span>
                       </span>
                     </div>
                   </div>
@@ -1019,8 +1030,8 @@ export default function PriceTable({ clr }) {
                       Monthly <b className="font-bold"> Salary </b>:
                     </span>
                     <div>
-                      <span className="w-[122px] flex justify-center">
-                        4444444444
+                      <span className="w-[122px] whitespace-nowrap flex justify-center">
+                        {priceValues[chooseBalance].monthlySalaryVal[0]}
                       </span>
                     </div>
                   </div>
@@ -1030,12 +1041,12 @@ export default function PriceTable({ clr }) {
           </Swiper>
         </div>
 
-        <div className="wrap  mt-10 grid sm:grid-cols-2 justify-center items-center gap-4 w-full">
+        <div className="wrap mt-6 grid sm:grid-cols-2 justify-center items-center gap-4 w-full">
           <div className="flex justify-center">
             <div className="refund flex items-center justify-center">
               <span className="!text-lg">Refundable fee: </span>
               <h4 className="text-[1.5rem] font-Montserrat font-extrabold ml-4">
-                4444444444
+                $ {totalPrice}
               </h4>
             </div>
           </div>

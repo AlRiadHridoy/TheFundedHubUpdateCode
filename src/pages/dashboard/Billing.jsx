@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 import { BsDownload } from "react-icons/bs";
 
 // Import Swiper styles

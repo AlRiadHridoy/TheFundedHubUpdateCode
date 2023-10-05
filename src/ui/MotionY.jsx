@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 export default function MotionY({ delay, cls, children }) {
   return (
     <motion.div
-      className={cls}
+      className={cls ? cls : ""}
       whileInView={{
         opacity: 1,
         y: 0,
@@ -15,7 +15,7 @@ export default function MotionY({ delay, cls, children }) {
         },
       }}
       viewport={{ once: true }}
-      initial={{ opacity: 0, y: -150 }}
+      initial={{ opacity: 0, y: -200 }}
     >
       {children}
     </motion.div>

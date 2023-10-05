@@ -14,7 +14,7 @@ export default function Contact() {
   return (
     <>
       <Navbar />
-      <section className="contact relative pt-32 sm:pt-48 pb-28 sm:pb-44 purple-shadow">
+      <section className="contact bg-dark relative pt-32 sm:pt-48 pb-28 sm:pb-44 purple-shadow">
         <div className="container z-10 relative">
           <div className="wrapper flex items-center justify-center w-full">
             <div className="content grid md:grid-cols-3 gap-10 max-w-[75rem] w-full">

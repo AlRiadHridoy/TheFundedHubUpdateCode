@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 
-export default function MotionX({ delay, children }) {
+export default function MotionX({ delay, children, right, cls }) {
+  const xAxis = right ? 150 : -150;
   return (
     <motion.div
+      className={cls ? cls : ""}
       whileInView={{
         opacity: 1,
         x: 0,
@@ -14,7 +16,7 @@ export default function MotionX({ delay, children }) {
         },
       }}
       viewport={{ once: true }}
-      initial={{ opacity: 0, x: -150 }}
+      initial={{ opacity: 0, x: xAxis }}
     >
       {children}
     </motion.div>

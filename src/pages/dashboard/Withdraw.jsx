@@ -4,6 +4,7 @@ import { arrow } from "../../ui/images";
 export default function Withdraw() {
   const [paraHeight, setparaHeight] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
+  const [withdraw, setWithdraw] = useState(0);
   const refferance = useRef(null);
 
   useEffect(() => {
@@ -48,6 +49,12 @@ export default function Withdraw() {
     },
   ];
 
+  const changeWithdraw = (e) => {
+    if (e > 2832) return setWithdraw(2832);
+    if (e < 0) return setWithdraw(0);
+    setWithdraw(e);
+  };
+
   return (
     <main className="content-wrapper pt-16 sm:pb-6 sm:pt-24 bg-black purple-shadow-dash min-h-screen">
       <div className="inner-content px-6">
@@ -67,7 +74,7 @@ export default function Withdraw() {
                             Your account profit from your current trading cycle.
                           </p>
                           <p className="text-blu text-[34px] font-semibold leading-[1.185] tracking-[-0.24px]">
-                            $0.00
+                            $1000.00
                           </p>
                         </div>
                       </div>
@@ -81,7 +88,7 @@ export default function Withdraw() {
                             cycle.
                           </p>
                           <p className="text-primary text-[34px] font-semibold leading-[1.185] tracking-[-0.24px]">
-                            $0.00
+                            $2832.00
                           </p>
                         </div>
                       </div>
@@ -93,13 +100,27 @@ export default function Withdraw() {
                           <p className="xl:text-[16px] text-[15px] leading-[1.5] tracking-[-0.05px] mb-[20px] text-wht/70">
                             Total Account Growth Percentage You&apos;ve Reached
                           </p>
-                          <div className="btn">
-                            <a
-                              className="capitalize hidden sm:inline-block font-Montserrat text-sm font-bold py-3 px-7 dash-btn rounded-3xl"
-                              href="/dashboard/billing"
-                            >
-                              Get your payout
-                            </a>
+                          <div className="wrap flex justify-between items-center gap-2">
+                            <div className="left flex items-center border border-primary/10 text-white rounded-3xl py-2 px-3 text-[1.4rem]">
+                              $
+                              <input
+                                type="number"
+                                onChange={(e) => changeWithdraw(e.target.value)}
+                                value={withdraw}
+                                className="bg-transparent w-16 focus:outline-none"
+                              />
+                              <div className="static-value font-bold text-primary">
+                                / $2832
+                              </div>
+                            </div>
+                            <div className="btn ">
+                              <a
+                                className="uppercase hidden sm:inline-block font-Montserrat text-sm font-bold py-3 px-7 dash-btn rounded-3xl"
+                                href="/dashboard/billing"
+                              >
+                                Get your payout
+                              </a>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -138,11 +159,10 @@ export default function Withdraw() {
                   >
                     <div ref={refferance} className="wrapper">
                       <div className="billing-data bg-transparent px-3 py-4 overflow-y-scroll">
-                        <div className="w-full m-auto max-w-[80vw] md:max-w-[70vw] overflow-x-scroll">
+                        <div className="m-auto max-w-[1200px] overflow-x-scroll whitespace-nowrap pb-6">
                           <table className="font-Montserrat w-full">
                             <thead>
                               <tr className="whitespace-nowrap">
-                                <th align="left">Pay</th>
                                 <th align="left">Funded challenge</th>
                                 <th align="left">Dates</th>
                                 <th align="left">Amount</th>
@@ -156,7 +176,6 @@ export default function Withdraw() {
                             <tbody>
                               {billingData.map((data, i) => (
                                 <tr key={data.open + i}>
-                                  <td> -- </td>
                                   <td>
                                     <div>
                                       <div className="nm text-all">

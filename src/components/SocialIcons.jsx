@@ -8,7 +8,7 @@ export default function SocialIcons() {
       <a
         target="__blank"
         href="https://www.instagram.com/fundedhub/"
-        className="lo-8 w-[1.5rem] hover:opacity-70 transition-all duration-300 flex justify-center items-center"
+        className="w-[1.5rem] hover:opacity-70 transition-all duration-300 flex justify-center items-center"
       >
         <img className="w-full" src={instagram} alt="Instagram" />
       </a>
@@ -21,7 +21,7 @@ export default function SocialIcons() {
       </a>
       <a
         target="__blank"
-        href="https://discord.com/invite/96Mq2M2gdB"
+        href="https://discord.gg/thefundedhub"
         className="logo w-[1.9rem] hover:opacity-70 transition-all duration-300 flex justify-center items-center"
       >
         <img className="w-full" src={discord} alt="discord" />

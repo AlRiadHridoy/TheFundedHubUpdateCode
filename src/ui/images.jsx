@@ -1,12 +1,11 @@
 import mainLogo from "../assets/images/logo.webp";
 import dashboard from "../assets/images/dashboard.webp";
 import arrow from "../assets/images/arrow.svg";
-import circle from "../assets/images/circle.svg";
+import circle from "../assets/images/circle.png";
 import copy from "../assets/images/copy.svg";
 import tick from "../assets/images/tick.svg";
 import shadow from "../assets/images/shadow.png";
 import mobile from "../assets/images/discord-mobile.webp";
-// import mainMobile from "../assets/images/main-mobile.png";
 
 // Dashboard Images
 import author from "../assets/images/dashboard/author/author.jpeg";

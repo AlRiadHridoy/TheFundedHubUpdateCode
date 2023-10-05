@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
+
 // main pages
 import Home from "./pages/main/Home";
 import Login from "./pages/main/Login";
@@ -14,9 +16,9 @@ import ReportProblem from "./pages/main/ReportProblem";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Withdraw from "./pages/dashboard/Withdraw";
 import TopUpReset from "./pages/dashboard/TopUpReset";
-import Help from "./pages/dashboard/Help";
+// import Help from "./pages/dashboard/Help";
 import Profile from "./pages/dashboard/Profile";
-import DashContact from "./pages/dashboard/DashContact";
+// import DashContact from "./pages/dashboard/DashContact";
 import Billing from "./pages/dashboard/Billing";
 import StartNewChallenge from "./pages/dashboard/StartNewChallenge";
 import Certificate from "./pages/dashboard/Certificate";
@@ -59,8 +61,8 @@ function App() {
             <Route path="start-new-challenge" element={<StartNewChallenge />} />
             <Route path="withdraw" element={<Withdraw />} />
             <Route path="top-up-reset" element={<TopUpReset />} />
-            <Route path="help" element={<Help />} />
-            <Route path="dashboard-contact" element={<DashContact />} />
+            {/* <Route path="help" element={<Help />} /> */}
+            {/* <Route path="dashboard-contact" element={<DashContact />} /> */}
             <Route path="certificate" element={<Certificate />} />
           </Route>
 

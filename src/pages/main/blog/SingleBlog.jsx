@@ -15,11 +15,11 @@ export default function SingleBlog() {
   return (
     <>
       <Navbar />
-      <section className="single-blog relative pt-32 sm:pt-48 pb-28 sm:pb-44 purple-shadow">
+      <section className="single-blog bg-dark relative pt-32 sm:pt-48 pb-28 sm:pb-44 purple-shadow">
         <div className="container z-10 relative">
           <div className="wrapper max-w-[75rem] m-auto w-full">
             <div className="flex justify-center items-center">
-              <div className="blog-img p-[0.03rem] rounded-md">
+              <div className="blog-img p-[0.03rem] rounded-md hidden">
                 <img className="rounded-md" src={blogOne} alt="" />
               </div>
             </div>

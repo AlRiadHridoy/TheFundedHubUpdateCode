@@ -176,9 +176,13 @@
 .pieChart .recharts-responsive-container {
   height: 100%;
 }
-/* .pieChart .recharts-surface {
-  margin-top: -40px;
-}  */
+.pieChart .recharts-wrapper > svg {
+  margin-top: -70px;
+}
+
+.pieChart .recharts-legend-wrapper {
+  margin-top: 70px;
+}
 
 .pieChart ::-webkit-scrollbar {
   height: 10px;

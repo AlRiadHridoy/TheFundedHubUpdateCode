@@ -67,7 +67,7 @@ export default function SiderNav() {
             </li>
           </NavLink>
 
-          <NavLink
+          {/* <NavLink
             to="help"
             className={({ isActive }) => (isActive ? "active-side-nav" : "")}
           >
@@ -87,7 +87,8 @@ export default function SiderNav() {
                 <span className="">Contact</span>
               </div>
             </li>
-          </NavLink>
+          </NavLink> */}
+
           <NavLink
             to="certificate"
             className={({ isActive }) => (isActive ? "active-side-nav" : "")}
