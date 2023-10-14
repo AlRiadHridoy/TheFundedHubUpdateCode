@@ -12,7 +12,7 @@ export default function FaqCollaps({ heading, para, fls }) {
   }, [isOpen]);
 
   return (
-    <article className="dash-home-bg rounded-xl">
+    <article className="dash-home-bg rounded-xl global-shadow ">
       <header
         onClick={() => setIsOpen(!isOpen)}
         className="flex justify-between cursor-pointer py-3 px-4"
@@ -48,6 +48,13 @@ export default function FaqCollaps({ heading, para, fls }) {
                 __html: para,
               }}
             />
+
+            {/* temporrayr ************************************* */}
+            <div className="faq-collaps hidden">
+              <div className="paras">
+                
+              </div>
+            </div>
           </div>
         </div>
       </div>

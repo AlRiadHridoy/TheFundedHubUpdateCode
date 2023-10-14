@@ -63,6 +63,24 @@ export default function FaqContent() {
       ],
     ],
 
+    TradingRules: [
+      [
+        "Do you offer Leverage?",
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      ],
+      [
+        "Can I hold trades over the weekend?",
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      ],
+      [
+        "Can I hold trades over the weekend?",
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      ],
+      [
+        "Is there any restrictions on trading?",
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+      ],
+    ],
     Billing: [
       [
         "Do you offer Leverage?",
@@ -126,6 +144,17 @@ export default function FaqContent() {
               onClick={() => setOption("TFH")}
             >
               <h5 className="px-3 sm:px-5">TFH Funded</h5>
+            </div>
+            {/* option */}
+            <div
+              className={`option py-2 sm:py-3 md:py-[1rem] rounded-xl  border-[3px] bg-[#2B2C30]/[17%] backdrop-blur-3xl cursor-pointer relative transition-all duration-200 before:transition-all before:duration-200 ${
+                option === "TradingRules"
+                  ? "border-primary/80 before:opacity-100"
+                  : "border-transparent before:opacity-0 hover:border-primary/40"
+              }`}
+              onClick={() => setOption("TradingRules")}
+            >
+              <h5 className="px-3 sm:px-5">Trading Rules</h5>
             </div>
             {/* option */}
             <div

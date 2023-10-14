@@ -50,7 +50,7 @@ export default function Blog() {
                 <Link
                   key={blog.title + index}
                   to={`/blog/${blog.link}`}
-                  className="single-blog p-[0.9rem] bg-light/20 backdrop-blur-3xl rounded-xl !relative"
+                  className="single-blog p-[0.9rem] bg-light/20 backdrop-blur-3xl rounded-xl !relative global-shadow"
                 >
                   <div className="blog-img rounded-md">
                     <img

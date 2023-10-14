@@ -31,7 +31,7 @@ export default function SocialConnect() {
           >
             <div className="img flex justify-center items-center relative h-[150px]">
               <img
-                className="sm:max-w-[12rem] md:max-w-[30rem] w-full absolute top-[2rem] left-0
+                className="w-full absolute top-[2rem] left-0
                   "
                 src={discord}
                 alt="discord"
@@ -39,23 +39,22 @@ export default function SocialConnect() {
             </div>
 
             {/* text */}
-            <div className="w-full grid justify-center gap-3 -mt-2">
+            <div className="w-full flex flex-col justify-between gap-8">
               <p className="text-center">
                 Trading is a challenge! Join our Discord for market discussions,
                 strategies, and Friday night gaming sessions!
               </p>
-            </div>
-
-            {/* btn */}
-            <div className="wrap self-end">
-              <div className="mt-4 btn uppercase flex justify-center self-end">
-                <a
-                  target="__blank"
-                  href="https://discord.gg/thefundedhub"
-                  className="uppercase font-base flex h-full justify-center items-center py-3 px-10 text-white border-primary rounded-3xl whitespace-nowrap font-Montserrat font-semibold text-[0.8rem]  max-w-[228px] discglow-btn"
-                >
-                  Join our Discord
-                </a>
+              {/* btn */}
+              <div className="wrap flex justify-center">
+                <div className="mt-4 btn uppercase flex justify-center self-end">
+                  <a
+                    target="__blank"
+                    href="https://discord.gg/thefundedhub"
+                    className="uppercase font-base flex h-full justify-center items-center py-3 px-10 text-white border-primary rounded-3xl whitespace-nowrap font-Montserrat font-semibold text-[0.8rem]  max-w-[228px] discglow-btn"
+                  >
+                    Join our Discord
+                  </a>
+                </div>
               </div>
             </div>
           </MotionX>
@@ -63,25 +62,25 @@ export default function SocialConnect() {
           <MotionX
             delay={0.5}
             right={true}
-            cls="grid gap-4 px-6  py-8 rounded-3xl x-bg h-full social-shadow max-w-[360px]"
+            cls="grid gap-4 px-6 py-8 rounded-3xl x-bg h-full social-shadow max-w-[360px]"
           >
             <div className="img flex justify-center items-center relative h-[150px]">
               <img
-                className="sm:max-w-[12rem] md:max-w-[30rem] w-full absolute top-[0.5rem] left-0
+                className="w-full absolute top-[0.5rem] left-0
                   "
                 src={x}
                 alt="x"
               />
             </div>
 
-            <div className="w-full grid justify-center gap-3">
+            <div className="w-full flex flex-col justify-between gap-8">
               <p className="text-center">
                 To ensure you&apos;re always in the know about TFH&apos;s
                 official updates and news, don&apos;t forget to follow us on
                 Twitter! Stay tuned for the latest developments.
               </p>
 
-              <div className="mt-4 btn uppercase flex justify-center">
+              <div className=" btn uppercase flex justify-center">
                 <a
                   target="__blank"
                   href="https://twitter.com/TheFundedHub"

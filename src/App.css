@@ -393,25 +393,40 @@ select option {
   width: 100%;
 }
 
-/* pagination */
-/* .css-iqeo3-MuiButtonBase-root-MuiPaginationItem-root {
-  @apply !text-white;
-} */
+/* faq content */
 
-.faq-collaps p {
-  @apply font-medium;
+.faq-collaps {
+  @apply font-Montserrat font-light;
 }
+
 .faq-collaps ul {
-  @apply list-disc font-Montserrat ml-6 mt-1;
+  display: grid;
+  gap: 1rem;
 }
+.faq-collaps h5,
+.faq-collaps ul li h5 {
+  @apply font-semibold;
+}
+
+.faq-collaps ul li span {
+  @apply inline-block font-semibold mr-1;
+}
+.faq-collaps ul li a {
+  @apply underline font-normal;
+}
+
+.faq-collaps ul {
+  @apply font-Montserrat ml-2 mt-1;
+}
+
 .faq-collaps span {
-  @apply font-Montserrat pt-2 flex;
+  @apply font-Montserrat flex;
 }
 .faq-collaps b {
   @apply flex mb-2;
 }
 .faq-collaps i {
-  @apply underline cursor-pointer;
+  @apply font-normal;
 }
 .faq-collaps {
   @apply grid gap-3;
@@ -645,6 +660,9 @@ select option {
   box-shadow: -5px 1px 25px 1px rgba(0, 0, 0, 0.75);
 }
 
+.global-shadow {
+  box-shadow: -5px 1px 25px 1px rgba(0, 0, 0, 0.75);
+}
 .social-shadow {
   box-shadow: -5px 1px 25px 1px rgba(0, 0, 0, 0.75);
 }

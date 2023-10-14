@@ -1,7 +1,7 @@
 export default function ContactForm({ clr, header }) {
   return (
     <form
-      className={`grid gap-6 sm:gap-8 md:gap-10 px-4 py-6 sm:p-8 relative z-10 rounded-3xl border-primary backdrop-blur-3xl ${
+      className={`grid gap-6 sm:gap-8 md:gap-10 px-4 py-6 sm:p-8 relative z-10 rounded-3xl border-primary backdrop-blur-3xl global-shadow  ${
         clr === "dash-bar-clr" ? "contact-clr" : "bg-main-bg/30"
       }`}
     >

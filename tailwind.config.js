@@ -3,6 +3,7 @@
 module.exports = {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
+    darkMode: "class",
     extend: {
       screens: {
         xs: "400px",
@@ -10,6 +11,7 @@ module.exports = {
       },
       colors: {
         "main-bg": "#030307",
+        "light-mode": "#0d0a12",
         light: "#2B2C30",
         primary: "#C7B3FC",
         "login-input": "#372439",

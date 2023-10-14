@@ -17,12 +17,14 @@ import metaTraderFour from "../assets/images/meta-trader-4.webp";
 
 export default function PriceTable({ clr }) {
   // choose balance
-  const [chooseBalance, setChooseBalance] = useState("200000");
-  const [tradingPeriod, setTradingPeriod] = useState("0-0");
-  const [tradingDays, setTradingDays] = useState("0-0");
-  const [dailyLoss, setDailyLoss] = useState("5");
-  const [overallLoss, setOverallloss] = useState("12");
-  const [profitTarget, setProfitTarget] = useState("10-5");
+  const [startingCapital, setStartingCapital] = useState("200000");
+  const [maximumTradingDays, setMaximumTradingDays] = useState("0-0");
+  const [minimumTradingDays, setMinimumTradingDays] = useState("0-0");
+  const [maximumDailyLossPercentage, setMaximumDailyLossPercentage] =
+    useState("5");
+  const [maximumTotalLossPercentage, setMaximumTotalLossPercentage] =
+    useState("12");
+  const [profitTargetPercentage, setProfitTargetPercentage] = useState("10-5");
 
   // navigate to payment page
   const [totalPrice, setTotalPrice] = useState(0);
@@ -69,7 +71,7 @@ export default function PriceTable({ clr }) {
 
   // Get Price values
   useEffect(() => {
-    const url = `https://development-api.thefundedhub.com/v1/website/prices?phaseCount=2&startingCapital=${chooseBalance}&minimumTradingDays=${tradingDays}&maximumTradingDays=${tradingPeriod}&profitTargetPercentage=${profitTarget}&maximumDailyLossPercentage=${dailyLoss}&maximumTotalLossPercentage=${overallLoss}`;
+    const url = `https://development-api.thefundedhub.com/v1/website/prices?phaseCount=2&startingCapital=${startingCapital}&minimumTradingDays=${minimumTradingDays}&maximumTradingDays=${maximumTradingDays}&profitTargetPercentage=${profitTargetPercentage}&maximumDailyLossPercentage=${maximumDailyLossPercentage}&maximumTotalLossPercentage=${maximumTotalLossPercentage}`;
     axios
       .get(url)
       .then((response) => {
@@ -79,12 +81,12 @@ export default function PriceTable({ clr }) {
         console.error("There was an error!", error);
       });
   }, [
-    chooseBalance,
-    dailyLoss,
-    overallLoss,
-    profitTarget,
-    tradingDays,
-    tradingPeriod,
+    startingCapital,
+    maximumDailyLossPercentage,
+    maximumTotalLossPercentage,
+    profitTargetPercentage,
+    minimumTradingDays,
+    maximumTradingDays,
   ]);
 
   // purchage request
@@ -97,12 +99,12 @@ export default function PriceTable({ clr }) {
         paymentProvider: "STRIPE",
         platform: "MT5",
         phaseCount: "2",
-        startingCapital: chooseBalance,
-        minimumTradingDays: tradingDays,
-        maximumTradingDays: tradingPeriod,
-        profitTargetPercentage: profitTarget,
-        maximumDailyLossPercentage: dailyLoss,
-        maximumTotalLossPercentage: overallLoss,
+        startingCapital: startingCapital,
+        minimumTradingDays: minimumTradingDays,
+        maximumTradingDays: maximumTradingDays,
+        profitTargetPercentage: profitTargetPercentage,
+        maximumDailyLossPercentage: maximumDailyLossPercentage,
+        maximumTotalLossPercentage: maximumTotalLossPercentage,
       })
       .then((response) => {
         window.location.replace(response.data.data.paymentUrl);
@@ -126,11 +128,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === "5000"
+                    startingCapital === "5000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("5000")}
+                  onClick={() => setStartingCapital("5000")}
                 >
                   $ 5,000
                 </button>
@@ -139,11 +141,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === "10000"
+                    startingCapital === "10000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("10000")}
+                  onClick={() => setStartingCapital("10000")}
                 >
                   $ 10,000
                 </button>
@@ -152,11 +154,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === "25000"
+                    startingCapital === "25000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("25000")}
+                  onClick={() => setStartingCapital("25000")}
                 >
                   $ 25,000
                 </button>
@@ -165,11 +167,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === "50000"
+                    startingCapital === "50000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("50000")}
+                  onClick={() => setStartingCapital("50000")}
                 >
                   $ 50,000
                 </button>
@@ -178,11 +180,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === "100000"
+                    startingCapital === "100000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("100000")}
+                  onClick={() => setStartingCapital("100000")}
                 >
                   $ 100,000
                 </button>
@@ -190,11 +192,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-[5.5rem] py-2.5 rounded-mds border-b-2 leading-[0.7] ${
-                    chooseBalance === "200000"
+                    startingCapital === "200000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("200000")}
+                  onClick={() => setStartingCapital("200000")}
                 >
                   $ 200,000
                 </button>
@@ -263,7 +265,7 @@ export default function PriceTable({ clr }) {
                 <select
                   id="treading-period"
                   name="treading-period"
-                  onChange={(e) => setTradingPeriod(e.target.value)}
+                  onChange={(e) => setMaximumTradingDays(e.target.value)}
                   className="price-table-select"
                 >
                   <option value="0-0">Unlimited</option>
@@ -281,9 +283,9 @@ export default function PriceTable({ clr }) {
               <div className="relative before:absolute before:font-bold before:content-['Phase_2'] flex justify-center before:-top-10 before:text-[0.9rem] font-normal whitespace-nowrap">
                 <div className="col-span-2 flex justify-center items-center">
                   <span className="priceVal">
-                    {tradingPeriod === "0-0"
+                    {maximumTradingDays === "0-0"
                       ? "Unlimited"
-                      : tradingPeriod === "45-45"
+                      : maximumTradingDays === "45-45"
                       ? "45 Days"
                       : "60 Days"}
                   </span>
@@ -304,7 +306,7 @@ export default function PriceTable({ clr }) {
                 <select
                   id="treading-period"
                   name="treading-period"
-                  onChange={(e) => setTradingDays(e.target.value)}
+                  onChange={(e) => setMinimumTradingDays(e.target.value)}
                   className="price-table-select"
                 >
                   <option value="0-0">0 Days</option>
@@ -319,9 +321,9 @@ export default function PriceTable({ clr }) {
             </span>
             <span className="col-span-2 flex justify-center">
               <span className="priceVal inline-flex justify-center items-center">
-                {tradingDays === "0-0"
+                {minimumTradingDays === "0-0"
                   ? "0 Days"
-                  : tradingDays === "3-3"
+                  : minimumTradingDays === "3-3"
                   ? "3 Days"
                   : "5 Days"}
               </span>
@@ -340,14 +342,16 @@ export default function PriceTable({ clr }) {
                 <select
                   id="daily-loss"
                   name="daily-loss"
-                  onChange={(e) => setDailyLoss(e.target.value)}
+                  onChange={(e) =>
+                    setMaximumDailyLossPercentage(e.target.value)
+                  }
                   className="price-table-select"
                 >
                   <option value="5">
-                    {priceValues[chooseBalance].maxDailyLossVal[0]}
+                    {priceValues[startingCapital].maxDailyLossVal[0]}
                   </option>
                   <option value="4">
-                    {priceValues[chooseBalance].maxDailyLossVal[1]}
+                    {priceValues[startingCapital].maxDailyLossVal[1]}
                   </option>
                 </select>
                 {/* arrow */}
@@ -358,16 +362,16 @@ export default function PriceTable({ clr }) {
             </div>
             <div className="col-span-2 flex justify-center items-center">
               <span className="priceVal inline-flex justify-center items-center">
-                {dailyLoss === "5"
-                  ? priceValues[chooseBalance].maxDailyLossVal[0]
-                  : priceValues[chooseBalance].maxDailyLossVal[1]}
+                {maximumDailyLossPercentage === "5"
+                  ? priceValues[startingCapital].maxDailyLossVal[0]
+                  : priceValues[startingCapital].maxDailyLossVal[1]}
               </span>
             </div>
             <div className="col-span-2 flex justify-center items-center gap-1">
               <span className="priceVal inline-flex justify-center items-center">
-                {dailyLoss === "5"
-                  ? priceValues[chooseBalance].maxDailyLossVal[0]
-                  : priceValues[chooseBalance].maxDailyLossVal[1]}
+                {maximumDailyLossPercentage === "5"
+                  ? priceValues[startingCapital].maxDailyLossVal[0]
+                  : priceValues[startingCapital].maxDailyLossVal[1]}
               </span>
             </div>
           </div>
@@ -381,17 +385,19 @@ export default function PriceTable({ clr }) {
                 <select
                   id="daily-loss"
                   name="daily-loss"
-                  onChange={(e) => setOverallloss(e.target.value)}
+                  onChange={(e) =>
+                    setMaximumTotalLossPercentage(e.target.value)
+                  }
                   className="price-table-select"
                 >
                   <option value="12">
-                    {priceValues[chooseBalance].maxOverallLossVal[0]}
+                    {priceValues[startingCapital].maxOverallLossVal[0]}
                   </option>
                   <option value="10">
-                    {priceValues[chooseBalance].maxOverallLossVal[1]}
+                    {priceValues[startingCapital].maxOverallLossVal[1]}
                   </option>
                   <option value="8">
-                    {priceValues[chooseBalance].maxOverallLossVal[2]}
+                    {priceValues[startingCapital].maxOverallLossVal[2]}
                   </option>
                 </select>
                 {/* arrow */}
@@ -403,21 +409,21 @@ export default function PriceTable({ clr }) {
             <div className="col-span-2 flex justify-center items-center">
               <span className="priceVal inline-flex justify-center items-center">
                 <span>
-                  {overallLoss === "12"
-                    ? priceValues[chooseBalance].maxOverallLossVal[0]
-                    : overallLoss === "10"
-                    ? priceValues[chooseBalance].maxOverallLossVal[1]
-                    : priceValues[chooseBalance].maxOverallLossVal[2]}
+                  {maximumTotalLossPercentage === "12"
+                    ? priceValues[startingCapital].maxOverallLossVal[0]
+                    : maximumTotalLossPercentage === "10"
+                    ? priceValues[startingCapital].maxOverallLossVal[1]
+                    : priceValues[startingCapital].maxOverallLossVal[2]}
                 </span>
               </span>
             </div>
             <div className="col-span-2 flex justify-center items-center gap-1">
               <span className="priceVal inline-flex justify-center items-center">
-                {overallLoss === "12"
-                  ? priceValues[chooseBalance].maxOverallLossVal[0]
-                  : overallLoss === "10"
-                  ? priceValues[chooseBalance].maxOverallLossVal[1]
-                  : priceValues[chooseBalance].maxOverallLossVal[2]}
+                {maximumTotalLossPercentage === "12"
+                  ? priceValues[startingCapital].maxOverallLossVal[0]
+                  : maximumTotalLossPercentage === "10"
+                  ? priceValues[startingCapital].maxOverallLossVal[1]
+                  : priceValues[startingCapital].maxOverallLossVal[2]}
               </span>
             </div>
           </div>
@@ -431,14 +437,14 @@ export default function PriceTable({ clr }) {
                 <select
                   id="daily-loss"
                   name="daily-loss"
-                  onChange={(e) => setProfitTarget(e.target.value)}
+                  onChange={(e) => setProfitTargetPercentage(e.target.value)}
                   className="price-table-select"
                 >
                   <option value="10-5">
-                    {priceValues[chooseBalance].profitTargetVal[0]}
+                    {priceValues[startingCapital].profitTargetVal[0]}
                   </option>
                   <option value="8-5">
-                    {priceValues[chooseBalance].profitTargetVal[1]}
+                    {priceValues[startingCapital].profitTargetVal[1]}
                   </option>
                 </select>
                 {/* arrow */}
@@ -450,7 +456,7 @@ export default function PriceTable({ clr }) {
 
             <div className="col-span-2 flex justify-center items-center gap-1">
               <span className="priceVal inline-flex justify-center items-center">
-                {priceValues[chooseBalance].profitTargetVal[2]}
+                {priceValues[startingCapital].profitTargetVal[2]}
               </span>
             </div>
             <span className="col-span-2 flex justify-center items-center">
@@ -494,7 +500,7 @@ export default function PriceTable({ clr }) {
             </div>
             <div className="col-span-2">
               <span className="priceVal inline-flex justify-center items-center">
-                {priceValues[chooseBalance].monthlySalaryVal[0]}
+                {priceValues[startingCapital].monthlySalaryVal[0]}
               </span>
             </div>
           </div>
@@ -534,11 +540,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
-                    chooseBalance === "5000"
+                    startingCapital === "5000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("5000")}
+                  onClick={() => setStartingCapital("5000")}
                 >
                   $ 5,000
                 </button>
@@ -546,11 +552,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
-                    chooseBalance === "10000"
+                    startingCapital === "10000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("10000")}
+                  onClick={() => setStartingCapital("10000")}
                 >
                   $ 10,000
                 </button>
@@ -559,11 +565,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
-                    chooseBalance === "25000"
+                    startingCapital === "25000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("25000")}
+                  onClick={() => setStartingCapital("25000")}
                 >
                   $ 25,000
                 </button>
@@ -572,11 +578,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
-                    chooseBalance === "50000"
+                    startingCapital === "50000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("50000")}
+                  onClick={() => setStartingCapital("50000")}
                 >
                   $ 50,000
                 </button>
@@ -585,11 +591,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
-                    chooseBalance === "100000"
+                    startingCapital === "100000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("100000")}
+                  onClick={() => setStartingCapital("100000")}
                 >
                   $ 100,000
                 </button>
@@ -597,11 +603,11 @@ export default function PriceTable({ clr }) {
               <div className="price">
                 <button
                   className={`w-full p-3 xs:px-5 rounded-mdg text-[0.95] ex:text-base transition-all duration-300 leading-[0.7] whitespace-nowrap border rounded-full bg-light/40 relative before:absolute before:w-full before:h-full before:inset-0 before:rounded-full font-Montserrat price-btn-shadow ${
-                    chooseBalance === "200000"
+                    startingCapital === "200000"
                       ? "border-primary"
                       : "border-primary/10"
                   }`}
-                  onClick={() => setChooseBalance("200000")}
+                  onClick={() => setStartingCapital("200000")}
                 >
                   $ 200,000
                 </button>
@@ -686,7 +692,9 @@ export default function PriceTable({ clr }) {
                           <select
                             id="treading-period"
                             name="treading-period"
-                            onChange={(e) => setTradingPeriod(e.target.value)}
+                            onChange={(e) =>
+                              setMaximumTradingDays(e.target.value)
+                            }
                             className="price-table-select"
                           >
                             <option value="0-0">Unlimited</option>
@@ -715,7 +723,7 @@ export default function PriceTable({ clr }) {
                       <select
                         id="treading-period"
                         name="treading-period"
-                        onChange={(e) => setTradingDays(e.target.value)}
+                        onChange={(e) => setMinimumTradingDays(e.target.value)}
                         className="price-table-select"
                       >
                         <option value="0-0">0 Days</option>
@@ -739,14 +747,16 @@ export default function PriceTable({ clr }) {
                         <select
                           id="daily-loss"
                           name="daily-loss"
-                          onChange={(e) => setDailyLoss(e.target.value)}
+                          onChange={(e) =>
+                            setMaximumDailyLossPercentage(e.target.value)
+                          }
                           className="price-table-select"
                         >
                           <option value="5">
-                            {priceValues[chooseBalance].maxDailyLossVal[0]}
+                            {priceValues[startingCapital].maxDailyLossVal[0]}
                           </option>
                           <option value="4">
-                            {priceValues[chooseBalance].maxDailyLossVal[1]}
+                            {priceValues[startingCapital].maxDailyLossVal[1]}
                           </option>
                         </select>
                         {/* arrow */}
@@ -767,17 +777,19 @@ export default function PriceTable({ clr }) {
                         <select
                           id="daily-loss"
                           name="daily-loss"
-                          onChange={(e) => setOverallloss(e.target.value)}
+                          onChange={(e) =>
+                            setMaximumTotalLossPercentage(e.target.value)
+                          }
                           className="price-table-select"
                         >
                           <option value="12">
-                            {priceValues[chooseBalance].maxOverallLossVal[0]}
+                            {priceValues[startingCapital].maxOverallLossVal[0]}
                           </option>
                           <option value="10">
-                            {priceValues[chooseBalance].maxOverallLossVal[1]}
+                            {priceValues[startingCapital].maxOverallLossVal[1]}
                           </option>
                           <option value="8">
-                            {priceValues[chooseBalance].maxOverallLossVal[2]}
+                            {priceValues[startingCapital].maxOverallLossVal[2]}
                           </option>
                         </select>
                         {/* arrow */}
@@ -797,14 +809,16 @@ export default function PriceTable({ clr }) {
                         <select
                           id="daily-loss"
                           name="daily-loss"
-                          onChange={(e) => setProfitTarget(e.target.value)}
+                          onChange={(e) =>
+                            setProfitTargetPercentage(e.target.value)
+                          }
                           className="price-table-select"
                         >
                           <option value="10-5">
-                            {priceValues[chooseBalance].profitTargetVal[0]}
+                            {priceValues[startingCapital].profitTargetVal[0]}
                           </option>
                           <option value="8-5">
-                            {priceValues[chooseBalance].profitTargetVal[1]}
+                            {priceValues[startingCapital].profitTargetVal[1]}
                           </option>
                         </select>
                         {/* arrow */}
@@ -855,9 +869,9 @@ export default function PriceTable({ clr }) {
                       <div className="wrap flex gap-2 justify-center items-center relative z-[10]">
                         <div className="col-span-2 flex justify-center items-center sm:w-[136px]">
                           <span className="priceVal">
-                            {tradingPeriod === "0-0"
+                            {maximumTradingDays === "0-0"
                               ? "Unlimited"
-                              : tradingPeriod === "45-45"
+                              : maximumTradingDays === "45-45"
                               ? "45 Days"
                               : "60 Days"}
                           </span>
@@ -872,9 +886,9 @@ export default function PriceTable({ clr }) {
                       <b className="font-bold"> Days</b>:
                     </span>
                     <span className="priceVal inline-flex justify-center items-center sm:w-[136px]">
-                      {tradingDays === "0-0"
+                      {minimumTradingDays === "0-0"
                         ? "0 Days"
-                        : tradingDays === "3-3"
+                        : minimumTradingDays === "3-3"
                         ? "3 Days"
                         : "5 Days"}
                     </span>
@@ -888,9 +902,9 @@ export default function PriceTable({ clr }) {
                     <div>
                       <span className="priceVal sm:w-[136px] flex justify-center">
                         <span className="priceVal inline-flex justify-center items-center">
-                          {dailyLoss === "5"
-                            ? priceValues[chooseBalance].maxDailyLossVal[0]
-                            : priceValues[chooseBalance].maxDailyLossVal[1]}
+                          {maximumDailyLossPercentage === "5"
+                            ? priceValues[startingCapital].maxDailyLossVal[0]
+                            : priceValues[startingCapital].maxDailyLossVal[1]}
                         </span>
                       </span>
                     </div>
@@ -904,11 +918,11 @@ export default function PriceTable({ clr }) {
                     <div>
                       <span className="priceVal sm:w-[136px] flex justify-center">
                         <span>
-                          {overallLoss === "12"
-                            ? priceValues[chooseBalance].maxOverallLossVal[0]
-                            : overallLoss === "10"
-                            ? priceValues[chooseBalance].maxOverallLossVal[1]
-                            : priceValues[chooseBalance].maxOverallLossVal[2]}
+                          {maximumTotalLossPercentage === "12"
+                            ? priceValues[startingCapital].maxOverallLossVal[0]
+                            : maximumTotalLossPercentage === "10"
+                            ? priceValues[startingCapital].maxOverallLossVal[1]
+                            : priceValues[startingCapital].maxOverallLossVal[2]}
                         </span>
                       </span>
                     </div>
@@ -921,7 +935,7 @@ export default function PriceTable({ clr }) {
                     </span>
 
                     <span className="priceVal sm:w-[136px] flex justify-center">
-                      {priceValues[chooseBalance].profitTargetVal[2]}
+                      {priceValues[startingCapital].profitTargetVal[2]}
                     </span>
                   </div>
 
@@ -983,9 +997,9 @@ export default function PriceTable({ clr }) {
                     </span>
                     <div>
                       <span className="w-[122px] flex justify-center">
-                        {dailyLoss === "5"
-                          ? priceValues[chooseBalance].maxDailyLossVal[0]
-                          : priceValues[chooseBalance].maxDailyLossVal[1]}
+                        {maximumDailyLossPercentage === "5"
+                          ? priceValues[startingCapital].maxDailyLossVal[0]
+                          : priceValues[startingCapital].maxDailyLossVal[1]}
                       </span>
                     </div>
                   </div>
@@ -998,11 +1012,11 @@ export default function PriceTable({ clr }) {
                     <div>
                       <span className="w-[122px] flex justify-center">
                         <span>
-                          {overallLoss === "12"
-                            ? priceValues[chooseBalance].maxOverallLossVal[0]
-                            : overallLoss === "10"
-                            ? priceValues[chooseBalance].maxOverallLossVal[1]
-                            : priceValues[chooseBalance].maxOverallLossVal[2]}
+                          {maximumTotalLossPercentage === "12"
+                            ? priceValues[startingCapital].maxOverallLossVal[0]
+                            : maximumTotalLossPercentage === "10"
+                            ? priceValues[startingCapital].maxOverallLossVal[1]
+                            : priceValues[startingCapital].maxOverallLossVal[2]}
                         </span>
                       </span>
                     </div>
@@ -1031,7 +1045,7 @@ export default function PriceTable({ clr }) {
                     </span>
                     <div>
                       <span className="w-[122px] whitespace-nowrap flex justify-center">
-                        {priceValues[chooseBalance].monthlySalaryVal[0]}
+                        {priceValues[startingCapital].monthlySalaryVal[0]}
                       </span>
                     </div>
                   </div>

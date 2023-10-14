@@ -24,7 +24,7 @@ export default function SingleBlog() {
               </div>
             </div>
 
-            <div className="blog-content">
+            <div className="blog-content global-shadow ">
               <div className="heading">
                 <h2 className="font-medium text-2xl xs:text-[1.9rem] tracking-tight text-wht-gradient">
                   {blog[0].title}

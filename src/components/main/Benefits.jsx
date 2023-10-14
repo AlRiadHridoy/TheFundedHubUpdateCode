@@ -101,9 +101,9 @@ export default function Benefits() {
                     </div>
                     {/* para */}
                     <p className="text-sm mt-3">
-                      We work with DEEL to ensure the smoothest withdrawal
-                      experience to all our traders. Once the payout is
-                      approved, get your money in a flash!
+                      Various payment methods, including Bank transfer, PayPal,
+                      and Crypto. Once your payout is approved, get your money
+                      in a flash!
                     </p>
                   </MotionX>
                 </div>
@@ -152,7 +152,7 @@ export default function Benefits() {
                     <p className="text-sm mt-3">
                       Any question or concern? We got you! Our team of traders
                       and engineers is available 24/5 to help you with anything
-                      you might need, even on Whatsapp!
+                      you might need.
                     </p>
                   </MotionX>
                 </div>
@@ -237,9 +237,9 @@ export default function Benefits() {
                   </div>
                   {/* para */}
                   <p className="text-sm mt-3">
-                    NWe work with DEEL to ensure the smoothest withdrawal
-                    experience to all our traders. Once the payout is approved,
-                    get your money in a flash!
+                    Various payment methods, including Bank transfer, PayPal,
+                    and Crypto. Once your payout is approved, get your money in
+                    a flash!
                   </p>
                 </SwiperSlide>
 

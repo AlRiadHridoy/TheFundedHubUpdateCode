@@ -80,7 +80,7 @@ export default function Login() {
         <div className="container relative">
           <div className="wrapper z-10 relative flex justify-center items-center min-h-[40vh] md:pt-20 pb-24 sm:pb-36">
             <form
-              className="grid gap-3 p-7 relative z-10 rounded-2xl bg-main-bg/[60%] border-primary max-w-[30rem] w-full"
+              className="grid gap-3 p-7 relative z-10 rounded-2xl bg-main-bg/[60%] border-primary max-w-[30rem] w-full global-shadow "
               onSubmit={(e) => submitUser(e)}
             >
               <div className="heading grid gap-3 justify-start items-center">

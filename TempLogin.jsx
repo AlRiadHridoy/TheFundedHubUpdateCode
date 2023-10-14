@@ -67,7 +67,7 @@ export default function Login() {
               />
             </Link>
 
-            <nav className="nav-links hidden md:flex text-wht font-light justify-center items-center">
+            <nav className="nav-links hidden md:flex dark:text-wht font-light justify-center items-center">
               <div className="item grid justify-center items-center">
                 <ul className="flex flex-wrap gap-4 justify-center items-center">
                   <li>
@@ -111,7 +111,7 @@ export default function Login() {
             >
               <div className="heading grid gap-3 justify-start items-center">
                 <div className="wrap">
-                  <h1 className="text-start text-xl xs:text-[1.8rem] font-medium text-wht-gradient pb-[0.2rem]">
+                  <h1 className="text-start text-xl xs:text-[1.8rem] font-medium dark:text-wht-gradient pb-[0.2rem]">
                     Sign in
                   </h1>
                 </div>
@@ -229,7 +229,7 @@ export default function Login() {
         ></div>
 
         <div
-          className={`box relative m-6 max-w-[500px] w-full text-main text-wht bg-light-gray bg-main-bg/90 transition-all duration-300 rounded-3xl z-[999] py-10 px-6 ${
+          className={`box relative m-6 max-w-[500px] w-full text-main dark:text-wht bg-light-gray bg-main-bg/90 transition-all duration-300 rounded-3xl z-[999] py-10 px-6 ${
             forgetModal ? "visible opacity-100" : "invisible opacity-0"
           }`}
         >
@@ -276,7 +276,7 @@ export default function Login() {
       <footer className="z-50 relative md:hidden left-0 right-0 transition-all duration-300 border-b border-transparent py-4 pb-10">
         <div className="container">
           <div className="wrapper flex flex-col md:flex-row justify-between gap-8">
-            <nav className="nav-links text-wht font-light flex justify-center items-center">
+            <nav className="nav-links dark:text-wht font-light flex justify-center items-center">
               <div className="item grid justify-center items-center">
                 <ul className="flex flex-wrap gap-4 justify-center items-center">
                   <li>
